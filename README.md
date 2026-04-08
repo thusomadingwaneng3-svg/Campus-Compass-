@@ -1,2 +1,2 @@
-# Campus-Compass-
+# Campus-Compass
 Students navigator app
