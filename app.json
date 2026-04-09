@@ -1,13 +1,18 @@
 {
   "expo": {
-    "name": "VUT Campus Compass",
+    "name": "Campus Compass",
     "slug": "campus-compass",
+    "owner": "campus-compass1999",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "android": {
-      "package": "com.vut.campuscompass",
-      "versionCode": 1
+      "package": "com.campuscompass.app"
     }
   }
 }
