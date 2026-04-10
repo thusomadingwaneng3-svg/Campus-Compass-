@@ -24,6 +24,11 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.campuscompass.app"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bb41d5ff-b177-4763-a521-81fcbbc80467"
+      }
     }
   }
 }
