@@ -7,20 +7,28 @@
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.campuscompass.app"
     },
     "android": {
-      "package": "com.campuscompass.app"
+      "package": "com.campuscompass.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
     },
     "extra": {
       "eas": {
-        "projectId": "48635a51-0f42-46b2-b221-9d711ce7a519"
+        "projectId": "48635e51-0f42-46b2-b221-9d711ce7a519"
       }
     }
   }
