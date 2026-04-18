@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, TouchableOpacity, Text, Linking, Alert, ScrollView, TextInput, ActivityIndicator } from 'react-native';
+import {
+  StyleSheet, View, TouchableOpacity, Text, Linking, Alert, ScrollView,
+  TextInput, ActivityIndicator, Modal, SectionList, Pressable
+} from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 
 // T 💙 PASTE YOUR NEW HUGGING FACE TOKEN HERE - NEVER SHARE IT
-const HF_TOKEN = 'hf_awZgT1ETGhJzCsKeDIfxiGfktyDhppzg1f';
+const HF_TOKEN = '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';
 
 export default function App() {
   const [mapType, setMapType] = useState('standard');
   const [question, setQuestion] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showVUTModal, setShowVUTModal] = useState(false); // T 💙 NEW: VUT popup state
 
   const VUT_COORDS = { latitude: -26.7028, longitude: 27.8405 };
 
@@ -32,6 +36,60 @@ export default function App() {
     { name: 'Emergency Services 112', number: '112' },
     { name: 'Ambulance 10177', number: '10177' },
   ];
+
+  // T 💙 NEW: VUT OFFICES DATA FROM YOUR SCREENSHOTS
+  const vutOffices = [
+    {
+      title: 'Student & Academic Support',
+      data: [
+        { name: 'General Student Enquiries', email: 'studentenquiries@vut.ac.za' },
+        { name: 'Work Integrated Learning (WIL)', email: 'WILregistration@vut.ac.za' },
+        { name: 'Masters/Doctorate Registration', email: 'faithmn@vut.ac.za' },
+        { name: 'Academic Appeals', email: 'appealapp@vut.ac.za' },
+      ],
+    },
+    {
+      title: 'Faculty Administration',
+      data: [
+        { name: 'FMS - Executive Dean', email: 'chengedzai@vut.ac.za', ext: '6886' },
+        { name: 'FMS - Head Admin', email: 'selinah@vut.ac.za', ext: '6878' },
+        { name: 'FMS - Senior Admin', email: 'thorisom@vut.ac.za', ext: '6876' },
+        { name: 'FACS', email: 'fucs@vut.ac.za', ext: '6690' },
+      ],
+    },
+    {
+      title: 'Research & Innovation',
+      data: [
+        { name: 'DVC Research & Innovation', email: 'leratoh@vut.ac.za' },
+        { name: 'Research Development', email: 'son@vut.ac.za' },
+        { name: 'Research Administration', email: 'ronela@vut.ac.za' },
+        { name: 'NRF Financial Officer', email: 'thakasilen@vut.ac.za' },
+        { name: 'Postgraduate Admin', email: 'beatricet@vut.ac.za' },
+      ],
+    },
+    {
+      title: 'Human Resources',
+      data: [
+        { name: 'Employee Relations - Tshepo Thekiso', email: 'tshepoth@vut.ac.za' },
+        { name: 'Employee Relations - John Sello', email: 'johns2@vut.ac.za' },
+        { name: 'OD & Performance', email: 'tsilisol@vut.ac.za' },
+        { name: 'HR Business Analyst', email: 'traceyv@vut.ac.za' },
+        { name: 'Benefits/Remuneration', email: 'thembi@vut.ac.za' },
+        { name: 'Benefits/Retirement', email: 'joane@vut.ac.za' },
+      ],
+    },
+    {
+      title: 'Other Services',
+      data: [
+        { name: 'IT Staff Services', email: 'it_support@vut.ac.za' },
+        { name: 'General Info/Reception', email: 'reception@vut.ac.za' },
+      ],
+    },
+  ];
+
+  const openEmail = (email) => {
+    Linking.openURL(`mailto:${email}`);
+  };
 
   const handleNavigate = () => {
     Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${VUT_COORDS.latitude},${VUT_COORDS.longitude}`);
@@ -74,7 +132,7 @@ export default function App() {
       Alert.alert('Ask something', 'Type your question about VUT first');
       return;
     }
-    if (!HF_TOKEN || HF_TOKEN === 'PASTE_NEW_HF_TOKEN_HERE') {
+    if (!HF_TOKEN || HF_TOKEN === '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') {
       Alert.alert('Setup needed', 'Add your Hugging Face token on line 7');
       return;
     }
@@ -174,6 +232,11 @@ export default function App() {
           <Text style={styles.buttonText}>🚨 PANIC BUTTON 🚨</Text>
         </TouchableOpacity>
 
+        {/* T 💙 NEW: VUT OFFICES BUTTON */}
+        <TouchableOpacity style={[styles.button, styles.vutBlue]} onPress={() => setShowVUTModal(true)}>
+          <Text style={styles.buttonText}>VUT Offices & Emails</Text>
+        </TouchableOpacity>
+
         {emergencyContacts.map((contact, index) => (
           <TouchableOpacity
             key={index}
@@ -197,6 +260,37 @@ export default function App() {
         </TouchableOpacity>
         <View style={{ height: 20 }} />
       </ScrollView>
+
+      {/* T 💙 NEW: VUT OFFICES MODAL */}
+      <Modal
+        visible={showVUTModal}
+        animationType="slide"
+        onRequestClose={() => setShowVUTModal(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalHeader}>
+            <Text style={styles.modalTitle}>VUT Offices</Text>
+            <Pressable onPress={() => setShowVUTModal(false)}>
+              <Text style={styles.closeText}>Close</Text>
+            </Pressable>
+          </View>
+          <Text style={styles.hours}>Mon-Fri: 07:45 - 16:30</Text>
+          <SectionList
+            sections={vutOffices}
+            keyExtractor={(item, index) => item.email + index}
+            renderItem={({ item }) => (
+              <Pressable style={styles.officeItem} onPress={() => openEmail(item.email)}>
+                <Text style={styles.officeName}>{item.name}</Text>
+                <Text style={styles.officeEmail}>{item.email}</Text>
+                {item.ext && <Text style={styles.officeExt}>Ext: {item.ext}</Text>}
+              </Pressable>
+            )}
+            renderSectionHeader={({ section: { title } }) => (
+              <Text style={styles.sectionHeader}>{title}</Text>
+            )}
+          />
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -213,8 +307,8 @@ const styles = StyleSheet.create({
   },
   headerText: { color: '#FFD700', fontSize: 22, fontWeight: 'bold' },
   subHeader: { color: '#fff', fontSize: 14, marginTop: 2 },
-  map: { height: 200 }, // T 💙 FIXED: was flex: 1
-  buttonContainer: { padding: 12, backgroundColor: 'yellow', flex: 1 }, // T 💙 FIXED: was maxHeight: 420
+  map: { height: 200 },
+  buttonContainer: { padding: 12, backgroundColor: 'yellow', flex: 1 },
   button: {
     padding: 16,
     borderRadius: 12,
@@ -228,6 +322,7 @@ const styles = StyleSheet.create({
   green: { backgroundColor: '#228B22' },
   red: { backgroundColor: '#DC143C' },
   blue: { backgroundColor: '#1E90FF' },
+  vutBlue: { backgroundColor: '#0033A0' }, // T 💙 NEW: VUT brand blue
   emergencyNumberBtn: {
     backgroundColor: '#F5F5F5',
     paddingVertical: 14,
@@ -260,5 +355,64 @@ const styles = StyleSheet.create({
     backgroundColor: '#FAFAFA',
     minHeight: 45,
     fontSize: 16
+  },
+  // T 💙 NEW: VUT MODAL STYLES
+  modalContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingTop: 50,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+    backgroundColor: '#8B0000',
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#FFD700',
+  },
+  closeText: {
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: '600',
+  },
+  hours: {
+    textAlign: 'center',
+    padding: 10,
+    backgroundColor: '#f2f2f2',
+    fontStyle: 'italic',
+    fontSize: 14,
+  },
+  sectionHeader: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    backgroundColor: '#E8E8E8',
+    padding: 12,
+    color: '#8B0000',
+  },
+  officeItem: {
+    padding: 14,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+  },
+  officeName: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#000',
+  },
+  officeEmail: {
+    fontSize: 14,
+    color: '#1E90FF',
+    marginTop: 3,
+  },
+  officeExt: {
+    fontSize: 12,
+    color: '#666',
+    marginTop: 2,
   },
 });
