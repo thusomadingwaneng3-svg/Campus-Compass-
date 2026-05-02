@@ -16,18 +16,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const knowledge = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     const context = JSON.stringify(knowledge).slice(0, 3000);
 
-    // Use chatCompletion - this is what featherless-ai supports
+    // Llama 3 8B works on featherless-ai free tier
     const response = await hf.chatCompletion({
-      model: 'microsoft/Phi-3-mini-4k-instruct',
+      model: 'meta-llama/Meta-Llama-3-8B-Instruct',
       messages: [
         {
           role: 'system',
-          content: `You are Campus Compass AI. Answer SA university questions using this data: ${context}. Be brief.`
+          content: `You are Campus Compass AI. Answer SA university questions using this data: ${context}. Keep answers under 80 words.`
         },
         { role: 'user', content: message }
       ],
       max_tokens: 200,
-      temperature: 0.2
+      temperature: 0.3
     });
 
     const reply = response.choices[0]?.message?.content;
@@ -36,7 +36,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).json({ reply: reply.trim() });
 
   } catch (err: any) {
-    console.error('API Error:', err);
+    console.error('API Error:', err.message, err.httpResponse?.body);
     return res.status(500).json({ error: 'AI request failed', details: err.message });
   }
 }
