@@ -490,7 +490,7 @@
       "applications_close": "31 July 2025",
       "prospectus_link": "https://www.smu.ac.za/students/prospective-students/",
       "faculties": {
-        "Medicine": {"aps": 35, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "Life Sciences": 6, "English": 5        },
+        "Medicine": {"aps": 35, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "Life Sciences": 6, "English": 5}, "degrees": ["MBChB"]},
         "Health Care Sciences": {"aps": 30, "subjects": {"Mathematics": 5, "Life Sciences": 5, "English": 4}, "degrees": ["BNurs", "BPharm", "BDS", "BSc Physio"]},
         "Science & Technology": {"aps": 28, "subjects": {"Mathematics": 5, "Physical Sciences": 5, "English": 4}, "degrees": ["BSc"]}
       },
