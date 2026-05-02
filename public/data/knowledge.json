@@ -518,32 +518,33 @@
       "buildings": []
     },
     {
-     "name": "Vaal University of Technology",
-     "short": "VUT",
-     "type": "University of Technology",
-     "province": "Gauteng",
-     "location": "Vanderbijlpark",
-     "lat": -26.7033,
-     "lng": 27.8400,
-     "website": "https://www.vut.ac.za",
-     "applications_open": "1 April 2025",
-     "applications_close": "30 September 2025",
-     "prospectus_link": "https://www.vut.ac.za/prospective-students/",
-     "faculties": {
-       "Engineering & Technology": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BEng Tech", "NDip"]},
-       "Applied & Computer Sciences": {"aps": 24, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BSc", "NDip"]},
-       "Management Sciences": {"aps": 22, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BTech", "NDip"]}
-     },
-     "residence_cost": "R36,000 - R54,000 per year",
-     "contact": "016 950 9000",
-     "email": "info@vut.ac.za",
-     "security_phone": "016 950 4911",
-     "primaryColor": "#8B0000",
-     "buildings": [
-     "name": "Main Building", "code": "MAIN", "coords": {"latitude": -26.7033, "longitude": 27.8400}},
-     "name": "Library", "code": "LIB", "coords": {"latitude": -26.7040, "longitude": 27.8410}},
-     "name": "Student Centre", "code": "SC", "coords": {"latitude": -26.7025, "longitude": 27.8395}}
-    }, 
+      "name": "Vaal University of Technology",
+      "short": "VUT",
+      "type": "University of Technology",
+      "province": "Gauteng",
+      "location": "Vanderbijlpark",
+      "lat": -26.7033,
+      "lng": 27.8400,
+      "website": "https://www.vut.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.vut.ac.za/prospective-students/",
+      "faculties": {
+        "Engineering & Technology": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BEng Tech", "NDip"]},
+        "Applied & Computer Sciences": {"aps": 24, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BSc", "NDip"]},
+        "Management Sciences": {"aps": 22, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BTech", "NDip"]}
+      },
+      "residence_cost": "R36,000 - R54,000 per year",
+      "contact": "016 950 9000",
+      "email": "info@vut.ac.za",
+      "security_phone": "016 950 4911",
+      "primaryColor": "#8B0000",
+      "buildings": [
+        { "name": "Main Building", "code": "MAIN", "coords": {"latitude": -26.7033, "longitude": 27.8400} },
+        { "name": "Library", "code": "LIB", "coords": {"latitude": -26.7040, "longitude": 27.8410} },
+        { "name": "Student Centre", "code": "SC", "coords": {"latitude": -26.7025, "longitude": 27.8395} }
+      ]
+    },  
     {
       "name": "Central University of Technology",
       "short": "CUT",
