@@ -18,51 +18,63 @@ export default function ChatScreen() {
 
   const getThusoReply = (userMsg: string): string => {
     const q = userMsg.toLowerCase().trim();
-    
-    // Combine all institutions
+
+    // funding.json is an array
+    const allBursaries = funding as any[];
+    const nsfas = allBursaries.find(b => b.id === 'nsfas2027' || b.name?.toLowerCase().includes('nsfas'));
+
     const allInstitutions = [
-      ...(knowledge.institutions || []),
-      ...(knowledge.tvet_colleges || []),
-      ...(knowledge.private_institutions || [])
+    ...(knowledge.institutions || []),
+    ...(knowledge.tvet_colleges || []),
+    ...(knowledge.private_institutions || [])
     ];
 
     // 1. NSFAS QUERIES
-    if (q.includes('nsfas')) {
-      const nsfas = funding.nsfas;
+    if (q.includes('nsfas') && nsfas) {
       if (q.includes('deadline') || q.includes('close') || q.includes('when') || q.includes('date')) {
-        return `NSFAS 2026 Applications:\n\n• Opens: ${nsfas.applications_open}\n• Closes: ${nsfas.applications_close}\n\nApply online: ${nsfas.website}`;
+        return `NSFAS 2027 Applications:\n\n• Deadline: ${nsfas.deadline}\n• Status: ${nsfas.status}\n\nApply: ${nsfas.apply_link}\n\n${nsfas.notes}`;
       }
       if (q.includes('cover') || q.includes('amount') || q.includes('pay') || q.includes('allowance') || q.includes('money')) {
-        return `NSFAS covers:\n${nsfas.covers.map(item => `• ${item}`).join('\n')}\n\nMaximum allowance: ${nsfas.max_allowance}`;
+        return `NSFAS covers:\n${nsfas.covers?.map((item: string) => `• ${item}`).join('\n')}\n\nIncome threshold: ${nsfas.income_threshold}`;
       }
       if (q.includes('requirement') || q.includes('qualify') || q.includes('who')) {
-        return `NSFAS Requirements:\n${nsfas.requirements.map(item => `• ${item}`).join('\n')}\n\nApply: ${nsfas.website}`;
+        return `NSFAS Requirements: ${nsfas.requirements}\n\nIncome threshold: ${nsfas.income_threshold}\n\nApply: ${nsfas.apply_link}`;
       }
-      return `${nsfas.description}\n\nKey dates:\n• Opens: ${nsfas.applications_open}\n• Closes: ${nsfas.applications_close}\n\nApply: ${nsfas.website}`;
+      return `${nsfas.name}\n${nsfas.provider}\n\n• Deadline: ${nsfas.deadline}\n• Status: ${nsfas.status}\n• Covers: ${nsfas.covers?.join(', ')}\n\nApply: ${nsfas.apply_link}`;
     }
 
-    // 2. BURSARY QUERIES
-    if (q.includes('bursary') || q.includes('bursaries') || q.includes('scholarship') || q.includes('funding')) {
-      const bursaries = funding.bursaries || [];
+    // 2. SPECIFIC BURSARY QUERIES
+    const specificBursary = allBursaries.find(b =>
+      q.includes(b.name?.toLowerCase()) ||
+      q.includes(b.id?.toLowerCase()) ||
+      q.includes(b.provider?.toLowerCase())
+    );
+
+    if (specificBursary) {
+      return `${specificBursary.name}\nProvider: ${specificBursary.provider}\n\n• Deadline: ${specificBursary.deadline}\n• Status: ${specificBursary.status}\n• Level: ${specificBursary.level?.join(', ')}\n• Fields: ${specificBursary.fields?.join(', ')}\n• Covers: ${specificBursary.covers?.join(', ')}\n• Requirements: ${specificBursary.requirements}\n\nApply: ${specificBursary.apply_link}\n\n${specificBursary.notes}`;
+    }
+
+    // 3. OPEN BURSARIES LIST
+    if (q.includes('bursary') || q.includes('bursaries') || q.includes('scholarship') || q.includes('funding') || q.includes('open')) {
       const now = new Date();
-      const open = bursaries.filter(b => new Date(b.deadline) > now);
-      
-      // Check for specific bursary name
-      const specificBursary = bursaries.find(b => q.includes(b.name.toLowerCase()));
-      if (specificBursary) {
-        return `${specificBursary.name}\n\n• Deadline: ${specificBursary.deadline}\n• Fields: ${specificBursary.fields?.join(', ') || 'All fields'}\n• Covers: ${specificBursary.covers?.join(', ') || 'Varies'}\n\nApply: ${specificBursary.website}`;
-      }
+      const open = allBursaries.filter(b => {
+        if (b.status && b.status.toLowerCase().includes('open')) return true;
+        if (!b.deadline) return false;
+        const dateStr = b.deadline.split(' for ')[0].split(' at ')[0];
+        const deadlineDate = new Date(dateStr);
+        return!isNaN(deadlineDate.getTime()) && deadlineDate > now;
+      });
 
       if (open.length === 0) {
-        return 'No bursaries are currently open. Most applications open April-September. Check back later or ask about NSFAS.';
+        return 'No bursaries are currently open. Most applications open April-September 2026 for 2027 study.\n\nData verified May 2, 2026. Always confirm on official websites.\n\nAsk about:\n• Funza Lushaka\n• Sasol Bursary\n• Transnet Bursary\n• Chevening Scholarship';
       }
-      
-      return `Open Bursaries (${open.length}):\n\n` + open.slice(0, 5).map(b => 
-        `• ${b.name}\n  Deadline: ${b.deadline}\n  ${b.fields?.slice(0,2).join(', ')}`
-      ).join('\n\n') + (open.length > 5 ? `\n\n+${open.length - 5} more. Ask for a specific bursary name.` : '');
+
+      return `Open Bursaries (${open.length}):\n\nData verified May 2, 2026\n\n` + open.slice(0, 6).map(b =>
+        `• ${b.name}\n Provider: ${b.provider}\n Deadline: ${b.deadline}`
+      ).join('\n\n') + (open.length > 6? `\n\n+${open.length - 6} more. Ask for a specific name.` : '');
     }
 
-    // 3. INSTITUTION QUERIES - Find best match
+    // 4. INSTITUTION QUERIES
     const found = allInstitutions.find(i => {
       const nameMatch = q.includes(i.name.toLowerCase());
       const shortMatch = i.short && q.includes(i.short.toLowerCase());
@@ -71,41 +83,36 @@ export default function ChatScreen() {
     });
 
     if (found) {
-      // Security/Emergency
       if (q.includes('security') || q.includes('emergency') || q.includes('safety') || q.includes('phone') || q.includes('call')) {
         return `${found.short || found.name} Campus Security\n\n📞 ${found.security_phone || found.contact}\n📍 ${found.location}, ${found.province}`;
       }
-      
-      // Applications
+
       if (q.includes('application') || q.includes('apply') || q.includes('deadline') || q.includes('close') || q.includes('admission')) {
         return `${found.short || found.name} Applications\n\n• Opens: ${found.applications_open}\n• Closes: ${found.applications_close}\n• Type: ${found.type}\n\nProspectus: ${found.prospectus_link}\nWebsite: ${found.website}`;
       }
-      
-      // Residence/Accommodation
+
       if (q.includes('residence') || q.includes('accommodation') || q.includes('housing') || q.includes('cost') || q.includes('fee')) {
         return `${found.short || found.name} Residence\n\n💰 ${found.residence_cost}\n\n📞 Contact: ${found.contact}\n📧 ${found.email}`;
       }
 
-      // Faculties/Courses
       if (q.includes('faculty') || q.includes('course') || q.includes('degree') || q.includes('study') || q.includes('aps')) {
         const faculties = Object.entries(found.faculties || {});
         if (faculties.length === 0) return `${found.short || found.name} - No faculty data available. Check: ${found.website}`;
-        return `${found.short || found.name} Faculties:\n\n` + faculties.slice(0, 4).map(([name, data]: [string, any]) => 
-          `• ${name}\n  APS: ${data.aps} | Degrees: ${data.degrees?.join(', ')}`
+        return `${found.short || found.name} Faculties:\n\n` + faculties.slice(0, 4).map(([name, data]: [string, any]) =>
+          `• ${name}\n APS: ${data.aps} | Degrees: ${data.degrees?.join(', ')}`
         ).join('\n\n');
       }
 
-      // Default: Full info
       return `${found.short || found.name}\n${found.type}\n\n📍 ${found.location}, ${found.province}\n📞 ${found.contact}\n📧 ${found.email}\n🌐 ${found.website}\n\nApplications close: ${found.applications_close}`;
     }
 
-    // 4. HELP
+    // 5. HELP
     if (q.includes('help') || q.includes('what can') || q.includes('how')) {
-      return `I can help you with:\n\n• NSFAS: deadlines, amounts, requirements\n• Bursaries: open applications, deadlines\n• All 90 SA institutions: applications, contacts, security, residence\n\nTry asking:\n"NSFAS deadline"\n"Open bursaries"\n"VUT security number"\n"Wits applications"`;
+      return `I can help you with:\n\n• NSFAS: deadlines, amounts, requirements\n• 50+ Bursaries: Sasol, Funza Lushaka, Transnet, Chevening, etc\n• All 90 SA institutions: applications, contacts, security, residence\n\nData verified May 2, 2026\n\nTry:\n"Funza Lushaka bursary"\n"Sasol deadline"\n"Wits security"\n"Open bursaries"`;
     }
 
-    // 5. FALLBACK
-    return `I don't have info on that. I can help with:\n\n• NSFAS & bursaries\n• All SA universities, TVET colleges & private institutions\n\nTry: "NSFAS deadline", "VUT security", or "open bursaries"`;
+    // 6. FALLBACK
+    return `I don't have info on that. Data verified May 2, 2026.\n\nTry:\n• "NSFAS deadline"\n• "Funza Lushaka bursary"\n• "Sasol bursary"\n• "Wits applications"\n• "Open bursaries"`;
   };
 
   const sendMessage = async () => {
@@ -114,7 +121,7 @@ export default function ChatScreen() {
     setMessage('');
     setMessages(prev => [...prev, { role: 'user', content: userMsg }]);
     setLoading(true);
-    
+
     setTimeout(() => {
       const reply = getThusoReply(userMsg);
       setMessages(prev => [...prev, { role: 'assistant', content: reply }]);
@@ -130,15 +137,15 @@ export default function ChatScreen() {
         <Text style={styles.headerTitle}>Thuso AI</Text>
         <Text style={styles.headerSubtitle}>Campus Compass Assistant</Text>
       </View>
-      
-      <KeyboardAvoidingView 
-        style={{ flex: 1 }} 
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios'? 'padding' : 'height'}
         keyboardVerticalOffset={90}
       >
-        <ScrollView 
+        <ScrollView
           ref={scrollViewRef}
-          style={styles.messages} 
+          style={styles.messages}
           contentContainerStyle={{ paddingBottom: 20 }}
           onContentSizeChange={() => scrollViewRef.current?.scrollToEnd({ animated: true })}
         >
@@ -146,23 +153,23 @@ export default function ChatScreen() {
             <View style={styles.emptyBox}>
               <Ionicons name="sparkles" size={48} color="#8B0000" />
               <Text style={styles.emptyTitle}>Ask Thuso anything</Text>
-              <Text style={styles.empty}>NSFAS deadlines, bursaries, or any SA campus info</Text>
+              <Text style={styles.empty}>NSFAS, bursaries, or any SA campus info</Text>
               <View style={styles.suggestions}>
-                <TouchableOpacity style={styles.chip} onPress={() => setMessage('NSFAS deadline')}>
-                  <Text style={styles.chipText}>NSFAS deadline</Text>
+                <TouchableOpacity style={styles.chip} onPress={() => setMessage('Funza Lushaka bursary')}>
+                  <Text style={styles.chipText}>Funza Lushaka</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.chip} onPress={() => setMessage('Open bursaries')}>
                   <Text style={styles.chipText}>Open bursaries</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.chip} onPress={() => setMessage('VUT security')}>
-                  <Text style={styles.chipText}>VUT security</Text>
+                <TouchableOpacity style={styles.chip} onPress={() => setMessage('NSFAS deadline')}>
+                  <Text style={styles.chipText}>NSFAS deadline</Text>
                 </TouchableOpacity>
               </View>
             </View>
           )}
           {messages.map((m, i) => (
-            <View key={i} style={[styles.bubble, m.role === 'user' ? styles.userBubble : styles.aiBubble]}>
-              <Text style={m.role === 'user' ? styles.userText : styles.aiText}>{m.content}</Text>
+            <View key={i} style={[styles.bubble, m.role === 'user'? styles.userBubble : styles.aiBubble]}>
+              <Text style={m.role === 'user'? styles.userText : styles.aiText}>{m.content}</Text>
             </View>
           ))}
           {loading && (
@@ -173,7 +180,7 @@ export default function ChatScreen() {
         </ScrollView>
 
         <View style={styles.inputRow}>
-          <TextInput 
+          <TextInput
             style={styles.input}
             placeholder="Ask about NSFAS, bursaries, campuses..."
             value={message}
@@ -182,10 +189,10 @@ export default function ChatScreen() {
             multiline
             maxLength={500}
           />
-          <TouchableOpacity 
-            style={[styles.sendBtn, (!message.trim() || loading) && styles.sendBtnDisabled]} 
-            onPress={sendMessage} 
-            disabled={loading || !message.trim()}
+          <TouchableOpacity
+            style={[styles.sendBtn, (!message.trim() || loading) && styles.sendBtnDisabled]}
+            onPress={sendMessage}
+            disabled={loading ||!message.trim()}
           >
             <Ionicons name="send" size={20} color="white" />
           </TouchableOpacity>
@@ -197,10 +204,10 @@ export default function ChatScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff' },
-  header: { 
-    padding: 16, 
-    borderBottomWidth: 1, 
-    borderColor: '#e5e5e5', 
+  header: {
+    padding: 16,
+    borderBottomWidth: 1,
+    borderColor: '#e5e5e5',
     alignItems: 'center',
     backgroundColor: '#fff'
   },
@@ -211,10 +218,10 @@ const styles = StyleSheet.create({
   emptyTitle: { fontSize: 20, fontWeight: 'bold', marginTop: 16, color: '#333' },
   empty: { textAlign: 'center', color: '#666', marginTop: 8, fontSize: 15, lineHeight: 22 },
   suggestions: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginTop: 20, gap: 8 },
-  chip: { 
-    backgroundColor: '#f0f0f0', 
-    paddingHorizontal: 16, 
-    paddingVertical: 8, 
+  chip: {
+    backgroundColor: '#f0f0f0',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
     borderRadius: 16,
     borderWidth: 1,
     borderColor: '#ddd'
@@ -225,33 +232,33 @@ const styles = StyleSheet.create({
   aiBubble: { backgroundColor: '#f0f0f0', alignSelf: 'flex-start', borderBottomLeftRadius: 4 },
   userText: { color: 'white', fontSize: 15, lineHeight: 20 },
   aiText: { color: '#000', fontSize: 15, lineHeight: 22 },
-  inputRow: { 
-    flexDirection: 'row', 
-    padding: 12, 
-    borderTopWidth: 1, 
-    borderColor: '#e5e5e5', 
+  inputRow: {
+    flexDirection: 'row',
+    padding: 12,
+    borderTopWidth: 1,
+    borderColor: '#e5e5e5',
     alignItems: 'flex-end',
     backgroundColor: '#fff'
   },
-  input: { 
-    flex: 1, 
-    borderWidth: 1, 
-    borderColor: '#ddd', 
-    borderRadius: 24, 
-    paddingHorizontal: 16, 
-    paddingVertical: 10, 
-    marginRight: 8, 
+  input: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 24,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    marginRight: 8,
     maxHeight: 100,
     fontSize: 15,
     backgroundColor: '#fafafa'
   },
-  sendBtn: { 
-    backgroundColor: '#8B0000', 
-    width: 44, 
-    height: 44, 
-    borderRadius: 22, 
-    alignItems: 'center', 
-    justifyContent: 'center' 
+  sendBtn: {
+    backgroundColor: '#8B0000',
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   sendBtnDisabled: {
     backgroundColor: '#ccc'
