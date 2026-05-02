@@ -11,7 +11,7 @@
       "requirements": "SA citizen, household income < R350k per annum, registered at public uni/TVET",
       "income_threshold": "R350,000 per annum",
       "covers": ["Tuition", "Accommodation", "Books", "Transport", "Meals"],
-      "notes": "Applications open September 2025"
+      "notes": "Applications open September 2025. Does NOT fund private colleges."
     },
     {
       "id": "funza-2026",
@@ -38,6 +38,18 @@
       "income_threshold": "Not specified",
       "covers": ["Tuition", "Accommodation", "Books", "Laptop", "Allowance"],
       "notes": "Vacation work required"
+    },
+    {
+      "id": "vodacom-2026",
+      "name": "Vodacom Bursary",
+      "provider": "Vodacom Foundation",
+      "type": "Corporate Bursary",
+      "fields": ["Engineering", "IT", "Computer Science"],
+      "deadline": "31 August 2025",
+      "apply_link": "https://www.vodacom.com/bursaries",
+      "requirements": "Maths 70%+, SA citizen, financial need",
+      "covers": ["Tuition", "Books", "Accommodation", "Laptop"],
+      "notes": "Graduate programme pipeline"
     }
   ],
   "institutions": [
@@ -99,7 +111,8 @@
         "Law": {"aps": 34, "subjects": {"English": 6}, "degrees": ["LLB"]}
       },
       "residence_cost": "R50,000 - R80,000 per year",
-      "contact": "021 808 9111"
+      "contact": "021 808 9111",
+      "email": "info@sun.ac.za"
     },
     {
       "name": "University of Pretoria",
@@ -118,7 +131,8 @@
         "Law": {"aps": 32, "subjects": {"English": 5}, "degrees": ["LLB"]}
       },
       "residence_cost": "R50,000 - R70,000 per year",
-      "contact": "012 420 3111"
+      "contact": "012 420 3111",
+      "email": "ssc@up.ac.za"
     },
     {
       "name": "University of Johannesburg",
@@ -156,7 +170,8 @@
         "Law & Management Studies": {"aps": 28, "subjects": {"English": 5, "Mathematics": 4}, "degrees": ["LLB", "BCom"]}
       },
       "residence_cost": "R42,000 - R68,000 per year",
-      "contact": "031 260 1111"
+      "contact": "031 260 1111",
+      "email": "enquiries@ukzn.ac.za"
     },
     {
       "name": "North-West University",
@@ -174,7 +189,8 @@
         "Economic & Management Sciences": {"aps": 24, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BCom"]}
       },
       "residence_cost": "R38,000 - R60,000 per year",
-      "contact": "018 299 1111"
+      "contact": "018 299 1111",
+      "email": "studies@nwu.ac.za"
     },
     {
       "name": "University of the Free State",
@@ -192,7 +208,8 @@
         "Law": {"aps": 28, "subjects": {"English": 5}, "degrees": ["LLB"]}
       },
       "residence_cost": "R40,000 - R62,000 per year",
-      "contact": "051 401 9111"
+      "contact": "051 401 9111",
+      "email": "studentadmin@ufs.ac.za"
     },
     {
       "name": "Rhodes University",
@@ -211,7 +228,8 @@
         "Humanities": {"aps": 32, "subjects": {"English": 5}, "degrees": ["BA", "BJourn"]}
       },
       "residence_cost": "R48,000 - R72,000 per year",
-      "contact": "046 603 8111"
+      "contact": "046 603 8111",
+      "email": "registrar@ru.ac.za"
     },
     {
       "name": "University of the Western Cape",
@@ -230,7 +248,8 @@
         "Economic & Management Sciences": {"aps": 28, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BCom"]}
       },
       "residence_cost": "R40,000 - R60,000 per year",
-      "contact": "021 959 2911"
+      "contact": "021 959 2911",
+      "email": "admissions@uwc.ac.za"
     },
     {
       "name": "Nelson Mandela University",
@@ -248,7 +267,8 @@
         "Business & Economic Sciences": {"aps": 28, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BCom"]}
       },
       "residence_cost": "R38,000 - R58,000 per year",
-      "contact": "041 504 1111"
+      "contact": "041 504 1111",
+      "email": "info@mandela.ac.za"
     },
     {
       "name": "University of Fort Hare",
@@ -266,7 +286,8 @@
         "Law": {"aps": 28, "subjects": {"English": 5}, "degrees": ["LLB"]}
       },
       "residence_cost": "R35,000 - R55,000 per year",
-      "contact": "040 602 2011"
+      "contact": "040 602 2011",
+      "email": "admissions@ufh.ac.za"
     },
     {
       "name": "University of Limpopo",
@@ -284,7 +305,8 @@
         "Management & Law": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BCom", "LLB"]}
       },
       "residence_cost": "R36,000 - R54,000 per year",
-      "contact": "015 268 9111"
+      "contact": "015 268 9111",
+      "email": "enrolment@ul.ac.za"
     },
     {
       "name": "University of Venda",
@@ -302,7 +324,8 @@
         "Management, Commerce & Law": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BCom", "LLB"]}
       },
       "residence_cost": "R34,000 - R52,000 per year",
-      "contact": "015 962 8000"
+      "contact": "015 962 8000",
+      "email": "info@univen.ac.za"
     },
     {
       "name": "Walter Sisulu University",
@@ -320,7 +343,8 @@
         "Business, Management Sciences & Law": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BCom", "LLB"]}
       },
       "residence_cost": "R36,000 - R54,000 per year",
-      "contact": "047 502 2844"
+      "contact": "047 502 2844",
+      "email": "admissions@wsu.ac.za"
     },
     {
       "name": "University of Zululand",
@@ -338,7 +362,8 @@
         "Commerce, Administration & Law": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BCom", "LLB", "BAdmin"]}
       },
       "residence_cost": "R35,000 - R53,000 per year",
-      "contact": "035 902 6000"
+      "contact": "035 902 6000",
+      "email": "admissions@unizulu.ac.za"
     },
     {
       "name": "Cape Peninsula University of Technology",
@@ -356,7 +381,8 @@
         "Business & Management Sciences": {"aps": 24, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BTech", "NDip Marketing"]}
       },
       "residence_cost": "R38,000 - R58,000 per year",
-      "contact": "021 959 6767"
+      "contact": "021 959 6767",
+      "email": "info@cput.ac.za"
     },
     {
       "name": "Durban University of Technology",
@@ -374,7 +400,8 @@
         "Management Sciences": {"aps": 24, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BTech", "NDip"]}
       },
       "residence_cost": "R36,000 - R56,000 per year",
-      "contact": "031 373 2000"
+      "contact": "031 373 2000",
+      "email": "info@dut.ac.za"
     },
     {
       "name": "Tshwane University of Technology",
@@ -392,7 +419,8 @@
         "ICT": {"aps": 24, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BTech", "NDip IT"]}
       },
       "residence_cost": "R40,000 - R60,000 per year",
-      "contact": "012 382 5911"
+      "contact": "012 382 5911",
+      "email": "general@tut.ac.za"
     },
     {
       "name": "Vaal University of Technology",
@@ -410,7 +438,8 @@
         "Management Sciences": {"aps": 22, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BTech", "NDip"]}
       },
       "residence_cost": "R36,000 - R54,000 per year",
-      "contact": "016 950 9000"
+      "contact": "016 950 9000",
+      "email": "info@vut.ac.za"
     },
     {
       "name": "Central University of Technology",
@@ -428,7 +457,8 @@
         "Management Sciences": {"aps": 22, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BTech", "NDip"]}
       },
       "residence_cost": "R35,000 - R53,000 per year",
-      "contact": "051 507 3911"
+      "contact": "051 507 3911",
+      "email": "info@cut.ac.za"
     },
     {
       "name": "Mangosuthu University of Technology",
@@ -446,7 +476,8 @@
         "Management Sciences": {"aps": 22, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["NDip"]}
       },
       "residence_cost": "R34,000 - R52,000 per year",
-      "contact": "031 907 7111"
+      "contact": "031 907 7111",
+      "email": "info@mut.ac.za"
     },
     {
       "name": "Sefako Makgatho Health Sciences University",
@@ -459,12 +490,13 @@
       "applications_close": "31 July 2025",
       "prospectus_link": "https://www.smu.ac.za/students/prospective-students/",
       "faculties": {
-        "Medicine": {"aps": 35, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "Life Sciences": 6, "English": 5}, "degrees": ["MBChB"]},
+        "Medicine": {"aps": 35, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "Life Sciences": 6, "English": 5        },
         "Health Care Sciences": {"aps": 30, "subjects": {"Mathematics": 5, "Life Sciences": 5, "English": 4}, "degrees": ["BNurs", "BPharm", "BDS", "BSc Physio"]},
         "Science & Technology": {"aps": 28, "subjects": {"Mathematics": 5, "Physical Sciences": 5, "English": 4}, "degrees": ["BSc"]}
       },
       "residence_cost": "R42,000 - R62,000 per year",
-      "contact": "012 521 4111"
+      "contact": "012 521 4111",
+      "email": "enquiries@smu.ac.za"
     },
     {
       "name": "Sol Plaatje University",
@@ -483,7 +515,8 @@
         "Humanities": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BA"]}
       },
       "residence_cost": "R38,000 - R56,000 per year",
-      "contact": "053 491 0000"
+      "contact": "053 491 0000",
+      "email": "applications@spu.ac.za"
     },
     {
       "name": "University of Mpumalanga",
@@ -501,59 +534,9 @@
         "Development Studies": {"aps": 24, "subjects": {"English": 4}, "degrees": ["BA Dev Studies"]}
       },
       "residence_cost": "R36,000 - R54,000 per year",
-      "contact": "013 002 0001"
+      "contact": "013 002 0001",
+      "email": "enquiries@ump.ac.za"
     }
-  ],
-  "tvet_colleges": [
-    {"name": "Boland TVET College", "short": "Boland", "province": "Western Cape", "location": "Stellenbosch/Paarl/Worcester", "courses": ["Engineering N1-N6", "Business Studies", "Safety in Society", "Hospitality"], "requirements": "Grade 9 for N1, Grade 12 for N4", "apply_link": "https://www.bolandcollege.com", "deadline": "30 November 2025", "contact": "021 886 7111"},
-    {"name": "Buffalo City TVET College", "short": "BCC", "province": "Eastern Cape", "location": "East London", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.bccollege.co.za", "deadline": "30 November 2025", "contact": "043 704 9200"},
-    {"name": "Capricorn TVET College", "short": "Capricorn", "province": "Limpopo", "location": "Polokwane", "courses": ["Engineering N1-N6", "Business Studies", "Tourism", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.capricorncollege.edu.za", "deadline": "30 November 2025", "contact": "015 230 1800"},
-        {"name": "Central Johannesburg TVET College", "short": "CJC", "province": "Gauteng", "location": "Johannesburg", "courses": ["Engineering N1-N6", "Business Studies", "ICT", "Art & Design"], "requirements": "Grade 9-12", "apply_link": "https://www.cjc.edu.za", "deadline": "30 November 2025", "contact": "011 351 6000"},
-    {"name": "Coastal KZN TVET College", "short": "Coastal", "province": "KwaZulu-Natal", "location": "Durban", "courses": ["Engineering N1-N6", "Business Studies", "Electrical Infrastructure"], "requirements": "Grade 9-12", "apply_link": "https://www.coastalkzn.co.za", "deadline": "30 November 2025", "contact": "031 905 7000"},
-    {"name": "College of Cape Town", "short": "CCT", "province": "Western Cape", "location": "Cape Town", "courses": ["Engineering N1-N6", "Business Studies", "Art & Design", "Beauty Therapy"], "requirements": "Grade 9-12", "apply_link": "https://www.cct.edu.za", "deadline": "30 November 2025", "contact": "021 404 6700"},
-    {"name": "Eastcape Midlands TVET College", "short": "EMC", "province": "Eastern Cape", "location": "Uitenhage", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.emcol.co.za", "deadline": "30 November 2025", "contact": "041 995 2000"},
-    {"name": "Ehlanzeni TVET College", "short": "Ehlanzeni", "province": "Mpumalanga", "location": "Mbombela", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.ehlanzenicollege.co.za", "deadline": "30 November 2025", "contact": "013 752 2425"},
-    {"name": "Ekurhuleni East TVET College", "short": "EEC", "province": "Gauteng", "location": "Springs", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.eec.edu.za", "deadline": "30 November 2025", "contact": "011 730 6600"},
-    {"name": "Ekurhuleni West TVET College", "short": "EWC", "province": "Gauteng", "location": "Germiston", "courses": ["Engineering N1-N6", "Business Studies", "ICT", "Transport"], "requirements": "Grade 9-12", "apply_link": "https://www.ewc.edu.za", "deadline": "30 November 2025", "contact": "011 323 1600"},
-    {"name": "Elangeni TVET College", "short": "Elangeni", "province": "KwaZulu-Natal", "location": "Pinelands", "courses": ["Engineering N1-N6", "Business Studies", "Electrical"], "requirements": "Grade 9-12", "apply_link": "https://www.elangeni.edu.za", "deadline": "30 November 2025", "contact": "031 716 6700"},
-    {"name": "Esayidi TVET College", "short": "Esayidi", "province": "KwaZulu-Natal", "location": "Port Shepstone", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Primary Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.esayidifet.co.za", "deadline": "30 November 2025", "contact": "039 318 1430"},
-    {"name": "False Bay TVET College", "short": "False Bay", "province": "Western Cape", "location": "Muizenberg", "courses": ["Engineering N1-N6", "Business Studies", "Safety in Society", "2D Animation"], "requirements": "Grade 9-12", "apply_link": "https://www.falsebaycollege.co.za", "deadline": "30 November 2025", "contact": "021 787 0800"},
-    {"name": "Flavius Mareka TVET College", "short": "Flavius Mareka", "province": "Free State", "location": "Sasolburg", "courses": ["Engineering N1-N6", "Business Studies", "Chemical Plant Operations"], "requirements": "Grade 9-12", "apply_link": "https://www.flaviusmareka.net", "deadline": "30 November 2025", "contact": "016 976 0815"},
-    {"name": "Goldfields TVET College", "short": "Goldfields", "province": "Free State", "location": "Welkom", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.goldfieldstvet.edu.za", "deadline": "30 November 2025", "contact": "057 910 6000"},
-    {"name": "Gert Sibande TVET College", "short": "Gert Sibande", "province": "Mpumalanga", "location": "Standerton", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.gscollege.edu.za", "deadline": "30 November 2025", "contact": "017 712 1458"},
-    {"name": "Ikhala TVET College", "short": "Ikhala", "province": "Eastern Cape", "location": "Queenstown", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ikhala.edu.za", "deadline": "30 November 2025", "contact": "047 873 8843"},
-    {"name": "Ingwe TVET College", "short": "Ingwe", "province": "Eastern Cape", "location": "Mount Frere", "courses": ["Engineering N1-N6", "Business Studies", "Primary Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ingwecollege.edu.za", "deadline": "30 November 2025", "contact": "039 255 0346"},
-    {"name": "King Hintsa TVET College", "short": "King Hintsa", "province": "Eastern Cape", "location": "Butterworth", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.kinghintsacollege.edu.za", "deadline": "30 November 2025", "contact": "047 401 6400"},
-    {"name": "King Sabata Dalindyebo TVET College", "short": "KSD", "province": "Eastern Cape", "location": "Mthatha", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.ksdcollege.edu.za", "deadline": "30 November 2025", "contact": "047 505 1000"},
-    {"name": "Letaba TVET College", "short": "Letaba", "province": "Limpopo", "location": "Tzaneen", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.letabacollege.edu.za", "deadline": "30 November 2025", "contact": "015 307 5440"},
-    {"name": "Lephalale TVET College", "short": "Lephalale", "province": "Limpopo", "location": "Lephalale", "courses": ["Engineering N1-N6", "Business Studies", "Electrical Infrastructure"], "requirements": "Grade 9-12", "apply_link": "https://www.leptvetcollege.edu.za", "deadline": "30 November 2025", "contact": "014 763 2252"},
-    {"name": "Lovedale TVET College", "short": "Lovedale", "province": "Eastern Cape", "location": "Alice", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Art & Design"], "requirements": "Grade 9-12", "apply_link": "https://www.lovedale.org.za", "deadline": "30 November 2025", "contact": "040 604 8850"},
-    {"name": "Majuba TVET College", "short": "Majuba", "province": "KwaZulu-Natal", "location": "Newcastle", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.majuba.edu.za", "deadline": "30 November 2025", "contact": "034 326 4887"},
-    {"name": "Maluti TVET College", "short": "Maluti", "province": "Free State", "location": "Phuthaditjhaba", "courses": ["Engineering N1-N6", "Business Studies", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.malutitvet.co.za", "deadline": "30 November 2025", "contact": "058 713 6100"},
-    {"name": "Mnambithi TVET College", "short": "Mnambithi", "province": "KwaZulu-Natal", "location": "Ladysmith", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.mnambithicollege.co.za", "deadline": "30 November 2025", "contact": "036 637 4790"},
-    {"name": "Mopani South East TVET College", "short": "Mopani", "province": "Limpopo", "location": "Phalaborwa", "courses": ["Engineering N1-N6", "Business Studies", "Tourism", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.mopanicollege.edu.za", "deadline": "30 November 2025", "contact": "015 781 5725"},
-    {"name": "Motheo TVET College", "short": "Motheo", "province": "Free State", "location": "Bloemfontein", "courses": ["Engineering N1-N6", "Business Studies", "Art & Design", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.motheotvet.co.za", "deadline": "30 November 2025", "contact": "051 406 9300"},
-    {"name": "Nkangala TVET College", "short": "Nkangala", "province": "Mpumalanga", "location": "Witbank", "courses": ["Engineering N1-N6", "Business Studies", "Electrical"], "requirements": "Grade 9-12", "apply_link": "https://www.nkangalafet.edu.za", "deadline": "30 November 2025", "contact": "013 658 4700"},
-    {"name": "Northern Cape Rural TVET College", "short": "NCR TVET", "province": "Northern Cape", "location": "Upington", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ncrtvet.com", "deadline": "30 November 2025", "contact": "054 331 3836"},
-    {"name": "Northern Cape Urban TVET College", "short": "NCU TVET", "province": "Northern Cape", "location": "Kimberley", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.ncutvet.edu.za", "deadline": "30 November 2025", "contact": "053 839 2000"},
-    {"name": "Northlink TVET College", "short": "Northlink", "province": "Western Cape", "location": "Bellville", "courses": ["Engineering N1-N6", "Business Studies", "Safety in Society", "Haircare"], "requirements": "Grade 9-12", "apply_link": "https://www.northlink.co.za", "deadline": "30 November 2025", "contact": "021 970 9000"},
-    {"name": "Orbit TVET College", "short": "Orbit", "province": "North West", "location": "Rustenburg", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Mining"], "requirements": "Grade 9-12", "apply_link": "https://www.orbitcollege.co.za", "deadline": "30 November 2025", "contact": "014 592 7014"},
-    {"name": "Port Elizabeth TVET College", "short": "PE College", "province": "Eastern Cape", "location": "Gqeberha", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Art"], "requirements": "Grade 9-12", "apply_link": "https://www.pecollege.edu.za", "deadline": "30 November 2025", "contact": "041 509 6000"},
-    {"name": "Sedibeng TVET College", "short": "Sedibeng", "province": "Gauteng", "location": "Vereeniging", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.sedcol.co.za", "deadline": "30 November 2025", "contact": "016 422 6645"},
-    {"name": "Sekhukhune TVET College", "short": "Sekhukhune", "province": "Limpopo", "location": "Groblersdal", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.sekhukhunetvet.edu.za", "deadline": "30 November 2025", "contact": "013 269 0278"},
-    {"name": "South Cape TVET College", "short": "South Cape", "province": "Western Cape", "location": "George", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.sccollege.co.za", "deadline": "30 November 2025", "contact": "044 884 0359"},
-    {"name": "South West Gauteng TVET College", "short": "SWGC", "province": "Gauteng", "location": "Roodepoort", "courses": ["Engineering N1-N6", "Business Studies", "ICT", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.swgc.co.za", "deadline": "30 November 2025", "contact": "011 761 1010"},
-    {"name": "Taletso TVET College", "short": "Taletso", "province": "North West", "location": "Mahikeng", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.taletsofetcollege.co.za", "deadline": "30 November 2025", "contact": "018 384 2346"},
-    {"name": "Thekwini TVET College", "short": "Thekwini", "province": "KwaZulu-Natal", "location": "Durban", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Art"], "requirements": "Grade 9-12", "apply_link": "https://www.thekwinicollege.co.za", "deadline": "30 November 2025", "contact": "031 250 8400"},
-    {"name": "Tshwane North TVET College", "short": "TNC", "province": "Gauteng", "location": "Pretoria", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.tnc.edu.za", "deadline": "30 November 2025", "contact": "012 401 1600"},
-    {"name": "Tshwane South TVET College", "short": "TSC", "province": "Gauteng", "location": "Centurion", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.tsc.edu.za", "deadline": "30 November 2025", "contact": "012 660 8500"},
-    {"name": "Umfolozi TVET College", "short": "Umfolozi", "province": "KwaZulu-Natal", "location": "Richards Bay", "courses": ["Engineering N1-N6", "Business Studies", "Maritime"], "requirements": "Grade 9-12", "apply_link": "https://www.umfolozicollege.co.za", "deadline": "30 November 2025", "contact": "035 902 9500"},
-    {"name": "Umgungundlovu TVET College", "short": "Umgungundlovu", "province": "KwaZulu-Natal", "location": "Pietermaritzburg", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ufetcollege.edu.za", "deadline": "30 November 2025", "contact": "033 341 2100"},
-    {"name": "Vhembe TVET College", "short": "Vhembe", "province": "Limpopo", "location": "Thohoyandou", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.vhembecollege.edu.za", "deadline": "30 November 2025", "contact": "015 963 3156"},
-    {"name": "Vuselela TVET College", "short": "Vuselela", "province": "North West", "location": "Klerksdorp", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.vuselelacollege.co.za", "deadline": "30 November 2025", "contact": "018 406 7800"},
-    {"name": "Waterberg TVET College", "short": "Waterberg", "province": "Limpopo", "location": "Mokopane", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.waterbergcollege.co.za", "deadline": "30 November 2025", "contact": "015 491 8600"},
-    {"name": "West Coast TVET College", "short": "West Coast", "province": "Western Cape", "location": "Vredenburg", "courses": ["Engineering N1-N6", "Business Studies", "Safety", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.westcoastcollege.co.za", "deadline": "30 November 2025", "contact": "022 482 1143"},
-    {"name": "Western TVET College", "short": "Western", "province": "Gauteng", "location": "Randfontein", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.westcol.co.za", "deadline": "30 November 2025", "contact": "011 692 4004"}
   ],
   "private_institutions": [
     {
@@ -564,7 +547,7 @@
       "location": "National - 8 campuses",
       "website": "https://www.varsitycollege.co.za",
       "applications_open": "Rolling admissions",
-      "applications_close": "January 2026 intake closes 15 Dec 2025",
+      "applications_close": "15 December 2025 for Jan 2026",
       "prospectus_link": "https://www.varsitycollege.co.za/programmes",
       "accreditation": "IIE, CHE accredited",
       "faculties": {
@@ -575,6 +558,7 @@
       },
       "residence_cost": "R60,000 - R95,000 per year",
       "contact": "0861 123 111",
+      "email": "info@varsitycollege.co.za",
       "notes": "NSFAS not applicable. Offers own bursaries and payment plans."
     },
     {
@@ -596,6 +580,7 @@
       },
       "residence_cost": "R70,000 - R110,000 per year",
       "contact": "011 950 4000",
+      "email": "study@monash.ac.za",
       "notes": "NSFAS not applicable. Merit scholarships available."
     },
     {
@@ -617,6 +602,7 @@
       },
       "residence_cost": "Varies by campus - no official res",
       "contact": "011 551 9000",
+      "email": "info@boston.co.za",
       "notes": "NSFAS not applicable. Focus on diplomas and certificates. Degree partnerships with UNISA."
     },
     {
@@ -638,6 +624,7 @@
       },
       "residence_cost": "No official residence",
       "contact": "0860 613 111",
+      "email": "info@damelin.co.za",
       "notes": "NSFAS not applicable. Focus on diplomas, higher certs, skills programmes."
     },
     {
@@ -659,6 +646,7 @@
       },
       "residence_cost": "R55,000 - R85,000 per year",
       "contact": "0861 403 323",
+      "email": "info@rosebankcollege.co.za",
       "notes": "NSFAS not applicable. IIE qualifications. Payment plans available."
     },
     {
@@ -679,6 +667,7 @@
       },
       "residence_cost": "R65,000 - R90,000 per year",
       "contact": "011 482 8345",
+      "email": "info@afda.co.za",
       "notes": "Portfolio required for creative degrees. NSFAS not applicable."
     },
     {
@@ -700,6 +689,7 @@
       },
       "residence_cost": "R60,000 - R88,000 per year",
       "contact": "011 690 1700",
+      "email": "info@pihe.ac.za",
       "notes": "NSFAS not applicable. Formerly CTI and MGI."
     },
     {
@@ -721,8 +711,60 @@
       },
       "residence_cost": "Mostly distance - limited res",
       "contact": "087 158 5000",
+      "email": "info@stadio.ac.za",
       "notes": "NSFAS not applicable. Strong in distance learning. Merged AFDA, LISOF, Prestige Academy."
     }
+  ],
+  "tvet_colleges": [
+    {"name": "Boland TVET College", "short": "Boland", "province": "Western Cape", "location": "Stellenbosch/Paarl/Worcester", "courses": ["Engineering N1-N6", "Business Studies", "Safety in Society", "Hospitality"], "requirements": "Grade 9 for N1, Grade 12 for N4", "apply_link": "https://www.bolandcollege.com", "deadline": "30 November 2025", "contact": "021 886 7111", "email": "info@bolandcollege.com"},
+    {"name": "Buffalo City TVET College", "short": "BCC", "province": "Eastern Cape", "location": "East London", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.bccollege.co.za", "deadline": "30 November 2025", "contact": "043 704 9200", "email": "info@bccollege.co.za"},
+    {"name": "Capricorn TVET College", "short": "Capricorn", "province": "Limpopo", "location": "Polokwane", "courses": ["Engineering N1-N6", "Business Studies", "Tourism", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.capricorncollege.edu.za", "deadline": "30 November 2025", "contact": "015 230 1800", "email": "info@capricorncollege.edu.za"},
+    {"name": "Central Johannesburg TVET College", "short": "CJC", "province": "Gauteng", "location": "Johannesburg", "courses": ["Engineering N1-N6", "Business Studies", "ICT", "Art & Design"], "requirements": "Grade 9-12", "apply_link": "https://www.cjc.edu.za", "deadline": "30 November 2025", "contact": "011 351 6000", "email": "info@cjc.edu.za"},
+    {"name": "Coastal KZN TVET College", "short": "Coastal", "province": "KwaZulu-Natal", "location": "Durban", "courses": ["Engineering N1-N6", "Business Studies", "Electrical Infrastructure"], "requirements": "Grade 9-12", "apply_link": "https://www.coastalkzn.co.za", "deadline": "30 November 2025", "contact": "031 905 7000", "email": "info@coastalkzn.co.za"},
+    {"name": "College of Cape Town", "short": "CCT", "province": "Western Cape", "location": "Cape Town", "courses": ["Engineering N1-N6", "Business Studies", "Art & Design", "Beauty Therapy"], "requirements": "Grade 9-12", "apply_link": "https://www.cct.edu.za", "deadline": "30 November 2025", "contact": "021 404 6700", "email": "info@cct.edu.za"},
+    {"name": "Eastcape Midlands TVET College", "short": "EMC", "province": "Eastern Cape", "location": "Uitenhage", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.emcol.co.za", "deadline": "30 November 2025", "contact": "041 995 2000", "email": "info@emcol.co.za"},
+    {"name": "Ehlanzeni TVET College", "short": "Ehlanzeni", "province": "Mpumalanga", "location": "Mbombela", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.ehlanzenicollege.co.za", "deadline": "30 November 2025", "contact": "013 752 2425", "email": "info@ehlanzenicollege.co.za"},
+    {"name": "Ekurhuleni East TVET College", "short": "EEC", "province": "Gauteng", "location": "Springs", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.eec.edu.za", "deadline": "30 November 2025", "contact": "011 730 6600", "email": "info@eec.edu.za"},
+    {"name": "Ekurhuleni West TVET College", "short": "EWC", "province": "Gauteng", "location": "Germiston", "courses": ["Engineering N1-N6", "Business Studies", "ICT", "Transport"], "requirements": "Grade 9-12", "apply_link": "https://www.ewc.edu.za", "deadline": "30 November 2025", "contact": "011 323 1600", "email": "info@ewc.edu.za"},
+    {"name": "Elangeni TVET College", "short": "Elangeni", "province": "KwaZulu-Natal", "location": "Pinelands", "courses": ["Engineering N1-N6", "Business Studies", "Electrical"], "requirements": "Grade 9-12", "apply_link": "https://www.elangeni.edu.za", "deadline": "30 November 2025", "contact": "031 716 6700", "email": "info@elangeni.edu.za"},
+    {"name": "Esayidi TVET College", "short": "Esayidi", "province": "KwaZulu-Natal", "location": "Port Shepstone", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Primary Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.esayidifet.co.za", "deadline": "30 November 2025", "contact": "039 318 1430", "email": "info@esayidifet.co.za"},
+    {"name": "False Bay TVET College", "short": "False Bay", "province": "Western Cape", "location": "Muizenberg", "courses": ["Engineering N1-N6", "Business Studies", "Safety in Society", "2D Animation"], "requirements": "Grade 9-12", "apply_link": "https://www.falsebaycollege.co.za", "deadline": "30 November 2025", "contact": "021 787 0800", "email": "info@falsebaycollege.co.za"},
+    {"name": "Flavius Mareka TVET College", "short": "Flavius Mareka", "province": "Free State", "location": "Sasolburg", "courses": ["Engineering N1-N6", "Business Studies", "Chemical Plant Operations"], "requirements": "Grade 9-12", "apply_link": "https://www.flaviusmareka.net", "deadline": "30 November 2025", "contact": "016 976 0815", "email": "info@flaviusmareka.net"},
+    {"name": "Goldfields TVET College", "short": "Goldfields", "province": "Free State", "location": "Welkom", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.goldfieldstvet.edu.za", "deadline": "30 November 2025", "contact": "057 910 6000", "email": "info@goldfieldstvet.edu.za"},
+    {"name": "Gert Sibande TVET College", "short": "Gert Sibande", "province": "Mpumalanga", "location": "Standerton", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.gscollege.edu.za", "deadline": "30 November 2025", "contact": "017 712 1458", "email": "info@gscollege.edu.za"},
+    {"name": "Ikhala TVET College", "short": "Ikhala", "province": "Eastern Cape", "location": "Queenstown", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ikhala.edu.za", "deadline": "30 November 2025", "contact": "047 873 8843", "email": "info@ikhala.edu.za"},
+    {"name": "Ingwe TVET College", "short": "Ingwe", "province": "Eastern Cape", "location": "Mount Frere", "courses": ["Engineering N1-N6", "Business Studies", "Primary Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ingwecollege.edu.za", "deadline": "30 November 2025", "contact": "039 255 0346", "email": "info@ingwecollege.edu.za"},
+    {"name": "King Hintsa TVET College", "short": "King Hintsa", "province": "Eastern Cape", "location": "Butterworth", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.kinghintsacollege.edu.za", "deadline": "30 November 2025", "contact": "047 401 6400", "email": "info@kinghintsacollege.edu.za"},
+    {"name": "King Sabata Dalindyebo TVET College", "short": "KSD", "province": "Eastern Cape", "location": "Mthatha", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.ksdcollege.edu.za", "deadline": "30 November 2025", "contact": "047 505 1000", "email": "info@ksdcollege.edu.za"},
+    {"name": "Letaba TVET College", "short": "Letaba", "province": "Limpopo", "location": "Tzaneen", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.letabacollege.edu.za", "deadline": "30 November 2025", "contact": "015 307 5440", "email": "info@letabacollege.edu.za"},
+    {"name": "Lephalale TVET College", "short": "Lephalale", "province": "Limpopo", "location": "Lephalale", "courses": ["Engineering N1-N6", "Business Studies", "Electrical Infrastructure"], "requirements": "Grade 9-12", "apply_link": "https://www.leptvetcollege.edu.za", "deadline": "30 November 2025", "contact": "014 763 2252", "email": "info@leptvetcollege.edu.za"},
+    {"name": "Lovedale TVET College", "short": "Lovedale", "province": "Eastern Cape", "location": "Alice", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Art & Design"], "requirements": "Grade 9-12", "apply_link": "https://www.lovedale.org.za", "deadline": "30 November 2025", "contact": "040 604 8850", "email": "info@lovedale.org.za"},
+    {"name": "Majuba TVET College", "short": "Majuba", "province": "KwaZulu-Natal", "location": "Newcastle", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.majuba.edu.za", "deadline": "30 November 2025", "contact": "034 326 4887", "email": "info@majuba.edu.za"},
+    {"name": "Maluti TVET College", "short": "Maluti", "province": "Free State", "location": "Phuthaditjhaba", "courses": ["Engineering N1-N6", "Business Studies", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.malutitvet.co.za", "deadline": "30 November 2025", "contact": "058 713 6100", "email": "info@malutitvet.co.za"},
+    {"name": "Mnambithi TVET College", "short": "Mnambithi", "province": "KwaZulu-Natal", "location": "Ladysmith", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.mnambithicollege.co.za", "deadline": "30 November 2025", "contact": "036 637 4790", "email": "info@mnambithicollege.co.za"},
+    {"name": "Mopani South East TVET College", "short": "Mopani", "province": "Limpopo", "location": "Phalaborwa", "courses": ["Engineering N1-N6", "Business Studies", "Tourism", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.mopanicollege.edu.za", "deadline": "30 November 2025", "contact": "015 781 5725", "email": "info@mopanicollege.edu.za"},
+    {"name": "Motheo TVET College", "short": "Motheo", "province": "Free State", "location": "Bloemfontein", "courses": ["Engineering N1-N6", "Business Studies", "Art & Design", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.motheotvet.co.za", "deadline": "30 November 2025", "contact": "051 406 9300", "email": "info@motheotvet.co.za"},
+    {"name": "Nkangala TVET College", "short": "Nkangala", "province": "Mpumalanga", "location": "Witbank", "courses": ["Engineering N1-N6", "Business Studies", "Electrical"], "requirements": "Grade 9-12", "apply_link": "https://www.nkangalafet.edu.za", "deadline": "30 November 2025", "contact": "013 658 4700", "email": "info@nkangalafet.edu.za"},
+    {"name": "Northern Cape Rural TVET College", "short": "NCR TVET", "province": "Northern Cape", "location": "Upington", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ncrtvet.com", "deadline": "30 November 2025", "contact": "054 331 3836", "email": "info@ncrtvet.com"},
+    {"name": "Northern Cape Urban TVET College", "short": "NCU TVET", "province": "Northern Cape", "location": "Kimberley", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.ncutvet.edu.za", "deadline": "30 November 2025", "contact": "053 839 2000", "email": "info@ncutvet.edu.za"},
+    {"name": "Northlink TVET College", "short": "Northlink", "province": "Western Cape", "location": "Bellville", "courses": ["Engineering N1-N6", "Business Studies", "Safety in Society", "Haircare"], "requirements": "Grade 9-12", "apply_link": "https://www.northlink.co.za", "deadline": "30 November 2025", "contact": "021 970 9000", "email": "info@northlink.co.za"},
+    {"name": "Orbit TVET College", "short": "Orbit", "province": "North West", "location": "Rustenburg", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Mining"], "requirements": "Grade 9-12", "apply_link": "https://www.orbitcollege.co.za", "deadline": "30 November 2025", "contact": "014 592 7014", "email": "info@orbitcollege.co.za"},
+    {"name": "Port Elizabeth TVET College", "short": "PE College", "province": "Eastern Cape", "location": "Gqeberha", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Art"], "requirements": "Grade 9-12", "apply_link": "https://www.pecollege.edu.za", "deadline": "30 November 2025", "contact": "041 509 6000", "email": "info@pecollege.edu.za"},
+    {"name": "Sedibeng TVET College", "short": "Sedibeng", "province": "Gauteng", "location": "Vereeniging", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.sedcol.co.za", "deadline": "30 November 2025", "contact": "016 422 6645", "email": "info@sedcol.co.za"},
+    {"name": "Sekhukhune TVET College", "short": "Sekhukhune", "province": "Limpopo", "location": "Groblersdal", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.sekhukhunetvet.edu.za", "deadline": "30 November 2025", "contact": "013 269 0278", "email": "info@sekhukhunetvet.edu.za"},
+    {"name": "South Cape TVET College", "short": "South Cape", "province": "Western Cape", "location": "George", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.sccollege.co.za", "deadline": "30 November 2025", "contact": "044 884 0359", "email": "info@sccollege.co.za"},
+    {"name": "South West Gauteng TVET College", "short": "SWGC", "province": "Gauteng", "location": "Roodepoort", "courses": ["Engineering N1-N6", "Business Studies", "ICT", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.swgc.co.za", "deadline": "30 November 2025", "contact": "011 761 1010", "email": "info@swgc.co.za"},
+    {"name": "Taletso TVET College", "short": "Taletso", "province": "North West", "location": "Mahikeng", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.taletsofetcollege.co.za", "deadline": "30 November 2025", "contact": "018 384 2346", "email": "info@taletsofetcollege.co.za"},
+    {"name": "Thekwini TVET College", "short": "Thekwini", "province": "KwaZulu-Natal", "location": "Durban", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Art"], "requirements": "Grade 9-12", "apply_link": "https://www.thekwinicollege.co.za", "deadline": "30 November 2025", "contact": "031 250 8400", "email": "info@thekwinicollege.co.za"},
+    {"name": "Tshwane North TVET College", "short": "TNC", "province": "Gauteng", "location": "Pretoria", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.tnc.edu.za", "deadline": "30 November 2025", "contact": "012 401 1600", "email": "info@tnc.edu.za"},
+    {"name": "Tshwane South TVET College", "short": "TSC", "province": "Gauteng", "location": "Centurion", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.tsc.edu.za", "deadline": "30 November 2025", "contact": "012 660 8500", "email": "info@tsc.edu.za"},
+    {"name": "Umfolozi TVET College", "short": "Umfolozi", "province": "KwaZulu-Natal", "location": "Richards Bay", "courses": ["Engineering N1-N6", "Business Studies", "Maritime"], "requirements": "Grade 9-12", "apply_link": "https://www.umfolozicollege.co.za", "deadline": "30 November 2025", "contact": "035 902 9500", "email": "info@umfolozicollege.co.za"},
+    {"name": "Umgungundlovu TVET College", "short": "Umgungundlovu", "province": "KwaZulu-Natal", "location": "Pietermaritzburg", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ufetcollege.edu.za", "deadline": "30 November 2025", "contact": "033 341 2100", "email": "info@ufetcollege.edu.za"},
+    {"name": "Vhembe TVET College", "short": "Vhembe", "province": "Limpopo", "location": "Thohoyandou", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.vhembecollege.edu.za", "deadline": "30 November 2025", "contact": "015 963 3156", "email": "info@vhembecollege.edu.za"},
+    {"name": "Vuselela TVET College", "short": "Vuselela", "province": "North West", "location": "Klerksdorp", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.vuselelacollege.co.za", "deadline": "30 November 2025", "contact": "018 406 7800", "email": "info@vuselelacollege.co.za"},
+    {"name": "Waterberg TVET College", "short": "Waterberg", "province": "Limpopo", "location": "Mokopane", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.waterbergcollege.co.za", "deadline": "30 November 2025", "contact": "015 491 8600", "email": "info@waterbergcollege.co.za"},
+    {"name": "West Coast TVET College", "short": "West Coast", "province": "Western Cape", "location": "Vredenburg", "courses": ["Engineering N1-N6", "Business Studies", "Safety", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.westcoastcollege.co.za", "deadline": "30 November 2025", "contact": "022 482 1143", "email": "info@westcoastcollege.co.za"},
+    {"name": "Western TVET College", "short": "Western", "province": "Gauteng", "location": "Randfontein", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.westcol.co.za", "deadline": "30 November 2025", "contact": "011 692 4004", "email": "info@westcol.co.za"}
   ],
   "faqs": [
     {"q": "What is APS?", "a": "Admission Point Score. Sum of your top 6 subjects excluding Life Orientation. Level 7=7pts, 6=6pts, 5=5pts, 4=4pts, 3=3pts, 2=2pts, 1=1pt. Max 42."},
@@ -732,6 +774,13 @@
     {"q": "What subjects do I need for Engineering?", "a": "Mathematics and Physical Sciences Level 5-6 minimum for university. Level 4 for TVET N4. English Level 4-5. Check specific uni APS."},
     {"q": "Can I study with NSFAS at a TVET?", "a": "Yes. NSFAS funds public universities and all 50 TVET colleges if household income < R350,000."},
     {"q": "Does NSFAS fund private colleges?", "a": "No. NSFAS only funds 26 public universities and 50 public TVET colleges. Private colleges like Varsity, Damelin, Boston are not NSFAS funded."},
-    {"q": "What is CHE accreditation?", "a": "Council on Higher Education. All legitimate SA degrees must be CHE accredited. Check CHE website to verify private colleges."}
+    {"q": "What is CHE accreditation?", "a": "Council on Higher Education. All legitimate SA degrees must be CHE accredited. Check CHE website to verify private colleges."},
+    {"q": "What is the difference between a degree and diploma?", "a": "Degree: NQF 7-8, 3-4 years, university. Diploma: NQF 6, 3 years, university or TVET. Higher Certificate: NQF 5, 1 year."},
+    {"q": "Can I apply with Grade 11 results?", "a": "Yes, provisional acceptance. You must pass Grade 12 and meet final requirements. Final offer depends on matric results."},
+    {"q": "What is NCV?", "a": "National Certificate Vocational. Offered at TVET colleges. Alternative to matric. NQF 2-4. Takes 3 years. Focus on practical skills."},
+    {"q": "What is N1-N6?", "a": "National N-Diploma courses at TVET. N1-N3 = 1 year each after Grade 9. N4-N6 = 1 year each after Grade 12. Need 18 months work experience for full diploma."},
+    {"q": "VUT email and contact?", "a": "Vaal University of Technology. Email: info@vut.ac.za. Phone: 016 950 9000. Applications close: 30 September 2025."},
+    {"q": "How to apply for NSFAS?", "a": "Online at www.nsfas.org.za. Need: ID, parents' proof of income, academic record. Opens September 2025, closes 31 January 2026."},
+    {"q": "What if I don't meet APS?", "a": "Consider: 1) Extended degree programmes 2) TVET college N4 3) Private colleges with lower APS 4) Bridging courses 5) Rewrite matric subjects."}
   ]
 }
