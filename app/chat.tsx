@@ -1,118 +1,181 @@
-import { useState, useRef } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
+import { useState, useRef, useEffect } from 'react';
+import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, KeyboardAvoidingView, Platform, Share, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Notifications from 'expo-notifications';
+import Fuse from 'fuse.js';
 import knowledge from '../public/data/knowledge.json';
 import funding from '../public/data/funding.json';
 
 type Message = {
   role: 'user' | 'assistant';
   content: string;
+  bursaryId?: string;
 };
+
+type Bursary = typeof funding[0];
+
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: false,
+    shouldSetBadge: false,
+  }),
+});
 
 export default function ChatScreen() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(false);
+  const [savedBursaries, setSavedBursaries] = useState<string[]>([]);
+  const [filter, setFilter] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const scrollViewRef = useRef<ScrollView>(null);
 
-  const getThusoReply = (userMsg: string): string => {
-    const q = userMsg.toLowerCase().trim();
+  useEffect(() => {
+    loadSaved();
+    requestPermissions();
+  }, []);
 
-    // funding.json is an array
-    const allBursaries = funding as any[];
-    const nsfas = allBursaries.find(b => b.id === 'nsfas2027' || b.name?.toLowerCase().includes('nsfas'));
-
-    const allInstitutions = [
-    ...(knowledge.institutions || []),
-    ...(knowledge.tvet_colleges || []),
-    ...(knowledge.private_institutions || [])
-    ];
-
-    // 1. NSFAS QUERIES
-    if (q.includes('nsfas') && nsfas) {
-      if (q.includes('deadline') || q.includes('close') || q.includes('when') || q.includes('date')) {
-        return `NSFAS 2027 Applications:\n\n• Deadline: ${nsfas.deadline}\n• Status: ${nsfas.status}\n\nApply: ${nsfas.apply_link}\n\n${nsfas.notes}`;
-      }
-      if (q.includes('cover') || q.includes('amount') || q.includes('pay') || q.includes('allowance') || q.includes('money')) {
-        return `NSFAS covers:\n${nsfas.covers?.map((item: string) => `• ${item}`).join('\n')}\n\nIncome threshold: ${nsfas.income_threshold}`;
-      }
-      if (q.includes('requirement') || q.includes('qualify') || q.includes('who')) {
-        return `NSFAS Requirements: ${nsfas.requirements}\n\nIncome threshold: ${nsfas.income_threshold}\n\nApply: ${nsfas.apply_link}`;
-      }
-      return `${nsfas.name}\n${nsfas.provider}\n\n• Deadline: ${nsfas.deadline}\n• Status: ${nsfas.status}\n• Covers: ${nsfas.covers?.join(', ')}\n\nApply: ${nsfas.apply_link}`;
+  const loadSaved = async () => {
+    try {
+      const saved = await AsyncStorage.getItem('savedBursaries');
+      if (saved) setSavedBursaries(JSON.parse(saved));
+      await AsyncStorage.setItem('fundingCache', JSON.stringify(funding));
+    } catch (e) {
+      console.log('Load error:', e);
     }
+  };
 
-    // 2. SPECIFIC BURSARY QUERIES
-    const specificBursary = allBursaries.find(b =>
-      q.includes(b.name?.toLowerCase()) ||
-      q.includes(b.id?.toLowerCase()) ||
-      q.includes(b.provider?.toLowerCase())
-    );
-
-    if (specificBursary) {
-      return `${specificBursary.name}\nProvider: ${specificBursary.provider}\n\n• Deadline: ${specificBursary.deadline}\n• Status: ${specificBursary.status}\n• Level: ${specificBursary.level?.join(', ')}\n• Fields: ${specificBursary.fields?.join(', ')}\n• Covers: ${specificBursary.covers?.join(', ')}\n• Requirements: ${specificBursary.requirements}\n\nApply: ${specificBursary.apply_link}\n\n${specificBursary.notes}`;
+  const requestPermissions = async () => {
+    try {
+      await Notifications.requestPermissionsAsync();
+    } catch (e) {
+      console.log('Permission error:', e);
     }
+  };
 
-    // 3. OPEN BURSARIES LIST
-    if (q.includes('bursary') || q.includes('bursaries') || q.includes('scholarship') || q.includes('funding') || q.includes('open')) {
-      const now = new Date();
-      const open = allBursaries.filter(b => {
-        if (b.status && b.status.toLowerCase().includes('open')) return true;
-        if (!b.deadline) return false;
-        const dateStr = b.deadline.split(' for ')[0].split(' at ')[0];
-        const deadlineDate = new Date(dateStr);
-        return!isNaN(deadlineDate.getTime()) && deadlineDate > now;
+  const fuse = new Fuse(funding as Bursary[], {
+    keys: ['name', 'provider', 'fields', 'id'],
+    threshold: 0.4,
+    includeScore: true,
+  });
+
+  const toggleSave = async (bursaryId: string) => {
+    const updated = savedBursaries.includes(bursaryId)
+    ? savedBursaries.filter(id => id!== bursaryId)
+      : [...savedBursaries, bursaryId];
+    setSavedBursaries(updated);
+    await AsyncStorage.setItem('savedBursaries', JSON.stringify(updated));
+  };
+
+  const shareBursary = async (bursary: Bursary) => {
+    const text = `🎓 ${bursary.name}\n\n📅 Deadline: ${bursary.deadline}\n💰 Covers: ${bursary.covers?.join(', ')}\n\nApply: ${bursary.apply_link}\n\nShared via Thuso AI - Campus Compass`;
+    await Share.share({ message: text });
+  };
+
+  const setReminder = async (bursary: Bursary) => {
+    try {
+      const dateStr = bursary.deadline.split(' for ')[0].split(' at ')[0].split('Expected ')[1] || bursary.deadline.split(' for ')[0].split(' at ')[0];
+      const deadline = new Date(dateStr);
+      const reminderDate = new Date(deadline.getTime() - 7 * 24 * 60 * 1000);
+
+      if (reminderDate < new Date()) {
+        Alert.alert('Deadline passed', 'This bursary deadline has already passed.');
+        return;
+      }
+
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: `⏰ ${bursary.name} closes soon!`,
+          body: `Deadline: ${bursary.deadline}. Tap to apply.`,
+        },
+        trigger: reminderDate,
       });
 
-      if (open.length === 0) {
-        return 'No bursaries are currently open. Most applications open April-September 2026 for 2027 study.\n\nData verified May 2, 2026. Always confirm on official websites.\n\nAsk about:\n• Funza Lushaka\n• Sasol Bursary\n• Transnet Bursary\n• Chevening Scholarship';
-      }
-
-      return `Open Bursaries (${open.length}):\n\nData verified May 2, 2026\n\n` + open.slice(0, 6).map(b =>
-        `• ${b.name}\n Provider: ${b.provider}\n Deadline: ${b.deadline}`
-      ).join('\n\n') + (open.length > 6? `\n\n+${open.length - 6} more. Ask for a specific name.` : '');
+      Alert.alert('Reminder set', `We'll notify you 7 days before ${bursary.name} closes.`);
+    } catch (e) {
+      Alert.alert('Error', 'Could not set reminder. Check the deadline format.');
     }
+  };
 
-    // 4. INSTITUTION QUERIES
-    const found = allInstitutions.find(i => {
-      const nameMatch = q.includes(i.name.toLowerCase());
-      const shortMatch = i.short && q.includes(i.short.toLowerCase());
-      const locationMatch = i.location && q.includes(i.location.toLowerCase());
-      return nameMatch || shortMatch || locationMatch;
-    });
+  const getThusoReply = (userMsg: string): { content: string; bursaryId?: string } => {
+    try {
+      const q = userMsg.toLowerCase().trim();
+      const allBursaries = funding as Bursary[];
 
-    if (found) {
-      if (q.includes('security') || q.includes('emergency') || q.includes('safety') || q.includes('phone') || q.includes('call')) {
-        return `${found.short || found.name} Campus Security\n\n📞 ${found.security_phone || found.contact}\n📍 ${found.location}, ${found.province}`;
+      let bursariesToSearch = allBursaries;
+      if (filter) {
+        bursariesToSearch = allBursaries.filter(b =>
+          b.fields?.some(f => f.toLowerCase().includes(filter.toLowerCase()))
+        );
       }
 
-      if (q.includes('application') || q.includes('apply') || q.includes('deadline') || q.includes('close') || q.includes('admission')) {
-        return `${found.short || found.name} Applications\n\n• Opens: ${found.applications_open}\n• Closes: ${found.applications_close}\n• Type: ${found.type}\n\nProspectus: ${found.prospectus_link}\nWebsite: ${found.website}`;
+      const nsfas = bursariesToSearch.find(b => b.id === 'nsfas2027');
+      const allInstitutions = [
+      ...(knowledge.institutions || []),
+      ...(knowledge.tvet_colleges || []),
+      ...(knowledge.private_institutions || [])
+      ];
+
+      if (q.includes('nsfas') && nsfas) {
+        if (q.includes('deadline') || q.includes('close') || q.includes('when')) {
+          return { content: `NSFAS 2027 Applications:\n\n• Deadline: ${nsfas.deadline}\n• Status: ${nsfas.status}\n\nApply: ${nsfas.apply_link}\n\n${nsfas.notes}`, bursaryId: nsfas.id };
+        }
+        if (q.includes('cover') || q.includes('amount') || q.includes('pay') || q.includes('allowance')) {
+          return { content: `NSFAS covers:\n${nsfas.covers?.map(item => `• ${item}`).join('\n')}\n\nIncome threshold: ${nsfas.income_threshold}`, bursaryId: nsfas.id };
+        }
+        return { content: `${nsfas.name}\n${nsfas.provider}\n\n• Deadline: ${nsfas.deadline}\n• Status: ${nsfas.status}\n• Covers: ${nsfas.covers?.join(', ')}\n\nApply: ${nsfas.apply_link}`, bursaryId: nsfas.id };
       }
 
-      if (q.includes('residence') || q.includes('accommodation') || q.includes('housing') || q.includes('cost') || q.includes('fee')) {
-        return `${found.short || found.name} Residence\n\n💰 ${found.residence_cost}\n\n📞 Contact: ${found.contact}\n📧 ${found.email}`;
+      const fuzzyResults = fuse.search(q, { limit: 1 });
+      if (fuzzyResults.length > 0 && fuzzyResults[0].score! < 0.4) {
+        const b = fuzzyResults[0].item;
+        return {
+          content: `${b.name}\nProvider: ${b.provider}\n\n• Deadline: ${b.deadline}\n• Status: ${b.status}\n• Fields: ${b.fields?.join(', ')}\n• Covers: ${b.covers?.join(', ')}\n• Requirements: ${b.requirements}\n\nApply: ${b.apply_link}\n\n${b.notes}`,
+          bursaryId: b.id
+        };
       }
 
-      if (q.includes('faculty') || q.includes('course') || q.includes('degree') || q.includes('study') || q.includes('aps')) {
-        const faculties = Object.entries(found.faculties || {});
-        if (faculties.length === 0) return `${found.short || found.name} - No faculty data available. Check: ${found.website}`;
-        return `${found.short || found.name} Faculties:\n\n` + faculties.slice(0, 4).map(([name, data]: [string, any]) =>
-          `• ${name}\n APS: ${data.aps} | Degrees: ${data.degrees?.join(', ')}`
-        ).join('\n\n');
+      if (q.includes('bursary') || q.includes('scholarship') || q.includes('open') || q.includes('my bursaries') || q.includes('saved')) {
+        let open = bursariesToSearch.filter(b => {
+          if (q.includes('my') || q.includes('saved')) return savedBursaries.includes(b.id);
+          if (b.status && b.status.toLowerCase().includes('open')) return true;
+          if (!b.deadline) return false;
+          const dateStr = b.deadline.split(' for ')[0].split(' at ')[0].split('Expected ')[1] || b.deadline.split(' for ')[0].split(' at ')[0];
+          const deadlineDate = new Date(dateStr);
+          return!isNaN(deadlineDate.getTime()) && deadlineDate > new Date();
+        });
+
+        if (open.length === 0) {
+          return { content: 'No bursaries match your filter. Most applications open April-September 2026.\n\nData verified May 2, 2026.' };
+        }
+
+        return { content: `${q.includes('my') || q.includes('saved')? 'Your Saved' : 'Open'} Bursaries (${open.length}):\n\nData verified May 2, 2026\n\n` + open.slice(0, 6).map(b =>
+          `• ${b.name}\n Provider: ${b.provider}\n Deadline: ${b.deadline}`
+        ).join('\n\n') };
       }
 
-      return `${found.short || found.name}\n${found.type}\n\n📍 ${found.location}, ${found.province}\n📞 ${found.contact}\n📧 ${found.email}\n🌐 ${found.website}\n\nApplications close: ${found.applications_close}`;
+      const instFuse = new Fuse(allInstitutions, { keys: ['name', 'short'], threshold: 0.4 });
+      const instResult = instFuse.search(q, { limit: 1 });
+      if (instResult.length > 0 && instResult[0].score! < 0.4) {
+        const found = instResult[0].item;
+        if (q.includes('security') || q.includes('emergency')) {
+          return { content: `${found.short || found.name} Campus Security\n\n📞 ${found.security_phone || found.contact}\n📍 ${found.location}, ${found.province}` };
+        }
+        return { content: `${found.short || found.name}\n${found.type}\n\n📍 ${found.location}, ${found.province}\n📞 ${found.contact}\n📧 ${found.email}\n🌐 ${found.website}\n\nApplications close: ${found.applications_close}` };
+      }
+
+      if (q.includes('help')) {
+        return { content: `I can help with:\n\n• NSFAS: deadlines, amounts, requirements\n• 50+ Bursaries: Sasol, Funza Lushaka, Transnet, Chevening, etc\n• All 90 SA institutions\n\nFilters: Engineering | Teaching | IT | Accounting\n\nData verified May 2, 2026\n\nTry: "engineering bursaries" or "my bursaries"` };
+      }
+
+      return { content: `I don't have info on that. Try:\n\n• "Sasol bursary"\n• "engineering bursaries"\n• "my bursaries"\n• "NSFAS deadline"\n\nData verified May 2, 2026` };
+    } catch (e) {
+      setError('Something went wrong. Try again.');
+      return { content: 'Sorry, I hit an error. Try asking again.' };
     }
-
-    // 5. HELP
-    if (q.includes('help') || q.includes('what can') || q.includes('how')) {
-      return `I can help you with:\n\n• NSFAS: deadlines, amounts, requirements\n• 50+ Bursaries: Sasol, Funza Lushaka, Transnet, Chevening, etc\n• All 90 SA institutions: applications, contacts, security, residence\n\nData verified May 2, 2026\n\nTry:\n"Funza Lushaka bursary"\n"Sasol deadline"\n"Wits security"\n"Open bursaries"`;
-    }
-
-    // 6. FALLBACK
-    return `I don't have info on that. Data verified May 2, 2026.\n\nTry:\n• "NSFAS deadline"\n• "Funza Lushaka bursary"\n• "Sasol bursary"\n• "Wits applications"\n• "Open bursaries"`;
   };
 
   const sendMessage = async () => {
@@ -124,11 +187,27 @@ export default function ChatScreen() {
 
     setTimeout(() => {
       const reply = getThusoReply(userMsg);
-      setMessages(prev => [...prev, { role: 'assistant', content: reply }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: reply.content, bursaryId: reply.bursaryId }]);
       setLoading(false);
       setTimeout(() => scrollViewRef.current?.scrollToEnd({ animated: true }), 100);
     }, 300);
   };
+
+  const filters = ['Engineering', 'Teaching', 'IT', 'Accounting', 'Science'];
+
+  if (error) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.errorBox}>
+          <Ionicons name="alert-circle" size={48} color="#8B0000" />
+          <Text style={styles.errorText}>{error}</Text>
+          <TouchableOpacity onPress={() => setError(null)} style={styles.retryBtn}>
+            <Text style={styles.retryText}>Retry</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
@@ -138,17 +217,23 @@ export default function ChatScreen() {
         <Text style={styles.headerSubtitle}>Campus Compass Assistant</Text>
       </View>
 
-      <KeyboardAvoidingView
-        style={{ flex: 1 }}
-        behavior={Platform.OS === 'ios'? 'padding' : 'height'}
-        keyboardVerticalOffset={90}
-      >
-        <ScrollView
-          ref={scrollViewRef}
-          style={styles.messages}
-          contentContainerStyle={{ paddingBottom: 20 }}
-          onContentSizeChange={() => scrollViewRef.current?.scrollToEnd({ animated: true })}
-        >
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filterBar}>
+        <TouchableOpacity onPress={() => setFilter(null)} style={[styles.filterChip,!filter && styles.filterActive]}>
+          <Text style={[styles.filterText,!filter && styles.filterTextActive]}>All</Text>
+        </TouchableOpacity>
+        {filters.map(f => (
+          <TouchableOpacity key={f} onPress={() => setFilter(f)} style={[styles.filterChip, filter === f && styles.filterActive]}>
+            <Text style={[styles.filterText, filter === f && styles.filterTextActive]}>{f}</Text>
+          </TouchableOpacity>
+        ))}
+        <TouchableOpacity onPress={() => setMessage('my bursaries')} style={styles.filterChip}>
+          <Ionicons name="heart" size={14} color="#8B0000" />
+          <Text style={styles.filterText}> Saved</Text>
+        </TouchableOpacity>
+      </ScrollView>
+
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios'? 'padding' : 'height'} keyboardVerticalOffset={90}>
+        <ScrollView ref={scrollViewRef} style={styles.messages} contentContainerStyle={{ paddingBottom: 20 }}>
           {messages.length === 0 && (
             <View style={styles.emptyBox}>
               <Ionicons name="sparkles" size={48} color="#8B0000" />
@@ -167,11 +252,27 @@ export default function ChatScreen() {
               </View>
             </View>
           )}
-          {messages.map((m, i) => (
-            <View key={i} style={[styles.bubble, m.role === 'user'? styles.userBubble : styles.aiBubble]}>
-              <Text style={m.role === 'user'? styles.userText : styles.aiText}>{m.content}</Text>
-            </View>
-          ))}
+          {messages.map((m, i) => {
+            const bursary = m.bursaryId? (funding as Bursary[]).find(b => b.id === m.bursaryId) : null;
+            return (
+              <View key={i} style={[styles.bubble, m.role === 'user'? styles.userBubble : styles.aiBubble]}>
+                <Text style={m.role === 'user'? styles.userText : styles.aiText}>{m.content}</Text>
+                {bursary && m.role === 'assistant' && (
+                  <View style={styles.actionRow}>
+                    <TouchableOpacity onPress={() => toggleSave(bursary.id)} style={styles.actionBtn}>
+                      <Ionicons name={savedBursaries.includes(bursary.id)? "heart" : "heart-outline"} size={18} color="#8B0000" />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => setReminder(bursary)} style={styles.actionBtn}>
+                      <Ionicons name="alarm-outline" size={18} color="#8B0000" />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => shareBursary(bursary)} style={styles.actionBtn}>
+                      <Ionicons name="share-social-outline" size={18} color="#8B0000" />
+                    </TouchableOpacity>
+                  </View>
+                )}
+              </View>
+            );
+          })}
           {loading && (
             <View style={[styles.bubble, styles.aiBubble]}>
               <Text style={styles.aiText}>Thuso is thinking...</Text>
@@ -189,11 +290,7 @@ export default function ChatScreen() {
             multiline
             maxLength={500}
           />
-          <TouchableOpacity
-            style={[styles.sendBtn, (!message.trim() || loading) && styles.sendBtnDisabled]}
-            onPress={sendMessage}
-            disabled={loading ||!message.trim()}
-          >
+          <TouchableOpacity style={[styles.sendBtn, (!message.trim() || loading) && styles.sendBtnDisabled]} onPress={sendMessage} disabled={loading ||!message.trim()}>
             <Ionicons name="send" size={20} color="white" />
           </TouchableOpacity>
         </View>
@@ -204,63 +301,34 @@ export default function ChatScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff' },
-  header: {
-    padding: 16,
-    borderBottomWidth: 1,
-    borderColor: '#e5e5e5',
-    alignItems: 'center',
-    backgroundColor: '#fff'
-  },
+  header: { padding: 16, borderBottomWidth: 1, borderColor: '#e5e5e5', alignItems: 'center', backgroundColor: '#fff' },
   headerTitle: { fontSize: 18, fontWeight: 'bold', color: '#8B0000', marginTop: 4 },
   headerSubtitle: { fontSize: 12, color: '#666', marginTop: 2 },
+  filterBar: { maxHeight: 50, paddingHorizontal: 12, paddingVertical: 8, borderBottomWidth: 1, borderColor: '#e5e5e5' },
+  filterChip: { flexDirection: 'row', backgroundColor: '#f0f0f0', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 16, marginRight: 8, alignItems: 'center' },
+  filterActive: { backgroundColor: '#8B0000' },
+  filterText: { color: '#333', fontSize: 13 },
+  filterTextActive: { color: '#fff' },
   messages: { flex: 1, padding: 16 },
   emptyBox: { alignItems: 'center', marginTop: 40, paddingHorizontal: 20 },
   emptyTitle: { fontSize: 20, fontWeight: 'bold', marginTop: 16, color: '#333' },
   empty: { textAlign: 'center', color: '#666', marginTop: 8, fontSize: 15, lineHeight: 22 },
   suggestions: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginTop: 20, gap: 8 },
-  chip: {
-    backgroundColor: '#f0f0f0',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 16,
-    borderWidth: 1,
-    borderColor: '#ddd'
-  },
+  chip: { backgroundColor: '#f0f0f0', paddingHorizontal: 16, paddingVertical: 8, borderRadius: 16, borderWidth: 1, borderColor: '#ddd' },
   chipText: { color: '#8B0000', fontSize: 13, fontWeight: '500' },
   bubble: { padding: 12, borderRadius: 16, marginBottom: 12, maxWidth: '85%' },
   userBubble: { backgroundColor: '#8B0000', alignSelf: 'flex-end', borderBottomRightRadius: 4 },
   aiBubble: { backgroundColor: '#f0f0f0', alignSelf: 'flex-start', borderBottomLeftRadius: 4 },
   userText: { color: 'white', fontSize: 15, lineHeight: 20 },
   aiText: { color: '#000', fontSize: 15, lineHeight: 22 },
-  inputRow: {
-    flexDirection: 'row',
-    padding: 12,
-    borderTopWidth: 1,
-    borderColor: '#e5e5e5',
-    alignItems: 'flex-end',
-    backgroundColor: '#fff'
-  },
-  input: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 24,
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    marginRight: 8,
-    maxHeight: 100,
-    fontSize: 15,
-    backgroundColor: '#fafafa'
-  },
-  sendBtn: {
-    backgroundColor: '#8B0000',
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  sendBtnDisabled: {
-    backgroundColor: '#ccc'
-  }
+  actionRow: { flexDirection: 'row', marginTop: 8, gap: 16 },
+  actionBtn: { padding: 4 },
+  inputRow: { flexDirection: 'row', padding: 12, borderTopWidth: 1, borderColor: '#e5e5e5', alignItems: 'flex-end', backgroundColor: '#fff' },
+  input: { flex: 1, borderWidth: 1, borderColor: '#ddd', borderRadius: 24, paddingHorizontal: 16, paddingVertical: 10, marginRight: 8, maxHeight: 100, fontSize: 15, backgroundColor: '#fafafa' },
+  sendBtn: { backgroundColor: '#8B0000', width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
+  sendBtnDisabled: { backgroundColor: '#ccc' },
+  errorBox: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20 },
+  errorText: { fontSize: 16, color: '#8B0000', marginTop: 16, textAlign: 'center' },
+  retryBtn: { marginTop: 20, backgroundColor: '#8B0000', paddingHorizontal: 24, paddingVertical: 12, borderRadius: 8 },
+  retryText: { color: '#fff', fontWeight: 'bold' }
 });
