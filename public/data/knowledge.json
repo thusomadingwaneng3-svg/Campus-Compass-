@@ -1,0 +1,737 @@
+{
+  "bursaries": [
+    {
+      "id": "nsfas-2026",
+      "name": "NSFAS",
+      "provider": "Government",
+      "type": "Bursary",
+      "fields": ["All"],
+      "deadline": "31 January 2026",
+      "apply_link": "https://www.nsfas.org.za",
+      "requirements": "SA citizen, household income < R350k per annum, registered at public uni/TVET",
+      "income_threshold": "R350,000 per annum",
+      "covers": ["Tuition", "Accommodation", "Books", "Transport", "Meals"],
+      "notes": "Applications open September 2025"
+    },
+    {
+      "id": "funza-2026",
+      "name": "Funza Lushaka Bursary",
+      "provider": "Department of Basic Education",
+      "type": "Bursary",
+      "fields": ["Teaching", "Education"],
+      "deadline": "11 February 2026",
+      "apply_link": "https://www.funzalushaka.doe.gov.za",
+      "requirements": "Study BEd or PGCE, commit to teach in public school",
+      "income_threshold": "Not specified",
+      "covers": ["Tuition", "Accommodation", "Books", "Living allowance"],
+      "notes": "Service obligation = years funded"
+    },
+    {
+      "id": "sasol-2026",
+      "name": "Sasol Bursary",
+      "provider": "Sasol",
+      "type": "Corporate Bursary",
+      "fields": ["Engineering", "Science", "Commerce", "IT"],
+      "deadline": "30 April 2025",
+      "apply_link": "https://www.sasolbursaries.com",
+      "requirements": "Maths 70%+, Physical Science 70%+, SA citizen",
+      "income_threshold": "Not specified",
+      "covers": ["Tuition", "Accommodation", "Books", "Laptop", "Allowance"],
+      "notes": "Vacation work required"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Cape Town",
+      "short": "UCT",
+      "type": "Public University",
+      "province": "Western Cape",
+      "location": "Cape Town",
+      "website": "https://www.uct.ac.za",
+      "applications_open": "2 April 2025",
+      "applications_close": "31 July 2025",
+      "prospectus_link": "https://www.uct.ac.za/apply/prospectus",
+      "faculties": {
+        "Engineering & Built Environment": {"aps": 38, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "English": 5}, "degrees": ["BSc Eng Civil", "BSc Eng Mechanical", "BSc Eng Electrical", "BSc Construction"]},
+        "Health Sciences": {"aps": 38, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "Life Sciences": 6, "English": 5}, "degrees": ["MBChB", "BSc Physio", "BPharm", "BDS"]},
+        "Commerce": {"aps": 36, "subjects": {"Mathematics": 5, "English": 5}, "degrees": ["BCom", "BBusSc", "BCom Acc"]},
+        "Law": {"aps": 36, "subjects": {"English": 6}, "degrees": ["LLB"]},
+        "Science": {"aps": 36, "subjects": {"Mathematics": 6, "Physical Sciences": 5}, "degrees": ["BSc"]}
+      },
+      "residence_cost": "R55,000 - R85,000 per year",
+      "contact": "021 650 9111",
+      "email": "admissions@uct.ac.za"
+    },
+    {
+      "name": "University of the Witwatersrand",
+      "short": "Wits",
+      "type": "Public University",
+      "province": "Gauteng",
+      "location": "Johannesburg",
+      "website": "https://www.wits.ac.za",
+      "applications_open": "1 March 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.wits.ac.za/undergraduate/apply/prospectus/",
+      "faculties": {
+        "Engineering & Built Environment": {"aps": 36, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "English": 5}, "degrees": ["BSc Eng Civil", "BSc Eng Mechanical", "BSc Eng Electrical", "BSc Eng Chemical"]},
+        "Health Sciences": {"aps": 36, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "Life Sciences": 6, "English": 5}, "degrees": ["MBBCh", "BPharm", "BNurs", "BDS"]},
+        "Commerce, Law & Management": {"aps": 30, "subjects": {"Mathematics": 5, "English": 5}, "degrees": ["BCom", "BAccSc", "LLB"]},
+        "Science": {"aps": 34, "subjects": {"Mathematics": 6, "Physical Sciences": 5, "English": 5}, "degrees": ["BSc"]}
+      },
+      "residence_cost": "R48,000 - R75,000 per year",
+      "contact": "011 717 1000",
+      "email": "study@wits.ac.za"
+    },
+    {
+      "name": "Stellenbosch University",
+      "short": "SU",
+      "type": "Public University",
+      "province": "Western Cape",
+      "location": "Stellenbosch",
+      "website": "https://www.sun.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "31 July 2025",
+      "prospectus_link": "https://www.sun.ac.za/english/maties/Documents",
+      "faculties": {
+        "Engineering": {"aps": 36, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "English": 5}, "degrees": ["BEng Civil", "BEng Mechanical", "BEng Electrical"]},
+        "Medicine & Health Sciences": {"aps": 38, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "Life Sciences": 6, "English": 5}, "degrees": ["MBChB", "BSc Diet", "BPharm"]},
+        "Economic & Management Sciences": {"aps": 32, "subjects": {"Mathematics": 5, "English": 5}, "degrees": ["BCom", "BAcc", "BCom Law"]},
+        "Law": {"aps": 34, "subjects": {"English": 6}, "degrees": ["LLB"]}
+      },
+      "residence_cost": "R50,000 - R80,000 per year",
+      "contact": "021 808 9111"
+    },
+    {
+      "name": "University of Pretoria",
+      "short": "UP",
+      "type": "Public University",
+      "province": "Gauteng",
+      "location": "Pretoria",
+      "website": "https://www.up.ac.za",
+      "applications_open": "1 March 2025",
+      "applications_close": "30 June 2025",
+      "prospectus_link": "https://www.up.ac.za/yearbooks",
+      "faculties": {
+        "Engineering, Built Environment & IT": {"aps": 35, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "English": 5}, "degrees": ["BEng Chemical", "BEng Civil", "BEng Electrical", "BIT", "BSc IT"]},
+        "Health Sciences": {"aps": 35, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "Life Sciences": 6, "English": 5}, "degrees": ["MBChB", "BChD", "BPharm", "BPhysio", "BNurs"]},
+        "Veterinary Science": {"aps": 35, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "English": 5}, "degrees": ["BVSc"]},
+        "Law": {"aps": 32, "subjects": {"English": 5}, "degrees": ["LLB"]}
+      },
+      "residence_cost": "R50,000 - R70,000 per year",
+      "contact": "012 420 3111"
+    },
+    {
+      "name": "University of Johannesburg",
+      "short": "UJ",
+      "type": "Public University",
+      "province": "Gauteng",
+      "location": "Johannesburg",
+      "website": "https://www.uj.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.uj.ac.za/admission-aid/prospectus/",
+      "faculties": {
+        "Engineering & Built Environment": {"aps": 28, "subjects": {"Mathematics": 5, "Physical Sciences": 5, "English": 4}, "degrees": ["BEng Tech Civil", "BEng Tech Mechanical", "BSc Construction"]},
+        "Health Sciences": {"aps": 30, "subjects": {"Mathematics": 5, "Life Sciences": 5, "Physical Sciences": 5, "English": 4}, "degrees": ["BNurs", "BPharm", "BOptom", "BSc Sports Science"]},
+        "Law": {"aps": 31, "subjects": {"English": 5}, "degrees": ["LLB"]},
+        "College of Business & Economics": {"aps": 26, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BCom Accounting", "BCom Economics", "BCom Marketing"]}
+      },
+      "residence_cost": "R45,000 - R65,000 per year",
+      "contact": "011 559 4555",
+      "email": "mylife@uj.ac.za"
+    },
+    {
+      "name": "University of KwaZulu-Natal",
+      "short": "UKZN",
+      "type": "Public University",
+      "province": "KwaZulu-Natal",
+      "location": "Durban/Pietermaritzburg",
+      "website": "https://www.ukzn.ac.za",
+      "applications_open": "1 March 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://applications.ukzn.ac.za",
+      "faculties": {
+        "Engineering": {"aps": 33, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "English": 5}, "degrees": ["BSc Eng"]},
+        "Health Sciences": {"aps": 33, "subjects": {"Mathematics": 6, "Life Sciences": 6, "Physical Sciences": 6, "English": 5}, "degrees": ["MBChB", "BNurs", "BPharm"]},
+        "Law & Management Studies": {"aps": 28, "subjects": {"English": 5, "Mathematics": 4}, "degrees": ["LLB", "BCom"]}
+      },
+      "residence_cost": "R42,000 - R68,000 per year",
+      "contact": "031 260 1111"
+    },
+    {
+      "name": "North-West University",
+      "short": "NWU",
+      "type": "Public University",
+      "province": "North West",
+      "location": "Potchefstroom/Mahikeng/Vanderbijlpark",
+      "website": "https://www.nwu.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.nwu.ac.za/studies",
+      "faculties": {
+        "Engineering": {"aps": 32, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "English": 4}, "degrees": ["BEng"]},
+        "Health Sciences": {"aps": 32, "subjects": {"Mathematics": 5, "Life Sciences": 5, "English": 4}, "degrees": ["BNurs", "BPharm", "BSc Diet"]},
+        "Economic & Management Sciences": {"aps": 24, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BCom"]}
+      },
+      "residence_cost": "R38,000 - R60,000 per year",
+      "contact": "018 299 1111"
+    },
+    {
+      "name": "University of the Free State",
+      "short": "UFS",
+      "type": "Public University",
+      "province": "Free State",
+      "location": "Bloemfontein",
+      "website": "https://www.ufs.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.ufs.ac.za/prospective",
+      "faculties": {
+        "Natural & Agricultural Sciences": {"aps": 32, "subjects": {"Mathematics": 5, "Physical Sciences": 5, "English": 4}, "degrees": ["BSc", "BEng", "BSc Agric"]},
+        "Health Sciences": {"aps": 32, "subjects": {"Mathematics": 5, "Life Sciences": 5, "English": 4}, "degrees": ["MBChB", "BNurs", "BOptom"]},
+        "Law": {"aps": 28, "subjects": {"English": 5}, "degrees": ["LLB"]}
+      },
+      "residence_cost": "R40,000 - R62,000 per year",
+      "contact": "051 401 9111"
+    },
+    {
+      "name": "Rhodes University",
+      "short": "RU",
+      "type": "Public University",
+      "province": "Eastern Cape",
+      "location": "Makhanda",
+      "website": "https://www.ru.ac.za",
+      "applications_open": "1 March 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.ru.ac.za/studying/",
+      "faculties": {
+        "Science": {"aps": 36, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "English": 5}, "degrees": ["BSc"]},
+        "Commerce": {"aps": 32, "subjects": {"Mathematics": 5, "English": 5}, "degrees": ["BCom", "BEcon"]},
+        "Law": {"aps": 36, "subjects": {"English": 6}, "degrees": ["LLB"]},
+        "Humanities": {"aps": 32, "subjects": {"English": 5}, "degrees": ["BA", "BJourn"]}
+      },
+      "residence_cost": "R48,000 - R72,000 per year",
+      "contact": "046 603 8111"
+    },
+    {
+      "name": "University of the Western Cape",
+      "short": "UWC",
+      "type": "Public University",
+      "province": "Western Cape",
+      "location": "Bellville",
+      "website": "https://www.uwc.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.uwc.ac.za/admission",
+      "faculties": {
+        "Natural Sciences": {"aps": 30, "subjects": {"Mathematics": 5, "Physical Sciences": 5, "English": 4}, "degrees": ["BSc"]},
+        "Community & Health Sciences": {"aps": 30, "subjects": {"Mathematics": 4, "Life Sciences": 5, "English": 4}, "degrees": ["BNurs", "BPharm", "BDS"]},
+        "Law": {"aps": 32, "subjects": {"English": 5}, "degrees": ["LLB"]},
+        "Economic & Management Sciences": {"aps": 28, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BCom"]}
+      },
+      "residence_cost": "R40,000 - R60,000 per year",
+      "contact": "021 959 2911"
+    },
+    {
+      "name": "Nelson Mandela University",
+      "short": "NMU",
+      "type": "Public University",
+      "province": "Eastern Cape",
+      "location": "Gqeberha",
+      "website": "https://www.mandela.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.mandela.ac.za/Study-at-Mandela",
+      "faculties": {
+        "Engineering, Built Environment & IT": {"aps": 32, "subjects": {"Mathematics": 5, "Physical Sciences": 5, "English": 4}, "degrees": ["BEng", "BSc IT", "NDip"]},
+        "Health Sciences": {"aps": 32, "subjects": {"Mathematics": 5, "Life Sciences": 5, "English": 4}, "degrees": ["BNurs", "BPharm", "BEMC"]},
+        "Business & Economic Sciences": {"aps": 28, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BCom"]}
+      },
+      "residence_cost": "R38,000 - R58,000 per year",
+      "contact": "041 504 1111"
+    },
+    {
+      "name": "University of Fort Hare",
+      "short": "UFH",
+      "type": "Public University",
+      "province": "Eastern Cape",
+      "location": "Alice",
+      "website": "https://www.ufh.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.ufh.ac.za/apply/",
+      "faculties": {
+        "Science & Agriculture": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BSc Agric", "BSc"]},
+        "Health Sciences": {"aps": 28, "subjects": {"Mathematics": 4, "Life Sciences": 4, "English": 4}, "degrees": ["BNurs"]},
+        "Law": {"aps": 28, "subjects": {"English": 5}, "degrees": ["LLB"]}
+      },
+      "residence_cost": "R35,000 - R55,000 per year",
+      "contact": "040 602 2011"
+    },
+    {
+      "name": "University of Limpopo",
+      "short": "UL",
+      "type": "Public University",
+      "province": "Limpopo",
+      "location": "Polokwane",
+      "website": "https://www.ul.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.ul.ac.za/index.php?Entity=Apply",
+      "faculties": {
+        "Science & Agriculture": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BSc"]},
+        "Health Sciences": {"aps": 30, "subjects": {"Mathematics": 5, "Life Sciences": 5, "English": 4}, "degrees": ["MBChB", "BNurs", "BPharm"]},
+        "Management & Law": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BCom", "LLB"]}
+      },
+      "residence_cost": "R36,000 - R54,000 per year",
+      "contact": "015 268 9111"
+    },
+    {
+      "name": "University of Venda",
+      "short": "Univen",
+      "type": "Public University",
+      "province": "Limpopo",
+      "location": "Thohoyandou",
+      "website": "https://www.univen.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.univen.ac.za/students/prospective-students/",
+      "faculties": {
+        "Science, Engineering & Agriculture": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BSc", "BEng", "BSc Agric"]},
+        "Health Sciences": {"aps": 28, "subjects": {"Life Sciences": 4, "English": 4}, "degrees": ["BNurs"]},
+        "Management, Commerce & Law": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BCom", "LLB"]}
+      },
+      "residence_cost": "R34,000 - R52,000 per year",
+      "contact": "015 962 8000"
+    },
+    {
+      "name": "Walter Sisulu University",
+      "short": "WSU",
+      "type": "Public University",
+      "province": "Eastern Cape",
+      "location": "Mthatha",
+      "website": "https://www.wsu.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.wsu.ac.za/index.php/students/prospective-students",
+      "faculties": {
+        "Science, Engineering & Technology": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BSc", "BTech", "NDip"]},
+        "Health Sciences": {"aps": 28, "subjects": {"Life Sciences": 4, "English": 4}, "degrees": ["MBChB", "BNurs"]},
+        "Business, Management Sciences & Law": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BCom", "LLB"]}
+      },
+      "residence_cost": "R36,000 - R54,000 per year",
+      "contact": "047 502 2844"
+    },
+    {
+      "name": "University of Zululand",
+      "short": "UniZulu",
+      "type": "Public University",
+      "province": "KwaZulu-Natal",
+      "location": "KwaDlangezwa",
+      "website": "https://www.unizulu.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.unizulu.ac.za/prospective-students/",
+      "faculties": {
+        "Science & Agriculture": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BSc", "BSc Agric"]},
+        "Education": {"aps": 24, "subjects": {"English": 4}, "degrees": ["BEd"]},
+        "Commerce, Administration & Law": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BCom", "LLB", "BAdmin"]}
+      },
+      "residence_cost": "R35,000 - R53,000 per year",
+      "contact": "035 902 6000"
+    },
+    {
+      "name": "Cape Peninsula University of Technology",
+      "short": "CPUT",
+      "type": "University of Technology",
+      "province": "Western Cape",
+      "location": "Cape Town",
+      "website": "https://www.cput.ac.za",
+      "applications_open": "1 March 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.cput.ac.za/study",
+      "faculties": {
+        "Engineering & Built Environment": {"aps": 28, "subjects": {"Mathematics": 5, "Physical Sciences": 5, "English": 4}, "degrees": ["BEng Tech", "NDip Civil", "NDip Electrical"]},
+        "Applied Sciences": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BSc", "NDip Analytical Chem"]},
+        "Business & Management Sciences": {"aps": 24, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BTech", "NDip Marketing"]}
+      },
+      "residence_cost": "R38,000 - R58,000 per year",
+      "contact": "021 959 6767"
+    },
+    {
+      "name": "Durban University of Technology",
+      "short": "DUT",
+      "type": "University of Technology",
+      "province": "KwaZulu-Natal",
+      "location": "Durban",
+      "website": "https://www.dut.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.dut.ac.za/student_portal/handbooks/",
+      "faculties": {
+        "Engineering & Built Environment": {"aps": 28, "subjects": {"Mathematics": 5, "Physical Sciences": 5, "English": 4}, "degrees": ["BEng Tech", "NDip"]},
+        "Health Sciences": {"aps": 28, "subjects": {"Mathematics": 4, "Life Sciences": 4, "English": 4}, "degrees": ["BNurs", "BTech Somatology", "NDip"]},
+        "Management Sciences": {"aps": 24, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BTech", "NDip"]}
+      },
+      "residence_cost": "R36,000 - R56,000 per year",
+      "contact": "031 373 2000"
+    },
+    {
+      "name": "Tshwane University of Technology",
+      "short": "TUT",
+      "type": "University of Technology",
+      "province": "Gauteng",
+      "location": "Pretoria",
+      "website": "https://www.tut.ac.za",
+      "applications_open": "1 March 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.tut.ac.za/students/prospectus",
+      "faculties": {
+        "Engineering & Built Environment": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BEng Tech", "NDip"]},
+        "Science": {"aps": 24, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BSc", "NDip"]},
+        "ICT": {"aps": 24, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BTech", "NDip IT"]}
+      },
+      "residence_cost": "R40,000 - R60,000 per year",
+      "contact": "012 382 5911"
+    },
+    {
+      "name": "Vaal University of Technology",
+      "short": "VUT",
+      "type": "University of Technology",
+      "province": "Gauteng",
+      "location": "Vanderbijlpark",
+      "website": "https://www.vut.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.vut.ac.za/prospective-students/",
+      "faculties": {
+        "Engineering & Technology": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BEng Tech", "NDip"]},
+        "Applied & Computer Sciences": {"aps": 24, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BSc", "NDip"]},
+        "Management Sciences": {"aps": 22, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BTech", "NDip"]}
+      },
+      "residence_cost": "R36,000 - R54,000 per year",
+      "contact": "016 950 9000"
+    },
+    {
+      "name": "Central University of Technology",
+      "short": "CUT",
+      "type": "University of Technology",
+      "province": "Free State",
+      "location": "Bloemfontein",
+      "website": "https://www.cut.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.cut.ac.za/prospective-student",
+      "faculties": {
+        "Engineering, Built Environment & IT": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BEng Tech", "NDip"]},
+        "Health & Environmental Sciences": {"aps": 26, "subjects": {"Life Sciences": 4, "English": 4}, "degrees": ["BNurs", "BTech", "NDip"]},
+        "Management Sciences": {"aps": 22, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BTech", "NDip"]}
+      },
+      "residence_cost": "R35,000 - R53,000 per year",
+      "contact": "051 507 3911"
+    },
+    {
+      "name": "Mangosuthu University of Technology",
+      "short": "MUT",
+      "type": "University of Technology",
+      "province": "KwaZulu-Natal",
+      "location": "Umlazi",
+      "website": "https://www.mut.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.mut.ac.za/prospective-students/",
+      "faculties": {
+        "Engineering": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BEng Tech", "NDip"]},
+        "Natural Sciences": {"aps": 24, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BSc", "NDip"]},
+        "Management Sciences": {"aps": 22, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["NDip"]}
+      },
+      "residence_cost": "R34,000 - R52,000 per year",
+      "contact": "031 907 7111"
+    },
+    {
+      "name": "Sefako Makgatho Health Sciences University",
+      "short": "SMU",
+      "type": "Public University",
+      "province": "Gauteng",
+      "location": "Pretoria",
+      "website": "https://www.smu.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "31 July 2025",
+      "prospectus_link": "https://www.smu.ac.za/students/prospective-students/",
+      "faculties": {
+        "Medicine": {"aps": 35, "subjects": {"Mathematics": 6, "Physical Sciences": 6, "Life Sciences": 6, "English": 5}, "degrees": ["MBChB"]},
+        "Health Care Sciences": {"aps": 30, "subjects": {"Mathematics": 5, "Life Sciences": 5, "English": 4}, "degrees": ["BNurs", "BPharm", "BDS", "BSc Physio"]},
+        "Science & Technology": {"aps": 28, "subjects": {"Mathematics": 5, "Physical Sciences": 5, "English": 4}, "degrees": ["BSc"]}
+      },
+      "residence_cost": "R42,000 - R62,000 per year",
+      "contact": "012 521 4111"
+    },
+    {
+      "name": "Sol Plaatje University",
+      "short": "SPU",
+      "type": "Public University",
+      "province": "Northern Cape",
+      "location": "Kimberley",
+      "website": "https://www.spu.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.spu.ac.za/index.php/study-at-spu/",
+      "faculties": {
+        "Natural & Applied Sciences": {"aps": 28, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BSc", "BSc IT"]},
+        "Economic & Management Sciences": {"aps": 26, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BCom"]},
+        "Education": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BEd Foundation Phase", "BEd Senior Phase"]},
+        "Humanities": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BA"]}
+      },
+      "residence_cost": "R38,000 - R56,000 per year",
+      "contact": "053 491 0000"
+    },
+    {
+      "name": "University of Mpumalanga",
+      "short": "UMP",
+      "type": "Public University",
+      "province": "Mpumalanga",
+      "location": "Mbombela",
+      "website": "https://www.ump.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 September 2025",
+      "prospectus_link": "https://www.ump.ac.za/study-at-ump/",
+      "faculties": {
+        "Agriculture & Natural Sciences": {"aps": 26, "subjects": {"Mathematics": 4, "Physical Sciences": 4, "English": 4}, "degrees": ["BSc Agric", "BSc"]},
+        "Education": {"aps": 26, "subjects": {"English": 4}, "degrees": ["BEd Foundation Phase", "BEd Senior Phase"]},
+        "Development Studies": {"aps": 24, "subjects": {"English": 4}, "degrees": ["BA Dev Studies"]}
+      },
+      "residence_cost": "R36,000 - R54,000 per year",
+      "contact": "013 002 0001"
+    }
+  ],
+  "tvet_colleges": [
+    {"name": "Boland TVET College", "short": "Boland", "province": "Western Cape", "location": "Stellenbosch/Paarl/Worcester", "courses": ["Engineering N1-N6", "Business Studies", "Safety in Society", "Hospitality"], "requirements": "Grade 9 for N1, Grade 12 for N4", "apply_link": "https://www.bolandcollege.com", "deadline": "30 November 2025", "contact": "021 886 7111"},
+    {"name": "Buffalo City TVET College", "short": "BCC", "province": "Eastern Cape", "location": "East London", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.bccollege.co.za", "deadline": "30 November 2025", "contact": "043 704 9200"},
+    {"name": "Capricorn TVET College", "short": "Capricorn", "province": "Limpopo", "location": "Polokwane", "courses": ["Engineering N1-N6", "Business Studies", "Tourism", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.capricorncollege.edu.za", "deadline": "30 November 2025", "contact": "015 230 1800"},
+        {"name": "Central Johannesburg TVET College", "short": "CJC", "province": "Gauteng", "location": "Johannesburg", "courses": ["Engineering N1-N6", "Business Studies", "ICT", "Art & Design"], "requirements": "Grade 9-12", "apply_link": "https://www.cjc.edu.za", "deadline": "30 November 2025", "contact": "011 351 6000"},
+    {"name": "Coastal KZN TVET College", "short": "Coastal", "province": "KwaZulu-Natal", "location": "Durban", "courses": ["Engineering N1-N6", "Business Studies", "Electrical Infrastructure"], "requirements": "Grade 9-12", "apply_link": "https://www.coastalkzn.co.za", "deadline": "30 November 2025", "contact": "031 905 7000"},
+    {"name": "College of Cape Town", "short": "CCT", "province": "Western Cape", "location": "Cape Town", "courses": ["Engineering N1-N6", "Business Studies", "Art & Design", "Beauty Therapy"], "requirements": "Grade 9-12", "apply_link": "https://www.cct.edu.za", "deadline": "30 November 2025", "contact": "021 404 6700"},
+    {"name": "Eastcape Midlands TVET College", "short": "EMC", "province": "Eastern Cape", "location": "Uitenhage", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.emcol.co.za", "deadline": "30 November 2025", "contact": "041 995 2000"},
+    {"name": "Ehlanzeni TVET College", "short": "Ehlanzeni", "province": "Mpumalanga", "location": "Mbombela", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.ehlanzenicollege.co.za", "deadline": "30 November 2025", "contact": "013 752 2425"},
+    {"name": "Ekurhuleni East TVET College", "short": "EEC", "province": "Gauteng", "location": "Springs", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.eec.edu.za", "deadline": "30 November 2025", "contact": "011 730 6600"},
+    {"name": "Ekurhuleni West TVET College", "short": "EWC", "province": "Gauteng", "location": "Germiston", "courses": ["Engineering N1-N6", "Business Studies", "ICT", "Transport"], "requirements": "Grade 9-12", "apply_link": "https://www.ewc.edu.za", "deadline": "30 November 2025", "contact": "011 323 1600"},
+    {"name": "Elangeni TVET College", "short": "Elangeni", "province": "KwaZulu-Natal", "location": "Pinelands", "courses": ["Engineering N1-N6", "Business Studies", "Electrical"], "requirements": "Grade 9-12", "apply_link": "https://www.elangeni.edu.za", "deadline": "30 November 2025", "contact": "031 716 6700"},
+    {"name": "Esayidi TVET College", "short": "Esayidi", "province": "KwaZulu-Natal", "location": "Port Shepstone", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Primary Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.esayidifet.co.za", "deadline": "30 November 2025", "contact": "039 318 1430"},
+    {"name": "False Bay TVET College", "short": "False Bay", "province": "Western Cape", "location": "Muizenberg", "courses": ["Engineering N1-N6", "Business Studies", "Safety in Society", "2D Animation"], "requirements": "Grade 9-12", "apply_link": "https://www.falsebaycollege.co.za", "deadline": "30 November 2025", "contact": "021 787 0800"},
+    {"name": "Flavius Mareka TVET College", "short": "Flavius Mareka", "province": "Free State", "location": "Sasolburg", "courses": ["Engineering N1-N6", "Business Studies", "Chemical Plant Operations"], "requirements": "Grade 9-12", "apply_link": "https://www.flaviusmareka.net", "deadline": "30 November 2025", "contact": "016 976 0815"},
+    {"name": "Goldfields TVET College", "short": "Goldfields", "province": "Free State", "location": "Welkom", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.goldfieldstvet.edu.za", "deadline": "30 November 2025", "contact": "057 910 6000"},
+    {"name": "Gert Sibande TVET College", "short": "Gert Sibande", "province": "Mpumalanga", "location": "Standerton", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.gscollege.edu.za", "deadline": "30 November 2025", "contact": "017 712 1458"},
+    {"name": "Ikhala TVET College", "short": "Ikhala", "province": "Eastern Cape", "location": "Queenstown", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ikhala.edu.za", "deadline": "30 November 2025", "contact": "047 873 8843"},
+    {"name": "Ingwe TVET College", "short": "Ingwe", "province": "Eastern Cape", "location": "Mount Frere", "courses": ["Engineering N1-N6", "Business Studies", "Primary Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ingwecollege.edu.za", "deadline": "30 November 2025", "contact": "039 255 0346"},
+    {"name": "King Hintsa TVET College", "short": "King Hintsa", "province": "Eastern Cape", "location": "Butterworth", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.kinghintsacollege.edu.za", "deadline": "30 November 2025", "contact": "047 401 6400"},
+    {"name": "King Sabata Dalindyebo TVET College", "short": "KSD", "province": "Eastern Cape", "location": "Mthatha", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.ksdcollege.edu.za", "deadline": "30 November 2025", "contact": "047 505 1000"},
+    {"name": "Letaba TVET College", "short": "Letaba", "province": "Limpopo", "location": "Tzaneen", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.letabacollege.edu.za", "deadline": "30 November 2025", "contact": "015 307 5440"},
+    {"name": "Lephalale TVET College", "short": "Lephalale", "province": "Limpopo", "location": "Lephalale", "courses": ["Engineering N1-N6", "Business Studies", "Electrical Infrastructure"], "requirements": "Grade 9-12", "apply_link": "https://www.leptvetcollege.edu.za", "deadline": "30 November 2025", "contact": "014 763 2252"},
+    {"name": "Lovedale TVET College", "short": "Lovedale", "province": "Eastern Cape", "location": "Alice", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Art & Design"], "requirements": "Grade 9-12", "apply_link": "https://www.lovedale.org.za", "deadline": "30 November 2025", "contact": "040 604 8850"},
+    {"name": "Majuba TVET College", "short": "Majuba", "province": "KwaZulu-Natal", "location": "Newcastle", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.majuba.edu.za", "deadline": "30 November 2025", "contact": "034 326 4887"},
+    {"name": "Maluti TVET College", "short": "Maluti", "province": "Free State", "location": "Phuthaditjhaba", "courses": ["Engineering N1-N6", "Business Studies", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.malutitvet.co.za", "deadline": "30 November 2025", "contact": "058 713 6100"},
+    {"name": "Mnambithi TVET College", "short": "Mnambithi", "province": "KwaZulu-Natal", "location": "Ladysmith", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.mnambithicollege.co.za", "deadline": "30 November 2025", "contact": "036 637 4790"},
+    {"name": "Mopani South East TVET College", "short": "Mopani", "province": "Limpopo", "location": "Phalaborwa", "courses": ["Engineering N1-N6", "Business Studies", "Tourism", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.mopanicollege.edu.za", "deadline": "30 November 2025", "contact": "015 781 5725"},
+    {"name": "Motheo TVET College", "short": "Motheo", "province": "Free State", "location": "Bloemfontein", "courses": ["Engineering N1-N6", "Business Studies", "Art & Design", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.motheotvet.co.za", "deadline": "30 November 2025", "contact": "051 406 9300"},
+    {"name": "Nkangala TVET College", "short": "Nkangala", "province": "Mpumalanga", "location": "Witbank", "courses": ["Engineering N1-N6", "Business Studies", "Electrical"], "requirements": "Grade 9-12", "apply_link": "https://www.nkangalafet.edu.za", "deadline": "30 November 2025", "contact": "013 658 4700"},
+    {"name": "Northern Cape Rural TVET College", "short": "NCR TVET", "province": "Northern Cape", "location": "Upington", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ncrtvet.com", "deadline": "30 November 2025", "contact": "054 331 3836"},
+    {"name": "Northern Cape Urban TVET College", "short": "NCU TVET", "province": "Northern Cape", "location": "Kimberley", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.ncutvet.edu.za", "deadline": "30 November 2025", "contact": "053 839 2000"},
+    {"name": "Northlink TVET College", "short": "Northlink", "province": "Western Cape", "location": "Bellville", "courses": ["Engineering N1-N6", "Business Studies", "Safety in Society", "Haircare"], "requirements": "Grade 9-12", "apply_link": "https://www.northlink.co.za", "deadline": "30 November 2025", "contact": "021 970 9000"},
+    {"name": "Orbit TVET College", "short": "Orbit", "province": "North West", "location": "Rustenburg", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Mining"], "requirements": "Grade 9-12", "apply_link": "https://www.orbitcollege.co.za", "deadline": "30 November 2025", "contact": "014 592 7014"},
+    {"name": "Port Elizabeth TVET College", "short": "PE College", "province": "Eastern Cape", "location": "Gqeberha", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Art"], "requirements": "Grade 9-12", "apply_link": "https://www.pecollege.edu.za", "deadline": "30 November 2025", "contact": "041 509 6000"},
+    {"name": "Sedibeng TVET College", "short": "Sedibeng", "province": "Gauteng", "location": "Vereeniging", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.sedcol.co.za", "deadline": "30 November 2025", "contact": "016 422 6645"},
+    {"name": "Sekhukhune TVET College", "short": "Sekhukhune", "province": "Limpopo", "location": "Groblersdal", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.sekhukhunetvet.edu.za", "deadline": "30 November 2025", "contact": "013 269 0278"},
+    {"name": "South Cape TVET College", "short": "South Cape", "province": "Western Cape", "location": "George", "courses": ["Engineering N1-N6", "Business Studies", "Hospitality", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.sccollege.co.za", "deadline": "30 November 2025", "contact": "044 884 0359"},
+    {"name": "South West Gauteng TVET College", "short": "SWGC", "province": "Gauteng", "location": "Roodepoort", "courses": ["Engineering N1-N6", "Business Studies", "ICT", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.swgc.co.za", "deadline": "30 November 2025", "contact": "011 761 1010"},
+    {"name": "Taletso TVET College", "short": "Taletso", "province": "North West", "location": "Mahikeng", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.taletsofetcollege.co.za", "deadline": "30 November 2025", "contact": "018 384 2346"},
+    {"name": "Thekwini TVET College", "short": "Thekwini", "province": "KwaZulu-Natal", "location": "Durban", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Art"], "requirements": "Grade 9-12", "apply_link": "https://www.thekwinicollege.co.za", "deadline": "30 November 2025", "contact": "031 250 8400"},
+    {"name": "Tshwane North TVET College", "short": "TNC", "province": "Gauteng", "location": "Pretoria", "courses": ["Engineering N1-N6", "Business Studies", "IT", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.tnc.edu.za", "deadline": "30 November 2025", "contact": "012 401 1600"},
+    {"name": "Tshwane South TVET College", "short": "TSC", "province": "Gauteng", "location": "Centurion", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.tsc.edu.za", "deadline": "30 November 2025", "contact": "012 660 8500"},
+    {"name": "Umfolozi TVET College", "short": "Umfolozi", "province": "KwaZulu-Natal", "location": "Richards Bay", "courses": ["Engineering N1-N6", "Business Studies", "Maritime"], "requirements": "Grade 9-12", "apply_link": "https://www.umfolozicollege.co.za", "deadline": "30 November 2025", "contact": "035 902 9500"},
+    {"name": "Umgungundlovu TVET College", "short": "Umgungundlovu", "province": "KwaZulu-Natal", "location": "Pietermaritzburg", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture"], "requirements": "Grade 9-12", "apply_link": "https://www.ufetcollege.edu.za", "deadline": "30 November 2025", "contact": "033 341 2100"},
+    {"name": "Vhembe TVET College", "short": "Vhembe", "province": "Limpopo", "location": "Thohoyandou", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Tourism"], "requirements": "Grade 9-12", "apply_link": "https://www.vhembecollege.edu.za", "deadline": "30 November 2025", "contact": "015 963 3156"},
+    {"name": "Vuselela TVET College", "short": "Vuselela", "province": "North West", "location": "Klerksdorp", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.vuselelacollege.co.za", "deadline": "30 November 2025", "contact": "018 406 7800"},
+    {"name": "Waterberg TVET College", "short": "Waterberg", "province": "Limpopo", "location": "Mokopane", "courses": ["Engineering N1-N6", "Business Studies", "Agriculture", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.waterbergcollege.co.za", "deadline": "30 November 2025", "contact": "015 491 8600"},
+    {"name": "West Coast TVET College", "short": "West Coast", "province": "Western Cape", "location": "Vredenburg", "courses": ["Engineering N1-N6", "Business Studies", "Safety", "Hospitality"], "requirements": "Grade 9-12", "apply_link": "https://www.westcoastcollege.co.za", "deadline": "30 November 2025", "contact": "022 482 1143"},
+    {"name": "Western TVET College", "short": "Western", "province": "Gauteng", "location": "Randfontein", "courses": ["Engineering N1-N6", "Business Studies", "IT"], "requirements": "Grade 9-12", "apply_link": "https://www.westcol.co.za", "deadline": "30 November 2025", "contact": "011 692 4004"}
+  ],
+  "private_institutions": [
+    {
+      "name": "Varsity College",
+      "short": "VC",
+      "type": "Private Higher Education",
+      "province": "Multiple",
+      "location": "National - 8 campuses",
+      "website": "https://www.varsitycollege.co.za",
+      "applications_open": "Rolling admissions",
+      "applications_close": "January 2026 intake closes 15 Dec 2025",
+      "prospectus_link": "https://www.varsitycollege.co.za/programmes",
+      "accreditation": "IIE, CHE accredited",
+      "faculties": {
+        "Business & Commerce": {"aps": 24, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BCom", "BBA", "Diploma in Business"]},
+        "Law": {"aps": 28, "subjects": {"English": 5}, "degrees": ["LLB"]},
+        "IT": {"aps": 24, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BSc IT", "Diploma in IT"]},
+        "Education": {"aps": 24, "subjects": {"English": 4}, "degrees": ["BEd Foundation Phase"]}
+      },
+      "residence_cost": "R60,000 - R95,000 per year",
+      "contact": "0861 123 111",
+      "notes": "NSFAS not applicable. Offers own bursaries and payment plans."
+    },
+    {
+      "name": "Monash South Africa",
+      "short": "MSA",
+      "type": "Private Higher Education",
+      "province": "Gauteng",
+      "location": "Ruimsig, Johannesburg",
+      "website": "https://www.monash.ac.za",
+      "applications_open": "1 March 2025",
+      "applications_close": "30 November 2025",
+      "prospectus_link": "https://www.monash.ac.za/study/",
+      "accreditation": "IIE, CHE accredited. Australian campus link.",
+      "faculties": {
+        "Business & Economics": {"aps": 28, "subjects": {"Mathematics": 4, "English": 5}, "degrees": ["BCom", "BBusSc"]},
+        "IT": {"aps": 28, "subjects": {"Mathematics": 5, "English": 4}, "degrees": ["BSc IT", "BCompSc"]},
+        "Health Sciences": {"aps": 30, "subjects": {"Mathematics": 5, "Life Sciences": 5, "English": 5}, "degrees": ["BNurs", "BSc Health Sci"]},
+        "Social Science": {"aps": 26, "subjects": {"English": 5}, "degrees": ["BA Psychology", "BA Media"]}
+      },
+      "residence_cost": "R70,000 - R110,000 per year",
+      "contact": "011 950 4000",
+      "notes": "NSFAS not applicable. Merit scholarships available."
+    },
+    {
+      "name": "Boston City Campus",
+      "short": "Boston",
+      "type": "Private Higher Education",
+      "province": "Multiple",
+      "location": "National - 40+ campuses",
+      "website": "https://www.boston.co.za",
+      "applications_open": "Rolling admissions",
+      "applications_close": "Intakes Jan, May, Sept 2026",
+      "prospectus_link": "https://www.boston.co.za/courses/",
+      "accreditation": "CHE accredited, various SETA",
+      "faculties": {
+        "Business": {"aps": 20, "subjects": {"English": 4}, "degrees": ["Diploma", "Higher Certificate", "BCom via UNISA"]},
+        "IT": {"aps": 20, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["Diploma in IT", "Certifications"]},
+        "Creative Arts": {"aps": 20, "subjects": {"English": 4}, "degrees": ["Diploma in Graphic Design", "Sound Engineering"]},
+        "Law": {"aps": 24, "subjects": {"English": 4}, "degrees": ["Higher Certificate Paralegal"]}
+      },
+      "residence_cost": "Varies by campus - no official res",
+      "contact": "011 551 9000",
+      "notes": "NSFAS not applicable. Focus on diplomas and certificates. Degree partnerships with UNISA."
+    },
+    {
+      "name": "Damelin",
+      "short": "Damelin",
+      "type": "Private Higher Education",
+      "province": "Multiple",
+      "location": "National - 17 campuses",
+      "website": "https://www.damelin.co.za",
+      "applications_open": "Rolling admissions",
+      "applications_close": "Intakes Jan, July 2026",
+      "prospectus_link": "https://www.damelin.co.za/courses",
+      "accreditation": "CHE accredited, Umalusi, SETA",
+      "faculties": {
+        "Business & Management": {"aps": 20, "subjects": {"English": 4}, "degrees": ["Diploma", "Higher Certificate", "Short Courses"]},
+        "IT": {"aps": 20, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["Diploma in IT", "PC Engineering"]},
+        "Creative Arts": {"aps": 20, "subjects": {"English": 4}, "degrees": ["Diploma in Journalism", "Sound Tech"]},
+        "Education": {"aps": 22, "subjects": {"English": 4}, "degrees": ["Higher Certificate in ECD"]}
+      },
+      "residence_cost": "No official residence",
+      "contact": "0860 613 111",
+      "notes": "NSFAS not applicable. Focus on diplomas, higher certs, skills programmes."
+    },
+    {
+      "name": "Rosebank College",
+      "short": "Rosebank",
+      "type": "Private Higher Education",
+      "province": "Multiple",
+      "location": "National - 5 campuses",
+      "website": "https://www.rosebankcollege.co.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 November 2025",
+      "prospectus_link": "https://www.rosebankcollege.co.za/programmes",
+      "accreditation": "IIE, CHE accredited",
+      "faculties": {
+        "Commerce": {"aps": 24, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BCom", "Diploma in Business"]},
+        "IT": {"aps": 24, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BSc IT", "Diploma in IT"]},
+        "Law": {"aps": 26, "subjects": {"English": 5}, "degrees": ["LLB", "Higher Cert in Law"]},
+        "Humanities": {"aps": 22, "subjects": {"English": 4}, "degrees": ["BA", "Diploma in Journalism"]}
+      },
+      "residence_cost": "R55,000 - R85,000 per year",
+      "contact": "0861 403 323",
+      "notes": "NSFAS not applicable. IIE qualifications. Payment plans available."
+    },
+    {
+      "name": "AFDA",
+      "short": "AFDA",
+      "type": "Private Higher Education",
+      "province": "Multiple",
+      "location": "JHB, CPT, DBN, GQ",
+      "website": "https://www.afda.co.za",
+      "applications_open": "1 March 2025",
+      "applications_close": "31 October 2025",
+      "prospectus_link": "https://www.afda.co.za/degrees/",
+      "accreditation": "CHE accredited",
+      "faculties": {
+        "Film & TV": {"aps": 24, "subjects": {"English": 4}, "degrees": ["BA Motion Picture", "BA Live Performance"]},
+        "Business Innovation": {"aps": 24, "subjects": {"English": 4}, "degrees": ["BCom Business Innovation"]},
+        "Creative Writing": {"aps": 24, "subjects": {"English": 5}, "degrees": ["BA Creative Writing"]}
+      },
+      "residence_cost": "R65,000 - R90,000 per year",
+      "contact": "011 482 8345",
+      "notes": "Portfolio required for creative degrees. NSFAS not applicable."
+    },
+    {
+      "name": "Pearson Institute of Higher Education",
+      "short": "PIHE",
+      "type": "Private Higher Education",
+      "province": "Multiple",
+      "location": "Midrand, CPT, DBN",
+      "website": "https://www.pihe.ac.za",
+      "applications_open": "1 April 2025",
+      "applications_close": "30 November 2025",
+      "prospectus_link": "https://www.pihe.ac.za/programmes",
+      "accreditation": "CHE accredited",
+      "faculties": {
+        "Commerce": {"aps": 24, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BCom", "Diploma"]},
+        "IT": {"aps": 24, "subjects": {"Mathematics": 4, "English": 4}, "degrees": ["BSc IT"]},
+        "Law": {"aps": 26, "subjects": {"English": 5}, "degrees": ["LLB"]},
+        "Humanities": {"aps": 22, "subjects": {"English": 4}, "degrees": ["BA Psychology"]}
+      },
+      "residence_cost": "R60,000 - R88,000 per year",
+      "contact": "011 690 1700",
+      "notes": "NSFAS not applicable. Formerly CTI and MGI."
+    },
+    {
+      "name": "Stadio Higher Education",
+      "short": "Stadio",
+      "type": "Private Higher Education",
+      "province": "Multiple",
+      "location": "National - Distance + campuses",
+      "website": "https://www.stadio.ac.za",
+      "applications_open": "Rolling admissions",
+      "applications_close": "Intakes Jan, July 2026",
+      "prospectus_link": "https://www.stadio.ac.za/qualifications",
+      "accreditation": "CHE accredited",
+      "faculties": {
+        "Education": {"aps": 22, "subjects": {"English": 4}, "degrees": ["BEd Foundation Phase", "PGCE"]},
+        "Law": {"aps": 26, "subjects": {"English": 5}, "degrees": ["LLB", "Higher Cert"]},
+        "Commerce": {"aps": 22, "subjects": {"Mathematics": 3, "English": 4}, "degrees": ["BCom", "Diploma"]},
+        "Policing": {"aps": 20, "subjects": {"English": 4}, "degrees": ["Diploma in Policing"]}
+      },
+      "residence_cost": "Mostly distance - limited res",
+      "contact": "087 158 5000",
+      "notes": "NSFAS not applicable. Strong in distance learning. Merged AFDA, LISOF, Prestige Academy."
+    }
+  ],
+  "faqs": [
+    {"q": "What is APS?", "a": "Admission Point Score. Sum of your top 6 subjects excluding Life Orientation. Level 7=7pts, 6=6pts, 5=5pts, 4=4pts, 3=3pts, 2=2pts, 1=1pt. Max 42."},
+    {"q": "When do university applications open for 2026?", "a": "Most open 1 March - 1 April 2025. Close 30 June - 30 September 2025. UCT/SU close 31 July, UP closes 30 June."},
+    {"q": "When do TVET applications close?", "a": "Most TVET colleges close 30 November 2025 for January 2026 intake."},
+    {"q": "What is the difference between university and TVET?", "a": "Universities offer degrees NQF 7-10. TVET colleges offer N1-N6 certificates, NCV, and diplomas NQF 2-6. TVETs focus on skills for jobs."},
+    {"q": "What subjects do I need for Engineering?", "a": "Mathematics and Physical Sciences Level 5-6 minimum for university. Level 4 for TVET N4. English Level 4-5. Check specific uni APS."},
+    {"q": "Can I study with NSFAS at a TVET?", "a": "Yes. NSFAS funds public universities and all 50 TVET colleges if household income < R350,000."},
+    {"q": "Does NSFAS fund private colleges?", "a": "No. NSFAS only funds 26 public universities and 50 public TVET colleges. Private colleges like Varsity, Damelin, Boston are not NSFAS funded."},
+    {"q": "What is CHE accreditation?", "a": "Council on Higher Education. All legitimate SA degrees must be CHE accredited. Check CHE website to verify private colleges."}
+  ]
+}
