@@ -55,7 +55,6 @@ export default function ChatScreen() {
     }
   };
 
-  // PRO LIMIT CHECK - ADDED
   const checkProLimit = async (): Promise<boolean> => {
     const isProUser = await AsyncStorage.getItem('isPro');
     if (isProUser === 'true') return true;
@@ -92,7 +91,7 @@ export default function ChatScreen() {
 
   const toggleSave = async (bursaryId: string) => {
     const updated = savedBursaries.includes(bursaryId)
-     ? savedBursaries.filter(id => id!== bursaryId)
+    ? savedBursaries.filter(id => id!== bursaryId)
       : [...savedBursaries, bursaryId];
     setSavedBursaries(updated);
     await AsyncStorage.setItem('savedBursaries', JSON.stringify(updated));
@@ -136,7 +135,57 @@ export default function ChatScreen() {
   const getThusoReply = (userMsg: string): { content: string; bursaryId?: string } => {
     const q = userMsg.toLowerCase().trim();
     const allBursaries = funding as Bursary[];
+    const allInstitutions = [
+    ...(knowledge.institutions || []),
+    ...(knowledge.tvet_colleges || []),
+    ...(knowledge.private_institutions || [])
+    ];
 
+    // 1. CHECK INSTITUTIONS FIRST - FIXED ORDER
+    const instFuse = new Fuse(allInstitutions, { 
+      keys: ['name', 'short'], 
+      threshold: 0.3,
+      includeScore: true 
+    });
+    const instResult = instFuse.search(q, { limit: 1 });
+    
+    if (instResult.length > 0 && instResult[0].score! < 0.3) {
+      const found = instResult[0].item;
+      if (q.includes('security') || q.includes('emergency') || q.includes('contact') || q.includes('phone')) {
+        return { content: `${found.short || found.name} Campus Security\n\n📞 ${found.security_phone || found.contact}\n📍 ${found.location}, ${found.province}\n\nNeed directions? Check the Map tab for turn-by-turn navigation.` };
+      }
+      if (q.includes('where') || q.includes('location') || q.includes('address') || q.includes('directions')) {
+        return { content: `${found.short || found.name}\n\n📍 ${found.location}, ${found.province}\n\nTap "Map" tab for directions to main gate.\n🌐 ${found.website}` };
+      }
+      if (q.includes('apply') || q.includes('application') || q.includes('admission') || q.includes('closing')) {
+        return { content: `${found.short || found.name} Applications\n\n📅 Open: ${found.applications_open}\n📅 Close: ${found.applications_close}\n🌐 Apply: ${found.website}\n📞 ${found.contact}\n\n📧 ${found.email}` };
+      }
+      if (q.includes('aps') || q.includes('points') || q.includes('requirements') || q.includes('qualify')) {
+        const faculties = Object.entries(found.faculties || {}).map(([name, data]: [string, any]) => 
+          `• ${name}: APS ${data.aps}`
+        ).join('\n');
+        return { content: `${found.short || found.name} APS Requirements\n\n${faculties}\n\nFull prospectus: ${found.prospectus_link || found.website}` };
+      }
+      if (q.includes('res') || q.includes('residence') || q.includes('accommodation')) {
+        return { content: `${found.short || found.name} Residence\n\n🏠 ${found.residence_cost || 'Contact for pricing'}\n📞 ${found.contact}\n\nApply early - res fills up fast!` };
+      }
+      // Default campus info
+      return { content: `${found.short || found.name}\n${found.type}\n\n📍 ${found.location}, ${found.province}\n📞 ${found.contact}\n📧 ${found.email}\n🌐 ${found.website}\n\n📅 Applications close: ${found.applications_close}\n🏠 Residence: ${found.residence_cost || 'Check website'}` };
+    }
+
+    // 2. NSFAS special cases
+    const nsfas = allBursaries.find(b => b.id === 'nsfas-2026');
+    if (q.includes('nsfas') && nsfas) {
+      if (q.includes('deadline') || q.includes('close') || q.includes('when')) {
+        return { content: `NSFAS 2026 Applications:\n\n• Deadline: ${nsfas.deadline}\n• Status: Open\n\nApply: ${nsfas.apply_link}\n\n${nsfas.notes}`, bursaryId: nsfas.id };
+      }
+      if (q.includes('cover') || q.includes('amount') || q.includes('pay') || q.includes('allowance')) {
+        return { content: `NSFAS covers:\n${nsfas.covers?.map(item => `• ${item}`).join('\n')}\n\nIncome threshold: ${nsfas.income_threshold}`, bursaryId: nsfas.id };
+      }
+      return { content: `${nsfas.name}\n${nsfas.provider}\n\n• Deadline: ${nsfas.deadline}\n• Covers: ${nsfas.covers?.join(', ')}\n\nApply: ${nsfas.apply_link}`, bursaryId: nsfas.id };
+    }
+
+    // 3. BURSARY SEARCH - only if not a campus
     let bursariesToSearch = allBursaries;
     if (filter) {
       bursariesToSearch = allBursaries.filter(b =>
@@ -144,33 +193,16 @@ export default function ChatScreen() {
       );
     }
 
-    const nsfas = bursariesToSearch.find(b => b.id === 'nsfas2027');
-    const allInstitutions = [
-     ...(knowledge.institutions || []),
-     ...(knowledge.tvet_colleges || []),
-     ...(knowledge.private_institutions || [])
-    ];
-
-    if (q.includes('nsfas') && nsfas) {
-      if (q.includes('deadline') || q.includes('close') || q.includes('when')) {
-        return { content: `NSFAS 2027 Applications:\n\n• Deadline: ${nsfas.deadline}\n• Status: ${nsfas.status}\n\nApply: ${nsfas.apply_link}\n\n${nsfas.notes}`, bursaryId: nsfas.id };
-      }
-      if (q.includes('cover') || q.includes('amount') || q.includes('pay') || q.includes('allowance')) {
-        return { content: `NSFAS covers:\n${nsfas.covers?.map(item => `• ${item}`).join('\n')}\n\nIncome threshold: ${nsfas.income_threshold}`, bursaryId: nsfas.id };
-      }
-      return { content: `${nsfas.name}\n${nsfas.provider}\n\n• Deadline: ${nsfas.deadline}\n• Status: ${nsfas.status}\n• Covers: ${nsfas.covers?.join(', ')}\n\nApply: ${nsfas.apply_link}`, bursaryId: nsfas.id };
-    }
-
     const fuzzyResults = fuse.search(q, { limit: 1 });
     if (fuzzyResults.length > 0 && fuzzyResults[0].score! < 0.4) {
       const b = fuzzyResults[0].item;
       return {
-        content: `${b.name}\nProvider: ${b.provider}\n\n• Deadline: ${b.deadline}\n• Status: ${b.status}\n• Fields: ${b.fields?.join(', ')}\n• Covers: ${b.covers?.join(', ')}\n• Requirements: ${b.requirements}\n\nApply: ${b.apply_link}\n\n${b.notes}`,
+        content: `${b.name}\nProvider: ${b.provider}\n\n• Deadline: ${b.deadline}\n• Fields: ${b.fields?.join(', ')}\n• Covers: ${b.covers?.join(', ')}\n• Requirements: ${b.requirements}\n\nApply: ${b.apply_link}\n\n${b.notes}`,
         bursaryId: b.id
       };
     }
 
-    if (q.includes('bursary') || q.includes('scholarship') || q.includes('open') || q.includes('my bursaries') || q.includes('saved')) {
+    if (q.includes('bursary') || q.includes('scholarship') || q.includes('funding') || q.includes('open') || q.includes('my bursaries') || q.includes('saved')) {
       let open = bursariesToSearch.filter(b => {
         if (q.includes('my') || q.includes('saved')) return savedBursaries.includes(b.id);
         if (b.status && b.status.toLowerCase().includes('open')) return true;
@@ -189,27 +221,17 @@ export default function ChatScreen() {
       ).join('\n\n') };
     }
 
-    const instFuse = new Fuse(allInstitutions, { keys: ['name', 'short'], threshold: 0.4 });
-    const instResult = instFuse.search(q, { limit: 1 });
-    if (instResult.length > 0 && instResult[0].score! < 0.4) {
-      const found = instResult[0].item;
-      if (q.includes('security') || q.includes('emergency')) {
-        return { content: `${found.short || found.name} Campus Security\n\n📞 ${found.security_phone || found.contact}\n📍 ${found.location}, ${found.province}` };
-      }
-      return { content: `${found.short || found.name}\n${found.type}\n\n📍 ${found.location}, ${found.province}\n📞 ${found.contact}\n📧 ${found.email}\n🌐 ${found.website}\n\nApplications close: ${found.applications_close}` };
+    // 4. HELP - show both capabilities
+    if (q.includes('help') || q.includes('what can you do')) {
+      return { content: `I can help with:\n\n🎓 **Bursaries**: NSFAS, Sasol, Funza Lushaka, 50+ others\n• Deadlines, amounts, requirements\n• "engineering bursaries" or "my bursaries"\n\n🏫 **90 SA Campuses**: All universities, TVETs, private colleges\n• Contact, APS, locations, applications, security\n• "UP requirements", "Wits security", "UCT applications"\n\nFilters: Engineering | Teaching | IT | Accounting\nData verified May 2, 2026` };
     }
 
-    if (q.includes('help')) {
-      return { content: `I can help with:\n\n• NSFAS: deadlines, amounts, requirements\n• 50+ Bursaries: Sasol, Funza Lushaka, Transnet, Chevening, etc\n• All 90 SA institutions\n\nFilters: Engineering | Teaching | IT | Accounting\nData verified May 2, 2026\n\nTry: "engineering bursaries" or "my bursaries"` };
-    }
-
-    return { content: `I don't have info on that. Try:\n\n• "Sasol bursary"\n• "engineering bursaries"\n• "my bursaries"\n• "NSFAS deadline"\n\nData verified May 2, 2026` };
+    return { content: `I don't have info on that. Try:\n\n**Bursaries**: "Sasol bursary", "NSFAS deadline"\n**Campuses**: "UP", "Wits security", "UCT applications", "CUT contact"\n\nData verified May 2, 2026` };
   };
 
   const sendMessage = async () => {
     if (!message.trim()) return;
     
-    // CHECK PRO LIMIT FIRST - ADDED
     const canSend = await checkProLimit();
     if (!canSend) return;
     
