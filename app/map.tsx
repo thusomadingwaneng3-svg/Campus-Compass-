@@ -1,108 +1,130 @@
-'use client'
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { useLocalSearchParams, Link } from 'expo-router';
+import { View, Text, ScrollView, Pressable, Linking, Platform } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import knowledge from '../public/data/knowledge.json';
 
-export default function Map() {
-  const searchParams = useSearchParams();
-  const uni = searchParams.get('uni'); // VUT, UCT, Ingwe, etc
+export default function MapScreen() {
+  const { uni } = useLocalSearchParams<{ uni?: string }>();
   
-  const [institution, setInstitution] = useState<any>(null);
-  const [allInstitutions, setAllInstitutions] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const allInstitutions = [
+    ...(knowledge.institutions || []),
+    ...(knowledge.tvet_colleges || []),
+    ...(knowledge.private_institutions || [])
+  ];
 
-  useEffect(() => {
-    fetch('/data/knowledge.json')
-    .then(res => res.json())
-    .then(json => {
-        const all = [
-        ...json.institutions,
-        ...(json.tvet_colleges || []),
-        ...(json.private_institutions || [])
-        ];
-        setAllInstitutions(all);
-        
-        if (uni) {
-          const found = all.find(i => 
-            i.short?.toLowerCase() === uni.toLowerCase() || 
-            i.name.toLowerCase() === uni.toLowerCase()
-          );
-          setInstitution(found);
-        }
-        setLoading(false);
-      });
-  }, [uni]);
+  const institution = uni ? allInstitutions.find(i => 
+    i.short?.toLowerCase() === String(uni).toLowerCase() || 
+    i.name.toLowerCase().includes(String(uni).toLowerCase())
+  ) : null;
 
-  // Case 1: Loading JSON
-  if (loading) return <div style={{ padding: '20px' }}>Loading...</div>;
+  const navigateToCampus = () => {
+    if (!institution) return;
+    // Use exact GPS coords - 100% accurate
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${institution.latitude},${institution.longitude}`;
+    Linking.openURL(url);
+  };
 
-  // Case 2: No?uni= param → show all 90
   if (!uni) {
     return (
-      <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-        <h1 style={{ marginBottom: '8px' }}>Select a Campus</h1>
-        <p style={{ color: '#666', marginBottom: '20px' }}>Choose from 90 SA institutions:</p>
-        <div style={{ display: 'grid', gap: '10px', maxHeight: '70vh', overflowY: 'auto' }}>
+      <View style={{ flex: 1, backgroundColor: '#fff' }}>
+        <ScrollView style={{ flex: 1 }} contentContainerStyle={{ padding: 20 }}>
+          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 8 }}>Select a Campus</Text>
+          <Text style={{ color: '#666', marginBottom: 20 }}>Found {allInstitutions.length} SA institutions:</Text>
+          
           {allInstitutions.map(inst => (
-            <Link 
-              key={inst.name} 
-              href={`/map?uni=${inst.short || inst.name}`}
-              style={{ 
-                padding: '12px', 
-                border: '1px solid #ddd', 
-                borderRadius: '8px',
-                textDecoration: 'none',
-                color: '#000',
+            <Link key={inst.name} href={`/map?uni=${inst.short || inst.name.split(' ')[0]}`} asChild>
+              <Pressable style={{ 
+                padding: 12, 
+                borderWidth: 1, 
+                borderColor: '#ddd', 
+                borderRadius: 8, 
+                marginBottom: 10,
                 backgroundColor: '#fff'
-              }}
-            >
-              <strong>{inst.short || inst.name}</strong><br/>
-              <small style={{ color: '#666' }}>{inst.location}</small>
+              }}>
+                <Text style={{ fontWeight: 'bold' }}>{inst.short || inst.name}</Text>
+                <Text style={{ color: '#666', fontSize: 12 }}>{inst.location}</Text>
+              </Pressable>
             </Link>
           ))}
-        </div>
-      </div>
+        </ScrollView>
+      </View>
     );
   }
 
-  // Case 3:?uni= set but not found
-  if (!institution) return <div style={{ padding: '20px' }}>Campus "{uni}" not found. <Link href="/map">Back to list</Link></div>;
-
-  // Case 4: Found the campus → show compass
-  const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${institution.lng-0.008},${institution.lat-0.008},${institution.lng+0.008},${institution.lat+0.008}&layer=mapnik&marker=${institution.lat},${institution.lng}`;
+  if (!institution) return (
+    <View style={{ padding: 20, flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Campus "{uni}" not found.</Text>
+      <Link href="/map" asChild><Pressable><Text style={{ color: '#007AFF', marginTop: 8 }}>Back to list</Text></Pressable></Link>
+    </View>
+  );
 
   return (
-    <div>
-      <div style={{ backgroundColor: institution.primaryColor || '#8B0000', color: 'white', padding: '20px', textAlign: 'center' }}>
-        <h1>{institution.short || institution.name} COMPASS</h1>
-        <p>{institution.location}</p>
-      </div>
+    <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
+      <View style={{ backgroundColor: institution.primaryColor || '#8B0000', padding: 20 }}>
+        <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold', textAlign: 'center' }}>
+          {institution.short || institution.name} COMPASS
+        </Text>
+        <Text style={{ color: 'white', textAlign: 'center' }}>{institution.location}</Text>
+      </View>
       
-      <iframe 
-        src={mapUrl}
-        style={{ width: '100%', height: '400px', border: 'none' }}
-        title={`${institution.short} Campus Map`}
-      />
+      {Platform.OS === 'web' && (
+        <iframe 
+          src={`https://www.openstreetmap.org/export/embed.html?bbox=${institution.longitude-0.008},${institution.latitude-0.008},${institution.longitude+0.008},${institution.latitude+0.008}&layer=mapnik&marker=${institution.latitude},${institution.longitude}`}
+          style={{ width: '100%', height: 400, border: 'none' }}
+        />
+      )}
 
-      <div style={{ padding: '20px' }}>
-        <a 
-          href={`tel:${institution.security_phone || institution.contact}`}
+      <View style={{ padding: 20, gap: 12 }}>
+        <Pressable 
+          onPress={navigateToCampus}
           style={{ 
-            display: 'block', 
-            backgroundColor: institution.primaryColor || '#8B0000', 
-            color: 'white', 
-            padding: '15px', 
-            textAlign: 'center',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontWeight: 'bold'
+            backgroundColor: '#10b981', 
+            padding: 15, 
+            borderRadius: 8,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 8
           }}
         >
-          📞 CALL CAMPUS SECURITY<br/>
-          {institution.security_phone || institution.contact}
-        </a>
-        <Link href="/map" style={{ display: 'block', textAlign: 'center', marginTop: '12px' }}>← All Campuses</Link>
-      </div>
-    </div>
+          <Ionicons name="navigate" size={20} color="white" />
+          <Text style={{ color: 'white', textAlign: 'center', fontWeight: 'bold' }}>
+            NAVIGATE TO CAMPUS
+          </Text>
+        </Pressable>
+
+        <Pressable 
+          onPress={() => Linking.openURL(`tel:${institution.security_phone || institution.contact}`)}
+          style={{ 
+            backgroundColor: institution.primaryColor || '#8B0000', 
+            padding: 15, 
+            borderRadius: 8 
+          }}
+        >
+          <Text style={{ color: 'white', textAlign: 'center', fontWeight: 'bold' }}>
+            📞 CALL CAMPUS SECURITY{'\n'}{institution.security_phone || institution.contact}
+          </Text>
+        </Pressable>
+
+        <Pressable 
+          onPress={() => Linking.openURL(institution.website)}
+          style={{ 
+            backgroundColor: '#f3f4f6', 
+            padding: 15, 
+            borderRadius: 8,
+            borderWidth: 1,
+            borderColor: '#d1d5db'
+          }}
+        >
+          <Text style={{ color: '#111827', textAlign: 'center', fontWeight: 'bold' }}>
+            🌐 Visit Website
+          </Text>
+        </Pressable>
+
+        <Link href="/map" asChild>
+          <Pressable><Text style={{ textAlign: 'center', marginTop: 4, color: '#007AFF' }}>← All Campuses</Text></Pressable>
+        </Link>
+      </View>
+    </ScrollView>
   );
 }
