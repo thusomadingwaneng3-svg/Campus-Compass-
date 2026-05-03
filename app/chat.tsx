@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, Keyboa
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useRouter } from 'expo-router';
 import Fuse from 'fuse.js';
 import knowledge from '../public/data/knowledge.json';
 import funding from '../public/data/funding.json';
@@ -35,6 +36,7 @@ export default function ChatScreen() {
   const [savedBursaries, setSavedBursaries] = useState<string[]>([]);
   const [filter, setFilter] = useState<string | null>(null);
   const scrollViewRef = useRef<ScrollView>(null);
+  const router = useRouter();
 
   useEffect(() => {
     loadSaved();
@@ -53,6 +55,35 @@ export default function ChatScreen() {
     }
   };
 
+  // PRO LIMIT CHECK - ADDED
+  const checkProLimit = async (): Promise<boolean> => {
+    const isProUser = await AsyncStorage.getItem('isPro');
+    if (isProUser === 'true') return true;
+    
+    const today = new Date().toDateString();
+    const usage = JSON.parse(await AsyncStorage.getItem('dailyUsage') || '{"date":"","count":0}');
+    
+    if (usage.date!== today) {
+      await AsyncStorage.setItem('dailyUsage', JSON.stringify({ date: today, count: 1 }));
+      return true;
+    }
+    
+    if (usage.count >= 10) {
+      Alert.alert(
+        'Daily Limit Reached', 
+        'Free users get 10 AI searches per day. Upgrade to Pro for R5/month for unlimited access.',
+        [
+          { text: 'Cancel', style: 'cancel' },
+          { text: 'Upgrade to Pro', onPress: () => router.push('/pro') }
+        ]
+      );
+      return false;
+    }
+    
+    await AsyncStorage.setItem('dailyUsage', JSON.stringify({...usage, count: usage.count + 1 }));
+    return true;
+  };
+
   const fuse = new Fuse(funding as Bursary[], {
     keys: ['name', 'provider', 'fields', 'id'],
     threshold: 0.4,
@@ -61,7 +92,7 @@ export default function ChatScreen() {
 
   const toggleSave = async (bursaryId: string) => {
     const updated = savedBursaries.includes(bursaryId)
-   ? savedBursaries.filter(id => id!== bursaryId)
+     ? savedBursaries.filter(id => id!== bursaryId)
       : [...savedBursaries, bursaryId];
     setSavedBursaries(updated);
     await AsyncStorage.setItem('savedBursaries', JSON.stringify(updated));
@@ -115,9 +146,9 @@ export default function ChatScreen() {
 
     const nsfas = bursariesToSearch.find(b => b.id === 'nsfas2027');
     const allInstitutions = [
-    ...(knowledge.institutions || []),
-    ...(knowledge.tvet_colleges || []),
-    ...(knowledge.private_institutions || [])
+     ...(knowledge.institutions || []),
+     ...(knowledge.tvet_colleges || []),
+     ...(knowledge.private_institutions || [])
     ];
 
     if (q.includes('nsfas') && nsfas) {
@@ -169,7 +200,7 @@ export default function ChatScreen() {
     }
 
     if (q.includes('help')) {
-      return { content: `I can help with:\n\n• NSFAS: deadlines, amounts, requirements\n• 50+ Bursaries: Sasol, Funza Lushaka, Transnet, Chevening, etc\n• All 90 SA institutions\n\nFilters: Engineering | Teaching | IT | Accounting\n\nData verified May 2, 2026\n\nTry: "engineering bursaries" or "my bursaries"` };
+      return { content: `I can help with:\n\n• NSFAS: deadlines, amounts, requirements\n• 50+ Bursaries: Sasol, Funza Lushaka, Transnet, Chevening, etc\n• All 90 SA institutions\n\nFilters: Engineering | Teaching | IT | Accounting\nData verified May 2, 2026\n\nTry: "engineering bursaries" or "my bursaries"` };
     }
 
     return { content: `I don't have info on that. Try:\n\n• "Sasol bursary"\n• "engineering bursaries"\n• "my bursaries"\n• "NSFAS deadline"\n\nData verified May 2, 2026` };
@@ -177,6 +208,11 @@ export default function ChatScreen() {
 
   const sendMessage = async () => {
     if (!message.trim()) return;
+    
+    // CHECK PRO LIMIT FIRST - ADDED
+    const canSend = await checkProLimit();
+    if (!canSend) return;
+    
     const userMsg = message;
     setMessage('');
     setMessages(prev => [...prev, { role: 'user', content: userMsg }]);
