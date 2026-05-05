@@ -13,7 +13,7 @@ export default function Layout() {
   
   const handleShareApp = async () => {
     await Share.share({
-      message: '🎓 Campus Compass: All 75 SA universities + 52 bursaries in one app\n\nInstall: https://campus-compass-thuso.vercel.app\n\nNo more missed deadlines.'
+      message: '🎓 Campus Compass: All SA institutions + 52 bursaries in one app\n\nInstall: https://campus-compass-thuso.vercel.app\n\nNo more missed deadlines. APS Calculator included.'
     });
   };
 
@@ -23,7 +23,7 @@ export default function Layout() {
       const knowledge = require('../public/data/knowledge.json');
       await AsyncStorage.setItem('offlineFunding', JSON.stringify(funding));
       await AsyncStorage.setItem('offlineKnowledge', JSON.stringify(knowledge));
-      Alert.alert('Downloaded ✅', 'All bursaries + campuses saved. App works offline now.');
+      Alert.alert('Downloaded ✅', 'All SA campuses + 52 bursaries saved. App works offline now. No data needed.');
     } catch {
       Alert.alert('Error', 'Could not save offline data.');
     }
@@ -31,7 +31,7 @@ export default function Layout() {
 
   const handleSyncData = async () => {
     try {
-      const res = await fetch('https://campus-compass-thuso.vercel.app/data/funding.json');
+      const res = await fetch('https://campus-compass-thuso.vercel.app/public/data/funding.json');
       const data = await res.json();
       await AsyncStorage.setItem('offlineFunding', JSON.stringify(data));
       Alert.alert('Updated ✅', `Synced ${data.length} bursaries. Restart app to see changes.`);
@@ -52,12 +52,13 @@ export default function Layout() {
             headerStyle: { backgroundColor: '#8B0000' },
             headerTintColor: '#FFD700',
             drawerActiveTintColor: '#8B0000',
+            drawerLabelStyle: { fontSize: 15 }
           }}
         >
           <Drawer.Screen
             name="index"
             options={{
-              drawerLabel: 'All 75 Institutions',
+              drawerLabel: 'ALL SA Institutions',
               title: 'ALL SA INSTITUTIONS',
               drawerIcon: ({color}) => <Ionicons name="school" size={22} color={color} />,
             }}
@@ -68,6 +69,14 @@ export default function Layout() {
               drawerLabel: 'AI Chat - Thuso',
               title: 'Campus AI',
               drawerIcon: ({color}) => <Ionicons name="chatbubbles" size={22} color={color} />,
+            }}
+          />
+          <Drawer.Screen
+            name="aps"
+            options={{
+              drawerLabel: 'APS Calculator',
+              title: 'APS Calculator', 
+              drawerIcon: ({color}) => <Ionicons name="calculator" size={22} color={color} />,
             }}
           />
           <Drawer.Screen
@@ -87,7 +96,7 @@ export default function Layout() {
             }}
           />
           
-          {/* NEW: Utility buttons */}
+          {/* Utilities */}
           <Drawer.Screen
             name="offline"
             listeners={{
@@ -143,7 +152,7 @@ export default function Layout() {
           <Drawer.Screen
             name="pro"
             options={{
-              drawerLabel: 'Upgrade to Pro',
+              drawerLabel: 'Upgrade to Pro - R5/month',
               title: 'Campus Compass Pro',
               drawerIcon: ({color}) => <Ionicons name="star" size={22} color={color} />,
             }}
