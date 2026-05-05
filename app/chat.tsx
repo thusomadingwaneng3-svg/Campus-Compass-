@@ -46,7 +46,11 @@ export default function ChatScreen() {
   const loadSaved = async () => {
     const saved = await AsyncStorage.getItem('savedBursaries');
     if (saved) setSavedBursaries(JSON.parse(saved));
-    await AsyncStorage.setItem('fundingCache', JSON.stringify(funding));
+    
+    // Load offline cache if available
+    const offlineFunding = await AsyncStorage.getItem('offlineFunding');
+    if (offlineFunding) await AsyncStorage.setItem('fundingCache', offlineFunding);
+    else await AsyncStorage.setItem('fundingCache', JSON.stringify(funding));
   };
 
   const requestPermissions = async () => {
@@ -91,7 +95,7 @@ export default function ChatScreen() {
 
   const toggleSave = async (bursaryId: string) => {
     const updated = savedBursaries.includes(bursaryId)
-    ? savedBursaries.filter(id => id!== bursaryId)
+   ? savedBursaries.filter(id => id!== bursaryId)
       : [...savedBursaries, bursaryId];
     setSavedBursaries(updated);
     await AsyncStorage.setItem('savedBursaries', JSON.stringify(updated));
@@ -136,12 +140,12 @@ export default function ChatScreen() {
     const q = userMsg.toLowerCase().trim();
     const allBursaries = funding as Bursary[];
     const allInstitutions = [
-    ...(knowledge.institutions || []),
-    ...(knowledge.tvet_colleges || []),
-    ...(knowledge.private_institutions || [])
+   ...(knowledge.institutions || []),
+   ...(knowledge.tvet_colleges || []),
+   ...(knowledge.private_institutions || [])
     ];
 
-    // 1. CHECK INSTITUTIONS FIRST - FIXED ORDER
+    // 1. CHECK INSTITUTIONS FIRST
     const instFuse = new Fuse(allInstitutions, { 
       keys: ['name', 'short'], 
       threshold: 0.3,
@@ -152,13 +156,13 @@ export default function ChatScreen() {
     if (instResult.length > 0 && instResult[0].score! < 0.3) {
       const found = instResult[0].item;
       if (q.includes('security') || q.includes('emergency') || q.includes('contact') || q.includes('phone')) {
-        return { content: `${found.short || found.name} Campus Security\n\n📞 ${found.security_phone || found.contact}\n📍 ${found.location}, ${found.province}\n\nNeed directions? Check the Map tab for turn-by-turn navigation.` };
+        return { content: `${found.short || found.name} Campus Security\n📞 ${found.security_phone || found.contact}\n📍 ${found.location}, ${found.province}\n\nNeed directions? Check the Map tab for turn-by-turn navigation.` };
       }
       if (q.includes('where') || q.includes('location') || q.includes('address') || q.includes('directions')) {
         return { content: `${found.short || found.name}\n\n📍 ${found.location}, ${found.province}\n\nTap "Map" tab for directions to main gate.\n🌐 ${found.website}` };
       }
       if (q.includes('apply') || q.includes('application') || q.includes('admission') || q.includes('closing')) {
-        return { content: `${found.short || found.name} Applications\n\n📅 Open: ${found.applications_open}\n📅 Close: ${found.applications_close}\n🌐 Apply: ${found.website}\n📞 ${found.contact}\n\n📧 ${found.email}` };
+        return { content: `${found.short || found.name} Applications\n📅 Open: ${found.applications_open}\n📅 Close: ${found.applications_close}\n🌐 Apply: ${found.website}\n📞 ${found.contact}\n\n📧 ${found.email}` };
       }
       if (q.includes('aps') || q.includes('points') || q.includes('requirements') || q.includes('qualify')) {
         const faculties = Object.entries(found.faculties || {}).map(([name, data]: [string, any]) => 
@@ -167,9 +171,8 @@ export default function ChatScreen() {
         return { content: `${found.short || found.name} APS Requirements\n\n${faculties}\n\nFull prospectus: ${found.prospectus_link || found.website}` };
       }
       if (q.includes('res') || q.includes('residence') || q.includes('accommodation')) {
-        return { content: `${found.short || found.name} Residence\n\n🏠 ${found.residence_cost || 'Contact for pricing'}\n📞 ${found.contact}\n\nApply early - res fills up fast!` };
+        return { content: `${found.short || found.name} Residence\n🏠 ${found.residence_cost || 'Contact for pricing'}\n📞 ${found.contact}\n\nApply early - res fills up fast!` };
       }
-      // Default campus info
       return { content: `${found.short || found.name}\n${found.type}\n\n📍 ${found.location}, ${found.province}\n📞 ${found.contact}\n📧 ${found.email}\n🌐 ${found.website}\n\n📅 Applications close: ${found.applications_close}\n🏠 Residence: ${found.residence_cost || 'Check website'}` };
     }
 
@@ -185,7 +188,7 @@ export default function ChatScreen() {
       return { content: `${nsfas.name}\n${nsfas.provider}\n\n• Deadline: ${nsfas.deadline}\n• Covers: ${nsfas.covers?.join(', ')}\n\nApply: ${nsfas.apply_link}`, bursaryId: nsfas.id };
     }
 
-    // 3. BURSARY SEARCH - only if not a campus
+    // 3. BURSARY SEARCH
     let bursariesToSearch = allBursaries;
     if (filter) {
       bursariesToSearch = allBursaries.filter(b =>
@@ -221,12 +224,12 @@ export default function ChatScreen() {
       ).join('\n\n') };
     }
 
-    // 4. HELP - show both capabilities
+    // 4. HELP
     if (q.includes('help') || q.includes('what can you do')) {
-      return { content: `I can help with:\n\n🎓 **Bursaries**: NSFAS, Sasol, Funza Lushaka, 50+ others\n• Deadlines, amounts, requirements\n• "engineering bursaries" or "my bursaries"\n\n🏫 **90 SA Campuses**: All universities, TVETs, private colleges\n• Contact, APS, locations, applications, security\n• "UP requirements", "Wits security", "UCT applications"\n\nFilters: Engineering | Teaching | IT | Accounting\nData verified May 2, 2026` };
+      return { content: `I can help with:\n\n🎓 **Bursaries**: NSFAS, Sasol, Funza Lushaka, 50+ others\n• Deadlines, amounts, requirements\n• "engineering bursaries" or "my bursaries"\n\n🏫 **90 SA Campuses**: All universities, TVETs, private colleges\n• Contact, APS, locations, applications, security\n• "UP requirements", "Wits security", "UCT applications"\n\n📊 **APS Calculator**: Tap the button below or ask "calculate my APS"\n\nFilters: Engineering | Teaching | IT | Accounting\nData verified May 2, 2026` };
     }
 
-    return { content: `I don't have info on that. Try:\n\n**Bursaries**: "Sasol bursary", "NSFAS deadline"\n**Campuses**: "UP", "Wits security", "UCT applications", "CUT contact"\n\nData verified May 2, 2026` };
+    return { content: `I don't have info on that. Try:\n\n**Bursaries**: "Sasol bursary", "NSFAS deadline"\n**Campuses**: "UP", "Wits security", "UCT applications"\n**Tools**: "calculate my APS"\n\nData verified May 2, 2026` };
   };
 
   const sendMessage = async () => {
@@ -271,6 +274,10 @@ export default function ChatScreen() {
           <Ionicons name="heart" size={14} color="#8B0000" />
           <Text style={styles.filterText}> Saved</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/aps')} style={styles.filterChip}>
+          <Ionicons name="calculator" size={14} color="#8B0000" />
+          <Text style={styles.filterText}> APS</Text>
+        </TouchableOpacity>
       </ScrollView>
 
       <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios'? 'padding' : 'height'} keyboardVerticalOffset={90}>
@@ -280,6 +287,14 @@ export default function ChatScreen() {
               <Ionicons name="sparkles" size={48} color="#8B0000" />
               <Text style={styles.emptyTitle}>Ask Thuso anything</Text>
               <Text style={styles.empty}>NSFAS, bursaries, or any SA campus info</Text>
+              
+              <TouchableOpacity 
+                onPress={() => router.push('/aps')} 
+                style={styles.apsQuickBtn}
+              >
+                <Ionicons name="calculator" size={20} color="white" />
+                <Text style={styles.apsQuickBtnText}>Calculate My APS Score</Text>
+              </TouchableOpacity>
             </View>
           )}
           {messages.map((m, i) => {
@@ -313,7 +328,7 @@ export default function ChatScreen() {
         <View style={styles.inputRow}>
           <TextInput
             style={styles.input}
-            placeholder="Ask about NSFAS, bursaries, campuses..."
+            placeholder="Ask about NSFAS, bursaries, campuses, APS..."
             value={message}
             onChangeText={setMessage}
             onSubmitEditing={sendMessage}
@@ -339,9 +354,11 @@ const styles = StyleSheet.create({
   filterText: { color: '#333', fontSize: 13 },
   filterTextActive: { color: '#fff' },
   messages: { flex: 1, padding: 16 },
-  emptyBox: { alignItems: 'center', marginTop: 40 },
+  emptyBox: { alignItems: 'center', marginTop: 40, paddingHorizontal: 20 },
   emptyTitle: { fontSize: 20, fontWeight: 'bold', marginTop: 16, color: '#333' },
-  empty: { textAlign: 'center', color: '#666', marginTop: 8, fontSize: 15 },
+  empty: { textAlign: 'center', color: '#666', marginTop: 8, fontSize: 15, marginBottom: 20 },
+  apsQuickBtn: { flexDirection: 'row', backgroundColor: '#8B0000', paddingHorizontal: 20, paddingVertical: 12, borderRadius: 12, alignItems: 'center', gap: 8 },
+  apsQuickBtnText: { color: 'white', fontWeight: 'bold', fontSize: 15 },
   bubble: { padding: 12, borderRadius: 16, marginBottom: 12, maxWidth: '85%' },
   userBubble: { backgroundColor: '#8B0000', alignSelf: 'flex-end', borderBottomRightRadius: 4 },
   aiBubble: { backgroundColor: '#f0f0f0', alignSelf: 'flex-start', borderBottomLeftRadius: 4 },
