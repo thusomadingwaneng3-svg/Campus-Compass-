@@ -36,16 +36,17 @@ export async function POST(req: Request) {
     // 3. Check monthly limit - 5 searches/month for R5 plan
     const today = new Date();
     const resetDate = profile.web_search_reset_date? new Date(profile.web_search_reset_date) : null;
+    let searchCount = profile.web_search_count?? 0;
 
     if (!resetDate || resetDate.getMonth()!== today.getMonth() || resetDate.getFullYear()!== today.getFullYear()) {
       // Reset counter monthly
       await supabase.from('profiles')
        .update({ web_search_count: 0, web_search_reset_date: today.toISOString() })
        .eq('id', user.id);
-      profile.web_search_count = 0;
+      searchCount = 0;
     }
 
-    if (profile.web_search_count >= 5) {
+    if (searchCount >= 5) {
       return Response.json({
         error: 'Monthly web search limit reached',
         message: 'You’ve used all 5 Pro web searches for this month. Limit resets on the 1st.'
@@ -67,7 +68,11 @@ export async function POST(req: Request) {
      .single();
 
     if (cached) {
-      return Response.json({ text: cached.answer, cached: true });
+      return Response.json({
+        text: cached.answer,
+        cached: true,
+        remaining: 5 - searchCount
+      });
     }
 
     // 6. Search the web with Serper
@@ -79,6 +84,10 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify({ q: message, num: 5, gl: 'za', hl: 'en' })
     });
+
+    if (!searchRes.ok) {
+      return Response.json({ error: 'Web search failed' }, { status: 502 });
+    }
 
     const searchData = await searchRes.json();
     const context = searchData.organic
@@ -116,12 +125,16 @@ export async function POST(req: Request) {
     const text = aiData.choices?.[0]?.message?.content || 'No answer generated.';
 
     // 8. Save to cache and increment counter
+    const newCount = searchCount + 1;
     await supabase.from('web_search_cache').insert({ key: cacheKey, answer: text });
     await supabase.from('profiles')
-     .update({ web_search_count: profile.web_search_count + 1 })
+     .update({ web_search_count: newCount })
      .eq('id', user.id);
 
-    return Response.json({ text, remaining: 4 - profile.web_search_count });
+    return Response.json({
+      text,
+      remaining: 5 - newCount
+    });
 
   } catch (err: any) {
     console.error('AI-web error:', err);

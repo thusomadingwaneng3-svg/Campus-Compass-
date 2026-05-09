@@ -1,8 +1,7 @@
 {
-  "buildCommand": "npx expo export --platform web",
+  "buildCommand": "npx expo export --platform web && xcopy public dist\\public /E /I /Y",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/public/(.*)", "destination": "/public/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
