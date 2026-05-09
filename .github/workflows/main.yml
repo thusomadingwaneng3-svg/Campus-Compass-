@@ -1,1 +1,31 @@
-Campus Compass 
+name: enrich knowledge.json with deadlines, fees, faculties
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run enrichment script
+        run: python scripts/build_knowledge.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add public/data/knowledge.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "auto-update knowledge.json"
+          git push

@@ -7,7 +7,7 @@ import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 
 // T 💙 PASTE YOUR NEW HUGGING FACE TOKEN HERE - NEVER SHARE IT
-const HF_TOKEN = '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';
+const HF_TOKEN = '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';
 
 export default function App() {
   const [mapType, setMapType] = useState('standard');
