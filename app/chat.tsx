@@ -5,8 +5,6 @@ import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
 import Fuse from 'fuse.js';
-import knowledge from '../public/data/knowledge.json';
-import funding from '../public/data/funding.json';
 
 // Only import notifications on mobile
 let Notifications: any = null;
@@ -27,7 +25,9 @@ type Message = {
   bursaryId?: string;
 };
 
-type Bursary = typeof funding[0];
+type Bursary = any;
+type Institution = any;
+type School = any;
 
 export default function ChatScreen() {
   const [message, setMessage] = useState('');
@@ -35,22 +35,46 @@ export default function ChatScreen() {
   const [loading, setLoading] = useState(false);
   const [savedBursaries, setSavedBursaries] = useState<string[]>([]);
   const [filter, setFilter] = useState<string | null>(null);
+  const [allSearchable, setAllSearchable] = useState<any[]>([]);
+  const [fuse, setFuse] = useState<Fuse<any> | null>(null);
+  const [knowledge, setKnowledge] = useState<any>({});
+  const [funding, setFunding] = useState<any[]>([]);
   const scrollViewRef = useRef<ScrollView>(null);
   const router = useRouter();
 
   useEffect(() => {
+    loadData();
     loadSaved();
     requestPermissions();
   }, []);
 
+  const loadData = async () => {
+    try {
+      // Load knowledge.json
+      const knowledgeRes = await fetch('/public/data/knowledge.json');
+      if (knowledgeRes.ok) {
+        const knowledgeData = await knowledgeRes.json();
+        setKnowledge(knowledgeData);
+      }
+
+      // Load funding.json
+      const fundingRes = await fetch('/public/data/funding.json');
+      if (fundingRes.ok) {
+        const fundingData = await fundingRes.json();
+        setFunding(fundingData);
+        await AsyncStorage.setItem('fundingCache', JSON.stringify(fundingData));
+      }
+    } catch (e) {
+      console.log('Failed to load data:', e);
+    }
+  };
+
   const loadSaved = async () => {
     const saved = await AsyncStorage.getItem('savedBursaries');
     if (saved) setSavedBursaries(JSON.parse(saved));
-    
-    // Load offline cache if available
+
     const offlineFunding = await AsyncStorage.getItem('offlineFunding');
     if (offlineFunding) await AsyncStorage.setItem('fundingCache', offlineFunding);
-    else await AsyncStorage.setItem('fundingCache', JSON.stringify(funding));
   };
 
   const requestPermissions = async () => {
@@ -59,21 +83,75 @@ export default function ChatScreen() {
     }
   };
 
+  const loadAllDataForSearch = async () => {
+    if (!knowledge.institutions || funding.length === 0) return;
+
+    let searchable: any[] = [];
+
+    // 1. Load institutions
+    const institutions = [
+    ...(knowledge.institutions || []),
+    ...(knowledge.tvet_colleges || []),
+    ...(knowledge.private_institutions || [])
+    ].map(i => ({...i, _type: 'institution' }));
+    searchable = [...searchable,...institutions];
+
+    // 2. Load schools from offline storage
+    try {
+      const indexStr = await AsyncStorage.getItem('offlineSchoolIndex');
+      if (indexStr) {
+        const index = JSON.parse(indexStr);
+        for (const prov of Object.keys(index)) {
+          const file = index[prov].file;
+          const key = `offline_${file.split('/').pop().replace('.json', '')}`;
+          const schoolsStr = await AsyncStorage.getItem(key);
+          if (schoolsStr) {
+            const schools = JSON.parse(schoolsStr);
+            const mapped = schools.map((s: any) => ({...s, _type: 'school' }));
+            searchable = [...searchable,...mapped];
+          }
+        }
+      }
+    } catch (e) {
+      console.log('Could not load schools for AI:', e);
+    }
+
+    // 3. Load funding
+    const bursaries = funding.map(b => ({...b, _type: 'bursary' }));
+    searchable = [...searchable,...bursaries];
+
+    setAllSearchable(searchable);
+
+    // Build Fuse index
+    const fuseInstance = new Fuse(searchable, {
+      keys: ['name', 'short', 'shortName', 'provider', 'fields', 'id', 'city', 'province', 'district'],
+      threshold: 0.35,
+      includeScore: true,
+    });
+    setFuse(fuseInstance);
+
+    console.log(`AI loaded ${searchable.length} items for search`);
+  };
+
+  useEffect(() => {
+    loadAllDataForSearch();
+  }, [knowledge, funding]);
+
   const checkProLimit = async (): Promise<boolean> => {
     const isProUser = await AsyncStorage.getItem('isPro');
     if (isProUser === 'true') return true;
-    
+
     const today = new Date().toDateString();
     const usage = JSON.parse(await AsyncStorage.getItem('dailyUsage') || '{"date":"","count":0}');
-    
+
     if (usage.date!== today) {
       await AsyncStorage.setItem('dailyUsage', JSON.stringify({ date: today, count: 1 }));
       return true;
     }
-    
+
     if (usage.count >= 10) {
       Alert.alert(
-        'Daily Limit Reached', 
+        'Daily Limit Reached',
         'Free users get 10 AI searches per day. Upgrade to Pro for R5/month for unlimited access.',
         [
           { text: 'Cancel', style: 'cancel' },
@@ -82,20 +160,14 @@ export default function ChatScreen() {
       );
       return false;
     }
-    
+
     await AsyncStorage.setItem('dailyUsage', JSON.stringify({...usage, count: usage.count + 1 }));
     return true;
   };
 
-  const fuse = new Fuse(funding as Bursary[], {
-    keys: ['name', 'provider', 'fields', 'id'],
-    threshold: 0.4,
-    includeScore: true,
-  });
-
   const toggleSave = async (bursaryId: string) => {
     const updated = savedBursaries.includes(bursaryId)
-   ? savedBursaries.filter(id => id!== bursaryId)
+    ? savedBursaries.filter(id => id!== bursaryId)
       : [...savedBursaries, bursaryId];
     setSavedBursaries(updated);
     await AsyncStorage.setItem('savedBursaries', JSON.stringify(updated));
@@ -111,7 +183,7 @@ export default function ChatScreen() {
       Alert.alert('Mobile Only', 'Reminders work after you install the app on your phone. Tap "Install App" in the drawer first.');
       return;
     }
-    
+
     try {
       const dateStr = bursary.deadline.split(' for ')[0].split(' at ')[0].split('Expected ')[1] || bursary.deadline.split(' for ')[0].split(' at ')[0];
       const deadline = new Date(dateStr);
@@ -138,74 +210,63 @@ export default function ChatScreen() {
 
   const getThusoReply = (userMsg: string): { content: string; bursaryId?: string } => {
     const q = userMsg.toLowerCase().trim();
-    const allBursaries = funding as Bursary[];
-    const allInstitutions = [
-   ...(knowledge.institutions || []),
-   ...(knowledge.tvet_colleges || []),
-   ...(knowledge.private_institutions || [])
-    ];
 
-    // 1. CHECK INSTITUTIONS FIRST
-    const instFuse = new Fuse(allInstitutions, { 
-      keys: ['name', 'short'], 
-      threshold: 0.3,
-      includeScore: true 
-    });
-    const instResult = instFuse.search(q, { limit: 1 });
-    
-    if (instResult.length > 0 && instResult[0].score! < 0.3) {
-      const found = instResult[0].item;
-      if (q.includes('security') || q.includes('emergency') || q.includes('contact') || q.includes('phone')) {
-        return { content: `${found.short || found.name} Campus Security\n📞 ${found.security_phone || found.contact}\n📍 ${found.location}, ${found.province}\n\nNeed directions? Check the Map tab for turn-by-turn navigation.` };
-      }
-      if (q.includes('where') || q.includes('location') || q.includes('address') || q.includes('directions')) {
-        return { content: `${found.short || found.name}\n\n📍 ${found.location}, ${found.province}\n\nTap "Map" tab for directions to main gate.\n🌐 ${found.website}` };
-      }
-      if (q.includes('apply') || q.includes('application') || q.includes('admission') || q.includes('closing')) {
-        return { content: `${found.short || found.name} Applications\n📅 Open: ${found.applications_open}\n📅 Close: ${found.applications_close}\n🌐 Apply: ${found.website}\n📞 ${found.contact}\n\n📧 ${found.email}` };
-      }
-      if (q.includes('aps') || q.includes('points') || q.includes('requirements') || q.includes('qualify')) {
-        const faculties = Object.entries(found.faculties || {}).map(([name, data]: [string, any]) => 
-          `• ${name}: APS ${data.aps}`
-        ).join('\n');
-        return { content: `${found.short || found.name} APS Requirements\n\n${faculties}\n\nFull prospectus: ${found.prospectus_link || found.website}` };
-      }
-      if (q.includes('res') || q.includes('residence') || q.includes('accommodation')) {
-        return { content: `${found.short || found.name} Residence\n🏠 ${found.residence_cost || 'Contact for pricing'}\n📞 ${found.contact}\n\nApply early - res fills up fast!` };
-      }
-      return { content: `${found.short || found.name}\n${found.type}\n\n📍 ${found.location}, ${found.province}\n📞 ${found.contact}\n📧 ${found.email}\n🌐 ${found.website}\n\n📅 Applications close: ${found.applications_close}\n🏠 Residence: ${found.residence_cost || 'Check website'}` };
+    if (!fuse || allSearchable.length === 0) {
+      return { content: 'Loading data... Tap "Download for Offline" in the drawer first, then try again.' };
     }
 
-    // 2. NSFAS special cases
-    const nsfas = allBursaries.find(b => b.id === 'nsfas-2026');
+    const results = fuse.search(q, { limit: 3 });
+
+    if (results.length > 0 && results[0].score! < 0.35) {
+      const item = results[0].item;
+
+      if (item._type === 'institution') {
+        if (q.includes('security') || q.includes('emergency') || q.includes('contact') || q.includes('phone')) {
+          return { content: `${item.short || item.name} Campus Security\n📞 ${item.security_phone || item.contact}\n📍 ${item.location}, ${item.province}\n\nNeed directions? Check the Map tab.` };
+        }
+        if (q.includes('where') || q.includes('location') || q.includes('address') || q.includes('directions')) {
+          return { content: `${item.short || item.name}\n\n📍 ${item.location}, ${item.province}\n\nTap "Map" tab for directions.\n🌐 ${item.website}` };
+        }
+        if (q.includes('apply') || q.includes('application') || q.includes('admission') || q.includes('closing')) {
+          return { content: `${item.short || item.name} Applications\n📅 Open: ${item.applications_open}\n📅 Close: ${item.applications_close}\n🌐 Apply: ${item.website}\n📞 ${item.contact}\n\n📧 ${item.email}` };
+        }
+        if (q.includes('aps') || q.includes('points') || q.includes('requirements') || q.includes('qualify')) {
+          const faculties = Object.entries(item.faculties || {}).map(([name, data]: [string, any]) =>
+            `• ${name}: APS ${data.aps}`
+          ).join('\n');
+          return { content: `${item.short || item.name} APS Requirements\n${faculties}\n\nFull prospectus: ${item.prospectus_link || item.website}` };
+        }
+        return { content: `${item.short || item.name}\n${item.type}\n\n📍 ${item.location}, ${item.province}\n📞 ${item.contact}\n📧 ${item.email}\n🌐 ${item.website}\n\n📅 Applications close: ${item.applications_close}` };
+      }
+
+      if (item._type === 'school') {
+        return { content: `${item.name}\n${item.type}\n\n📍 ${item.city}, ${item.province} - ${item.district}\n📞 ${item.contact || 'Contact school'}\n📧 ${item.email || 'N/A'}\n\nAddress: ${item.address || 'N/A'}` };
+      }
+
+      if (item._type === 'bursary') {
+        return {
+          content: `${item.name}\nProvider: ${item.provider}\n\n• Deadline: ${item.deadline}\n• Fields: ${item.fields?.join(', ')}\n• Covers: ${item.covers?.join(', ')}\n• Requirements: ${item.requirements}\n\nApply: ${item.apply_link}\n\n${item.notes}`,
+          bursaryId: item.id
+        };
+      }
+    }
+
+    const nsfas = funding.find(b => b.id === 'nsfas-2026');
     if (q.includes('nsfas') && nsfas) {
       if (q.includes('deadline') || q.includes('close') || q.includes('when')) {
-        return { content: `NSFAS 2026 Applications:\n\n• Deadline: ${nsfas.deadline}\n• Status: Open\n\nApply: ${nsfas.apply_link}\n\n${nsfas.notes}`, bursaryId: nsfas.id };
-      }
-      if (q.includes('cover') || q.includes('amount') || q.includes('pay') || q.includes('allowance')) {
-        return { content: `NSFAS covers:\n${nsfas.covers?.map(item => `• ${item}`).join('\n')}\n\nIncome threshold: ${nsfas.income_threshold}`, bursaryId: nsfas.id };
+        return { content: `NSFAS 2026 Applications:\n\n• Deadline: ${nsfas.deadline}\n• Status: Open\nApply: ${nsfas.apply_link}\n\n${nsfas.notes}`, bursaryId: nsfas.id };
       }
       return { content: `${nsfas.name}\n${nsfas.provider}\n\n• Deadline: ${nsfas.deadline}\n• Covers: ${nsfas.covers?.join(', ')}\n\nApply: ${nsfas.apply_link}`, bursaryId: nsfas.id };
     }
 
-    // 3. BURSARY SEARCH
-    let bursariesToSearch = allBursaries;
-    if (filter) {
-      bursariesToSearch = allBursaries.filter(b =>
-        b.fields?.some(f => f.toLowerCase().includes(filter.toLowerCase()))
-      );
-    }
-
-    const fuzzyResults = fuse.search(q, { limit: 1 });
-    if (fuzzyResults.length > 0 && fuzzyResults[0].score! < 0.4) {
-      const b = fuzzyResults[0].item;
-      return {
-        content: `${b.name}\nProvider: ${b.provider}\n\n• Deadline: ${b.deadline}\n• Fields: ${b.fields?.join(', ')}\n• Covers: ${b.covers?.join(', ')}\n• Requirements: ${b.requirements}\n\nApply: ${b.apply_link}\n\n${b.notes}`,
-        bursaryId: b.id
-      };
-    }
-
     if (q.includes('bursary') || q.includes('scholarship') || q.includes('funding') || q.includes('open') || q.includes('my bursaries') || q.includes('saved')) {
+      let bursariesToSearch = funding;
+      if (filter) {
+        bursariesToSearch = funding.filter(b =>
+          b.fields?.some(f => f.toLowerCase().includes(filter.toLowerCase()))
+        );
+      }
+
       let open = bursariesToSearch.filter(b => {
         if (q.includes('my') || q.includes('saved')) return savedBursaries.includes(b.id);
         if (b.status && b.status.toLowerCase().includes('open')) return true;
@@ -216,28 +277,27 @@ export default function ChatScreen() {
       });
 
       if (open.length === 0) {
-        return { content: 'No bursaries match your filter. Most applications open April-September 2026.\n\nData verified May 2, 2026.' };
+        return { content: 'No bursaries match your filter. Most applications open April-September 2026.\n\nData verified May 9, 2026.' };
       }
 
-      return { content: `${q.includes('my') || q.includes('saved')? 'Your Saved' : 'Open'} Bursaries (${open.length}):\n\nData verified May 2, 2026\n\n` + open.slice(0, 6).map(b =>
+      return { content: `${q.includes('my') || q.includes('saved')? 'Your Saved' : 'Open'} Bursaries (${open.length}):\n\nData verified May 9, 2026\n` + open.slice(0, 6).map(b =>
         `• ${b.name}\n Provider: ${b.provider}\n Deadline: ${b.deadline}`
       ).join('\n\n') };
     }
 
-    // 4. HELP
     if (q.includes('help') || q.includes('what can you do')) {
-      return { content: `I can help with:\n\n🎓 **Bursaries**: NSFAS, Sasol, Funza Lushaka, 50+ others\n• Deadlines, amounts, requirements\n• "engineering bursaries" or "my bursaries"\n\n🏫 **90 SA Campuses**: All universities, TVETs, private colleges\n• Contact, APS, locations, applications, security\n• "UP requirements", "Wits security", "UCT applications"\n\n📊 **APS Calculator**: Tap the button below or ask "calculate my APS"\n\nFilters: Engineering | Teaching | IT | Accounting\nData verified May 2, 2026` };
+      return { content: `I can help with:\n\n🎓 **Bursaries**: NSFAS, Sasol, Funza Lushaka, 50+ others\n• Deadlines, amounts, requirements\n🏫 **90+ Tertiary Institutions**: Universities, TVETs, private colleges\n• Contact, APS, locations, applications\n🏫 **24,000+ Schools**: All public schools in SA\n• Names, locations, contacts\n📊 **APS Calculator**: Tap the button below\nData verified May 9, 2026` };
     }
 
-    return { content: `I don't have info on that. Try:\n\n**Bursaries**: "Sasol bursary", "NSFAS deadline"\n**Campuses**: "UP", "Wits security", "UCT applications"\n**Tools**: "calculate my APS"\n\nData verified May 2, 2026` };
+    return { content: `I don't have info on that. Try:\n\n**Bursaries**: "Sasol bursary", "NSFAS deadline"\n**Campuses**: "UP", "Wits security"\n**Schools**: "High school Pretoria", "Primary school Soweto"\n\nMake sure you hit "Download for Offline" first.` };
   };
 
   const sendMessage = async () => {
     if (!message.trim()) return;
-    
+
     const canSend = await checkProLimit();
     if (!canSend) return;
-    
+
     const userMsg = message;
     setMessage('');
     setMessages(prev => [...prev, { role: 'user', content: userMsg }]);
@@ -286,10 +346,10 @@ export default function ChatScreen() {
             <View style={styles.emptyBox}>
               <Ionicons name="sparkles" size={48} color="#8B0000" />
               <Text style={styles.emptyTitle}>Ask Thuso anything</Text>
-              <Text style={styles.empty}>NSFAS, bursaries, or any SA campus info</Text>
-              
-              <TouchableOpacity 
-                onPress={() => router.push('/aps')} 
+              <Text style={styles.empty}>NSFAS, bursaries, campuses, schools</Text>
+
+              <TouchableOpacity
+                onPress={() => router.push('/aps')}
                 style={styles.apsQuickBtn}
               >
                 <Ionicons name="calculator" size={20} color="white" />
@@ -328,7 +388,7 @@ export default function ChatScreen() {
         <View style={styles.inputRow}>
           <TextInput
             style={styles.input}
-            placeholder="Ask about NSFAS, bursaries, campuses, APS..."
+            placeholder="Ask about NSFAS, bursaries, campuses, schools..."
             value={message}
             onChangeText={setMessage}
             onSubmitEditing={sendMessage}
@@ -358,7 +418,7 @@ const styles = StyleSheet.create({
   emptyTitle: { fontSize: 20, fontWeight: 'bold', marginTop: 16, color: '#333' },
   empty: { textAlign: 'center', color: '#666', marginTop: 8, fontSize: 15, marginBottom: 20 },
   apsQuickBtn: { flexDirection: 'row', backgroundColor: '#8B0000', paddingHorizontal: 20, paddingVertical: 12, borderRadius: 12, alignItems: 'center', gap: 8 },
-  apsQuickBtnText: { color: 'white', fontWeight: 'bold', fontSize: 15 },
+  apsQuickBtnText: { color: 'white', fontWeight: 'bold', size: 15 },
   bubble: { padding: 12, borderRadius: 16, marginBottom: 12, maxWidth: '85%' },
   userBubble: { backgroundColor: '#8B0000', alignSelf: 'flex-end', borderBottomRightRadius: 4 },
   aiBubble: { backgroundColor: '#f0f0f0', alignSelf: 'flex-start', borderBottomLeftRadius: 4 },

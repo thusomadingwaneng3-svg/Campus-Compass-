@@ -56,7 +56,7 @@ export default function ProScreen() {
             <Text style={styles.proFeature}>✅ Save Unlimited Bursaries</Text>
             <Text style={styles.proFeature}>✅ Priority Reminders</Text>
             <Text style={styles.proFeature}>✅ No Ads Forever</Text>
-            <Text style={styles.proFeature}>✅ All 75 Institutions</Text>
+            <Text style={styles.proFeature}>✅ All Institutions</Text>
           </View>
           <Text style={styles.supportText}>Thank you for supporting Campus Compass</Text>
         </View>
