@@ -1,0 +1,83 @@
+export const UNIVERSITY_CONTACTS = {
+  "universities": [
+    {
+      "name": "University of Pretoria", "shortName": "UP",
+      "offices": [
+        { "office": "General Enquiries", "email": "scc@up.ac.za", "phone": "012 420 3111" },
+        { "office": "Law Faculty", "email": "lawstudentadmin@up.ac.za", "phone": "012 420 2290" },
+        { "office": "EMS Faculty", "email": "emsstudentadmin@up.ac.za", "phone": "012 420 3325" },
+        { "office": "EBIT Faculty", "email": "ebitstudentadmin@up.ac.za", "phone": "012 420 2724" },
+        { "office": "Health Sciences", "email": "healthstudentadmin@up.ac.za", "phone": "012 420 3111" },
+        { "office": "Humanities", "email": "bongetsebe@up.ac.za", "phone": "012 420 2188" }
+      ]
+    },
+    {
+      "name": "University of Cape Town", "shortName": "UCT",
+      "offices": [
+        { "office": "General", "email": "admissions@uct.ac.za", "phone": "021 650 9111" },
+        { "office": "Fees Office", "email": "fnd-feeenq@uct.ac.za", "phone": "021 650 1704" },
+        { "office": "IT Helpdesk", "email": "icts-helpdesk@uct.ac.za", "phone": "021 650 4500" },
+        { "office": "Residences", "email": "res@uct.ac.za", "phone": "021 650 2977" },
+        { "office": "International", "email": "iapo@uct.ac.za", "phone": "021 650 2822" },
+        { "office": "Exams", "email": "examsoffice@uct.ac.za", "phone": "021 650 3692" },
+        { "office": "Postgrad Funding", "email": "pgfunding@uct.ac.za", "phone": "021 650 3622" },
+        { "office": "Libraries", "email": "libraries@uct.ac.za", "phone": "021 650 3134" }
+      ]
+    },
+    { "name": "Stellenbosch University", "shortName": "SU", "offices": [{ "office": "General", "email": "info@sun.ac.za", "phone": "021 808 9111" }] },
+    { "name": "University of the Witwatersrand", "shortName": "Wits", "offices": [{ "office": "General", "email": "askwits@wits.ac.za", "phone": "011 717 1000" }] },
+    { "name": "University of Johannesburg", "shortName": "UJ", "offices": [{ "office": "General", "email": "mylife@uj.ac.za", "phone": "011 559 4555" }] },
+    { "name": "Nelson Mandela University", "shortName": "NMU", "offices": [{ "office": "General", "email": "info@mandela.ac.za", "phone": "041 504 1111" }] },
+    { "name": "University of South Africa", "shortName": "UNISA", "offices": [{ "office": "General", "email": "info@unisa.ac.za", "phone": "012 429 3111" }] },
+    { "name": "University of Venda", "shortName": "UNIVEN", "offices": [{ "office": "General", "email": "info@univen.ac.za", "phone": "015 962 8000" }] },
+    { "name": "Walter Sisulu University", "shortName": "WSU", "offices": [{ "office": "General", "email": "info@wsu.ac.za", "phone": "047 502 2844" }] },
+    { "name": "University of Zululand", "shortName": "UNIZULU", "offices": [{ "office": "General", "email": "info@unizulu.ac.za", "phone": "035 902 6000" }] },
+    { "name": "Cape Peninsula University of Technology", "shortName": "CPUT", "offices": [{ "office": "General", "email": "info@cput.ac.za", "phone": "021 959 6767" }] },
+    { "name": "Sol Plaatje University", "shortName": "SPU", "offices": [{ "office": "General", "email": "information@spu.ac.za", "phone": "053 491 0000" }] },
+    { "name": "North-West University", "shortName": "NWU", "offices": [{ "office": "General", "email": "jacoline.jansenvanvuuren@nwu.ac.za", "phone": "018 299 4897" }] },
+    { "name": "University of the Western Cape", "shortName": "UWC", "offices": [{ "office": "General", "email": "info@uwc.ac.za", "phone": "021 959 2911" }] },
+    { "name": "Rhodes University", "shortName": "RU", "offices": [{ "office": "General", "email": "registrar@ru.ac.za", "phone": "046 603 8111" }] },
+    { "name": "University of the Free State", "shortName": "UFS", "offices": [{ "office": "General", "email": "info@ufs.ac.za", "phone": "051 401 9111" }] },
+    { "name": "University of KwaZulu-Natal", "shortName": "UKZN", "offices": [{ "office": "General", "email": "enquiries@ukzn.ac.za", "phone": "031 260 1111" }] },
+    { "name": "University of Limpopo", "shortName": "UL", "offices": [{ "office": "General", "email": "enrolment@ul.ac.za", "phone": "015 268 9111" }] },
+    { "name": "University of Mpumalanga", "shortName": "UMP", "offices": [{ "office": "General", "email": "info@ump.ac.za", "phone": "013 002 0001" }] },
+    { "name": "Central University of Technology", "shortName": "CUT", "offices": [{ "office": "General", "email": "info@cut.ac.za", "phone": "051 507 3911" }] },
+    { "name": "Durban University of Technology", "shortName": "DUT", "offices": [{ "office": "General", "email": "info@dut.ac.za", "phone": "031 373 2000" }] },
+    { "name": "Mangosuthu University of Technology", "shortName": "MUT", "offices": [{ "office": "General", "email": "info@mut.ac.za", "phone": "031 907 7111" }] },
+    { "name": "Tshwane University of Technology", "shortName": "TUT", "offices": [{ "office": "General", "email": "general@tut.ac.za", "phone": "012 382 5911" }] },
+    { "name": "Vaal University of Technology", "shortName": "VUT", "offices": [{ "office": "General", "email": "info@vut.ac.za", "phone": "016 950 9000" }] },
+    { "name": "University of Fort Hare", "shortName": "UFH", "offices": [{ "office": "General", "email": "registrar@ufh.ac.za", "phone": "040 602 2011" }] },
+    { "name": "Sefako Makgatho Health Sciences University", "shortName": "SMU", "offices": [{ "office": "General", "email": "info@smu.ac.za", "phone": "012 521 4000" }] }
+  ],
+  "tvetColleges": [
+    { "name": "Tshwane South TVET College", "province": "Gauteng", "offices": [{ "office": "General", "email": "info@tsc.edu.za", "phone": "012 380 5000" }] },
+    { "name": "Tshwane North TVET College", "province": "Gauteng", "offices": [{ "office": "General", "email": "info@tnc.edu.za", "phone": "012 401 1600" }] },
+    { "name": "Sedibeng TVET College", "province": "Gauteng", "offices": [{ "office": "General", "email": "info@sedcol.co.za", "phone": "016 420 2520" }] },
+    { "name": "Western College TVET", "province": "Gauteng", "offices": [{ "office": "General", "email": "info@westcol.co.za", "phone": "011 692 4000" }] },
+    { "name": "Ekurhuleni East TVET College", "province": "Gauteng", "offices": [{ "office": "General", "email": "info@eec.edu.za", "phone": "011 730 6600" }] },
+    { "name": "Ekurhuleni West TVET College", "province": "Gauteng", "offices": [{ "office": "General", "email": "info@ewc.edu.za", "phone": "011 323 1600" }] },
+    { "name": "South West Gauteng TVET College", "province": "Gauteng", "offices": [{ "office": "General", "email": "info@swgc.co.za", "phone": "011 984 1260" }] },
+    { "name": "Central Johannesburg TVET College", "province": "Gauteng", "offices": [{ "office": "General", "email": "info@cjc.edu.za", "phone": "011 484 1388" }] },
+    { "name": "Buffalo City TVET College", "province": "Eastern Cape", "offices": [{ "office": "General", "email": "hq@bolandcollege.com", "phone": "043 722 5453" }] },
+    { "name": "Eastcape Midlands TVET College", "province": "Eastern Cape", "offices": [{ "office": "General", "email": "info@emcol.co.za", "phone": "041 995 2000" }] },
+    { "name": "Ikhala TVET College", "province": "Eastern Cape", "offices": [{ "office": "General", "email": "africa.mgaleli@ikhala.edu.za", "phone": "045 838 2593" }] },
+    { "name": "Ingwe TVET College", "province": "Eastern Cape", "offices": [{ "office": "General", "email": "canca@ingwecollege.org.za", "phone": "039 255 0188" }] },
+    { "name": "King Hintsa TVET College", "province": "Eastern Cape", "offices": [{ "office": "General", "email": "pumla.toboti@kinghintsa.org.za", "phone": "047 492 0060" }] },
+    { "name": "King Sabata Dalindyebo TVET College", "province": "Eastern Cape", "offices": [{ "office": "General", "email": "ericmatola@ksdfetcollege.org.za", "phone": "047 505 1001" }] },
+    { "name": "Lovedale TVET College", "province": "Eastern Cape", "offices": [{ "office": "General", "email": "headquarters@lovedale.org.za", "phone": "043 604 0700" }] },
+    { "name": "Port Elizabeth TVET College", "province": "Eastern Cape", "offices": [{ "office": "General", "email": "bridgetm.pefet@feta.gov.za", "phone": "041 586 0002" }] },
+    { "name": "Flavius Mareka TVET College", "province": "Free State", "offices": [{ "office": "General", "email": "principal@flaviusmareka.net", "phone": "016 976 0829" }] },
+    { "name": "Goldfields TVET College", "province": "Free State", "offices": [{ "office": "General", "email": "adm@gfc.za.net", "phone": "057 391 0500" }] },
+    { "name": "Maluti TVET College", "province": "Free State", "offices": [{ "office": "General", "email": "centraloffice@malutifet.co.za", "phone": "058 713 3048" }] },
+    { "name": "Motheo TVET College", "province": "Free State", "offices": [{ "office": "General", "email": "maboya@motheofet.co.za", "phone": "051 411 2000" }] },
+    { "name": "Coastal KZN TVET College", "province": "KwaZulu-Natal", "offices": [{ "office": "General", "email": "info@coastalkzn.co.za", "phone": "031 905 7000" }] },
+    { "name": "Elangeni TVET College", "province": "KwaZulu-Natal", "offices": [{ "office": "General", "email": "info@elangeni.edu.za", "phone": "031 716 6700" }] },
+    { "name": "Esayidi TVET College", "province": "KwaZulu-Natal", "offices": [{ "office": "General", "email": "info@esayidifet.co.za", "phone": "039 684 0110" }] },
+    { "name": "Majuba TVET College", "province": "KwaZulu-Natal", "offices": [{ "office": "General", "email": "info@majuba.edu.za", "phone": "034 326 4888" }] },
+    { "name": "Mnambithi TVET College", "province": "KwaZulu-Natal", "offices": [{ "office": "General", "email": "info@mnambithi.edu.za", "phone": "036 637 4782" }] },
+    { "name": "Mthashana TVET College", "province": "KwaZulu-Natal", "offices": [{ "office": "General", "email": "info@mthashana.edu.za", "phone": "034 980 1010" }] },
+    { "name": "Thekwini TVET College", "province": "KwaZulu-Natal", "offices": [{ "office": "General", "email": "info@thekwini.edu.za", "phone": "031 250 8400" }] },
+    { "name": "Umfolozi TVET College", "province": "KwaZulu-Natal", "offices": [{ "office": "General", "email": "info@umfolozi.edu.za", "phone": "035 902 9500" }] },
+    { "name": "Umgungundlovu TVET College", "province": "KwaZulu-Natal", "offices": [{ "office": "General", "email": "info@ufet.edu.za", "phone": "033 341 2100" }] }
+  ]
+};

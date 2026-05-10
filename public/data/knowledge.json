@@ -382,31 +382,6 @@
       "popular_courses": []
     },
     {
-      "id": "nwu",
-      "name": "North-West University",
-      "short": "NWU",
-      "province": "North West",
-      "latitude": -26.6947,
-      "longitude": 27.0936,
-      "geo_url": "geo:-26.6947,27.0936",
-      "primaryColor": "#4B0082",
-      "apply_link": "https://studies.nwu.ac.za/studies/apply",
-      "student_portal": {
-        "type": "Portal link",
-        "url": "https://my.nwu.ac.za"
-      },
-      "virtual_tour_url": null,
-      "security_phone": "0182991111",
-      "medical_phone": "0182991112",
-      "application_deadline_2026": null,
-      "estimated_fees": "R7",
-      "faculties": [
-        "Faculty Fact Sheets"
-      ],
-      "nsfas_contact": "08000 67327",
-      "popular_courses": []
-    },
-    {
       "id": "ufs",
       "name": "University of the Free State",
       "short": "UFS",
@@ -472,7 +447,7 @@
       "application_deadline_2026": null,
       "estimated_fees": "R5",
       "faculties": [],
-      "nsfas_contact": "08000 67327",
+      "nsfas_contact": "0800067327",
       "popular_courses": []
     },
     {
@@ -646,60 +621,6 @@
       "application_deadline_2026": "31 August 2025",
       "estimated_fees": "R8",
       "faculties": [],
-      "nsfas_contact": "08000 67327",
-      "popular_courses": []
-    },
-    {
-      "id": "nwu_mahikeng",
-      "name": "North-West University Mahikeng Campus",
-      "short": "NWU Mahikeng",
-      "province": "North West",
-      "latitude": -25.789,
-      "longitude": 25.6247,
-      "geo_url": "geo:-25.7890,25.6247",
-      "primaryColor": "#4B0082",
-      "apply_link": "https://studies.nwu.ac.za/studies/apply",
-      "student_portal": {
-        "type": "Portal link",
-        "url": "https://my.nwu.ac.za"
-      },
-      "virtual_tour_url": "https://virtualcampus.nwu.ac.za/mahikeng",
-      "security_phone": "0183891111",
-      "medical_phone": "0183891112",
-      "application_deadline_2026": null,
-      "estimated_fees": "R7",
-      "faculties": [
-        "Faculty Fact Sheets"
-      ],
-      "nsfas_contact": "08000 67327",
-      "popular_courses": []
-    },
-    {
-      "id": "uct_gsh",
-      "name": "UCT Graduate School of Business",
-      "short": "UCT GSB",
-      "province": "Western Cape",
-      "latitude": -33.9778,
-      "longitude": 18.4241,
-      "geo_url": "geo:-33.9778,18.4241",
-      "primaryColor": "#007FA4",
-      "apply_link": "https://www.gsb.uct.ac.za/apply",
-      "student_portal": {
-        "type": "GSB Portal",
-        "url": "https://gsb.uct.ac.za"
-      },
-      "virtual_tour_url": "https://www.gsb.uct.ac.za/virtual-tour",
-      "security_phone": "0214061911",
-      "medical_phone": "0214061912",
-      "application_deadline_2026": null,
-      "estimated_fees": null,
-      "faculties": [
-        "Faculty & Research",
-        "Faculty",
-        "Full-time Faculty",
-        "Emeritus Faculty",
-        "Adjunct Faculty"
-      ],
       "nsfas_contact": "08000 67327",
       "popular_courses": []
     },
@@ -913,7 +834,7 @@
       "faculties": [],
       "nsfas_contact": "08000 67327"
     },
-    {
+       {
       "id": "southwest_gauteng_tvet",
       "name": "South West Gauteng TVET College",
       "short": "SWGC",

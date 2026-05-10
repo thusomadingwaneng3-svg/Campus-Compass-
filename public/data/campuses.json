@@ -1,0 +1,1379 @@
+[
+  {
+    "id": "uct",
+    "name": "University of Cape Town",
+    "shortName": "UCT",
+    "type": "University",
+    "province": "Western Cape",
+    "city": "Cape Town",
+    "address": "Private Bag X3, Rondebosch 7701",
+    "website": "https://www.uct.ac.za",
+    "phone": "+27 21 650 9111",
+    "email": "info@uct.ac.za",
+    "coordinates": { "lat": -33.9577, "lng": 18.4612 },
+    "logo": "https://www.uct.ac.za/sites/default/files/uct-logo.png",
+    "established": 1829,
+    "studentCount": 29000,
+    "courses": [
+      { "name": "MBChB Medicine", "faculty": "Health Sciences", "minAPS": 42, "subjects": [{"name": "Mathematics", "minLevel": 6}, {"name": "Physical Sciences", "minLevel": 5}] },
+      { "name": "BSc Engineering", "faculty": "Engineering", "minAPS": 42, "subjects": [{"name": "Mathematics", "minLevel": 7}, {"name": "Physical Sciences", "minLevel": 6}] },
+      { "name": "BCom", "faculty": "Business", "minAPS": 36, "subjects": [{"name": "Mathematics", "minLevel": 5}] },
+      { "name": "BA", "faculty": "Humanities", "minAPS": 32 }
+    ]
+  },
+  {
+    "id": "wits",
+    "name": "University of the Witwatersrand",
+    "shortName": "Wits",
+    "type": "University",
+    "province": "Gauteng",
+    "city": "Johannesburg",
+    "address": "1 Jan Smuts Avenue, Braamfontein 2000",
+    "website": "https://www.wits.ac.za",
+    "phone": "+27 11 717 1000",
+    "email": "info@wits.ac.za",
+    "coordinates": { "lat": -26.1929, "lng": 28.0302 },
+    "logo": "https://www.wits.ac.za/media/wits-university/logo.png",
+    "established": 1922,
+    "studentCount": 40000,
+    "courses": [
+      { "name": "BSc Computer Science", "faculty": "IT", "minAPS": 42, "subjects": [{"name": "Mathematics", "minLevel": 6}] },
+      { "name": "BEng Civil", "faculty": "Engineering", "minAPS": 42, "subjects": [{"name": "Mathematics", "minLevel": 7}, {"name": "Physical Sciences", "minLevel": 6}] },
+      { "name": "MBBCh", "faculty": "Health Sciences", "minAPS": 42, "subjects": [{"name": "Mathematics", "minLevel": 6}, {"name": "Physical Sciences", "minLevel": 5}] },
+      { "name": "BCom Accounting", "faculty": "Business", "minAPS": 38, "subjects": [{"name": "Mathematics", "minLevel": 5}] }
+    ]
+  },
+  {
+    "id": "up",
+    "name": "University of Pretoria",
+    "shortName": "UP",
+    "type": "University",
+    "province": "Gauteng",
+    "city": "Pretoria",
+    "address": "Private Bag X20, Hatfield 0028",
+    "website": "https://www.up.ac.za",
+    "phone": "+27 12 420 3111",
+    "email": "csc@up.ac.za",
+    "coordinates": { "lat": -25.7545, "lng": 28.2314 },
+    "logo": "https://www.up.ac.za/themes/up/logo.png",
+    "established": 1908,
+    "studentCount": 53000,
+    "courses": [
+      { "name": "BEng", "faculty": "Engineering", "minAPS": 35, "subjects": [{"name": "Mathematics", "minLevel": 6}, {"name": "Physical Sciences", "minLevel": 5}] },
+      { "name": "BSc IT", "faculty": "IT", "minAPS": 30, "subjects": [{"name": "Mathematics", "minLevel": 5}] },
+      { "name": "BCom Law", "faculty": "Business", "minAPS": 32 },
+      { "name": "BVSc Veterinary", "faculty": "Health Sciences", "minAPS": 40, "subjects": [{"name": "Mathematics", "minLevel": 6}, {"name": "Physical Sciences", "minLevel": 5}] }
+    ]
+  },
+  {
+    "id": "uj",
+    "name": "University of Johannesburg",
+    "shortName": "UJ",
+    "type": "University",
+    "province": "Gauteng",
+    "city": "Johannesburg",
+    "address": "PO Box 524, Auckland Park 2006",
+    "website": "https://www.uj.ac.za",
+    "phone": "+27 11 559 4555",
+    "email": "mylife@uj.ac.za",
+    "coordinates": { "lat": -26.1834, "lng": 27.9996 },
+    "logo": "https://www.uj.ac.za/wp-content/uploads/2021/10/UJ-Logo.png",
+    "established": 2005,
+    "studentCount": 50000,
+    "courses": [
+      { "name": "BEng Civil", "faculty": "Engineering", "minAPS": 32, "subjects": [{"name": "Mathematics", "minLevel": 6}, {"name": "Physical Sciences", "minLevel": 5}] },
+      { "name": "BCom Accounting", "faculty": "Business", "minAPS": 28, "subjects": [{"name": "Mathematics", "minLevel": 4}] },
+      { "name": "BA Education", "faculty": "Education", "minAPS": 26 },
+      { "name": "BSc Computer Science", "faculty": "IT", "minAPS": 30, "subjects": [{"name": "Mathematics", "minLevel": 5}] }
+    ]
+  },
+  {
+    "id": "sun",
+    "name": "Stellenbosch University",
+    "shortName": "SU",
+    "type": "University",
+    "province": "Western Cape",
+    "city": "Stellenbosch",
+    "address": "Private Bag X1, Matieland 7602",
+    "website": "https://www.sun.ac.za",
+    "phone": "+27 21 808 9111",
+    "email": "info@sun.ac.za",
+    "coordinates": { "lat": -33.9321, "lng": 18.8644 },
+    "logo": "https://www.sun.ac.za/english/PublishingImages/su-logo.png",
+    "established": 1918,
+    "studentCount": 32000,
+    "courses": [
+      { "name": "BEng", "faculty": "Engineering", "minAPS": 40, "subjects": [{"name": "Mathematics", "minLevel": 7}, {"name": "Physical Sciences", "minLevel": 6}] },
+      { "name": "BAcc", "faculty": "Business", "minAPS": 36, "subjects": [{"name": "Mathematics", "minLevel": 5}] },
+      { "name": "MBChB", "faculty": "Health Sciences", "minAPS": 42, "subjects": [{"name": "Mathematics", "minLevel": 6}, {"name": "Physical Sciences", "minLevel": 5}] }
+    ]
+  },
+  {
+    "id": "ukzn",
+    "name": "University of KwaZulu-Natal",
+    "shortName": "UKZN",
+    "type": "University",
+    "province": "KwaZulu-Natal",
+    "city": "Durban",
+    "address": "Private Bag X54001, Durban 4000",
+    "website": "https://www.ukzn.ac.za",
+    "phone": "+27 31 260 1111",
+    "email": "enquiries@ukzn.ac.za",
+    "coordinates": { "lat": -29.8668, "lng": 30.9803 },
+    "logo": "https://ukzn.ac.za/wp-content/uploads/2021/03/UKZN-logo.png",
+    "established": 2004,
+    "studentCount": 47000,
+    "courses": [
+      { "name": "MBChB", "faculty": "Health Sciences", "minAPS": 40 },
+      { "name": "BSc Engineering", "faculty": "Engineering", "minAPS": 38 },
+      { "name": "BCom", "faculty": "Business", "minAPS": 30 },
+      { "name": "B Education", "faculty": "Education", "minAPS": 28 }
+    ]
+  },
+  {
+    "id": "nwu",
+    "name": "North-West University",
+    "shortName": "NWU",
+    "type": "University",
+    "province": "North West",
+    "city": "Potchefstroom",
+    "address": "Private Bag X6001, Potchefstroom 2520",
+    "website": "https://www.nwu.ac.za",
+    "phone": "+27 18 299 1111",
+    "email": "info@nwu.ac.za",
+    "coordinates": { "lat": -26.6939, "lng": 27.0944 },
+    "logo": "https://www.nwu.ac.za/sites/www.nwu.ac.za/files/logo.png",
+    "established": 2004,
+    "studentCount": 65000,
+    "courses": [
+      { "name": "BEng", "faculty": "Engineering", "minAPS": 32 },
+      { "name": "BCom", "faculty": "Business", "minAPS": 28 },
+      { "name": "BSc IT", "faculty": "IT", "minAPS": 28 }
+    ]
+  },
+  {
+    "id": "ufs",
+    "name": "University of the Free State",
+    "shortName": "UFS",
+    "type": "University",
+    "province": "Free State",
+    "city": "Bloemfontein",
+    "address": "PO Box 339, Bloemfontein 9300",
+    "website": "https://www.ufs.ac.za",
+    "phone": "+27 51 401 9111",
+    "email": "info@ufs.ac.za",
+    "coordinates": { "lat": -29.1073, "lng": 26.1857 },
+    "logo": "https://www.ufs.ac.za/templates/ufs/images/logo.png",
+    "established": 1904,
+    "studentCount": 39000,
+    "courses": [
+      { "name": "MBChB", "faculty": "Health Sciences", "minAPS": 38 },
+      { "name": "BSc Agriculture", "faculty": "Science", "minAPS": 30 },
+      { "name": "B Education", "faculty": "Education", "minAPS": 28 }
+    ]
+  },
+  {
+    "id": "ru",
+    "name": "Rhodes University",
+    "shortName": "RU",
+    "type": "University",
+    "province": "Eastern Cape",
+    "city": "Makhanda",
+    "address": "PO Box 94, Makhanda 6140",
+    "website": "https://www.ru.ac.za",
+    "phone": "+27 46 603 8111",
+    "email": "registrar@ru.ac.za",
+    "coordinates": { "lat": -33.3118, "lng": 26.5218 },
+    "logo": "https://www.ru.ac.za/static/images/logo.png",
+    "established": 1904,
+    "studentCount": 8000,
+    "courses": [
+      { "name": "BJourn", "faculty": "Humanities", "minAPS": 35 },
+      { "name": "BSc", "faculty": "Science", "minAPS": 35 },
+      { "name": "BCom", "faculty": "Business", "minAPS": 35 }
+    ]
+  },
+  {
+    "id": "ufh",
+    "name": "University of Fort Hare",
+    "shortName": "UFH",
+    "type": "University",
+    "province": "Eastern Cape",
+    "city": "Alice",
+    "address": "Private Bag X1314, Alice 5700",
+    "website": "https://www.ufh.ac.za",
+    "phone": "+27 40 602 2011",
+    "email": "info@ufh.ac.za",
+    "coordinates": { "lat": -32.7861, "lng": 26.8459 },
+    "logo": "https://www.ufh.ac.za/images/ufh-logo.png",
+    "established": 1916,
+    "studentCount": 13000,
+    "courses": [
+      { "name": "BA", "faculty": "Humanities", "minAPS": 26 },
+      { "name": "BSc Agriculture", "faculty": "Science", "minAPS": 28 }
+    ]
+  },
+  {
+    "id": "uwc",
+    "name": "University of the Western Cape",
+    "shortName": "UWC",
+    "type": "University",
+    "province": "Western Cape",
+    "city": "Cape Town",
+    "address": "Private Bag X17, Bellville 7535",
+    "website": "https://www.uwc.ac.za",
+    "phone": "+27 21 959 2911",
+    "email": "info@uwc.ac.za",
+    "coordinates": { "lat": -33.9341, "lng": 18.6298 },
+    "logo": "https://www.uwc.ac.za/images/logo.png",
+    "established": 1960,
+    "studentCount": 23000,
+    "courses": [
+      { "name": "BCom", "faculty": "Business", "minAPS": 30 },
+      { "name": "BSc", "faculty": "Science", "minAPS": 30 },
+      { "name": "LLB", "faculty": "Law", "minAPS": 32 }
+    ]
+  },
+  {
+    "id": "unisa",
+    "name": "University of South Africa",
+    "shortName": "UNISA",
+    "type": "University",
+    "province": "Gauteng",
+    "city": "Pretoria",
+    "address": "PO Box 392, UNISA 0003",
+    "website": "https://www.unisa.ac.za",
+    "phone": "+27 12 429 3111",
+    "email": "study-info@unisa.ac.za",
+    "coordinates": { "lat": -25.7676, "lng": 28.1990 },
+    "logo": "https://www.unisa.ac.za/static/unisa-site/img/unisa-logo.png",
+    "established": 1873,
+    "studentCount": 400000,
+    "courses": [
+      { "name": "BCom", "faculty": "Business", "minAPS": 20 },
+      { "name": "BA", "faculty": "Humanities", "minAPS": 20 },
+      { "name": "BSc", "faculty": "Science", "minAPS": 20 },
+      { "name": "LLB", "faculty": "Law", "minAPS": 24 }
+    ]
+  },
+  {
+    "id": "ul",
+    "name": "University of Limpopo",
+    "shortName": "UL",
+    "type": "University",
+    "province": "Limpopo",
+    "city": "Polokwane",
+    "address": "Private Bag X1106, Sovenga 0727",
+    "website": "https://www.ul.ac.za",
+    "phone": "+27 15 268 9111",
+    "email": "info@ul.ac.za",
+    "coordinates": { "lat": -23.8873, "lng": 29.7276 },
+    "logo": "https://www.ul.ac.za/images/logo.png",
+    "established": 2005,
+    "studentCount": 22000,
+    "courses": [
+      { "name": "MBChB", "faculty": "Health Sciences", "minAPS": 36 },
+      { "name": "BSc", "faculty": "Science", "minAPS": 28 }
+    ]
+  },
+  {
+    "id": "uv",
+    "name": "University of Venda",
+    "shortName": "UNIVEN",
+    "type": "University",
+    "province": "Limpopo",
+    "city": "Thohoyandou",
+    "address": "Private Bag X5050, Thohoyandou 0950",
+    "website": "https://www.univen.ac.za",
+    "phone": "+27 15 962 8000",
+    "email": "info@univen.ac.za",
+    "coordinates": { "lat": -22.9756, "lng": 30.4443 },
+    "logo": "https://www.univen.ac.za/wp-content/uploads/2019/08/logo.png",
+    "established": 1982,
+    "studentCount": 17000,
+    "courses": [
+      { "name": "B Education", "faculty": "Education", "minAPS": 26 },
+      { "name": "BSc Agriculture", "faculty": "Science", "minAPS": 28 }
+    ]
+  },
+  {
+    "id": "wsu",
+    "name": "Walter Sisulu University",
+    "shortName": "WSU",
+    "type": "University",
+    "province": "Eastern Cape",
+    "city": "Mthatha",
+    "address": "Private Bag X1, Mthatha 5117",
+    "website": "https://www.wsu.ac.za",
+    "phone": "+27 47 502 2111",
+    "email": "info@wsu.ac.za",
+    "coordinates": { "lat": -31.5889, "lng": 28.7844 },
+    "logo": "https://www.wsu.ac.za/wp-content/uploads/2019/01/logo.png",
+    "established": 2005,
+    "studentCount": 31000,
+    "courses": [
+      { "name": "MBChB", "faculty": "Health Sciences", "minAPS": 38 },
+      { "name": "BEng", "faculty": "Engineering", "minAPS": 32 }
+    ]
+  },
+  {
+    "id": "nmu",
+    "name": "Nelson Mandela University",
+    "shortName": "NMU",
+    "type": "University",
+    "province": "Eastern Cape",
+    "city": "Gqeberha",
+    "address": "PO Box 77000, Gqeberha 6031",
+    "website": "https://www.mandela.ac.za",
+    "phone": "+27 41 504 1111",
+    "email": "info@mandela.ac.za",
+    "coordinates": { "lat": -34.0089, "lng": 25.6695 },
+    "logo": "https://www.mandela.ac.za/getmedia/7e7e-7e7e-4e7e-8e7e-7e7e7e7e/logo",
+    "established": 2005,
+    "studentCount": 29000,
+    "courses": [
+      { "name": "BEng", "faculty": "Engineering", "minAPS": 34 },
+      { "name": "BCom", "faculty": "Business", "minAPS": 30 },
+      { "name": "B Education", "faculty": "Education", "minAPS": 28 }
+    ]
+  },
+  {
+    "id": "smu",
+    "name": "Sefako Makgatho Health Sciences University",
+    "shortName": "SMU",
+    "type": "University",
+    "province": "Gauteng",
+    "city": "Pretoria",
+    "address": "PO Box 60, Medunsa 0204",
+    "website": "https://www.smu.ac.za",
+    "phone": "+27 12 521 4111",
+    "email": "info@smu.ac.za",
+    "coordinates": { "lat": -25.6200, "lng": 28.0125 },
+    "logo": "https://www.smu.ac.za/wp-content/uploads/2020/02/logo.png",
+    "established": 2015,
+    "studentCount": 6000,
+    "courses": [
+      { "name": "MBChB", "faculty": "Health Sciences", "minAPS": 40 },
+      { "name": "BSc Nursing", "faculty": "Health Sciences", "minAPS": 30 }
+    ]
+  },
+  {
+    "id": "spu",
+    "name": "Sol Plaatje University",
+    "shortName": "SPU",
+    "type": "University",
+    "province": "Northern Cape",
+    "city": "Kimberley",
+    "address": "Private Bag X5008, Kimberley 8300",
+    "website": "https://www.spu.ac.za",
+    "phone": "+27 53 491 0000",
+    "email": "info@spu.ac.za",
+    "coordinates": { "lat": -28.7383, "lng": 24.7623 },
+    "logo": "https://www.spu.ac.za/wp-content/uploads/2019/02/logo.png",
+    "established": 2014,
+    "studentCount": 4000,
+    "courses": [
+      { "name": "B Education", "faculty": "Education", "minAPS": 26 },
+      { "name": "BSc Data Science", "faculty": "IT", "minAPS": 30 }
+    ]
+  },
+  {
+    "id": "ump",
+    "name": "University of Mpumalanga",
+    "shortName": "UMP",
+    "type": "University",
+    "province": "Mpumalanga",
+    "city": "Mbombela",
+    "address": "Private Bag X11283, Mbombela 1200",
+    "website": "https://www.ump.ac.za",
+    "phone": "+27 13 002 0001",
+    "email": "info@ump.ac.za",
+    "coordinates": { "lat": -25.4753, "lng": 30.9692 },
+    "logo": "https://www.ump.ac.za/wp-content/uploads/2019/01/logo.png",
+    "established": 2014,
+    "studentCount": 5000,
+    "courses": [
+      { "name": "B Education", "faculty": "Education", "minAPS": 26 },
+      { "name": "BSc Agriculture", "faculty": "Science", "minAPS": 28 }
+    ]
+  },
+  {
+    "id": "tut",
+    "name": "Tshwane University of Technology",
+    "shortName": "TUT",
+    "type": "University of Technology",
+    "province": "Gauteng",
+    "city": "Pretoria",
+    "address": "Private Bag X680, Pretoria 0001",
+    "website": "https://www.tut.ac.za",
+    "phone": "+27 12 382 5911",
+    "email": "general@tut.ac.za",
+    "coordinates": { "lat": -25.7313, "lng": 28.1872 },
+    "logo": "https://www.tut.ac.za/sites/default/files/logo.png",
+    "established": 2004,
+    "studentCount": 60000,
+    "courses": [
+      { "name": "NDip Engineering", "faculty": "Engineering", "minAPS": 24 },
+      { "name": "NDip IT", "faculty": "IT", "minAPS": 24 },
+      { "name": "NDip Accounting", "faculty": "Business", "minAPS": 24 }
+    ]
+  },
+  {
+    "id": "dut",
+    "name": "Durban University of Technology",
+    "shortName": "DUT",
+    "type": "University of Technology",
+    "province": "KwaZulu-Natal",
+    "city": "Durban",
+    "address": "PO Box 1334, Durban 4000",
+    "website": "https://www.dut.ac.za",
+    "phone": "+27 31 373 2000",
+    "email": "info@dut.ac.za",
+    "coordinates": { "lat": -29.8579, "lng": 31.0292 },
+    "logo": "https://www.dut.ac.za/wp-content/uploads/2021/07/logo.png",
+    "established": 2002,
+    "studentCount": 33000,
+    "courses": [
+      { "name": "NDip Engineering", "faculty": "Engineering", "minAPS": 26 },
+      { "name": "NDip Hospitality", "faculty": "Humanities", "minAPS": 22 }
+    ]
+  },
+  {
+    "id": "cut",
+    "name": "Central University of Technology",
+    "shortName": "CUT",
+    "type": "University of Technology",
+    "province": "Free State",
+    "city": "Bloemfontein",
+    "address": "Private Bag X20539, Bloemfontein 9300",
+    "website": "https://www.cut.ac.za",
+    "phone": "+27 51 507 3911",
+    "email": "info@cut.ac.za",
+    "coordinates": { "lat": -29.1217, "lng": 26.2144 },
+    "logo": "https://www.cut.ac.za/wp-content/uploads/2019/03/logo.png",
+    "established": 1981,
+    "studentCount": 21000,
+    "courses": [
+      { "name": "NDip Engineering", "faculty": "Engineering", "minAPS": 24 },
+      { "name": "NDip IT", "faculty": "IT", "minAPS": 24 }
+    ]
+  },
+  {
+    "id": "vut",
+    "name": "Vaal University of Technology",
+    "shortName": "VUT",
+    "type": "University of Technology",
+    "province": "Gauteng",
+    "city": "Vanderbijlpark",
+    "address": "Private Bag X021, Vanderbijlpark 1900",
+    "website": "https://www.vut.ac.za",
+    "phone": "+27 16 950 9000",
+    "email": "info@vut.ac.za",
+    "coordinates": { "lat": -26.7095, "lng": 27.8436 },
+    "logo": "https://www.vut.ac.za/wp-content/uploads/2019/02/logo.png",
+    "established": 2004,
+    "studentCount": 22000,
+    "courses": [
+      { "name": "NDip Engineering", "faculty": "Engineering", "minAPS": 24 },
+      { "name": "NDip Management", "faculty": "Business", "minAPS": 22 }
+    ]
+  },
+  {
+    "id": "mut",
+    "name": "Mangosuthu University of Technology",
+    "shortName": "MUT",
+    "type": "University of Technology",
+    "province": "KwaZulu-Natal",
+    "city": "Durban",
+    "address": "PO Box 12363, Jacobs 4026",
+    "website": "https://www.mut.ac.za",
+    "phone": "+27 31 907 7111",
+    "email": "info@mut.ac.za",
+    "coordinates": { "lat": -29.9707, "lng": 30.9511 },
+    "logo": "https://www.mut.ac.za/wp-content/uploads/2019/01/logo.png",
+    "established": 1979,
+    "studentCount": 13000,
+    "courses": [
+      { "name": "NDip Engineering", "faculty": "Engineering", "minAPS": 24 },
+      { "name": "NDip IT", "faculty": "IT", "minAPS": 24 }
+    ]
+  },
+  {
+    "id": "cput",
+    "name": "Cape Peninsula University of Technology",
+    "shortName": "CPUT",
+    "type": "University of Technology",
+    "province": "Western Cape",
+    "city": "Cape Town",
+    "address": "PO Box 1906, Bellville 7535",
+    "website": "https://www.cput.ac.za",
+    "phone": "+27 21 959 6767",
+    "email": "info@cput.ac.za",
+    "coordinates": { "lat": -33.9321, "lng": 18.6278 },
+    "logo": "https://www.cput.ac.za/images/logo.png",
+    "established": 2005,
+    "studentCount": 34000,
+    "courses": [
+      { "name": "NDip Engineering", "faculty": "Engineering", "minAPS": 26 },
+      { "name": "NDip Design", "faculty": "Humanities", "minAPS": 24 },
+      { "name": "NDip IT", "faculty": "IT", "minAPS": 24 }
+    ]
+  },
+  {
+    "id": "sedcol",
+    "name": "Sedibeng TVET College",
+    "shortName": "Sedibeng",
+    "type": "TVET College",
+    "province": "Gauteng",
+    "city": "Vereeniging",
+    "address": "37 Voortrekker St, Vereeniging 1930",
+    "website": "https://www.sedcol.co.za",
+    "phone": "+27 16 422 6645",
+    "email": "info@sedcol.co.za",
+    "coordinates": { "lat": -26.6736, "lng": 27.9261 },
+    "logo": "https://www.sedcol.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 15000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV IT", "faculty": "IT", "minAPS": 20 },
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "cjc",
+    "name": "Central Johannesburg TVET College",
+    "shortName": "CJC",
+    "type": "TVET College",
+    "province": "Gauteng",
+    "city": "Johannesburg",
+    "address": "5 Ubla Ave, Parktown 2193",
+    "website": "https://www.cjc.edu.za",
+    "phone": "+27 11 351 6000",
+    "email": "info@cjc.edu.za",
+    "coordinates": { "lat": -26.1823, "lng": 28.0331 },
+    "logo": "https://www.cjc.edu.za/images/logo.png",
+    "established": 2003,
+    "studentCount": 30000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV Hospitality", "faculty": "Humanities", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "ewc",
+    "name": "Ekurhuleni West TVET College",
+    "shortName": "EWC",
+    "type": "TVET College",
+    "province": "Gauteng",
+    "city": "Germiston",
+    "address": "Cnr Driehoek & Sol Rd, Germiston 1401",
+    "website": "https://www.ewc.edu.za",
+    "phone": "+27 11 323 1600",
+    "email": "info@ewc.edu.za",
+    "coordinates": { "lat": -26.2189, "lng": 28.1697 },
+    "logo": "https://www.ewc.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 28000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV IT", "faculty": "IT", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "eec",
+    "name": "Ekurhuleni East TVET College",
+    "shortName": "EEC",
+    "type": "TVET College",
+    "province": "Gauteng",
+    "city": "Springs",
+    "address": "Sam Ngema Rd, Kwa-Thema 1560",
+    "website": "https://www.eec.edu.za",
+    "phone": "+27 11 730 6600",
+    "email": "info@eec.edu.za",
+    "coordinates": { "lat": -26.2708, "lng": 28.4456 },
+    "logo": "https://www.eec.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 22000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "swgc",
+    "name": "South West Gauteng TVET College",
+    "shortName": "SWGC",
+    "type": "TVET College",
+    "province": "Gauteng",
+    "city": "Roodepoort",
+    "address": "1822 A Molele St, Molapo 1868",
+    "website": "https://www.swgc.co.za",
+    "phone": "+27 11 527 8300",
+    "email": "info@swgc.co.za",
+    "coordinates": { "lat": -26.1625, "lng": 27.8708 },
+    "logo": "https://www.swgc.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 32000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 },
+      { "name": "NCV IT", "faculty": "IT", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "tsc",
+    "name": "Tshwane South TVET College",
+    "shortName": "TSC",
+    "type": "TVET College",
+    "province": "Gauteng",
+    "city": "Pretoria",
+    "address": "85 Francis Baard St, Pretoria 0002",
+    "website": "https://www.tsc.edu.za",
+    "phone": "+27 12 401 5000",
+    "email": "info@tsc.edu.za",
+    "coordinates": { "lat": -25.7461, "lng": 28.1881 },
+    "logo": "https://www.tsc.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 18000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "tnc",
+    "name": "Tshwane North TVET College",
+    "shortName": "TNC",
+    "type": "TVET College",
+    "province": "Gauteng",
+    "city": "Pretoria",
+    "address": "Cnr Kgosi Mampuru & Pretorius St, Pretoria 0001",
+    "website": "https://www.tnc.edu.za",
+    "phone": "+27 12 401 1900",
+    "email": "info@tnc.edu.za",
+    "coordinates": { "lat": -25.7479, "lng": 28.2293 },
+    "logo": "https://www.tnc.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 19000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS
+  ,
+  {
+    "id": "wnc",
+    "name": "Western College TVET",
+    "shortName": "WNC",
+    "type": "TVET College",
+    "province": "Gauteng",
+    "city": "Randfontein",
+    "address": "42 Kiewiet St, Helikon Park 1759",
+    "website": "https://www.westcol.co.za",
+    "phone": "+27 11 692 4004",
+    "email": "info@westcol.co.za",
+    "coordinates": { "lat": -26.1811, "lng": 27.7040 },
+    "logo": "https://www.westcol.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 14000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "cch",
+    "name": "College of Cape Town",
+    "shortName": "CCT",
+    "type": "TVET College",
+    "province": "Western Cape",
+    "city": "Cape Town",
+    "address": "334 Albert Rd, Salt River 7925",
+    "website": "https://www.cct.edu.za",
+    "phone": "+27 21 404 6700",
+    "email": "info@cct.edu.za",
+    "coordinates": { "lat": -33.9249, "lng": 18.4241 },
+    "logo": "https://www.cct.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 20000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV Hospitality", "faculty": "Humanities", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "northlink",
+    "name": "Northlink TVET College",
+    "shortName": "Northlink",
+    "type": "TVET College",
+    "province": "Western Cape",
+    "city": "Bellville",
+    "address": "80 Voortrekker Rd, Bellville 7530",
+    "website": "https://www.northlink.co.za",
+    "phone": "+27 21 970 9000",
+    "email": "info@northlink.co.za",
+    "coordinates": { "lat": -33.9018, "lng": 18.6300 },
+    "logo": "https://www.northlink.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 18000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV IT", "faculty": "IT", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "falsebay",
+    "name": "False Bay TVET College",
+    "shortName": "False Bay",
+    "type": "TVET College",
+    "province": "Western Cape",
+    "city": "Muizenberg",
+    "address": "131 Main Rd, Muizenberg 7945",
+    "website": "https://www.falsebaycollege.co.za",
+    "phone": "+27 21 787 0800",
+    "email": "info@falsebaycollege.co.za",
+    "coordinates": { "lat": -34.1076, "lng": 18.4680 },
+    "logo": "https://www.falsebaycollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 12000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV Tourism", "faculty": "Humanities", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "westcoast",
+    "name": "West Coast TVET College",
+    "shortName": "West Coast",
+    "type": "TVET College",
+    "province": "Western Cape",
+    "city": "Vredenburg",
+    "address": "2 Loedolf St, Vredenburg 7380",
+    "website": "https://www.westcoastcollege.co.za",
+    "phone": "+27 22 482 1143",
+    "email": "info@westcoastcollege.co.za",
+    "coordinates": { "lat": -32.9068, "lng": 17.9935 },
+    "logo": "https://www.westcoastcollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 9000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "boland",
+    "name": "Boland TVET College",
+    "shortName": "Boland",
+    "type": "TVET College",
+    "province": "Western Cape",
+    "city": "Paarl",
+    "address": "85 Bird St, Paarl 7646",
+    "website": "https://www.bolandcollege.com",
+    "phone": "+27 21 886 7111",
+    "email": "info@bolandcollege.com",
+    "coordinates": { "lat": -33.7366, "lng": 18.9614 },
+    "logo": "https://www.bolandcollege.com/images/logo.png",
+    "established": 2002,
+    "studentCount": 16000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 },
+      { "name": "NCV IT", "faculty": "IT", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "southcape",
+    "name": "South Cape TVET College",
+    "shortName": "South Cape",
+    "type": "TVET College",
+    "province": "Western Cape",
+    "city": "George",
+    "address": "125 Mitchell St, George 6529",
+    "website": "https://www.sccollege.co.za",
+    "phone": "+27 44 884 0359",
+    "email": "info@sccollege.co.za",
+    "coordinates": { "lat": -33.9628, "lng": 22.4598 },
+    "logo": "https://www.sccollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 8000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "ethekwini",
+    "name": "Ethekwini TVET College",
+    "shortName": "Ethekwini",
+    "type": "TVET College",
+    "province": "KwaZulu-Natal",
+    "city": "Durban",
+    "address": "262 D Aintree Ave, Asherville 4091",
+    "website": "https://www.ethekwinicollege.co.za",
+    "phone": "+27 31 250 8400",
+    "email": "info@ethekwinicollege.co.za",
+    "coordinates": { "lat": -29.8587, "lng": 31.0218 },
+    "logo": "https://www.ethekwinicollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 25000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV IT", "faculty": "IT", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "elc",
+    "name": "Elangeni TVET College",
+    "shortName": "Elangeni",
+    "type": "TVET College",
+    "province": "KwaZulu-Natal",
+    "city": "Pinetown",
+    "address": "15 Portsmouth Rd, Pinetown 3600",
+    "website": "https://www.elangeni.edu.za",
+    "phone": "+27 31 716 6700",
+    "email": "info@elangeni.edu.za",
+    "coordinates": { "lat": -29.8139, "lng": 30.8508 },
+    "logo": "https://www.elangeni.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 18000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "coastal",
+    "name": "Coastal KZN TVET College",
+    "shortName": "Coastal",
+    "type": "TVET College",
+    "province": "KwaZulu-Natal",
+    "city": "Durban",
+    "address": "50051 Mfundi Mngadi Dr, KwaMashu 4360",
+    "website": "https://www.coastalkzn.co.za",
+    "phone": "+27 31 504 8300",
+    "email": "info@coastalkzn.co.za",
+    "coordinates": { "lat": -29.7417, "lng": 30.9765 },
+    "logo": "https://www.coastalkzn.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 21000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "majuba",
+    "name": "Majuba TVET College",
+    "shortName": "Majuba",
+    "type": "TVET College",
+    "province": "KwaZulu-Natal",
+    "city": "Newcastle",
+    "address": "83 Allen St, Newcastle 2940",
+    "website": "https://www.majuba.edu.za",
+    "phone": "+27 34 326 4888",
+    "email": "info@majuba.edu.za",
+    "coordinates": { "lat": -27.7745, "lng": 29.9318 },
+    "logo": "https://www.majuba.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 16000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "mnambithi",
+    "name": "Mnambithi TVET College",
+    "shortName": "Mnambithi",
+    "type": "TVET College",
+    "province": "KwaZulu-Natal",
+    "city": "Ladysmith",
+    "address": "77 Murchison St, Ladysmith 3370",
+    "website": "https://www.mnambithi.edu.za",
+    "phone": "+27 36 631 0360",
+    "email": "info@mnambithi.edu.za",
+    "coordinates": { "lat": -28.5595, "lng": 29.7823 },
+    "logo": "https://www.mnambithi.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 9000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "mthashana",
+    "name": "Mthashana TVET College",
+    "shortName": "Mthashana",
+    "type": "TVET College",
+    "province": "KwaZulu-Natal",
+    "city": "Vryheid",
+    "address": "92 Hlobane St, Vryheid 3100",
+    "website": "https://www.mthashanacollege.co.za",
+    "phone": "+27 34 980 1010",
+    "email": "info@mthashanacollege.co.za",
+    "coordinates": { "lat": -27.7694, "lng": 30.7914 },
+    "logo": "https://www.mthashanacollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 7000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "umfolozi",
+    "name": "Umfolozi TVET College",
+    "shortName": "Umfolozi",
+    "type": "TVET College",
+    "province": "KwaZulu-Natal",
+    "city": "Richards Bay",
+    "address": "Cnr Via Richardia & Naboomnek, Richards Bay 3900",
+    "website": "https://www.umfolozicollege.co.za",
+    "phone": "+27 35 902 9500",
+    "email": "info@umfolozicollege.co.za",
+    "coordinates": { "lat": -28.7830, "lng": 32.0373 },
+    "logo": "https://www.umfolozicollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 17000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "umgungundlovu",
+    "name": "Umgungundlovu TVET College",
+    "shortName": "Umgungundlovu",
+    "type": "TVET College",
+    "province": "KwaZulu-Natal",
+    "city": "Pietermaritzburg",
+    "address": "44 Burger St, Pietermaritzburg 3201",
+    "website": "https://www.utvet.co.za",
+    "phone": "+27 33 341 2100",
+    "email": "info@utvet.co.za",
+    "coordinates": { "lat": -29.6006, "lng": 30.3794 },
+    "logo": "https://www.utvet.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 19000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "esayidi",
+    "name": "Esayidi TVET College",
+    "shortName": "Esayidi",
+    "type": "TVET College",
+    "province": "KwaZulu-Natal",
+    "city": "Port Shepstone",
+    "address": "Lot 462 Nelson Mandela Dr, Port Shepstone 4240",
+    "website": "https://www.esayidifet.co.za",
+    "phone": "+27 39 685 5482",
+    "email": "info@esayidifet.co.za",
+    "coordinates": { "lat": -30.7407, "lng": 30.4560 },
+    "logo": "https://www.esayidifet.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 11000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "thekwini",
+    "name": "Thekwini TVET College",
+    "shortName": "Thekwini",
+    "type": "TVET College",
+    "province": "KwaZulu-Natal",
+    "city": "Durban",
+    "address": "262 D Aintree Ave, Asherville 4091",
+    "website": "https://www.thekwinicollege.co.za",
+    "phone": "+27 31 250 8400",
+    "email": "info@thekwinicollege.co.za",
+    "coordinates": { "lat": -29.8587, "lng": 31.0218 },
+    "logo": "https://www.thekwinicollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 15000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "orbit",
+    "name": "Orbit TVET College",
+    "shortName": "Orbit",
+    "type": "TVET College",
+    "province": "North West",
+    "city": "Rustenburg",
+    "address": "Coronation Ave, Rustenburg 0300",
+    "website": "https://www.orbitcollege.co.za",
+    "phone": "+27 14 592 7014",
+    "email": "info@orbitcollege.co.za",
+    "coordinates": { "lat": -25.6678, "lng": 27.2420 },
+    "logo": "https://www.orbitcollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 16000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV IT", "faculty": "IT", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "taletso",
+    "name": "Taletso TVET College",
+    "shortName": "Taletso",
+    "type": "TVET College",
+    "province": "North West",
+    "city": "Mahikeng",
+    "address": "Dr Albert Luthuli Dr, Mmabatho 2735",
+    "website": "https://www.taletso.edu.za",
+    "phone": "+27 18 384 2346",
+    "email": "info@taletso.edu.za",
+    "coordinates": { "lat": -25.8561, "lng": 25.6403 },
+    "logo": "https://www.taletso.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 13000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "vuselela",
+    "name": "Vuselela TVET College",
+    "shortName": "Vuselela",
+    "type": "TVET College",
+    "province": "North West",
+    "city": "Klerksdorp",
+    "address": "8 Bram Fischer St, Klerksdorp 2571",
+    "website": "https://www.vuselelacollege.co.za",
+    "phone": "+27 18 406 7800",
+    "email": "info@vuselelacollege.co.za",
+    "coordinates": { "lat": -26.8524, "lng": 26.6657 },
+    "logo": "https://www.vuselelacollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 14000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "motheo",
+    "name": "Motheo TVET College",
+    "shortName": "Motheo",
+    "type": "TVET College",
+    "province": "Free State",
+    "city": "Bloemfontein",
+    "address": "Cnr St Georges & Aliwal St, Bloemfontein 9301",
+    "website": "https://www.motheotvet.co.za",
+    "phone": "+27 51 406 9300",
+    "email": "info@motheotvet.co.za",
+    "coordinates": { "lat": -29.1211, "lng": 26.2140 },
+    "logo": "https://www.motheotvet.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 17000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV IT", "faculty": "IT", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "goldfields",
+    "name": "Goldfields TVET College",
+    "shortName": "Goldfields",
+    "type": "TVET College",
+    "province": "Free State",
+    "city": "Welkom",
+    "address": "36 Buren St, Welkom 9460",
+    "website": "https://www.goldfieldscollege.co.za",
+    "phone": "+27 57 910 6000",
+    "email": "info@goldfieldscollege.co.za",
+    "coordinates": { "lat": -27.9693, "lng": 26.7197 },
+    "logo": "https://www.goldfieldscollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 12000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "maluti",
+    "name": "Maluti TVET College",
+    "shortName": "Maluti",
+    "type": "TVET College",
+    "province": "Free State",
+    "city": "Phuthaditjhaba",
+    "address": "Mampoi St, Phuthaditjhaba 9866",
+    "website": "https://www.malutitvet.co.za",
+    "phone": "+27 58 713 6100",
+    "email": "info@malutitvet.co.za",
+    "coordinates": { "lat": -28.5147, "lng": 28.8194 },
+    "logo": "https://www.malutitvet.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 10000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "flaviusmareka",
+    "name": "Flavius Mareka TVET College",
+    "shortName": "Flavius Mareka",
+    "type": "TVET College",
+    "province": "Free State",
+    "city": "Sasolburg",
+    "address": "Cnr Hertzog Rd & Sullivan St, Sasolburg 1947",
+    "website": "https://www.flaviusmareka.net",
+    "phone": "+27 16 976 0815",
+    "email": "info@flaviusmareka.net",
+    "coordinates": { "lat": -26.8143, "lng": 27.8266 },
+    "logo": "https://www.flaviusmareka.net/images/logo.png",
+    "established": 2002,
+    "studentCount": 8000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "bufcity",
+    "name": "Buffalo City TVET College",
+    "shortName": "Buffalo City",
+    "type": "TVET College",
+    "province": "Eastern Cape",
+    "city": "East London",
+    "address": "Lukin Rd, Selborne 5201",
+    "website": "https://www.bccollege.co.za",
+    "phone": "+27 43 704 9200",
+    "email": "info@bccollege.co.za",
+    "coordinates": { "lat": -32.9781, "lng": 27.8546 },
+    "logo": "https://www.bccollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 15000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV IT", "faculty": "IT", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "ecmidlands",
+    "name": "Eastcape Midlands TVET College",
+    "shortName": "EMC",
+    "type": "TVET College",
+    "province": "Eastern Cape",
+    "city": "Uitenhage",
+    "address": "Private Bag X35, Uitenhage 6230",
+    "website": "https://www.emcol.co.za",
+    "phone": "+27 41 995 2000",
+    "email": "info@emcol.co.za",
+    "coordinates": { "lat": -33.7582, "lng": 25.3974 },
+    "logo": "https://www.emcol.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 12000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "ikhala",
+    "name": "Ikhala TVET College",
+    "shortName": "Ikhala",
+    "type": "TVET College",
+    "province": "Eastern Cape",
+    "city": "Queenstown",
+    "address": "Zone D, Ezibeleni 5326",
+    "website": "https://www.ikhala.edu.za",
+    "phone": "+27 47 873 8843",
+    "email": "info@ikhala.edu.za",
+    "coordinates": { "lat": -31.8975, "lng": 26.8756 },
+    "logo": "https://www.ikhala.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 9000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "ingwe",
+    "name": "Ingwe TVET College",
+    "shortName": "Ingwe",
+    "type": "TVET College",
+    "province": "Eastern Cape",
+    "city": "Mount Frere",
+    "address": "Badibanise A/A, Mount Frere 5090",
+    "website": "https://www.ingwecollege.edu.za",
+    "phone": "+27 39 255 0346",
+    "email": "info@ingwecollege.edu.za",
+    "coordinates": { "lat": -30.9086, "lng": 28.9889 },
+    "logo": "https://www.ingwecollege.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 7000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "kinghintsa",
+    "name": "King Hintsa TVET College",
+    "shortName": "King Hintsa",
+    "type": "TVET College",
+    "province": "Eastern Cape",
+    "city": "Butterworth",
+    "address": "218 Mthatha Rd, Butterworth 4960",
+    "website": "https://www.kinghintsacollege.edu.za",
+    "phone": "+27 47 401 6400",
+    "email": "info@kinghintsacollege.edu.za",
+    "coordinates": { "lat": -32.3276, "lng": 28.1518 },
+    "logo": "https://www.kinghintsacollege.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 8000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "ksd",
+    "name": "King Sabata Dalindyebo TVET College",
+    "shortName": "KSD",
+    "type": "TVET College",
+    "province": "Eastern Cape",
+    "city": "Mthatha",
+    "address": "R61 Rd, Mthatha 5099",
+    "website": "https://www.ksdcollege.edu.za",
+    "phone": "+27 47 505 1000",
+    "email": "info@ksdcollege.edu.za",
+    "coordinates": { "lat": -31.5889, "lng": 28.7844 },
+    "logo": "https://www.ksdcollege.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 11000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "lovedale",
+    "name": "Lovedale TVET College",
+    "shortName": "Lovedale",
+    "type": "TVET College",
+    "province": "Eastern Cape",
+    "city": "King Williams Town",
+    "address": "1 Amatola Row, King Williams Town 5601",
+    "website": "https://www.lovedale.org.za",
+    "phone": "+27 43 604 0700",
+    "email": "info@lovedale.org.za",
+    "coordinates": { "lat": -32.8782, "lng": 27.3983 },
+    "logo": "https://www.lovedale.org.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 10000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "pecollege",
+    "name": "Port Elizabeth TVET College",
+    "shortName": "PE College",
+    "type": "TVET College",
+    "province": "Eastern Cape",
+    "city": "Gqeberha",
+    "address": "139 Russell Rd, Gqeberha 6001",
+    "website": "https://www.pecollege.edu.za",
+    "phone": "+27 41 585 7777",
+    "email": "info@pecollege.edu.za",
+    "coordinates": { "lat": -33.9608, "lng": 25.6022 },
+    "logo": "https://www.pecollege.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 13000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV IT", "faculty": "IT", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "capricorn",
+    "name": "Capricorn TVET College",
+    "shortName": "Capricorn",
+    "type": "TVET College",
+    "province": "Limpopo",
+    "city": "Polokwane",
+    "address": "16 Market St, Polokwane 0699",
+    "website": "https://www.capricorncollege.co.za",
+    "phone": "+27 15 230 1800",
+    "email": "info@capricorncollege.co.za",
+    "coordinates": { "lat": -23.9045, "lng": 29.4689 },
+    "logo": "https://www.capricorncollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 15000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 },
+      { "name": "NCV IT", "faculty": "IT", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "lephalale",
+    "name": "Lephalale TVET College",
+    "shortName": "Lephalale",
+    "type": "TVET College",
+    "province": "Limpopo",
+    "city": "Lephalale",
+    "address": "Cnr Nelson Mandela & Chris Hani Dr, Lephalale 0555",
+    "website": "https://www.lephalaletvetcollege.edu.za",
+    "phone": "+27 14 763 2252",
+    "email": "info@lephalaletvetcollege.edu.za",
+    "coordinates": { "lat": -23.6707, "lng": 27.7460 },
+    "logo": "https://www.lephalaletvetcollege.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 6000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "letaba",
+    "name": "Letaba TVET College",
+    "shortName": "Letaba",
+    "type": "TVET College",
+    "province": "Limpopo",
+    "city": "Tzaneen",
+    "address": "1 Claude Wheatley St, Tzaneen 0850",
+    "website": "https://www.letaba.edu.za",
+    "phone": "+27 15 307 5440",
+    "email": "info@letaba.edu.za",
+    "coordinates": { "lat": -23.8332, "lng": 30.1614 },
+    "logo": "https://www.letaba.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 11000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "mopani",
+    "name": "Mopani South East TVET College",
+    "shortName": "Mopani SE",
+    "type": "TVET College",
+    "province": "Limpopo",
+    "city": "Phalaborwa",
+    "address": "Cnr Sealene & Combretum St, Phalaborwa 1390",
+    "website": "https://www.mopanicollege.edu.za",
+    "phone": "+27 15 781 5721",
+    "email": "info@mopanicollege.edu.za",
+    "coordinates": { "lat": -23.9425, "lng": 31.1411 },
+    "logo": "https://www.mopanicollege.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 8000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "sekgosese",
+    "name": "Sekgosese TVET College",
+    "shortName": "Sekgosese",
+    "type": "TVET College",
+    "province": "Limpopo",
+    "city": "Sekgosese",
+    "address": "Stand No 1190, Ramokgopa 0811",
+    "website": "https://www.sekgosese.edu.za",
+    "phone": "+27 15 880 0400",
+    "email": "info@sekgosese.edu.za",
+    "coordinates": { "lat": -23.4167, "lng": 30.0833 },
+    "logo": "https://www.sekgosese.edu.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 5000,
+    "courses": [
+      { "name": "NATED Business", "faculty": "Business", "minAPS": 20 }
+    ]
+  },
+  {
+    "id": "vhembe",
+    "name": "Vhembe TVET College",
+    "shortName": "Vhembe",
+    "type": "TVET College",
+    "province": "Limpopo",
+    "city": "Thohoyandou",
+    "address": "Stand No 203, Unit A, Thohoyand

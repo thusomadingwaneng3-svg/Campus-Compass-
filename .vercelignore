@@ -1,0 +1,12 @@
+android
+android_parent
+.expo
+.idea
+TempApp
+node_modules
+assets
+data_backup
+*.apk
+*.mp4
+*.zip
+.DS_Store

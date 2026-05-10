@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "VUT Campus Compass",
+    "name": "Campus Compass",
     "slug": "campuscompass",
+    "scheme": "campuscompass",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
@@ -24,12 +25,7 @@
           "locationAlwaysAndWhenInUsePermission": "Allow Campus Compass to use your location for campus navigation and emergency sharing."
         }
       ],
-      [
-        "react-native-maps",
-        {
-          "androidGoogleMapsApiKey": "AIzaSyBr7wYthKwzM9uWrDopIw5XOP8qabGbEN4"
-        }
-      ]
+      "expo-router"
     ],
     "extra": {
       "eas": {
