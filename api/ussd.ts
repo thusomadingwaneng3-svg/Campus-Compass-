@@ -2,13 +2,14 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import fs from 'fs';
 import path from 'path';
 
-const dataDir = path.join(process.cwd(), 'public', 'data');
+// Changed from 'public/data' to 'api/data'
+const dataDir = path.join(process.cwd(), 'api', 'data');
 
 function loadData() {
   try {
     return {
       funding: JSON.parse(fs.readFileSync(path.join(dataDir, 'funding.json'), 'utf8')),
-      bursaries: JSON.parse(fs.readFileSync(path.join(dataDir, 'africa_bursaries.json'), 'utf8')), // fixed typo
+      bursaries: JSON.parse(fs.readFileSync(path.join(dataDir, 'africa_bursaries.json'), 'utf8')),
       emergency: JSON.parse(fs.readFileSync(path.join(dataDir, 'africa_emergency.json'), 'utf8')),
       schools: JSON.parse(fs.readFileSync(path.join(dataDir, 'schools_africa.json'), 'utf8')),
       knowledge: JSON.parse(fs.readFileSync(path.join(dataDir, 'knowledge.json'), 'utf8')),
@@ -68,7 +69,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         ).slice(0, 3);
 
         response = results.length === 0
-         ? 'END 0. Back\nNo campuses found'
+        ? 'END 0. Back\nNo campuses found'
           : 'END 0. Back\n' + results.map(s => `${s.name}, ${s.city}`).join('\n');
       } else if (levels[0] === '2') {
         if (lastInput === '1') {
@@ -100,7 +101,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         ).slice(0, 3);
 
         response = results.length === 0
-         ? 'END 0. Back\nNo info found'
+        ? 'END 0. Back\nNo info found'
           : 'END 0. Back\n' + results.map(k => `${k.topic}: ${k.summary}`).join('\n');
       }
     }
