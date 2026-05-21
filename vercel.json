@@ -1,7 +1,10 @@
 {
-  "buildCommand": "npx expo export --platform web && xcopy public dist\\public /E /I /Y",
+  "buildCommand": "npx expo export",
   "outputDirectory": "dist",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  "installCommand": "npm install",
+  "functions": {
+    "api/ussd.ts": {
+      "includeFiles": "public/data/**"
+    }
+  }
 }
