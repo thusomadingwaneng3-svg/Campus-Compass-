@@ -12,7 +12,7 @@
       "backgroundColor": "#8B0000"
     },
     "web": {
-      "output": "server",
+      "output": "static",
       "favicon": "./assets/favicon.png",
       "manifest": {
         "name": "Campus Compass",
