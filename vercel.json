@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npx expo export",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "functions": {
+    "api/ussd.ts": {
+      "includeFiles": "api/data/**"
+    }
+  }
+}
