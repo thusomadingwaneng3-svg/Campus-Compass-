@@ -1376,4 +1376,16 @@
     "type": "TVET College",
     "province": "Limpopo",
     "city": "Thohoyandou",
-    "address": "Stand No 203, Unit A, Thohoyand
+    "address": "Stand No 203, Unit A, Thohoyandou",
+    "website": "https://www.vhembecollege.co.za",
+    "phone": "+27 15 963 7000",
+    "email": "info@vhembecollege.co.za",
+    "coordinates": { "lat": -22.9756, "lng": 30.4443 },
+    "logo": "https://www.vhembecollege.co.za/images/logo.png",
+    "established": 2002,
+    "studentCount": 17000,
+    "courses": [
+      { "name": "NATED Engineering", "faculty": "Engineering", "minAPS": 20 }
+    ]
+  }
+]
