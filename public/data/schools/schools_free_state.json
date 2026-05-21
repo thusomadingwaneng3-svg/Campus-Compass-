@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": "impucuko_p_s",
     "name": "IMPUCUKO P/S",
@@ -841,7 +841,7 @@
     "province": "FS",
     "district": "THABO MOFUTSANYANA",
     "city": "THABO MOFUTSANYANA",
-    "address": "1 STRAPP STREET, Môrelig, Môrelig, BETHLEHEM, 9700",
+    "address": "1 STRAPP STREET, MÃ´relig, MÃ´relig, BETHLEHEM, 9700",
     "primaryColor": "#0066CC",
     "coords": {
       "lat": -28.2165315,
@@ -2055,8 +2055,8 @@
   },
   {
     "id": "jim_fouch_s_s",
-    "name": "JIM FOUCHé S/S",
-    "shortName": "JIM FOUCHé S/S",
+    "name": "JIM FOUCHÃ© S/S",
+    "shortName": "JIM FOUCHÃ© S/S",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -2237,8 +2237,8 @@
   },
   {
     "id": "jim_fouch_p_s",
-    "name": "JIM FOUCHé P/S",
-    "shortName": "JIM FOUCHé P/S",
+    "name": "JIM FOUCHÃ© P/S",
+    "shortName": "JIM FOUCHÃ© P/S",
     "level": "School",
     "type": "Public Primary School",
     "sub_level": "PRIMARY SCHOOL",
@@ -3467,7 +3467,7 @@
     "province": "FS",
     "district": "MOTHEO",
     "city": "MOTHEO",
-    "address": "Generaal Cronjéstraat, Dan Pienaar, Dan Pienaar, BLOEMFONTEIN, 9310",
+    "address": "Generaal CronjÃ©straat, Dan Pienaar, Dan Pienaar, BLOEMFONTEIN, 9310",
     "primaryColor": "#0066CC",
     "coords": {
       "lat": -29.08866472,
@@ -4837,8 +4837,8 @@
   },
   {
     "id": "eben_d_nges_p_s",
-    "name": "EBEN DöNGES P/S",
-    "shortName": "EBEN DöNGES P/S",
+    "name": "EBEN DÃ¶NGES P/S",
+    "shortName": "EBEN DÃ¶NGES P/S",
     "level": "School",
     "type": "Public Primary School",
     "sub_level": "PRIMARY SCHOOL",
@@ -9543,8 +9543,8 @@
   },
   {
     "id": "harrismith_ho_rskool_s_s",
-    "name": "HARRISMITH HOëRSKOOL S/S",
-    "shortName": "HARRISMITH HOëRSKOOL S/S",
+    "name": "HARRISMITH HOÃ«RSKOOL S/S",
+    "shortName": "HARRISMITH HOÃ«RSKOOL S/S",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -9829,8 +9829,8 @@
   },
   {
     "id": "kraanvo_lvlakte_pf_s",
-    "name": "KRAANVOëLVLAKTE PF/S",
-    "shortName": "KRAANVOëLVLAKTE PF/S",
+    "name": "KRAANVOÃ«LVLAKTE PF/S",
+    "shortName": "KRAANVOÃ«LVLAKTE PF/S",
     "level": "School",
     "type": "Public Primary School",
     "sub_level": "PRIMARY SCHOOL",
@@ -15289,8 +15289,8 @@
   },
   {
     "id": "lumi_re_p_s",
-    "name": "LUMIèRE P/S",
-    "shortName": "LUMIèRE P/S",
+    "name": "LUMIÃ¨RE P/S",
+    "shortName": "LUMIÃ¨RE P/S",
     "level": "School",
     "type": "Public Primary School",
     "sub_level": "PRIMARY SCHOOL",

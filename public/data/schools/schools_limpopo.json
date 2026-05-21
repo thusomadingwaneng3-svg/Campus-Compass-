@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": "saselemani_prospect_academy",
     "name": "SASELEMANI PROSPECT ACADEMY",
@@ -14153,7 +14153,7 @@
     "province": "LP",
     "district": "MOPANI WEST",
     "city": "MOPANI WEST",
-    "address": "DAN VILLAGE STAND NO. 50010;NEAR TIBENCU CAFÉ",
+    "address": "DAN VILLAGE STAND NO. 50010;NEAR TIBENCU CAFÃ‰",
     "primaryColor": "#0066CC",
     "coords": {
       "lat": -23.911184799,
@@ -97111,8 +97111,8 @@
   },
   {
     "id": "ho_rskool_ben_viljoen",
-    "name": "HOËRSKOOL BEN VILJOEN",
-    "shortName": "HOËRSKOOL BEN VILJOEN",
+    "name": "HOÃ‹RSKOOL BEN VILJOEN",
+    "shortName": "HOÃ‹RSKOOL BEN VILJOEN",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",

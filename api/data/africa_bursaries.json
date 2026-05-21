@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": "mauritius-africa-2026",
     "name": "Mauritius-Africa Scholarship Scheme 2026",
@@ -92,7 +92,7 @@
     "deadline": "2026-09-30",
     "status": "Opens July 2026",
     "apply_link": "https://www.daad.de/en/",
-    "requirements": "Citizen of Sub-Saharan Africa, Bachelor’s degree",
+    "requirements": "Citizen of Sub-Saharan Africa, Bachelorâ€™s degree",
     "notes": "For East, West, Central Africa"
   },
   {
@@ -252,7 +252,7 @@
     "deadline": "2026-06-30",
     "status": "Opens Apr 2026",
     "apply_link": "https://aercafrica.org/",
-    "requirements": "African citizen, Bachelor’s in Economics",
+    "requirements": "African citizen, Bachelorâ€™s in Economics",
     "notes": "2-year masters program"
   },
   {
@@ -305,7 +305,7 @@
   },
   {
     "id": "turkiye-burslari-2026",
-    "name": "Türkiye Burslari Scholarship 2026",
+    "name": "TÃ¼rkiye Burslari Scholarship 2026",
     "provider": "Government of Turkey",
     "type": "Scholarship",
     "level": ["Undergraduate", "Masters", "PhD"],
@@ -450,7 +450,7 @@
   {
     "id": "belgium-aeres-2026",
     "name": "ARES Scholarships 2026",
-    "provider": "Académie de Recherche et d'Enseignement Supérieur",
+    "provider": "AcadÃ©mie de Recherche et d'Enseignement SupÃ©rieur",
     "type": "Scholarship",
     "level": ["Masters", "Training"],
     "institutions": ["Belgian universities"],
@@ -561,8 +561,8 @@
   },
   {
     "id": "germany-heinrich-boell-2026",
-    "name": "Heinrich Böll Foundation Scholarship 2026",
-    "provider": "Heinrich Böll Foundation",
+    "name": "Heinrich BÃ¶ll Foundation Scholarship 2026",
+    "provider": "Heinrich BÃ¶ll Foundation",
     "type": "Scholarship",
     "level": ["Masters", "PhD"],
     "institutions": ["German universities"],

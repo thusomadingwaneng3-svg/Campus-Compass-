@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": "sabuyaze_secondary_school",
     "name": "SABUYAZE SECONDARY SCHOOL",
@@ -963,8 +963,8 @@
   },
   {
     "id": "ho_rskool_amajuba_high_school",
-    "name": "HOËRSKOOL AMAJUBA HIGH SCHOOL",
-    "shortName": "HOËRSKOOL AMAJUBA HIGH SCHOOL",
+    "name": "HOÃ‹RSKOOL AMAJUBA HIGH SCHOOL",
+    "shortName": "HOÃ‹RSKOOL AMAJUBA HIGH SCHOOL",
     "level": "School",
     "type": "Public School",
     "sub_level": "COMBINED SCHOOL",
@@ -13079,8 +13079,8 @@
   },
   {
     "id": "prim_re_skool_dirkie_uys_primary_school",
-    "name": "Primêre Skool Dirkie Uys Primary School",
-    "shortName": "Primêre Skool Dirkie Uys Primary School",
+    "name": "PrimÃªre Skool Dirkie Uys Primary School",
+    "shortName": "PrimÃªre Skool Dirkie Uys Primary School",
     "level": "School",
     "type": "Public Primary School",
     "sub_level": "PRIMARY SCHOOL",
@@ -23487,7 +23487,7 @@
     "province": "KZN",
     "district": "KING CETSHWAYO",
     "city": "KING CETSHWAYO",
-    "address": "NDUNDULU NKWALINI FONTEIN CAFÉ,MELMOTH,3835",
+    "address": "NDUNDULU NKWALINI FONTEIN CAFÃ‰,MELMOTH,3835",
     "primaryColor": "#0066CC",
     "coords": {
       "lat": -28.7063,
@@ -29641,8 +29641,8 @@
   },
   {
     "id": "prim_re_skool_gert_maritz",
-    "name": "PRIMêRE SKOOL GERT MARITZ",
-    "shortName": "PRIMêRE SKOOL GERT MARITZ",
+    "name": "PRIMÃªRE SKOOL GERT MARITZ",
+    "shortName": "PRIMÃªRE SKOOL GERT MARITZ",
     "level": "School",
     "type": "Public Primary School",
     "sub_level": "PRIMARY SCHOOL",
@@ -30603,8 +30603,8 @@
   },
   {
     "id": "gl_ckstadt_primary_school",
-    "name": "GLÜCKSTADT PRIMARY SCHOOL",
-    "shortName": "GLÜCKSTADT PRIMARY SCHOOL",
+    "name": "GLÃœCKSTADT PRIMARY SCHOOL",
+    "shortName": "GLÃœCKSTADT PRIMARY SCHOOL",
     "level": "School",
     "type": "Public Primary School",
     "sub_level": "PRIMARY SCHOOL",
@@ -35933,8 +35933,8 @@
   },
   {
     "id": "huttenpark_prim_re_skool",
-    "name": "HUTTENPARK PRIMÊRE SKOOL",
-    "shortName": "HUTTENPARK PRIMÊRE SKOOL",
+    "name": "HUTTENPARK PRIMÃŠRE SKOOL",
+    "shortName": "HUTTENPARK PRIMÃŠRE SKOOL",
     "level": "School",
     "type": "Public Primary School",
     "sub_level": "PRIMARY SCHOOL",
@@ -94407,8 +94407,8 @@
   },
   {
     "id": "ho_rskool_pionier",
-    "name": "HOËRSKOOL PIONIER",
-    "shortName": "HOËRSKOOL PIONIER",
+    "name": "HOÃ‹RSKOOL PIONIER",
+    "shortName": "HOÃ‹RSKOOL PIONIER",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -97397,8 +97397,8 @@
   },
   {
     "id": "ho_rskool_richardsbaai",
-    "name": "HOËRSKOOL RICHARDSBAAI",
-    "shortName": "HOËRSKOOL RICHARDSBAAI",
+    "name": "HOÃ‹RSKOOL RICHARDSBAAI",
+    "shortName": "HOÃ‹RSKOOL RICHARDSBAAI",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -99477,8 +99477,8 @@
   },
   {
     "id": "ho_rskool_sarel_cilliers_high_school",
-    "name": "HOËRSKOOL SAREL CILLIERS HIGH SCHOOL",
-    "shortName": "HOËRSKOOL SAREL CILLIERS HIGH SCHOOL",
+    "name": "HOÃ‹RSKOOL SAREL CILLIERS HIGH SCHOOL",
+    "shortName": "HOÃ‹RSKOOL SAREL CILLIERS HIGH SCHOOL",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -111099,8 +111099,8 @@
   },
   {
     "id": "ho_rskool_suid_natal",
-    "name": "HOËRSKOOL SUID NATAL",
-    "shortName": "HOËRSKOOL SUID NATAL",
+    "name": "HOÃ‹RSKOOL SUID NATAL",
+    "shortName": "HOÃ‹RSKOOL SUID NATAL",
     "level": "School",
     "type": "Public School",
     "sub_level": "COMBINED SCHOOL",
@@ -119809,8 +119809,8 @@
   },
   {
     "id": "ho_rskool_voortrekker",
-    "name": "HOËRSKOOL VOORTREKKER",
-    "shortName": "HOËRSKOOL VOORTREKKER",
+    "name": "HOÃ‹RSKOOL VOORTREKKER",
+    "shortName": "HOÃ‹RSKOOL VOORTREKKER",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -119861,8 +119861,8 @@
   },
   {
     "id": "ho_rskool_vryheid_high_school",
-    "name": "HOËRSKOOL VRYHEID HIGH SCHOOL",
-    "shortName": "HOËRSKOOL VRYHEID HIGH SCHOOL",
+    "name": "HOÃ‹RSKOOL VRYHEID HIGH SCHOOL",
+    "shortName": "HOÃ‹RSKOOL VRYHEID HIGH SCHOOL",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -119913,8 +119913,8 @@
   },
   {
     "id": "ho_r_landbouskool_vryheid",
-    "name": "HOËR LANDBOUSKOOL VRYHEID",
-    "shortName": "HOËR LANDBOUSKOOL VRYHEID",
+    "name": "HOÃ‹R LANDBOUSKOOL VRYHEID",
+    "shortName": "HOÃ‹R LANDBOUSKOOL VRYHEID",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -121291,8 +121291,8 @@
   },
   {
     "id": "weenen_prim_re_weenen_primary_school",
-    "name": "WEENEN PRIMÊRE/WEENEN PRIMARY SCHOOL",
-    "shortName": "WEENEN PRIMÊRE/WEENEN PRIMARY SCHOOL",
+    "name": "WEENEN PRIMÃŠRE/WEENEN PRIMARY SCHOOL",
+    "shortName": "WEENEN PRIMÃŠRE/WEENEN PRIMARY SCHOOL",
     "level": "School",
     "type": "Public Primary School",
     "sub_level": "PRIMARY SCHOOL",

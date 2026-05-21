@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": "a_v_bukani_primary_school",
     "name": "A V BUKANI PRIMARY SCHOOL",
@@ -5045,8 +5045,8 @@
   },
   {
     "id": "ho_r_volkskool",
-    "name": "HOëR VOLKSKOOL",
-    "shortName": "HOëR VOLKSKOOL",
+    "name": "HOÃ«R VOLKSKOOL",
+    "shortName": "HOÃ«R VOLKSKOOL",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -5071,8 +5071,8 @@
   },
   {
     "id": "ho_rskool_brandwag",
-    "name": "HOëRSKOOL BRANDWAG",
-    "shortName": "HOëRSKOOL BRANDWAG",
+    "name": "HOÃ«RSKOOL BRANDWAG",
+    "shortName": "HOÃ«RSKOOL BRANDWAG",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -5097,8 +5097,8 @@
   },
   {
     "id": "ho_rskool_cilli",
-    "name": "HOëRSKOOL CILLIé",
-    "shortName": "HOëRSKOOL CILLIé",
+    "name": "HOÃ«RSKOOL CILLIÃ©",
+    "shortName": "HOÃ«RSKOOL CILLIÃ©",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -5123,8 +5123,8 @@
   },
   {
     "id": "ho_rskool_jansenville",
-    "name": "HOëRSKOOL JANSENVILLE",
-    "shortName": "HOëRSKOOL JANSENVILLE",
+    "name": "HOÃ«RSKOOL JANSENVILLE",
+    "shortName": "HOÃ«RSKOOL JANSENVILLE",
     "level": "School",
     "type": "Public School",
     "sub_level": "COMBINED SCHOOL",
@@ -5149,8 +5149,8 @@
   },
   {
     "id": "ho_rskool_mclachlan",
-    "name": "HOëRSKOOL McLACHLAN",
-    "shortName": "HOëRSKOOL McLACHLAN",
+    "name": "HOÃ«RSKOOL McLACHLAN",
+    "shortName": "HOÃ«RSKOOL McLACHLAN",
     "level": "School",
     "type": "Public School",
     "sub_level": "COMBINED SCHOOL",
@@ -9309,8 +9309,8 @@
   },
   {
     "id": "ho_rskool_nico_malan",
-    "name": "HOëRSKOOL NICO MALAN",
-    "shortName": "HOëRSKOOL NICO MALAN",
+    "name": "HOÃ«RSKOOL NICO MALAN",
+    "shortName": "HOÃ«RSKOOL NICO MALAN",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -9985,8 +9985,8 @@
   },
   {
     "id": "ho_rskool_p_j_olivier",
-    "name": "HOëRSKOOL P J OLIVIER",
-    "shortName": "HOëRSKOOL P J OLIVIER",
+    "name": "HOÃ«RSKOOL P J OLIVIER",
+    "shortName": "HOÃ«RSKOOL P J OLIVIER",
     "level": "School",
     "type": "Public School",
     "sub_level": "COMBINED SCHOOL",
@@ -10903,7 +10903,7 @@
     "province": "EC",
     "district": "NELSON MANDELA",
     "city": "NELSON MANDELA",
-    "address": "4 TERBLANCHÈ STREET,GELVANDALE,GQEBERHA,6020",
+    "address": "4 TERBLANCHÃˆ STREET,GELVANDALE,GQEBERHA,6020",
     "primaryColor": "#0066CC",
     "coords": {
       "lat": 25.54701,
@@ -13131,8 +13131,8 @@
   },
   {
     "id": "v_rit_junior_secondary_school",
-    "name": "VéRITé JUNIOR SECONDARY SCHOOL",
-    "shortName": "VéRITé JUNIOR SECONDARY SCHOOL",
+    "name": "VÃ©RITÃ© JUNIOR SECONDARY SCHOOL",
+    "shortName": "VÃ©RITÃ© JUNIOR SECONDARY SCHOOL",
     "level": "School",
     "type": "Public Primary School",
     "sub_level": "PRIMARY SCHOOL",
@@ -14561,8 +14561,8 @@
   },
   {
     "id": "ho_rskool_paul_sauer",
-    "name": "HOëRSKOOL PAUL SAUER",
-    "shortName": "HOëRSKOOL PAUL SAUER",
+    "name": "HOÃ«RSKOOL PAUL SAUER",
+    "shortName": "HOÃ«RSKOOL PAUL SAUER",
     "level": "School",
     "type": "Public School",
     "sub_level": "COMBINED SCHOOL",
@@ -20593,8 +20593,8 @@
   },
   {
     "id": "ho_rskool_de_vos_malan",
-    "name": "HOëRSKOOL DE VOS MALAN",
-    "shortName": "HOëRSKOOL DE VOS MALAN",
+    "name": "HOÃ«RSKOOL DE VOS MALAN",
+    "shortName": "HOÃ«RSKOOL DE VOS MALAN",
     "level": "School",
     "type": "Public School",
     "sub_level": "COMBINED SCHOOL",
@@ -20619,8 +20619,8 @@
   },
   {
     "id": "ho_rskool_grens",
-    "name": "HOëRSKOOL GRENS",
-    "shortName": "HOëRSKOOL GRENS",
+    "name": "HOÃ«RSKOOL GRENS",
+    "shortName": "HOÃ«RSKOOL GRENS",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
@@ -61439,8 +61439,8 @@
   },
   {
     "id": "jo_lshoek_farm_school",
-    "name": "JOëLSHOEK FARM SCHOOL",
-    "shortName": "JOëLSHOEK FARM SCHOOL",
+    "name": "JOÃ«LSHOEK FARM SCHOOL",
+    "shortName": "JOÃ«LSHOEK FARM SCHOOL",
     "level": "School",
     "type": "Public Primary School",
     "sub_level": "PRIMARY SCHOOL",
@@ -65737,7 +65737,7 @@
     "province": "EC",
     "district": "OR TAMBO COASTAL",
     "city": "OR TAMBO COASTAL",
-    "address": "Nqanda Á' A/A,Ngqeleni,5140",
+    "address": "Nqanda Ã' A/A,Ngqeleni,5140",
     "primaryColor": "#0066CC",
     "coords": {
       "lat": 28.9403,
@@ -122799,15 +122799,15 @@
   },
   {
     "id": "ho_r_landbouskool_marlow",
-    "name": "HOëR LANDBOUSKOOL MARLOW",
-    "shortName": "HOëR LANDBOUSKOOL MARLOW",
+    "name": "HOÃ«R LANDBOUSKOOL MARLOW",
+    "shortName": "HOÃ«R LANDBOUSKOOL MARLOW",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",
     "province": "EC",
     "district": "CHRIS HANI WEST",
     "city": "CHRIS HANI WEST",
-    "address": "Hoër Landbouskool,Marlow,Cradock,5880",
+    "address": "HoÃ«r Landbouskool,Marlow,Cradock,5880",
     "primaryColor": "#0066CC",
     "coords": {
       "lat": 25.58662,
@@ -122825,8 +122825,8 @@
   },
   {
     "id": "ho_rskool_barkly_east",
-    "name": "HOëRSKOOL BARKLY EAST",
-    "shortName": "HOëRSKOOL BARKLY EAST",
+    "name": "HOÃ«RSKOOL BARKLY EAST",
+    "shortName": "HOÃ«RSKOOL BARKLY EAST",
     "level": "School",
     "type": "Public School",
     "sub_level": "COMBINED SCHOOL",
@@ -122851,8 +122851,8 @@
   },
   {
     "id": "ho_rskool_hangklip",
-    "name": "HOëRSKOOL HANGKLIP",
-    "shortName": "HOëRSKOOL HANGKLIP",
+    "name": "HOÃ«RSKOOL HANGKLIP",
+    "shortName": "HOÃ«RSKOOL HANGKLIP",
     "level": "School",
     "type": "Public High School",
     "sub_level": "SECONDARY SCHOOL",

@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": "nsfas2027",
     "name": "NSFAS Bursary 2027",
@@ -753,8 +753,8 @@
   },
   {
     "id": "nestle2027",
-    "name": "Nestlé Bursary 2027",
-    "provider": "Nestlé SA",
+    "name": "NestlÃ© Bursary 2027",
+    "provider": "NestlÃ© SA",
     "type": "Corporate Bursary",
     "level": ["Undergraduate"],
     "institutions": ["Any SA university"],
@@ -888,7 +888,7 @@
     "institutions": ["German universities"],
     "fields": ["All fields"],
     "income_threshold": "Not specified",
-    "covers": ["Monthly stipend €934-1200", "Tuition", "Travel", "Health insurance"],
+    "covers": ["Monthly stipend â‚¬934-1200", "Tuition", "Travel", "Health insurance"],
     "deadline": "Varies by programme - August-December 2026",
     "status": "Check daad.org.za",
     "apply_link": "https://www.daad.org.za",
