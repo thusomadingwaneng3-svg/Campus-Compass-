@@ -39,7 +39,7 @@ export default function Privacy() {
         </Text>
         <Text style={{ fontSize: 16, lineHeight: 24 }}>
           For questions or to report data issues, contact: 
-          {'\n'}campuscompass.support@gmail.com
+          {'\n'}thusomadingwaneng3@gmail.com
         </Text>
       </View>
     </ScrollView>

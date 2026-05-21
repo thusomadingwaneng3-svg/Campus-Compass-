@@ -3,7 +3,7 @@ import { View, Text, ScrollView, TouchableOpacity, Linking, Alert, ActivityIndic
 import { useLocalSearchParams, Stack, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import * as MailComposer from 'expo-mail-composer';
-import DataService from '../services/dataService.ts';
+import DataService from '../services/dataService';
 
 // Report component - always at the bottom
 const ReportWrongInfo = ({ institution }: { institution: any }) => {
@@ -79,7 +79,7 @@ export default function InstitutionScreen() {
   };
   
   const handleWebsite = async (url: string) => {
-    if (!url || url === 'undefined') {
+    if (!url || url === 'undefined' || url === 'TBA' || url === '') {
       Alert.alert('No link', 'This institution has no link available');
       return;
     }
@@ -143,15 +143,15 @@ export default function InstitutionScreen() {
   }
 
   const primaryColor = institution.primaryColor || '#8B0000';
-  const hasWebsite = !!institution.website;
-  const hasApply = !!institution.apply_link;
-  const hasPortal = !!institution.student_portal?.url;
+  const hasWebsite = institution.website && institution.website !== 'TBA' && institution.website !== '';
+  const hasApply = institution.apply_link && institution.apply_link !== 'TBA' && institution.apply_link !== '';
+  const hasPortal = institution.student_portal && institution.student_portal !== 'TBA' && institution.student_portal !== '';
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: '#f9fafb' }}>
       <Stack.Screen 
         options={{ 
-          title: institution.short || institution.name,
+          title: institution.shortName || institution.name,
           headerStyle: { backgroundColor: primaryColor },
           headerTintColor: '#fff',
           headerLeft: () => (
@@ -227,7 +227,7 @@ export default function InstitutionScreen() {
 
           {hasPortal && (
             <TouchableOpacity 
-              onPress={() => handleWebsite(institution.student_portal.url)}
+              onPress={() => handleWebsite(institution.student_portal)}
               style={{ 
                 flex: 1, 
                 minWidth: '48%',
@@ -293,7 +293,7 @@ export default function InstitutionScreen() {
               )}
             </View>
           ))}
-          {institution.prospectus_link && (
+          {institution.prospectus_link && institution.prospectus_link !== 'TBA' && (
             <TouchableOpacity onPress={() => handleWebsite(institution.prospectus_link)}>
               <Text style={{ color: '#2563eb', fontWeight: '600', marginTop: 8 }}>
                 View Full Prospectus →

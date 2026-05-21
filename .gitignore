@@ -7,3 +7,5 @@ yarn-error.log*
 .DS_Store
 *.pem
 TempApp/
+.env
+public/data/knowledge-lite.json

@@ -1,0 +1,5316 @@
+﻿[
+    {
+        "name":  "Regent University College of Science and Technology",
+        "domains":  [
+                        "regent.edu.gh"
+                    ],
+        "web_pages":  [
+                          "https://regent.edu.gh"
+                      ],
+        "country":  "Ghana",
+        "alpha_two_code":  "GH",
+        "state-province":  null
+    },
+    {
+        "name":  "Bugema University",
+        "domains":  [
+                        "bugemauniv.ac.ug"
+                    ],
+        "web_pages":  [
+                          "https://bugemauniv.ac.ug/"
+                      ],
+        "country":  "Uganda",
+        "alpha_two_code":  "UG",
+        "state-province":  "Luweero"
+    },
+    {
+        "web_pages":  [
+                          "http://www.lagh-univ.dz/"
+                      ],
+        "name":  "Université Amar Telidji",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "lagh-univ.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.umbb.dz/"
+                      ],
+        "name":  "Université M\u0027hamed Bouguerra de Boumerdes",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "umbb.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.umc.edu.dz/"
+                      ],
+        "name":  "Université Mentouri Constantine",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "umc.edu.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ummto.dz/"
+                      ],
+        "name":  "Université Mouloud Mammeri de Tizi Ouzou",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "ummto.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-alger3.dz/"
+                      ],
+        "name":  "Université d\u0027Alger 3",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-alger3.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-alger.dz/"
+                      ],
+        "name":  "Université d\u0027Alger",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-alger.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-annaba.dz/"
+                      ],
+        "name":  "Université Badji Mokhtar",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-annaba.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-batna.dz/"
+                      ],
+        "name":  "Université de Batna",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-batna.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-bejaia.dz/"
+                      ],
+        "name":  "Université de Béjaia",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-bejaia.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-biskra.dz/"
+                      ],
+        "name":  "Université de Biskra",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-biskra.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-blida.dz/"
+                      ],
+        "name":  "Université de Blida",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-blida.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-chlef.dz/"
+                      ],
+        "name":  "Université de Chlef",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-chlef.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-emir.dz/"
+                      ],
+        "name":  "Universite des Sciences Islamiques de Constantine",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-emir.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-guelma.dz/"
+                      ],
+        "name":  "Université de Guelma",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-guelma.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-jijel.dz/"
+                      ],
+        "name":  "Centre Universitaire de Jijel",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-jijel.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-mosta.dz/"
+                      ],
+        "name":  "Université de Mostaganem",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-mosta.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-msila.dz/"
+                      ],
+        "name":  "Université de M\u0027sila",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-msila.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-oeb.dz/"
+                      ],
+        "name":  "Centre Universitaire d\u0027Oum El Bouaghi",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-oeb.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-oran.dz/"
+                      ],
+        "name":  "Université d\u0027Oran Es-Senia",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-oran.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-ouargla.dz/"
+                      ],
+        "name":  "Université Kasdi Merbah Ouargla",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-ouargla.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-saida.dz/"
+                      ],
+        "name":  "Université de Saida",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-saida.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-sba.dz/"
+                      ],
+        "name":  "Université de Sidi-Bel-Abbès (Djillali Liabès)",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-sba.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-setif.dz/"
+                      ],
+        "name":  "Université de Sétif",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-setif.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-skikda.dz/"
+                      ],
+        "name":  "Université de Skikda",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-skikda.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-tebessa.dz/"
+                      ],
+        "name":  "Centre Universitaire de Tebessa",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-tebessa.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-tiaret.dz/"
+                      ],
+        "name":  "Centre Universitaire de Tiaret",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-tiaret.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-tlemcen.dz/"
+                      ],
+        "name":  "Université Abou Bekr Belkaid, Tlemcen",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-tlemcen.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-usto.dz/"
+                      ],
+        "name":  "Université des Sciences et de la Technologie d\u0027Oran",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "univ-usto.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.usthb.dz/"
+                      ],
+        "name":  "Université des Sciences et de la Technologie Houari Boumediène",
+        "alpha_two_code":  "DZ",
+        "state-province":  null,
+        "domains":  [
+                        "usthb.dz"
+                    ],
+        "country":  "Algeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.bamendauniversity.com/"
+                      ],
+        "name":  "Bamenda University of Science \u0026 Technology",
+        "alpha_two_code":  "CM",
+        "state-province":  null,
+        "domains":  [
+                        "bamendauniversity.com"
+                    ],
+        "country":  "Cameroon"
+    },
+    {
+        "web_pages":  [
+                          "http://www.fomicgroup.cm/"
+                      ],
+        "name":  "Fomic Polytechnic",
+        "alpha_two_code":  "CM",
+        "state-province":  null,
+        "domains":  [
+                        "fomicgroup.cm"
+                    ],
+        "country":  "Cameroon"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ubuea.cm/"
+                      ],
+        "name":  "Université de Buéa",
+        "alpha_two_code":  "CM",
+        "state-province":  null,
+        "domains":  [
+                        "ubuea.cm"
+                    ],
+        "country":  "Cameroon"
+    },
+    {
+        "web_pages":  [
+                          "http://www.udesmontagnes.org/"
+                      ],
+        "name":  "Université des Montagnes",
+        "alpha_two_code":  "CM",
+        "state-province":  null,
+        "domains":  [
+                        "udesmontagnes.org"
+                    ],
+        "country":  "Cameroon"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unibda.net/"
+                      ],
+        "name":  "Université de Bamenda",
+        "alpha_two_code":  "CM",
+        "state-province":  null,
+        "domains":  [
+                        "unibda.net"
+                    ],
+        "country":  "Cameroon"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-douala.com/"
+                      ],
+        "name":  "Université de Douala",
+        "alpha_two_code":  "CM",
+        "state-province":  null,
+        "domains":  [
+                        "univ-douala.com"
+                    ],
+        "country":  "Cameroon"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-dschang.org/"
+                      ],
+        "name":  "Université de Dschang",
+        "alpha_two_code":  "CM",
+        "state-province":  null,
+        "domains":  [
+                        "univ-dschang.org"
+                    ],
+        "country":  "Cameroon"
+    },
+    {
+        "web_pages":  [
+                          "http://www.universite-yde2.org/"
+                      ],
+        "name":  "Université de Yaoundé II",
+        "alpha_two_code":  "CM",
+        "state-province":  null,
+        "domains":  [
+                        "universite-yde2.org"
+                    ],
+        "country":  "Cameroon"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-ndere.cm/"
+                      ],
+        "name":  "Université de Ngaoundéré",
+        "alpha_two_code":  "CM",
+        "state-province":  null,
+        "domains":  [
+                        "univ-ndere.cm"
+                    ],
+        "country":  "Cameroon"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uy1.uninet.cm/"
+                      ],
+        "name":  "Université de Yaoundé I",
+        "alpha_two_code":  "CM",
+        "state-province":  null,
+        "domains":  [
+                        "uy1.uninet.cm"
+                    ],
+        "country":  "Cameroon"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uabobo.ci/"
+                      ],
+        "name":  "Université d\u0027Abobo-Adjamé",
+        "alpha_two_code":  "CI",
+        "state-province":  null,
+        "domains":  [
+                        "uabobo.ci"
+                    ],
+        "country":  "Côte d\u0027Ivoire"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ubouake.ci/"
+                      ],
+        "name":  "Université de Bouaké",
+        "alpha_two_code":  "CI",
+        "state-province":  null,
+        "domains":  [
+                        "ubouake.ci"
+                    ],
+        "country":  "Côte d\u0027Ivoire"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-cocody.ci/"
+                      ],
+        "name":  "Université de Cocody",
+        "alpha_two_code":  "CI",
+        "state-province":  null,
+        "domains":  [
+                        "univ-cocody.ci"
+                    ],
+        "country":  "Côte d\u0027Ivoire"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aast.edu/"
+                      ],
+        "name":  "Arab Academy for Science \u0026 Technology",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "aast.edu"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.akhbaracademy.edu.eg/"
+                      ],
+        "name":  "Akhbar El Yom Academy",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "akhbaracademy.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.alex.edu.eg/"
+                      ],
+        "name":  "Alexandria University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "alex.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aou.edu.eg/"
+                      ],
+        "name":  "Arab Open University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "aou.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aucegypt.edu/"
+                      ],
+        "name":  "American University in Cairo",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "aucegypt.edu"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aun.edu.eg/"
+                      ],
+        "name":  "Assiut University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "aun.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.azhar.edu.eg/"
+                      ],
+        "name":  "Al Azhar University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "azhar.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.bsu.edu.eg/"
+                      ],
+        "name":  "Beni Suef University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "bsu.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.bu.edu.eg/"
+                      ],
+        "name":  "Benha University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "bu.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.cu.edu.eg/"
+                      ],
+        "name":  "Cairo University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "cu.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.damanhour.edu.eg/"
+                      ],
+        "name":  "Damanhour University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "damanhour.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.du.edu.eg/"
+                      ],
+        "name":  "Damietta University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "du.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.elshoroukacademy.edu.eg/"
+                      ],
+        "name":  "El Shorouk Academy",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "elshoroukacademy.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.fayoum.edu.eg/"
+                      ],
+        "name":  "Fayoum University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "fayoum.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.futureuniversity.edu.eg/"
+                      ],
+        "name":  "Future University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "futureuniversity.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.guc.edu.eg/"
+                      ],
+        "name":  "German University in Cairo",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "guc.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.helwan.edu.eg/"
+                      ],
+        "name":  "Helwan University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "helwan.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.hti.edu.eg/"
+                      ],
+        "name":  "Higher Technological Institute",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "hti.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kfs.edu.eg/"
+                      ],
+        "name":  "Kafr El-Sheikh University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "kfs.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mans.edu.eg/"
+                      ],
+        "name":  "Mansoura University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "mans.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.menofia.edu.eg/"
+                      ],
+        "name":  "Menoufia University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "menofia.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.minia.edu.eg/"
+                      ],
+        "name":  "Minia University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "minia.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.miuegypt.edu.eg/"
+                      ],
+        "name":  "Misr International University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "miuegypt.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.modern-academy.edu.eg/"
+                      ],
+        "name":  "Modern Acadmy",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "modern-academy.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.msa.eun.eg/"
+                      ],
+        "name":  "Modern Sciences \u0026 Arts University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "msa.eun.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mtc.edu.eg/"
+                      ],
+        "name":  "Military Technical College",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "mtc.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mti.edu.eg/"
+                      ],
+        "name":  "Modern University For Technology and Information",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "mti.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.must.edu.eg/"
+                      ],
+        "name":  "Misr University for Sience and Technology",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "must.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.nileu.edu.eg/"
+                      ],
+        "name":  "Nile University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "nileu.edu.eg",
+                        "nu.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.o6u.edu.eg/"
+                      ],
+        "name":  "October 6 university",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "o6u.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.pua.edu.eg/"
+                      ],
+        "name":  "Pharos International University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "pua.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.sadatacademy.edu.eg/"
+                      ],
+        "name":  "Sadat Academy for Management Sciences",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "sadatacademy.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "https://www.asu.edu.eg/"
+                      ],
+        "name":  "Ain Shams University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "shams.edu.eg",
+                        "asu.edu.eg",
+                        "eng.asu.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.sohag-univ.edu.eg/"
+                      ],
+        "name":  "Sohag University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "sohag-univ.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.su.edu.eg/"
+                      ],
+        "name":  "Sinai University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "su.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.suez.edu.eg/"
+                      ],
+        "name":  "Suez Canal University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "suez.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.svu.edu.eg/"
+                      ],
+        "name":  "South Valley University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "svu.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.tanta.edu.eg/"
+                      ],
+        "name":  "Tanta University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "tanta.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ufe.edu.eg/"
+                      ],
+        "name":  "Université Française d\u0027Égypte",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "ufe.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.usenghor-francophonie.org/"
+                      ],
+        "name":  "Université Senghor d\u0027Alexandrie",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "usenghor-francophonie.org"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.zu.edu.eg/"
+                      ],
+        "name":  "Zagazig University",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "zu.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aastu.org/"
+                      ],
+        "name":  "Addis Ababa Science \u0026 Technology University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "aastu.org"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aau.edu.et/"
+                      ],
+        "name":  "Addis Ababa University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "aau.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.adu.edu.et/"
+                      ],
+        "name":  "Adigrat University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "adu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aku.edu.et/"
+                      ],
+        "name":  "Aksum University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "aku.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ambou.edu.et/"
+                      ],
+        "name":  "Ambo University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "ambou.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.amu.edu.et/"
+                      ],
+        "name":  "Arba Minch University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "amu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.astu.edu.et/"
+                      ],
+        "name":  "Adama Science and Technology University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "astu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.asu.edu.et/"
+                      ],
+        "name":  "Assosa University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "asu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.bdu.edu.et/"
+                      ],
+        "name":  "Bahir Dar University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "bdu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.bulehorauniversity.com/"
+                      ],
+        "name":  "Bule Hora University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "bulehorauniversity.com"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.dbu.edu.et/"
+                      ],
+        "name":  "Debre Birhan University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "dbu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ddu.edu.et/"
+                      ],
+        "name":  "Dire Dawa University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "ddu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.dillauniversity.edu.et/"
+                      ],
+        "name":  "Dilla University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "dillauniversity.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.dmu.edu.et/"
+                      ],
+        "name":  "Debre Markos University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "dmu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ecsc.edu.et/"
+                      ],
+        "name":  "Ethiopian Civil Service University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "ecsc.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.haramaya.edu.et/"
+                      ],
+        "name":  "Haramaya University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "haramaya.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.hu.edu.et/"
+                      ],
+        "name":  "Hawassa University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "hu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.jju.edu.et/"
+                      ],
+        "name":  "Jigjiga University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "jju.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ju.edu.et/"
+                      ],
+        "name":  "Jimma University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "ju.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mitethiopia.edu.et/"
+                      ],
+        "name":  "Mekelle Institute of Technology",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "mitethiopia.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mtu.edu.et/"
+                      ],
+        "name":  "Mizan Tepi University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "mtu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mu.edu.et/"
+                      ],
+        "name":  "Mekelle University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "mu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mwu.edu.et/"
+                      ],
+        "name":  "Madawalabu University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "mwu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.su.edu.et/"
+                      ],
+        "name":  "Semera University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "su.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uog.edu.et/"
+                      ],
+        "name":  "Gondar University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "uog.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uuc.edu.et/"
+                      ],
+        "name":  "Unity University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "uuc.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.wku.edu.et/"
+                      ],
+        "name":  "Wolkite University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "wku.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.wsu.edu.et/"
+                      ],
+        "name":  "Wolaita Sodo University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "wsu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.wu.edu.et/"
+                      ],
+        "name":  "Wollo University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "wu.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.wuni.edu.et/"
+                      ],
+        "name":  "Wollega University",
+        "alpha_two_code":  "ET",
+        "state-province":  null,
+        "domains":  [
+                        "wuni.edu.et"
+                    ],
+        "country":  "Ethiopia"
+    },
+    {
+        "web_pages":  [
+                          "https://atu.edu.gh/"
+                      ],
+        "name":  "Accra Technical University",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "atu.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.acighana.org/"
+                      ],
+        "name":  "Akrofi-Christaller Institute of Theeology, Mission and Culture",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "acighana.org"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.anuc.edu.gh/"
+                      ],
+        "name":  "All Nations University College",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "anuc.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ashesi.edu.gh/"
+                      ],
+        "name":  "Ashesi University",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "ashesi.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.central.edu.gh/"
+                      ],
+        "name":  "Central University College",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "central.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "https://cctu.edu.gh/"
+                      ],
+        "name":  "Cape Coast Technical University",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "cctu.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "https://cauc.edu.gh/"
+                      ],
+        "name":  "Christ Apostolic University College",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "cauc.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ghanacu.org/"
+                      ],
+        "name":  "Ghana Christian University College",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "ghanacu.org"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.gimpa.edu.gh/"
+                      ],
+        "name":  "Ghana Institute of Management and Public Administration (GIMPA)",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "gimpa.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "https://www.gbuc.edu.gh/"
+                      ],
+        "name":  "Ghana Baptist University College",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "gbuc.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.gtuc.edu.gh/"
+                      ],
+        "name":  "Ghana Telecom University College",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "gtuc.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "https://htu.edu.gh/"
+                      ],
+        "name":  "Ho Technical University",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "htu.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.iug.edu.gh/"
+                      ],
+        "name":  "Islamic University College",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "iug.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "https://kc.edu.gh/"
+                      ],
+        "name":  "Kessben College",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "kc.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.knust.edu.gh/"
+                      ],
+        "name":  "Kwame Nkrumah University of Science and Technology",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "knust.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "https://www.ktu.edu.gh/"
+                      ],
+        "name":  "Koforidua Technical University",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "ktu.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "https://www.kstu.edu.gh/"
+                      ],
+        "name":  "Kumasi Technical University",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "kstu.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "https://lancaster.edu.gh/"
+                      ],
+        "name":  "Lancaster University",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "lancaster.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.pacuc.edu.gh/"
+                      ],
+        "name":  "Pan African Christian University College",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "pacuc.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.presbyuniversity.edu.gh/"
+                      ],
+        "name":  "Presbyterian University College",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "presbyuniversity.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.regentghana.net/"
+                      ],
+        "name":  "Regent University College of Science and Technology",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "regentghana.net"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "https://stu.edu.gh/"
+                      ],
+        "name":  "Sunyani Technical University",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "stu.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "https://www.ttu.edu.gh/"
+                      ],
+        "name":  "Takoradi Technical University",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "ttu.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.trinity.edu.gh/"
+                      ],
+        "name":  "Trinity Theological Seminary",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "trinity.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ucc.edu.gh/"
+                      ],
+        "name":  "University of Cape Coast",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "ucc.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uds.edu.gh/"
+                      ],
+        "name":  "University for Development Studies",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "uds.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uew.edu.gh/"
+                      ],
+        "name":  "University of Education, Winneba",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "uew.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ug.edu.gh/"
+                      ],
+        "name":  "University of Ghana",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "ug.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.vvu.edu.gh/"
+                      ],
+        "name":  "Valley View University",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "vvu.edu.gh"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "https://www.zucghana.org"
+                      ],
+        "name":  "Zenith University College",
+        "alpha_two_code":  "GH",
+        "state-province":  null,
+        "domains":  [
+                        "zucghana.org"
+                    ],
+        "country":  "Ghana"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aiu.ac.ke/"
+                      ],
+        "name":  "Africa International University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "aiu.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.anu.ac.ke/"
+                      ],
+        "name":  "Africa Nazarene University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "anu.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aua.ac.ke/"
+                      ],
+        "name":  "Adventist University of Africa",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "aua.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.chuka.ac.ke/"
+                      ],
+        "name":  "Chuka University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "chuka.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.cuea.edu/"
+                      ],
+        "name":  "Catholic University of Eastern Africa",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "cuea.edu"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.daystar.ac.ke/"
+                      ],
+        "name":  "Daystar University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "daystar.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.dkut.ac.ke/"
+                      ],
+        "name":  "Dedan Kimathi University of Technology",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "dkut.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.egerton.ac.ke/"
+                      ],
+        "name":  "Egerton University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "egerton.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.gluk.ac.ke/"
+                      ],
+        "name":  "Great Lakes University of Kisumu",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "gluk.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.gretsauniversity.ac.ke/"
+                      ],
+        "name":  "Gretsa Universtiy",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "gretsauniversity.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.iu.ac.ke/"
+                      ],
+        "name":  "Inoorero University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "iu.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.jkuat.ac.ke/"
+                      ],
+        "name":  "Jomo Kenyatta University of Agriculture and Technology",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "jkuat.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.jooust.ac.ke/"
+                      ],
+        "name":  "Jaramogi Oginga Odinga University of Science and Technology",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "jooust.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kabarak.ac.ke/"
+                      ],
+        "name":  "Kabarak University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "kabarak.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kabianga.ac.ke/"
+                      ],
+        "name":  "University of Kabianga",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "kabianga.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.karatinauniversity.ac.ke/"
+                      ],
+        "name":  "Karatina University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "karatinauniversity.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kca.ac.ke/"
+                      ],
+        "name":  "Kenya College of Accountancy",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "kca.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kemu.ac.ke/"
+                      ],
+        "name":  "Kenya Methodist University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "kemu.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kisiiuniversity.ac.ke/"
+                      ],
+        "name":  "Kisii University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "kisiiuniversity.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kmtc.ac.ke/"
+                      ],
+        "name":  "Kenya Medical Training College",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "kmtc.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ku.ac.ke/"
+                      ],
+        "name":  "Kenyatta University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "ku.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kwust.ac.ke/"
+                      ],
+        "name":  "Kiriri Womens University of Science and Technology",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "kwust.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.laikipia.ac.ke/"
+                      ],
+        "name":  "Laikipia University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "laikipia.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.maseno.ac.ke/"
+                      ],
+        "name":  "Maseno University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "maseno.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mku.ac.ke/"
+                      ],
+        "name":  "Mount Kenya University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "mku.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mmarau.ac.ke/"
+                      ],
+        "name":  "Maasai Mara University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "mmarau.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mmu.ac.ke/"
+                      ],
+        "name":  "Multimedia University of Kenya",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "mmu.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mmust.ac.ke/"
+                      ],
+        "name":  "Masinde Muliro University of Science and Technology",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "mmust.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mu.ac.ke/"
+                      ],
+        "name":  "Moi University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "mu.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.must.ac.ke/"
+                      ],
+        "name":  "Meru University of Science and Technology",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "must.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.nibs.ac.ke/"
+                      ],
+        "name":  "Nairobi Institute of Business Studies",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "nibs.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ntti.ac.ke/"
+                      ],
+        "name":  "Nairobi Technical Training Institute",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "ntti.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.pacuniversity.ac.ke/"
+                      ],
+        "name":  "Pan Africa Christian University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "pacuniversity.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.piu.ac.ke/"
+                      ],
+        "name":  "Pioneer International University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "piu.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.pu.ac.ke/"
+                      ],
+        "name":  "Pwani University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "pu.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.puea.ac.ke/"
+                      ],
+        "name":  "Presbyterian University of East Africa",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "puea.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.riarauniversity.ac.ke/"
+                      ],
+        "name":  "Riara University School of Business and Law",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "riarauniversity.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.scott.ac.ke/"
+                      ],
+        "name":  "Scott Christian University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "scott.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.seku.ac.ke/"
+                      ],
+        "name":  "South Eastern Kenya University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "seku.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.spu.ac.ke/"
+                      ],
+        "name":  "St. Pauls University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "spu.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.strathmore.edu/"
+                      ],
+        "name":  "Strathmore University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "strathmore.edu"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.tukenya.ac.ke/"
+                      ],
+        "name":  "Technical University of Kenya",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "tukenya.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.tum.ac.ke/"
+                      ],
+        "name":  "Technical University of Mombasa",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "tum.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ueab.ac.ke/"
+                      ],
+        "name":  "University of Eastern Africa, Baraton",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "ueab.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uoeld.ac.ke/"
+                      ],
+        "name":  "University of Eldoret",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "uoeld.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uonbi.ac.ke/"
+                      ],
+        "name":  "University of Nairobi",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "uonbi.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.usiu.ac.ke/"
+                      ],
+        "name":  "United States International University",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "usiu.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uzimauniversity.ac.ke/"
+                      ],
+        "name":  "Uzima University College",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "uzimauniversity.ac.ke"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.zetechcollege.com/"
+                      ],
+        "name":  "Zetech College",
+        "alpha_two_code":  "KE",
+        "state-province":  null,
+        "domains":  [
+                        "zetechcollege.com"
+                    ],
+        "country":  "Kenya"
+    },
+    {
+        "web_pages":  [
+                          "http://www.archi.ac.ma/"
+                      ],
+        "name":  "Ecole Nationale d\u0027Architecture",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "archi.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aui.ma/"
+                      ],
+        "name":  "Al Akhawayn University",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "aui.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.edhec.ac.ma/"
+                      ],
+        "name":  "Ecole des Hautes Etudes en Gestion Informatique et Communication",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "edhec.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.emi.ac.ma/"
+                      ],
+        "name":  "Ecole Mohammadia d\u0027Ingénieurs",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "emi.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.enameknes.ac.ma/"
+                      ],
+        "name":  "Ecole National d\u0027Agriculture de Meknes",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "enameknes.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.esca.ac.ma/"
+                      ],
+        "name":  "Ecole Supérieure de Commerce et des Affaires",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "esca.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uiz.ac.ma/"
+                      ],
+        "name":  "Université Ibn Zohr Agadir",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "uiz.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.groupeiscae.ma/"
+                      ],
+        "name":  "Institut Supérieur de Commerce et d\u0027Administration des Entreprises",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "groupeiscae.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.hec.ac.ma/"
+                      ],
+        "name":  "Ecole des Hautes Etudes Commerciales MAROC",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "hec.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.hem.ac.ma/"
+                      ],
+        "name":  "Institut des Hautes Etudes de Management",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "hem.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.hightech.edu/"
+                      ],
+        "name":  "Ecole Supérieure d\u0027Informatique et de Management",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "hightech.edu"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.iihem.ac.ma/"
+                      ],
+        "name":  "International Institute for Higher Education",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "iihem.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.imbt.ma/"
+                      ],
+        "name":  "Institute of Management and Business Technology",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "imbt.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.inpt.ac.ma/"
+                      ],
+        "name":  "Institut National des Postes et Télécommunications",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "inpt.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.isfort.ac.ma/"
+                      ],
+        "name":  "ISFORT - Institut de Formation en Technologie Alimentaire",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "isfort.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.matci.ac.ma/"
+                      ],
+        "name":  "Institut Supérieur de Management et de Technologie (MATCI)",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "matci.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.rectorat-uh2c.ac.ma/"
+                      ],
+        "name":  "Université Hassan II - Aïn Chock",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "rectorat-uh2c.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.rumi.ac.ma/"
+                      ],
+        "name":  "Université Moulay Ismail Meknès",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "rumi.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.suptelecom.net.ma/"
+                      ],
+        "name":  "Ecole Superieure des Télécommunications",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "suptelecom.net.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uae.ac.ma/"
+                      ],
+        "name":  "Université Abdelmalek Essadi",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "uae.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ucam.ac.ma/"
+                      ],
+        "name":  "Université Cadi Ayyad",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "ucam.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://upm.ac.ma/"
+                      ],
+        "name":  "Université Privée de Marrakech",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "upm.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ucd.ac.ma/"
+                      ],
+        "name":  "Université Chouaib Doukkali",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "ucd.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uh1.ac.ma/"
+                      ],
+        "name":  "Université Hassan Ier - Settat",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "uh1.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uh2m.ac.ma/"
+                      ],
+        "name":  "Université Hassan II - Mohammadia",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "uh2m.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.um5a.ac.ma/"
+                      ],
+        "name":  "Université Mohammed V - Agdal",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "um5a.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.um5s.ac.ma/"
+                      ],
+        "name":  "Université Mohammed V - Souissi",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "um5s.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-ibntofail.ac.ma/"
+                      ],
+        "name":  "Université Ibn Toufail",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "univ-ibntofail.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-oujda.ac.ma/"
+                      ],
+        "name":  "Université Mohammed Ier",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "univ-oujda.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.usmba.ac.ma/"
+                      ],
+        "name":  "Université Sidi Mohammed Ben Abdellah",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "usmba.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ump.ma/"
+                      ],
+        "name":  "Université Mohammed Premier Oujda",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "ump.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aaua.edu.ng/"
+                      ],
+        "name":  "Adekunle Ajasin University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "aaua.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aauekpoma.edu.ng/"
+                      ],
+        "name":  "Ambrose Alli University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "aauekpoma.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.abiapoly.edu.ng/"
+                      ],
+        "name":  "Abia State Polytechnic",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "abiapoly.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.absu.edu.ng/"
+                      ],
+        "name":  "Abia State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "absu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.abuad.edu.ng/"
+                      ],
+        "name":  "Afe Babalola University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "abuad.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.abu.edu.ng/"
+                      ],
+        "name":  "Ahmadu Bello University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "abu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aceondo-ng.com/"
+                      ],
+        "name":  "Adeyemi College of Education",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "aceondo-ng.com"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.achievers.edu.ng/"
+                      ],
+        "name":  "The Achievers University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "achievers.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.acu.edu.ng/"
+                      ],
+        "name":  "Ajayi Crowther University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "acu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.adelekeuniversity.edu.ng/"
+                      ],
+        "name":  "Adeleke University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "adelekeuniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.adsu.edu.ng/"
+                      ],
+        "name":  "Adamawa State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "adsu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.akutech.edu.ng/"
+                      ],
+        "name":  "Akwa Ibom State University of Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "akutech.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.alhikmah.edu.ng/"
+                      ],
+        "name":  "Al-hikmah University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "alhikmah.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ansu.edu.ng/"
+                      ],
+        "name":  "Anambra State University of Science and Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "ansu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.atbu.edu.ng/"
+                      ],
+        "name":  "Abubakar Tafawa Balewa University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "atbu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.auchipoly.edu.ng/"
+                      ],
+        "name":  "Auchi Polytechnic",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "auchipoly.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aun.edu.ng/"
+                      ],
+        "name":  "ABTI American University of Nigeria",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "aun.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.aust-abuja.org/"
+                      ],
+        "name":  "African University of Science and Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "aust-abuja.org"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.babcockuni.edu.ng/"
+                      ],
+        "name":  "Babcock University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "babcockuni.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.basug.edu.ng/"
+                      ],
+        "name":  "Bauchi State University, Gadau",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "basug.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.bazeuniversity.edu.ng"
+                      ],
+        "name":  "Baze University Abuja",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "bazeuniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.bellsuniversity.org/"
+                      ],
+        "name":  "Bells University of Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "bellsuniversity.org"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.binghamuni.edu.ng/"
+                      ],
+        "name":  "Bingham University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "binghamuni.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.biu.edu.ng/"
+                      ],
+        "name":  "Benson Idahosa University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "biu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://bowenuniversity-edu.org/"
+                      ],
+        "name":  "Bowen University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "bowenuniversity-edu.org"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.bsum.edu.ng/"
+                      ],
+        "name":  "Benue State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "bsum.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.buk.edu.ng/"
+                      ],
+        "name":  "Bayero University Kano",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "buk.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.calebuniversity.edu.ng/"
+                      ],
+        "name":  "Caleb University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "calebuniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.caritasuni.edu.ng/"
+                      ],
+        "name":  "Caritas University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "caritasuni.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.coeikere.edu.ng/"
+                      ],
+        "name":  "College of Education Ikere",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "coeikere.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.coeoju.com/"
+                      ],
+        "name":  "College of Education Oju",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "coeoju.com"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.covenantuniversity.edu.ng/"
+                      ],
+        "name":  "Covenant University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "covenantuniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.crawforduniversity.edu.ng/"
+                      ],
+        "name":  "Crawford University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "crawforduniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.crescent-university.edu.ng/"
+                      ],
+        "name":  "Crescent University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "crescent-university.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.crutech.edu.ng/"
+                      ],
+        "name":  "Cross River University of Science and Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "crutech.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ebsu-edu.net/"
+                      ],
+        "name":  "Ebonyi State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "ebsu-edu.net"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.eksu.edu.ng/"
+                      ],
+        "name":  "Ekiti State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "eksu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.esut.edu.ng/"
+                      ],
+        "name":  "Enugu State University of Science and Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "esut.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.fcetakoka-edu.net/"
+                      ],
+        "name":  "Federal College Of Education (Technical), Akoka",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "fcetakoka-edu.net"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.fedpoffa.edu.ng/"
+                      ],
+        "name":  "The Federal Polytechnic Offa",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "fedpoffa.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.fountainuniversity.edu.ng/"
+                      ],
+        "name":  "Fountain University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "fountainuniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.fupre.edu.ng/"
+                      ],
+        "name":  "Federal University of Petroleum Resources",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "fupre.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.futa.edu.ng/"
+                      ],
+        "name":  "Federal University of Technology, Akure",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "futa.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.futminna.edu.ng/"
+                      ],
+        "name":  "Federal University of Technology, Minna",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "futminna.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.futo.edu.ng/"
+                      ],
+        "name":  "Federal University of Technology, Owerri",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "futo.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.futy.edu.ng/"
+                      ],
+        "name":  "Federal University of Technology, Yola",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "futy.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.gouni.edu.ng/"
+                      ],
+        "name":  "Godfrey Okoye University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "gouni.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.gsu.edu.ng/"
+                      ],
+        "name":  "Gombe State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "gsu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ibbu.edu.ng/"
+                      ],
+        "name":  "Ibrahim Babangida University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "ibbu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.imsu.edu.ng/"
+                      ],
+        "name":  "Imo State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "imsu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.iuokada.edu.ng/"
+                      ],
+        "name":  "Igbinedion University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "iuokada.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.jabu.edu.ng/"
+                      ],
+        "name":  "Joseph Ayo Babalola University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "jabu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kasuportal.net/"
+                      ],
+        "name":  "Kaduna State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "kasuportal.net"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ksuportal.edu.ng/"
+                      ],
+        "name":  "Kogi State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "ksuportal.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ksusta.edu.ng/"
+                      ],
+        "name":  "Kebbi State University of Science and Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "ksusta.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kuk.edu.ng/"
+                      ],
+        "name":  "Katsina University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "kuk.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kustwudil.edu.ng/"
+                      ],
+        "name":  "Kano State University of Technology Wudil",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "kustwudil.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kwarapoly.edu.ng/"
+                      ],
+        "name":  "Kwara State Polytecnic",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "kwarapoly.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kwararafauniversity.edu.ng/"
+                      ],
+        "name":  "Kwararafa University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "kwararafauniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kwasu.edu.ng/"
+                      ],
+        "name":  "Kwara State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "kwasu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.laspotech.net/"
+                      ],
+        "name":  "Lagos State Polytechnic",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "laspotech.net"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.lasunigeria.org/"
+                      ],
+        "name":  "Lagos State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "lasunigeria.org"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.lautech.edu.ng/"
+                      ],
+        "name":  "Ladoke Akintola University of Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "lautech.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.lcu.edu.ng/"
+                      ],
+        "name":  "Lead City University of Ibadan",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "lcu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.lmu.edu.ng/"
+                      ],
+        "name":  "Landmark University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "lmu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.madonnauniversity.edu.ng/"
+                      ],
+        "name":  "Madonna University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "madonnauniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mouau.edu.ng/"
+                      ],
+        "name":  "Michael Okpara University of Agriculture",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "mouau.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mylcp.net/"
+                      ],
+        "name":  "Lagos City Polytechnic",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "mylcp.net"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.nda.edu.ng/"
+                      ],
+        "name":  "Nigerian Defence Academy",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "nda.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ndu.edu.ng/"
+                      ],
+        "name":  "Niger Delta University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "ndu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.nou.edu.ng/"
+                      ],
+        "name":  "National Open University of Nigeria",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "nou.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.novenauniversity.edu.ng/"
+                      ],
+        "name":  "Novena University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "novenauniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.nsuk.edu.ng/"
+                      ],
+        "name":  "Nasarawa State University Keffi",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "nsuk.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ntnu.edu.ng/"
+                      ],
+        "name":  "Nigerian Turkish Nile University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "ntnu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.oauife.edu.ng/"
+                      ],
+        "name":  "Obafemi Awolowo University Ile-Ife",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "oauife.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.obonguniversity.net/"
+                      ],
+        "name":  "Obong University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "obonguniversity.net"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.oduduwauniversity.edu.ng/"
+                      ],
+        "name":  "Oduduwa University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "oduduwauniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.oouagoiwoye.edu.ng/"
+                      ],
+        "name":  "Olabisi Onabanjo University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "oouagoiwoye.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.osustech.edu.ng/"
+                      ],
+        "name":  "Ondo State University of Science and Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "osustech.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.pau.edu.ng/"
+                      ],
+        "name":  "Pan-African University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "pau.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.pauluniversity.edu.ng/"
+                      ],
+        "name":  "Paul University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "pauluniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.polyibadan.edu.ng/"
+                      ],
+        "name":  "Polytechnic Ibadan",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "polyibadan.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.polyunwana.net/"
+                      ],
+        "name":  "Akanu Ibiam Federal Polytechnic, Unwana",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "polyunwana.net"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.rnu.edu.ng/"
+                      ],
+        "name":  "Renaissance University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "rnu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.run.edu.ng/"
+                      ],
+        "name":  "Redeemers University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "run.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.salemuniversity.edu.ng/"
+                      ],
+        "name":  "Salem University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "salemuniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ssu.edu.ng/"
+                      ],
+        "name":  "Sokoto State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "ssu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.tansianuniversity.edu.ng/"
+                      ],
+        "name":  "Tansian University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "tansianuniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.tasued.edu.ng/"
+                      ],
+        "name":  "Tai Solarin University of Education",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "tasued.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.tsuniversity.edu.ng/"
+                      ],
+        "name":  "Taraba State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "tsuniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uam.edu.ng/"
+                      ],
+        "name":  "University of Agriculture Makurdi",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "uam.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.udusok.edu.ng/"
+                      ],
+        "name":  "Usmanu Danfodiyo University Sokoto",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "udusok.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ui.edu.ng/"
+                      ],
+        "name":  "University of Ibadan",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "ui.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.umyu.edu.ng/"
+                      ],
+        "name":  "Umaru Musa Yar\u0027Adua University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "umyu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unaab.edu.ng/"
+                      ],
+        "name":  "University of Agriculture Abeokuta",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "unaab.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uniben.edu/"
+                      ],
+        "name":  "University of Benin",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "uniben.edu"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unibuja.edu.ng/"
+                      ],
+        "name":  "University of Abuja",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "unibuja.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unical.edu.ng/"
+                      ],
+        "name":  "University of Calabar",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "unical.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unijos.edu.ng/"
+                      ],
+        "name":  "University of Jos",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "unijos.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unilag.edu.ng/"
+                      ],
+        "name":  "University of Lagos",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "unilag.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unilorin.edu.ng/"
+                      ],
+        "name":  "University of Ilorin",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "unilorin.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unimaid.edu.ng/"
+                      ],
+        "name":  "University of Maiduguri",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "unimaid.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unimkar.edu.ng/"
+                      ],
+        "name":  "University of Mkar",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "unimkar.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uniosun.edu.ng/"
+                      ],
+        "name":  "Osun State University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "uniosun.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uniport.edu.ng/"
+                      ],
+        "name":  "University of Portharcourt",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "uniport.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uniuyo.edu.ng/"
+                      ],
+        "name":  "University of Uyo",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "uniuyo.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unizik.edu.ng/"
+                      ],
+        "name":  "Nnamdi Azikiwe University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "unizik.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unn.edu.ng/"
+                      ],
+        "name":  "University of Nigeria",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "unn.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ust.edu.ng/"
+                      ],
+        "name":  "Rivers State University of Science and Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "ust.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.veritas.edu.ng/"
+                      ],
+        "name":  "Veritas University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "veritas.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.wdu.edu.ng/"
+                      ],
+        "name":  "Western Delta University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "wdu.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.wellspringuniversity.edu.ng/"
+                      ],
+        "name":  "Wellspring University",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "wellspringuniversity.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.wustoportal.edu.ng/"
+                      ],
+        "name":  "Wesley University of Science and Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "wustoportal.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.yabatech.edu.ng/"
+                      ],
+        "name":  "Yaba College of Technology",
+        "alpha_two_code":  "NG",
+        "state-province":  null,
+        "domains":  [
+                        "yabatech.edu.ng"
+                    ],
+        "country":  "Nigeria"
+    },
+    {
+        "web_pages":  [
+                          "http://www.auca.ac.rw/"
+                      ],
+        "name":  "Adventist University of Central Africa",
+        "alpha_two_code":  "RW",
+        "state-province":  null,
+        "domains":  [
+                        "auca.ac.rw"
+                    ],
+        "country":  "Rwanda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.inatek.ac.rw/"
+                      ],
+        "name":  "Institut d\u0027Agriculture, de Technologie et d\u0027Education de Kibungo",
+        "alpha_two_code":  "RW",
+        "state-province":  null,
+        "domains":  [
+                        "inatek.ac.rw"
+                    ],
+        "country":  "Rwanda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.isae.ac.rw/"
+                      ],
+        "name":  "Higher Institute of Agriculture and Animal Husbandry",
+        "alpha_two_code":  "RW",
+        "state-province":  null,
+        "domains":  [
+                        "isae.ac.rw"
+                    ],
+        "country":  "Rwanda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.khi.ac.rw/"
+                      ],
+        "name":  "Kigali Health Institute",
+        "alpha_two_code":  "RW",
+        "state-province":  null,
+        "domains":  [
+                        "khi.ac.rw"
+                    ],
+        "country":  "Rwanda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kie.ac.rw/"
+                      ],
+        "name":  "Kigali Institute of Education",
+        "alpha_two_code":  "RW",
+        "state-province":  null,
+        "domains":  [
+                        "kie.ac.rw"
+                    ],
+        "country":  "Rwanda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kist.ac.rw/"
+                      ],
+        "name":  "Kigali Institute of Science \u0026 Technology",
+        "alpha_two_code":  "RW",
+        "state-province":  null,
+        "domains":  [
+                        "kist.ac.rw"
+                    ],
+        "country":  "Rwanda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.nur.ac.rw/"
+                      ],
+        "name":  "National University of Rwanda",
+        "alpha_two_code":  "RW",
+        "state-province":  null,
+        "domains":  [
+                        "nur.ac.rw"
+                    ],
+        "country":  "Rwanda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.sfb.ac.rw/"
+                      ],
+        "name":  "School of Finance and Banking",
+        "alpha_two_code":  "RW",
+        "state-province":  null,
+        "domains":  [
+                        "sfb.ac.rw"
+                    ],
+        "country":  "Rwanda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uck.ac.rw/"
+                      ],
+        "name":  "Université Catholique de Kabgayi",
+        "alpha_two_code":  "RW",
+        "state-province":  null,
+        "domains":  [
+                        "uck.ac.rw"
+                    ],
+        "country":  "Rwanda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ulk.ac.rw/"
+                      ],
+        "name":  "Kigali Independent University",
+        "alpha_two_code":  "RW",
+        "state-province":  null,
+        "domains":  [
+                        "ulk.ac.rw"
+                    ],
+        "country":  "Rwanda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.umutarapolytech.ac.rw/"
+                      ],
+        "name":  "Umutara Polytechnic",
+        "alpha_two_code":  "RW",
+        "state-province":  null,
+        "domains":  [
+                        "umutarapolytech.ac.rw"
+                    ],
+        "country":  "Rwanda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.cput.ac.za/"
+                      ],
+        "name":  "Cape Peninsula University of Technology",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Western Cape Province",
+        "domains":  [
+                        "cput.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.cut.ac.za/"
+                      ],
+        "name":  "Central University of Technology",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Free State Province",
+        "domains":  [
+                        "cut.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.dut.ac.za/"
+                      ],
+        "name":  "Durban University of Technology",
+        "alpha_two_code":  "ZA",
+        "state-province":  "KwaZulu-Natal",
+        "domains":  [
+                        "dut.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mandela.ac.za/",
+                          "http://www.nmmu.ac.za/"
+                      ],
+        "name":  "Nelson Mandela University",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Eastern Cape Province",
+        "domains":  [
+                        "mandela.ac.za",
+                        "nmmu.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ru.ac.za/"
+                      ],
+        "name":  "Rhodes University",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Eastern Cape Province",
+        "domains":  [
+                        "ru.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.sun.ac.za/"
+                      ],
+        "name":  "University of Stellenbosch",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Western Cape Province",
+        "domains":  [
+                        "sun.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.tut.ac.za/"
+                      ],
+        "name":  "Tshwane University of Technology",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Gauteng Province",
+        "domains":  [
+                        "tut.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uct.ac.za/"
+                      ],
+        "name":  "University of Cape Town",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Western Cape Province",
+        "domains":  [
+                        "uct.ac.za",
+                        "myuct.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ufh.ac.za/"
+                      ],
+        "name":  "University of Fort Hare",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Eastern Cape Province",
+        "domains":  [
+                        "ufh.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uj.ac.za/"
+                      ],
+        "name":  "University of Johannesburg",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Gauteng Province",
+        "domains":  [
+                        "uj.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ukzn.ac.za/"
+                      ],
+        "name":  "University of KwaZulu-Natal",
+        "alpha_two_code":  "ZA",
+        "state-province":  "KwaZulu-Natal",
+        "domains":  [
+                        "ukzn.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ul.ac.za/"
+                      ],
+        "name":  "University of Limpopo",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Limpopo Province",
+        "domains":  [
+                        "ul.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unisa.ac.za/"
+                      ],
+        "name":  "University of South Africa",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Gauteng Province",
+        "domains":  [
+                        "unisa.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univen.ac.za/"
+                      ],
+        "name":  "University of Venda",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Limpopo Province",
+        "domains":  [
+                        "univen.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.nwu.ac.za/",
+                          "http://www.uniwest.ac.za/"
+                      ],
+        "name":  "North-West University",
+        "alpha_two_code":  "ZA",
+        "state-province":  "North West Province",
+        "domains":  [
+                        "nwu.ac.za",
+                        "uniwest.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uovs.ac.za/",
+                          "http://www.ufs.ac.za/"
+                      ],
+        "name":  "University of the Free State",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Free State Province",
+        "domains":  [
+                        "uovs.ac.za",
+                        "ufs.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.up.ac.za/"
+                      ],
+        "name":  "University of Pretoria",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Gauteng Province",
+        "domains":  [
+                        "up.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uwc.ac.za/"
+                      ],
+        "name":  "University of the Western Cape",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Western Cape Province",
+        "domains":  [
+                        "uwc.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unizulu.ac.za/"
+                      ],
+        "name":  "University of Zululand",
+        "alpha_two_code":  "ZA",
+        "state-province":  "KwaZulu-Natal",
+        "domains":  [
+                        "unizulu.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.vut.ac.za/"
+                      ],
+        "name":  "Vaal University of Technology",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Gauteng Province",
+        "domains":  [
+                        "vut.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.wits.ac.za/"
+                      ],
+        "name":  "University of Witwatersrand",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Gauteng Province",
+        "domains":  [
+                        "wits.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.wsu.ac.za/"
+                      ],
+        "name":  "Walter Sisulu University for Technology and Science",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Eastern Cape Province",
+        "domains":  [
+                        "wsu.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.msa.ac.za/"
+                      ],
+        "name":  "Monash Univerisity South Africa",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Gauteng Province",
+        "domains":  [
+                        "msa.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ump.ac.za/"
+                      ],
+        "name":  "Univerisity of Mpumalanga",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Mpumalanga Province",
+        "domains":  [
+                        "ump.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mut.ac.za/"
+                      ],
+        "name":  "Mangosuthu Univerisity of Technology",
+        "alpha_two_code":  "ZA",
+        "state-province":  "KwaZulu-Natal",
+        "domains":  [
+                        "mut.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.smu.ac.za/"
+                      ],
+        "name":  "Sefako Makgatho Health Sciences University",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Gauteng Province",
+        "domains":  [
+                        "smu.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.spu.ac.za/"
+                      ],
+        "name":  "Sol Plaatje University",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Northern Cape Province",
+        "domains":  [
+                        "spu.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "https://www.aisct.org/"
+                      ],
+        "name":  "American International School of Cape Town",
+        "alpha_two_code":  "ZA",
+        "state-province":  "Western Cape Province",
+        "domains":  [
+                        "aisct.org"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "http://www.avu.org/"
+                      ],
+        "name":  "African Virtual University",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "avu.org"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.dit.ac.tz/"
+                      ],
+        "name":  "Dares Salaam Institute of Technology",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "dit.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.hkmu.ac.tz/"
+                      ],
+        "name":  "Hubert Kairuki Memorial University",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "hkmu.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.iaa.ac.tz/"
+                      ],
+        "name":  "Institute of Accountancy Arusha",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "iaa.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ifm.ac.tz/"
+                      ],
+        "name":  "Institute of Finance Management",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "ifm.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.imtu.edu/index.htm"
+                      ],
+        "name":  "International Medical \u0026 Technological University",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "imtu.edu"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kcmc.ac.tz/"
+                      ],
+        "name":  "Kilimanjaro Christian Medical College",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "kcmc.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mmu.ac.tz/"
+                      ],
+        "name":  "Mount Meru University",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "mmu.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mnma.ac.tz/"
+                      ],
+        "name":  "Mwalimu Nyerere Memorial Academy",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "mnma.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.muccobs.ac.tz/"
+                      ],
+        "name":  "Moshi University College of Cooperative and Business Studies",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "muccobs.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.muchs.ac.tz/"
+                      ],
+        "name":  "Muhimbili University of Health and Allied Sciences (MUHAS)",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "muchs.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mzumbe.ac.tz/"
+                      ],
+        "name":  "Mzumbe University (Chuo Kikuu Mzumbe)",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "mzumbe.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.out.ac.tz/"
+                      ],
+        "name":  "Open University of Tanzania",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "out.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.saut.ac.tz/"
+                      ],
+        "name":  "St. Augustine University of Tanzania",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "saut.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.sekuco.org/"
+                      ],
+        "name":  "Sebatian Kolowa University College",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "sekuco.org"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.stjosephtanzania.com/sjcet/index.html"
+                      ],
+        "name":  "St. Joseph Group of Institutes",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "stjosephtanzania.com"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.suanet.ac.tz/"
+                      ],
+        "name":  "Sokoine University of Agriculture",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "suanet.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.tumaini.ac.tz/"
+                      ],
+        "name":  "Tumaini University - Iringa University College",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "tumaini.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.udom.ac.tz/"
+                      ],
+        "name":  "University of Dodoma",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "udom.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.udsm.ac.tz/"
+                      ],
+        "name":  "University of Dar Es Salaam",
+        "alpha_two_code":  "TZ",
+        "state-province":  null,
+        "domains":  [
+                        "udsm.ac.tz"
+                    ],
+        "country":  "Tanzania, United Republic of"
+    },
+    {
+        "web_pages":  [
+                          "http://www.disfm.rnu.tn/"
+                      ],
+        "name":  "Instituts Supérieurs de Formation des Maîtres",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "disfm.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.isetr.rnu.tn/"
+                      ],
+        "name":  "Instituts Supérieurs des Etudes Technologiques",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "isetr.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.isg.rnu.tn/"
+                      ],
+        "name":  "Institut Supérieur de Gestion de Tunis",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "isg.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://u7nc.uvt.rnu.tn/"
+                      ],
+        "name":  "Université de 7 Novembre à Carthage",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "u7nc.uvt.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ucaat.com/"
+                      ],
+        "name":  "Université Centrale",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "ucaat.com"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uc.rnu.tn/"
+                      ],
+        "name":  "Université du Centre, Sousse",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "uc.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ugaf.rnu.tn/"
+                      ],
+        "name":  "Université de Gafsa",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "ugaf.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uj.rnu.tn/"
+                      ],
+        "name":  "Université de Jendouba",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "uj.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ult.ens.tn/"
+                      ],
+        "name":  "Université Libre de Tunis",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "ult.ens.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uma.rnu.tn/"
+                      ],
+        "name":  "Université de la Manouba",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "uma.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.um.rnu.tn/"
+                      ],
+        "name":  "Université de Monastir",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "um.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.unat.ens.tn/"
+                      ],
+        "name":  "University of Aviation and Technology",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "unat.ens.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univgb.rnu.tn/"
+                      ],
+        "name":  "Université de Gabès",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "univgb.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.univ-k.rnu.tn/"
+                      ],
+        "name":  "Université de Kairouan",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "univ-k.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uss.rnu.tn/"
+                      ],
+        "name":  "Université de Sfax",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "uss.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.utm.rnu.tn/"
+                      ],
+        "name":  "Université de Tunis El Manar",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "utm.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.utunis.rnu.tn/"
+                      ],
+        "name":  "Université de Tunis",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "utunis.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uvt.rnu.tn/"
+                      ],
+        "name":  "Université Virtuelle de Tunis",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "uvt.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.uz.rnu.tn/"
+                      ],
+        "name":  "Université Ez-Zitouna",
+        "alpha_two_code":  "TN",
+        "state-province":  null,
+        "domains":  [
+                        "uz.rnu.tn"
+                    ],
+        "country":  "Tunisia"
+    },
+    {
+        "web_pages":  [
+                          "http://www.busitema.ac.ug/"
+                      ],
+        "name":  "Busitema University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "busitema.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.busogauniversity.ac.ug/"
+                      ],
+        "name":  "Busoga University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "busogauniversity.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.cbu2000.com/"
+                      ],
+        "name":  "Central Buganda University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "cbu2000.com"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.gu.ac.ug/"
+                      ],
+        "name":  "Gulu University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "gu.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.iuiu.ac.ug/"
+                      ],
+        "name":  "Islamic University in Uganda",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "iuiu.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kiu.ac.ug/"
+                      ],
+        "name":  "Kampala International University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "kiu.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ku.ac.ug/"
+                      ],
+        "name":  "Kampala University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "ku.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.kyu.ac.ug/"
+                      ],
+        "name":  "Kyambogo University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "kyu.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mak.ac.ug/"
+                      ],
+        "name":  "Makerere University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "mak.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mmu.ac.ug/"
+                      ],
+        "name":  "Mountains of the Moon University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "mmu.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.mru.ac.ug/"
+                      ],
+        "name":  "Mutesa 1 Royal University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "mru.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.must.ac.ug/"
+                      ],
+        "name":  "Mbarara University of Science and Technology",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "must.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ndejjeuniversity.ac.ug/"
+                      ],
+        "name":  "Ndejje University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "ndejjeuniversity.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.nkumbauniversity.ac.ug/"
+                      ],
+        "name":  "Nkumba University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "nkumbauniversity.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.saiu.ac.ug/"
+                      ],
+        "name":  "St. Augustine International University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "saiu.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.ucu.ac.ug/"
+                      ],
+        "name":  "Uganda Christian University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "ucu.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://www.umu.ac.ug/"
+                      ],
+        "name":  "Uganda Martyr\u0027s University",
+        "alpha_two_code":  "UG",
+        "state-province":  null,
+        "domains":  [
+                        "umu.ac.ug"
+                    ],
+        "country":  "Uganda"
+    },
+    {
+        "web_pages":  [
+                          "http://cic-cairo.com/"
+                      ],
+        "name":  "CIC - Canadian International College",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "cic-cairo.com"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "https://deraya.edu.eg"
+                      ],
+        "name":  "Deraya University",
+        "alpha_two_code":  "EG",
+        "state-province":  "New Minia",
+        "domains":  [
+                        "deraya.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "web_pages":  [
+                          "https://nwu.ac.za"
+                      ],
+        "name":  "North-West Univeristy",
+        "alpha_two_code":  "ZA",
+        "state-province":  null,
+        "domains":  [
+                        "student.g.nwu.ac.za"
+                    ],
+        "country":  "South Africa"
+    },
+    {
+        "web_pages":  [
+                          "https://buc.edu.eg"
+                      ],
+        "name":  "Badr University in Cairo",
+        "alpha_two_code":  "EG",
+        "state-province":  null,
+        "domains":  [
+                        "buc.edu.eg"
+                    ],
+        "country":  "Egypt"
+    },
+    {
+        "name":  "Miva Open University",
+        "domains":  [
+                        "miva.university"
+                    ],
+        "web_pages":  [
+                          "https://miva.university/"
+                      ],
+        "country":  "Nigeria",
+        "alpha_two_code":  "NG",
+        "state-province":  null
+    },
+    {
+        "web_pages":  [
+                          "http://www.ehtp.ac.ma/"
+                      ],
+        "name":  "Ecole Hassania des Travaux Publics",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "ehtp.ac.ma"
+                    ],
+        "country":  "Morocco"
+    },
+    {
+        "web_pages":  [
+                          "https://biu.education/"
+                      ],
+        "name":  "British International University",
+        "alpha_two_code":  "CI",
+        "state-province":  null,
+        "domains":  [
+                        "biu.education"
+                    ],
+        "country":  "Côte d\u0027Ivoire"
+    },
+    {
+        "web_pages":  [
+                          "https://www.uir.ac.ma/"
+                      ],
+        "name":  "Université Internationale de Rabat",
+        "alpha_two_code":  "MA",
+        "state-province":  null,
+        "domains":  [
+                        "uir.ac.ma"
+                    ],
+        "country":  "Morocco"
+    }
+]

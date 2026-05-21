@@ -1,38 +1,38 @@
 {
   "Eastern Cape": {
-    "file": "/public/data/schools/schools_eastern_cape.json",
+    "file": "/data/schools/schools_eastern_cape.json",
     "count": 5310
   },
   "Free State": {
-    "file": "/public/data/schools/schools_free_state.json",
+    "file": "/data/schools/schools_free_state.json",
     "count": 1021
   },
   "Gauteng": {
-    "file": "/public/data/schools/schools_gauteng.json",
+    "file": "/data/schools/schools_gauteng.json",
     "count": 3056
   },
   "KwaZulu-Natal": {
-    "file": "/public/data/schools/schools_kwazulu-natal.json",
+    "file": "/data/schools/schools_kwazulu-natal.json",
     "count": 6060
   },
   "Limpopo": {
-    "file": "/public/data/schools/schools_limpopo.json",
+    "file": "/data/schools/schools_limpopo.json",
     "count": 3839
   },
   "Mpumalanga": {
-    "file": "/public/data/schools/schools_mpumalanga.json",
+    "file": "/data/schools/schools_mpumalanga.json",
     "count": 1771
   },
   "Northern Cape": {
-    "file": "/public/data/schools/schools_northern_cape.json",
+    "file": "/data/schools/schools_northern_cape.json",
     "count": 589
   },
   "North West": {
-    "file": "/public/data/schools/schools_north_west.json",
+    "file": "/data/schools/schools_north_west.json",
     "count": 1549
   },
   "Western Cape": {
-    "file": "/public/data/schools/schools_western_cape.json",
+    "file": "/data/schools/schools_western_cape.json",
     "count": 1803
   }
 }

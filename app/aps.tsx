@@ -46,10 +46,13 @@ export default function APSScreen() {
   useEffect(() => {
     const loadKnowledge = async () => {
       try {
-        const res = await fetch('/public/data/knowledge.json');
+        // FIXED: removed /public
+        const res = await fetch('/data/knowledge.json');
         if (res.ok) {
           const data = await res.json();
           setKnowledge(data);
+        } else {
+          console.log('Failed to load knowledge.json:', res.status);
         }
       } catch (e) {
         console.log('Failed to load knowledge.json:', e);
@@ -69,9 +72,9 @@ export default function APSScreen() {
 
     // Take best 6 subjects excluding Life Orientation
     const bestSix = otherSubjects
-    .map(s => ({...s, apsPoints: markToAPS(s.mark) }))
-    .sort((a, b) => b.apsPoints - a.apsPoints)
-    .slice(0, 6);
+   .map(s => ({...s, apsPoints: markToAPS(s.mark) }))
+   .sort((a, b) => b.apsPoints - a.apsPoints)
+   .slice(0, 6);
 
     const total = bestSix.reduce((sum, s) => sum + s.apsPoints, 0) + (lo? 1 : 0);
     setAps(total);
@@ -107,9 +110,9 @@ export default function APSScreen() {
     if (!knowledge.institutions) return [];
 
     const allInstitutions = [
-    ...knowledge.institutions,
-    ...knowledge.tvet_colleges,
-    ...knowledge.private_institutions
+   ...(knowledge.institutions || []),
+   ...(knowledge.tvet_colleges || []),
+   ...(knowledge.private_institutions || [])
     ];
 
     const results: any[] = [];
