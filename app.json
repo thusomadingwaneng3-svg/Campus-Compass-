@@ -6,6 +6,38 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#8B0000"
+    },
+    "web": {
+      "output": "server",
+      "favicon": "./assets/favicon.png",
+      "manifest": {
+        "name": "Campus Compass",
+        "short_name": "CampusCompass",
+        "theme_color": "#8B0000",
+        "background_color": "#ffffff",
+        "display": "standalone",
+        "start_url": "/",
+        "icons": [
+          {
+            "src": "./assets/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          },
+          {
+            "src": "./assets/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+          }
+        ]
+      }
+    },
+    "assetBundlePatterns": [
+      "assets/*"
+    ],
     "android": {
       "package": "com.vut.campuscompass",
       "versionCode": 2,
@@ -25,7 +57,8 @@
           "locationAlwaysAndWhenInUsePermission": "Allow Campus Compass to use your location for campus navigation and emergency sharing."
         }
       ],
-      "expo-router"
+      "expo-router",
+      "expo-mlkit-ocr"
     ],
     "extra": {
       "eas": {
