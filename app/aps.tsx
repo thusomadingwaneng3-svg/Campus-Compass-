@@ -1,41 +1,35 @@
 import { useState, useEffect } from 'react';
-import { View, Text, TextInput, ScrollView, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
+import Select from 'react-select';
 
 type Subject = { name: string; mark: number };
 
-// 1. ADD ALL 11 SA HOME LANGUAGES + CORE SUBJECTS
-const SUBJECTS = [
-  // Home Languages - COMPULSORY for APS
-  'English Home Language',
-  'Afrikaans Home Language',
-  'isiZulu Home Language',
-  'isiXhosa Home Language',
-  'Sepedi Home Language',
-  'Sesotho Home Language',
-  'Setswana Home Language',
-  'siSwati Home Language',
-  'Tshivenda Home Language',
-  'Xitsonga Home Language',
-  'isiNdebele Home Language',
-
-  // Other Subjects
-  'Mathematics',
-  'Mathematical Literacy',
-  'Physical Sciences',
-  'Life Sciences',
-  'History',
-  'Geography',
-  'Accounting',
-  'Business Studies',
-  'Economics',
-  'Life Orientation' // Counts as 1 point only
+const SUBJECT_OPTIONS = [
+  { value: 'English Home Language', label: 'English Home Language' },
+  { value: 'Afrikaans Home Language', label: 'Afrikaans Home Language' },
+  { value: 'isiZulu Home Language', label: 'isiZulu Home Language' },
+  { value: 'isiXhosa Home Language', label: 'isiXhosa Home Language' },
+  { value: 'Sepedi Home Language', label: 'Sepedi Home Language' },
+  { value: 'Sesotho Home Language', label: 'Sesotho Home Language' },
+  { value: 'Setswana Home Language', label: 'Setswana Home Language' },
+  { value: 'siSwati Home Language', label: 'siSwati Home Language' },
+  { value: 'Tshivenda Home Language', label: 'Tshivenda Home Language' },
+  { value: 'Xitsonga Home Language', label: 'Xitsonga Home Language' },
+  { value: 'isiNdebele Home Language', label: 'isiNdebele Home Language' },
+  { value: 'Mathematics', label: 'Mathematics' },
+  { value: 'Mathematical Literacy', label: 'Mathematical Literacy' },
+  { value: 'Physical Sciences', label: 'Physical Sciences' },
+  { value: 'Life Sciences', label: 'Life Sciences' },
+  { value: 'History', label: 'History' },
+  { value: 'Geography', label: 'Geography' },
+  { value: 'Accounting', label: 'Accounting' },
+  { value: 'Business Studies', label: 'Business Studies' },
+  { value: 'Economics', label: 'Economics' },
+  { value: 'Life Orientation', label: 'Life Orientation' }
 ];
 
 export default function APSScreen() {
   const [subjects, setSubjects] = useState<Subject[]>([
-    { name: 'English Home Language', mark: 0 }, // Default Home Language
+    { name: 'English Home Language', mark: 0 },
     { name: 'Mathematics', mark: 0 },
     { name: 'Life Orientation', mark: 0 }
   ]);
@@ -46,7 +40,6 @@ export default function APSScreen() {
   useEffect(() => {
     const loadKnowledge = async () => {
       try {
-        // FIXED: removed /public
         const res = await fetch('/data/knowledge.json');
         if (res.ok) {
           const data = await res.json();
@@ -65,30 +58,26 @@ export default function APSScreen() {
 
   const calculateAPS = () => {
     const validSubjects = subjects.filter(s => s.name && s.mark > 0);
-
-    // Separate Life Orientation from other subjects
     const lo = validSubjects.find(s => s.name === 'Life Orientation');
     const otherSubjects = validSubjects.filter(s => s.name!== 'Life Orientation');
 
-    // Take best 6 subjects excluding Life Orientation
     const bestSix = otherSubjects
-   .map(s => ({...s, apsPoints: markToAPS(s.mark) }))
-   .sort((a, b) => b.apsPoints - a.apsPoints)
-   .slice(0, 6);
+     .map(s => ({...s, apsPoints: markToAPS(s.mark) }))
+     .sort((a, b) => b.apsPoints - a.apsPoints)
+     .slice(0, 6);
 
     const total = bestSix.reduce((sum, s) => sum + s.apsPoints, 0) + (lo? 1 : 0);
     setAps(total);
   };
 
   const markToAPS = (mark: number): number => {
-    if (mark >= 90) return 8;
-    if (mark >= 80) return 7;
-    if (mark >= 70) return 6;
-    if (mark >= 60) return 5;
-    if (mark >= 50) return 4;
-    if (mark >= 40) return 3;
-    if (mark >= 30) return 2;
-    return 1;
+    if (mark >= 80) return 7; // 80-100 = 7
+    if (mark >= 70) return 6; // 70-79 = 6
+    if (mark >= 60) return 5; // 60-69 = 5
+    if (mark >= 50) return 4; // 50-59 = 4
+    if (mark >= 40) return 3; // 40-49 = 3
+    if (mark >= 30) return 2; // 30-39 = 2
+    return 1; // 0-29 = 1
   };
 
   const addSubject = () => {
@@ -110,9 +99,9 @@ export default function APSScreen() {
     if (!knowledge.institutions) return [];
 
     const allInstitutions = [
-   ...(knowledge.institutions || []),
-   ...(knowledge.tvet_colleges || []),
-   ...(knowledge.private_institutions || [])
+     ...(knowledge.institutions || []),
+     ...(knowledge.tvet_colleges || []),
+     ...(knowledge.private_institutions || [])
     ];
 
     const results: any[] = [];
@@ -124,7 +113,7 @@ export default function APSScreen() {
             faculty,
             apsRequired: data.aps,
             degrees: data.degrees?.slice(0, 2).join(', ') || 'Various',
-            color: inst.primaryColor
+            color: inst.primaryColor || '#8B0000'
           });
         }
       });
@@ -137,125 +126,91 @@ export default function APSScreen() {
   const hasHomeLanguage = subjects.some(s => s.name.includes('Home Language'));
 
   if (loading) {
-    return (
-      <SafeAreaView style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
-        <ActivityIndicator size="large" color="#8B0000" />
-        <Text style={{ marginTop: 12, color: '#666' }}>Loading institutions...</Text>
-      </SafeAreaView>
-    );
+    return <div style={{ padding: 40, textAlign: 'center' }}>Loading institutions...</div>;
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>APS Calculator</Text>
-        <Text style={styles.headerSubtitle}>Check what you qualify for</Text>
-      </View>
+    <div style={{ maxWidth: 600, margin: '0 auto', padding: 20 }}>
+      <div style={{ backgroundColor: '#8B0000', color: 'white', padding: 20, borderRadius: 12, textAlign: 'center', marginBottom: 20 }}>
+        <h1 style={{ margin: 0, fontSize: 24 }}>APS Calculator</h1>
+        <p style={{ margin: '8px 0 0', opacity: 0.9 }}>Check what you qualify for</p>
+      </div>
 
-      <ScrollView style={styles.content}>
-        <View style={styles.apsBox}>
-          <Text style={styles.apsLabel}>Your APS Score</Text>
-          <Text style={styles.apsScore}>{aps}</Text>
-          <Text style={styles.apsNote}>
-            {hasHomeLanguage? 'Based on your 6 best subjects + Life Orientation' : 'Select a Home Language first'}
-          </Text>
-        </View>
+      <div style={{ backgroundColor: '#8B0000', color: 'white', borderRadius: 16, padding: 24, textAlign: 'center', marginBottom: 16 }}>
+        <div style={{ fontSize: 14, opacity: 0.9 }}>Your APS Score</div>
+        <div style={{ fontSize: 48, fontWeight: 'bold', margin: '8px 0' }}>{aps}</div>
+        <div style={{ fontSize: 12, opacity: 0.9 }}>
+          {hasHomeLanguage? 'Based on your 6 best subjects + Life Orientation' : 'Select a Home Language first'}
+        </div>
+      </div>
 
-        {!hasHomeLanguage && (
-          <View style={styles.warningBox}>
-            <Ionicons name="alert-circle-outline" size={20} color="#dc2626" />
-            <Text style={styles.warningText}>Home Language is compulsory for university admission</Text>
-          </View>
-        )}
+      {!hasHomeLanguage && (
+        <div style={{ backgroundColor: '#fef2f2', border: '1px solid #fecaca', padding: 12, borderRadius: 8, marginBottom: 16, color: '#dc2626' }}>
+          ⚠️ Home Language is compulsory for university admission
+        </div>
+      )}
 
-        <Text style={styles.sectionTitle}>Enter Your Marks</Text>
-        {subjects.map((subject, index) => (
-          <View key={index} style={styles.subjectRow}>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.subjectPicker}>
-              {SUBJECTS.map(s => (
-                <TouchableOpacity
-                  key={s}
-                  onPress={() => updateSubject(index, 'name', s)}
-                  style={[styles.subjectChip, subject.name === s && styles.subjectChipActive]}
-                >
-                  <Text style={[styles.subjectChipText, subject.name === s && styles.subjectChipTextActive]}>
-                    {s}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-            <TextInput
-              style={styles.markInput}
-              placeholder="%"
-              keyboardType="numeric"
-              maxLength={3}
-              value={subject.mark? String(subject.mark) : ''}
-              onChangeText={(v) => updateSubject(index, 'mark', v)}
+      <h2 style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 12 }}>Enter Your Marks</h2>
+
+      {subjects.map((subject, index) => (
+        <div key={index} style={{ display: 'flex', gap: 8, marginBottom: 12, alignItems: 'center' }}>
+          <div style={{ flex: 1 }}>
+            <Select
+              options={SUBJECT_OPTIONS}
+              value={SUBJECT_OPTIONS.find(opt => opt.value === subject.name) || null}
+              onChange={(opt) => updateSubject(index, 'name', opt?.value || '')}
+              placeholder="Select Subject"
+              isSearchable={true}
             />
-            {subjects.length > 3 && (
-              <TouchableOpacity onPress={() => removeSubject(index)}>
-                <Ionicons name="trash-outline" size={20} color="#dc2626" />
-              </TouchableOpacity>
-            )}
-          </View>
-        ))}
+          </div>
+          <input
+            type="number"
+            placeholder="%"
+            min="0"
+            max="100"
+            value={subject.mark || ''}
+            onChange={(e) => updateSubject(index, 'mark', e.target.value)}
+            style={{ width: 70, padding: 10, borderRadius: 8, border: '1px solid #ddd', textAlign: 'center' }}
+          />
+          {subjects.length > 3 && (
+            <button onClick={() => removeSubject(index)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#dc2626' }}>
+              🗑️
+            </button>
+          )}
+        </div>
+      ))}
 
-        <TouchableOpacity onPress={addSubject} style={styles.addBtn} disabled={subjects.length >= 8}>
-          <Ionicons name="add-circle-outline" size={20} color="#8B0000" />
-          <Text style={styles.addBtnText}>Add Subject (Max 8)</Text>
-        </TouchableOpacity>
+      <button
+        onClick={addSubject}
+        disabled={subjects.length >= 8}
+        style={{ width: '100%', padding: 12, border: '2px dashed #8B0000', background: 'none', color: '#8B0000', borderRadius: 8, cursor: 'pointer', marginBottom: 16 }}
+      >
+        + Add Subject (Max 8)
+      </button>
 
-        <TouchableOpacity onPress={calculateAPS} style={styles.calcBtn}>
-          <Text style={styles.calcBtnText}>Calculate APS</Text>
-        </TouchableOpacity>
+      <button
+        onClick={calculateAPS}
+        style={{ width: '100%', backgroundColor: '#8B0000', color: 'white', padding: 16, borderRadius: 12, border: 'none', fontWeight: 'bold', fontSize: 16, cursor: 'pointer' }}
+      >
+        Calculate APS
+      </button>
 
-        {aps > 0 && (
-          <>
-            <Text style={styles.sectionTitle}>You Qualify For ({qualifying.length})</Text>
-            {qualifying.map((q, i) => (
-              <View key={i} style={[styles.qualCard, { borderLeftColor: q.color || '#8B0000' }]}>
-                <Text style={styles.qualInst}>{q.institution}</Text>
-                <Text style={styles.qualFaculty}>{q.faculty} - APS {q.apsRequired}</Text>
-                <Text style={styles.qualDegrees}>{q.degrees}</Text>
-              </View>
-            ))}
-            {qualifying.length === 0 && (
-              <Text style={styles.noQual}>No qualifications found with APS {aps}. Try TVET colleges - they accept APS 20+.</Text>
-            )}
-          </>
-        )}
-      </ScrollView>
-    </SafeAreaView>
+      {aps > 0 && (
+        <div style={{ marginTop: 24 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 12 }}>You Qualify For ({qualifying.length})</h2>
+          {qualifying.length === 0? (
+            <p style={{ color: '#666', textAlign: 'center', padding: 20 }}>No qualifications found with APS {aps}. Try TVET colleges - they accept APS 20+.</p>
+          ) : (
+            qualifying.map((q, i) => (
+              <div key={i} style={{ backgroundColor: '#f9fafb', padding: 12, borderRadius: 8, marginBottom: 8, borderLeft: `4px solid ${q.color}` }}>
+                <div style={{ fontWeight: 'bold', fontSize: 15 }}>{q.institution}</div>
+                <div style={{ color: '#666', fontSize: 13, marginTop: 2 }}>{q.faculty} - APS {q.apsRequired}</div>
+                <div style={{ color: '#333', fontSize: 13, marginTop: 4 }}>{q.degrees}</div>
+              </div>
+            ))
+          )}
+        </div>
+      )}
+    </div>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
-  header: { padding: 20, borderBottomWidth: 1, borderColor: '#e5e5e5', backgroundColor: '#8B0000' },
-  headerTitle: { fontSize: 22, fontWeight: 'bold', color: '#fff' },
-  headerSubtitle: { fontSize: 13, color: '#f3f4f6', marginTop: 4 },
-  content: { padding: 16 },
-  apsBox: { backgroundColor: '#8B0000', borderRadius: 16, padding: 24, alignItems: 'center', marginBottom: 16 },
-  apsLabel: { color: '#f3f4f6', fontSize: 14 },
-  apsScore: { color: '#fff', fontSize: 48, fontWeight: 'bold', marginVertical: 8 },
-  apsNote: { color: '#f3f4f6', fontSize: 12, textAlign: 'center' },
-  warningBox: { backgroundColor: '#fef2f2', padding: 12, borderRadius: 8, marginBottom: 16, flexDirection: 'row', alignItems: 'center', gap: 8, borderWidth: 1, borderColor: '#fecaca' },
-  warningText: { color: '#dc2626', fontSize: 13, flex: 1 },
-  sectionTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 12, marginTop: 8 },
-  subjectRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 12, gap: 8 },
-  subjectPicker: { flex: 1 },
-  subjectChip: { paddingHorizontal: 10, paddingVertical: 6, borderRadius: 12, backgroundColor: '#f3f4f6', borderWidth: 1, borderColor: '#ddd', marginRight: 6 },
-  subjectChipActive: { backgroundColor: '#8B0000', borderColor: '#8B0000' },
-  subjectChipText: { fontSize: 11, color: '#333' },
-  subjectChipTextActive: { color: '#fff', fontWeight: '600' },
-  markInput: { width: 60, borderWidth: 1, borderColor: '#ddd', borderRadius: 8, padding: 8, textAlign: 'center', fontSize: 16 },
-  addBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, padding: 12, borderWidth: 1, borderColor: '#8B0000', borderRadius: 8, borderStyle: 'dashed', marginBottom: 16 },
-  addBtnText: { color: '#8B0000', fontWeight: '600' },
-  calcBtn: { backgroundColor: '#8B0000', padding: 16, borderRadius: 12, alignItems: 'center', marginVertical: 20 },
-  calcBtnText: { color: '#fff', fontWeight: 'bold', fontSize: 16 },
-  qualCard: { backgroundColor: '#f9fafb', padding: 12, borderRadius: 8, marginBottom: 8, borderLeftWidth: 4 },
-  qualInst: { fontWeight: 'bold', fontSize: 15 },
-  qualFaculty: { color: '#666', fontSize: 13, marginTop: 2 },
-  qualDegrees: { color: '#333', fontSize: 13, marginTop: 4 },
-  noQual: { color: '#666', textAlign: 'center', padding: 20, fontStyle: 'italic' }
-});

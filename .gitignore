@@ -9,3 +9,5 @@ yarn-error.log*
 TempApp/
 .env
 public/data/knowledge-lite.json
+.vercel
+.env*.local

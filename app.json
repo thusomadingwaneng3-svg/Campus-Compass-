@@ -1,7 +1,12 @@
-﻿{
+{
   "expo": {
     "name": "Campus Compass",
     "slug": "campuscompass",
+    "platforms": [
+      "android",
+      "ios",
+      "web"
+    ],
     "scheme": "campuscompass",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -58,7 +63,8 @@
         }
       ],
       "expo-router",
-      "expo-mlkit-ocr"
+      "expo-mlkit-ocr",
+      "expo-font"
     ],
     "extra": {
       "eas": {

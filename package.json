@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "campus-compass",
   "version": "1.0.0",
   "main": "expo-router/entry",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@expo/metro-runtime": "~3.2.3",
     "@expo/vector-icons": "^14.0.3",
+    "@opentelemetry/api": "^1.9.1",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-navigation/drawer": "6.7.2",
     "@supabase/supabase-js": "^2.105.4",
@@ -20,12 +21,15 @@
     "axios": "^1.16.1",
     "cheerio": "^1.2.0",
     "expo": "~51.0.28",
+    "expo-camera": "~15.0.16",
     "expo-clipboard": "~6.0.3",
     "expo-constants": "~16.0.2",
     "expo-crypto": "~13.0.2",
     "expo-device": "~6.0.2",
     "expo-document-picker": "~12.0.2",
     "expo-file-system": "~17.0.1",
+    "expo-font": "~12.0.10",
+    "expo-image-picker": "~15.1.0",
     "expo-linear-gradient": "~13.0.2",
     "expo-linking": "~6.3.1",
     "expo-location": "~17.0.1",
@@ -39,6 +43,7 @@
     "expo-sqlite": "~14.0.6",
     "expo-status-bar": "~1.12.1",
     "fuse.js": "^7.3.0",
+    "jspdf": "^4.2.1",
     "leaflet": "^1.9.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -53,6 +58,7 @@
     "react-native-screens": "3.31.1",
     "react-native-url-polyfill": "^3.0.0",
     "react-native-web": "~0.19.10",
+    "react-select": "^5.10.2",
     "tesseract.js": "^7.0.0",
     "typescript": "~5.3.3"
   },
