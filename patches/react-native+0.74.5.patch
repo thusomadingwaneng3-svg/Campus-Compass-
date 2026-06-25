@@ -5,6 +5,13 @@ index 0000000..37d9fb4
 +++ b/node_modules/react-native/Libraries/Alert/RCTAlertManager.web.js
 @@ -0,0 +1 @@
 +exports.default = { alertWithArgs() {} };
+diff --git a/node_modules/react-native/Libraries/BatchedBridge/NativeModules.web.js b/node_modules/react-native/Libraries/BatchedBridge/NativeModules.web.js
+new file mode 100644
+index 0000000..b511c97
+--- /dev/null
++++ b/node_modules/react-native/Libraries/BatchedBridge/NativeModules.web.js
+@@ -0,0 +1 @@
++﻿export default {};
 diff --git a/node_modules/react-native/Libraries/Components/AccessibilityInfo/legacySendAccessibilityEvent.web.js b/node_modules/react-native/Libraries/Components/AccessibilityInfo/legacySendAccessibilityEvent.web.js
 new file mode 100644
 index 0000000..55a2966
@@ -12,6 +19,13 @@ index 0000000..55a2966
 +++ b/node_modules/react-native/Libraries/Components/AccessibilityInfo/legacySendAccessibilityEvent.web.js
 @@ -0,0 +1 @@
 +module.exports = require('react-native-web/dist/exports/AccessibilityInfo').legacySendAccessibilityEvent;
+diff --git a/node_modules/react-native/Libraries/EventEmitter/RCTNativeEventEmitter.web.js b/node_modules/react-native/Libraries/EventEmitter/RCTNativeEventEmitter.web.js
+new file mode 100644
+index 0000000..0d26a06
+--- /dev/null
++++ b/node_modules/react-native/Libraries/EventEmitter/RCTNativeEventEmitter.web.js
+@@ -0,0 +1 @@
++﻿export default class RCTNativeEventEmitter { addListener() { return { remove() {} }; } removeAllListeners() {} }
 diff --git a/node_modules/react-native/Libraries/Libraries/Alert/RCTAlertManager.web.js b/node_modules/react-native/Libraries/Libraries/Alert/RCTAlertManager.web.js
 new file mode 100644
 index 0000000..5110969
