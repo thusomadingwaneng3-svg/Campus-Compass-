@@ -1,0 +1,100 @@
+diff --git a/node_modules/react-native/Libraries/Alert/RCTAlertManager.web.js b/node_modules/react-native/Libraries/Alert/RCTAlertManager.web.js
+new file mode 100644
+index 0000000..37d9fb4
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Alert/RCTAlertManager.web.js
+@@ -0,0 +1 @@
++exports.default = { alertWithArgs() {} };
+diff --git a/node_modules/react-native/Libraries/Components/AccessibilityInfo/legacySendAccessibilityEvent.web.js b/node_modules/react-native/Libraries/Components/AccessibilityInfo/legacySendAccessibilityEvent.web.js
+new file mode 100644
+index 0000000..55a2966
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Components/AccessibilityInfo/legacySendAccessibilityEvent.web.js
+@@ -0,0 +1 @@
++module.exports = require('react-native-web/dist/exports/AccessibilityInfo').legacySendAccessibilityEvent;
+diff --git a/node_modules/react-native/Libraries/Libraries/Alert/RCTAlertManager.web.js b/node_modules/react-native/Libraries/Libraries/Alert/RCTAlertManager.web.js
+new file mode 100644
+index 0000000..5110969
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Libraries/Alert/RCTAlertManager.web.js
+@@ -0,0 +1 @@
++﻿exports.default = { alertWithArgs() {} };
+diff --git a/node_modules/react-native/Libraries/Libraries/Components/AccessibilityInfo/legacySendAccessibilityEvent.web.js b/node_modules/react-native/Libraries/Libraries/Components/AccessibilityInfo/legacySendAccessibilityEvent.web.js
+new file mode 100644
+index 0000000..13f61fb
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Libraries/Components/AccessibilityInfo/legacySendAccessibilityEvent.web.js
+@@ -0,0 +1 @@
++﻿module.exports = require('react-native-web/dist/exports/AccessibilityInfo').legacySendAccessibilityEvent;
+diff --git a/node_modules/react-native/Libraries/Libraries/NativeComponent/BaseViewConfig.web.js b/node_modules/react-native/Libraries/Libraries/NativeComponent/BaseViewConfig.web.js
+new file mode 100644
+index 0000000..8c0c581
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Libraries/NativeComponent/BaseViewConfig.web.js
+@@ -0,0 +1 @@
++﻿module.exports = { validAttributes: {}, uiViewClassName: 'RCTView' };
+diff --git a/node_modules/react-native/Libraries/Libraries/Network/RCTNetworking.web.js b/node_modules/react-native/Libraries/Libraries/Network/RCTNetworking.web.js
+new file mode 100644
+index 0000000..e076fde
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Libraries/Network/RCTNetworking.web.js
+@@ -0,0 +1 @@
++﻿exports.default = { sendRequest() {}, abortRequest() {}, addListener() {}, removeListeners() {} };
+diff --git a/node_modules/react-native/Libraries/Libraries/StyleSheet/PlatformColorValueTypes.web.js b/node_modules/react-native/Libraries/Libraries/StyleSheet/PlatformColorValueTypes.web.js
+new file mode 100644
+index 0000000..a3326f8
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Libraries/StyleSheet/PlatformColorValueTypes.web.js
+@@ -0,0 +1 @@
++﻿exports.processColorObject = function(color) { return null; };
+diff --git a/node_modules/react-native/Libraries/Libraries/Utilities/BackHandler.web.js b/node_modules/react-native/Libraries/Libraries/Utilities/BackHandler.web.js
+new file mode 100644
+index 0000000..e17ed24
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Libraries/Utilities/BackHandler.web.js
+@@ -0,0 +1 @@
++﻿exports.default = { addEventListener() { return { remove() {} } }, removeEventListener() {}, exitApp() {} };
+diff --git a/node_modules/react-native/Libraries/Libraries/Utilities/Platform.web.js b/node_modules/react-native/Libraries/Libraries/Utilities/Platform.web.js
+new file mode 100644
+index 0000000..d9228e9
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Libraries/Utilities/Platform.web.js
+@@ -0,0 +1 @@
++﻿module.exports = require('react-native-web/dist/exports/Platform');
+diff --git a/node_modules/react-native/Libraries/NativeComponent/BaseViewConfig.web.js b/node_modules/react-native/Libraries/NativeComponent/BaseViewConfig.web.js
+new file mode 100644
+index 0000000..db56af0
+--- /dev/null
++++ b/node_modules/react-native/Libraries/NativeComponent/BaseViewConfig.web.js
+@@ -0,0 +1 @@
++module.exports = { validAttributes: {}, uiViewClassName: 'RCTView' };
+diff --git a/node_modules/react-native/Libraries/Network/RCTNetworking.web.js b/node_modules/react-native/Libraries/Network/RCTNetworking.web.js
+new file mode 100644
+index 0000000..3e4f9ae
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Network/RCTNetworking.web.js
+@@ -0,0 +1 @@
++exports.default = { sendRequest() {}, abortRequest() {}, addListener() {}, removeListeners() {} };
+diff --git a/node_modules/react-native/Libraries/StyleSheet/PlatformColorValueTypes.web.js b/node_modules/react-native/Libraries/StyleSheet/PlatformColorValueTypes.web.js
+new file mode 100644
+index 0000000..a3831ce
+--- /dev/null
++++ b/node_modules/react-native/Libraries/StyleSheet/PlatformColorValueTypes.web.js
+@@ -0,0 +1 @@
++exports.processColorObject = function(color) { return null; };
+diff --git a/node_modules/react-native/Libraries/Utilities/BackHandler.web.js b/node_modules/react-native/Libraries/Utilities/BackHandler.web.js
+new file mode 100644
+index 0000000..ce17475
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Utilities/BackHandler.web.js
+@@ -0,0 +1 @@
++exports.default = { addEventListener() { return { remove() {} } }, removeEventListener() {}, exitApp() {} };
+diff --git a/node_modules/react-native/Libraries/Utilities/Platform.web.js b/node_modules/react-native/Libraries/Utilities/Platform.web.js
+new file mode 100644
+index 0000000..57df935
+--- /dev/null
++++ b/node_modules/react-native/Libraries/Utilities/Platform.web.js
+@@ -0,0 +1,2 @@
++// Stub to satisfy react-native/Libraries/ReactPrivate/ReactNativePrivateInterface.js
++module.exports = require('react-native-web/dist/exports/Platform');
+\ No newline at end of file
