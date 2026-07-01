@@ -1,7 +1,12 @@
 {
-  "buildCommand": "npx expo export",
+  "buildCommand": "npm run build:web",
   "outputDirectory": "dist",
-  "installCommand": "npm install",
+  "installCommand": "npm install --legacy-peer-deps",
+  "build": {
+    "includeFiles": [
+      "assets/**"
+    ]
+  },
   "functions": {
     "api/ussd.ts": {
       "includeFiles": "api/data/**"

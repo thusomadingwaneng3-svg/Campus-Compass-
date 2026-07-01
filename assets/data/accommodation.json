@@ -1,0 +1,687 @@
+[
+  {
+    "institution": "University of Cape Town",
+    "province": "Western Cape",
+    "type": "Public University",
+    "residences": [
+      {"name": "Fuller Hall", "gender": "Mixed", "roomType": "Catered, Single/Sharing", "price": "R6 200 - R8 900/month", "contact": "021 650 3572", "applyLink": "https://www.uct.ac.za/students/residence"},
+      {"name": "College House", "gender": "Male", "roomType": "Catered, Single", "price": "R7 100/month", "contact": "021 650 3572", "applyLink": "https://www.uct.ac.za/students/residence"},
+      {"name": "Forest Hill", "gender": "Female", "roomType": "Catered, Single", "price": "R6 800/month", "contact": "021 650 3572", "applyLink": "https://www.uct.ac.za/students/residence"},
+      {"name": "Smuts Hall", "gender": "Mixed", "roomType": "Self-catering, Sharing", "price": "R5 200/month", "contact": "021 650 3572", "applyLink": "https://www.uct.ac.za/students/residence"}
+    ]
+  },
+  {
+    "institution": "University of the Witwatersrand",
+    "province": "Gauteng",
+    "type": "Public University",
+    "residences": [
+      {"name": "Sunnyside Residence", "gender": "Mixed", "roomType": "Self-catering, Single/Sharing", "price": "R4 800 - R6 500/month", "contact": "011 717 9435", "applyLink": "https://www.wits.ac.za/students/accommodation/"},
+      {"name": "Knockando Residence", "gender": "Female", "roomType": "Catered, Single", "price": "R5 900/month", "contact": "011 717 9435", "applyLink": "https://www.wits.ac.za/students/accommodation/"},
+      {"name": "Bernard Price Residence", "gender": "Male", "roomType": "Catered, Sharing", "price": "R4 900/month", "contact": "011 717 9435", "applyLink": "https://www.wits.ac.za/students/accommodation/"}
+    ]
+  },
+  {
+    "institution": "Stellenbosch University",
+    "province": "Western Cape",
+    "type": "Public University",
+    "residences": [
+      {"name": "Wilgenhof", "gender": "Male", "roomType": "Catered, Sharing", "price": "R5 400/month", "contact": "021 808 9111", "applyLink": "https://www.sun.ac.za/english/student-life/accommodation"},
+      {"name": "Heemstede", "gender": "Female", "roomType": "Catered, Single/Sharing", "price": "R5 800/month", "contact": "021 808 9111", "applyLink": "https://www.sun.ac.za/english/student-life/accommodation"},
+      {"name": "Huize Marais", "gender": "Female", "roomType": "Catered, Single", "price": "R6 200/month", "contact": "021 808 9111", "applyLink": "https://www.sun.ac.za/english/student-life/accommodation"}
+    ]
+  },
+  {
+    "institution": "University of Pretoria",
+    "province": "Gauteng",
+    "type": "Public University",
+    "residences": [
+      {"name": "Residence Village", "gender": "Mixed", "roomType": "Self-catering, Single/Sharing", "price": "R4 200 - R6 100/month", "contact": "012 420 3111", "applyLink": "https://www.up.ac.za/accommodation"},
+      {"name": "Kiaat Residence", "gender": "Female", "roomType": "Catered, Single", "price": "R5 600/month", "contact": "012 420 3111", "applyLink": "https://www.up.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "University of KwaZulu-Natal",
+    "province": "KwaZulu-Natal",
+    "type": "Public University",
+    "residences": [
+      {"name": "Howard College Residences", "gender": "Mixed", "roomType": "Catered/Self-catering", "price": "R3 800 - R5 600/month", "contact": "031 260 1111", "applyLink": "https://www.ukzn.ac.za/student-services/accommodation/"},
+      {"name": "Westville Campus Residences", "gender": "Mixed", "roomType": "Self-catering", "price": "R3 200 - R4 800/month", "contact": "031 260 1111", "applyLink": "https://www.ukzn.ac.za/student-services/accommodation/"}
+    ]
+  },
+  {
+    "institution": "University of Johannesburg",
+    "province": "Gauteng",
+    "type": "Public University",
+    "residences": [
+      {"name": "APB Residences", "gender": "Mixed", "roomType": "Self-catering, Single/Sharing", "price": "R3 500 - R5 200/month", "contact": "011 559 4555", "applyLink": "https://www.uj.ac.za/student-affairs/accommodation/"},
+      {"name": "APK Residences", "gender": "Mixed", "roomType": "Self-catering", "price": "R3 200 - R4 900/month", "contact": "011 559 4555", "applyLink": "https://www.uj.ac.za/student-affairs/accommodation/"}
+    ]
+  },
+  {
+    "institution": "Rhodes University",
+    "province": "Eastern Cape",
+    "type": "Public University",
+    "residences": [
+      {"name": "Graham House", "gender": "Mixed", "roomType": "Catered, Single", "price": "R5 100/month", "contact": "046 603 8111", "applyLink": "https://www.ru.ac.za/studentservices/residences/"},
+      {"name": "Celeste Residence", "gender": "Female", "roomType": "Catered, Single", "price": "R4 900/month", "contact": "046 603 8111", "applyLink": "https://www.ru.ac.za/studentservices/residences/"}
+    ]
+  },
+  {
+    "institution": "Nelson Mandela University",
+    "province": "Eastern Cape",
+    "type": "Public University",
+    "residences": [
+      {"name": "Bird Street Campus Residences", "gender": "Mixed", "roomType": "Self-catering", "price": "R3 200 - R4 800/month", "contact": "041 504 1111", "applyLink": "https://www.mandela.ac.za/Student-life/Accommodation"},
+      {"name": "South Campus Residences", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 900 - R4 200/month", "contact": "041 504 1111", "applyLink": "https://www.mandela.ac.za/Student-life/Accommodation"}
+    ]
+  },
+  {
+    "institution": "University of the Free State",
+    "province": "Free State",
+    "type": "Public University",
+    "residences": [
+      {"name": "Kovsies Residences", "gender": "Mixed", "roomType": "Catered/Self-catering", "price": "R3 600 - R5 000/month", "contact": "051 401 9111", "applyLink": "https://www.ufs.ac.za/residences"}
+    ]
+  },
+  {
+    "institution": "North-West University",
+    "province": "North West",
+    "type": "Public University",
+    "residences": [
+      {"name": "Potch Campus Residences", "gender": "Mixed", "roomType": "Self-catering", "price": "R3 000 - R4 500/month", "contact": "018 299 1111", "applyLink": "https://www.nwu.ac.za/accommodation"},
+      {"name": "Mahikeng Campus Residences", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 500 - R3 800/month", "contact": "018 299 1111", "applyLink": "https://www.nwu.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Tshwane University of Technology",
+    "province": "Gauteng",
+    "type": "Public University",
+    "residences": [
+      {"name": "Soshanguve Campus Hostels", "gender": "Mixed", "roomType": "NSFAS Accredited, Self-catering", "price": "R2 800 - R4 200/month", "contact": "012 382 5911", "applyLink": "https://www.tut.ac.za/student-life/accommodation"},
+      {"name": "Pretoria Campus Residences", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R3 000 - R4 500/month", "contact": "012 382 5911", "applyLink": "https://www.tut.ac.za/student-life/accommodation"}
+    ]
+  },
+  {
+    "institution": "Cape Peninsula University of Technology",
+    "province": "Western Cape",
+    "type": "Public University",
+    "residences": [
+      {"name": "Bellville Campus Residences", "gender": "Mixed", "roomType": "NSFAS Accredited, Self-catering", "price": "R3 000 - R4 800/month", "contact": "021 959 6767", "applyLink": "https://www.cput.ac.za/students/life/accommodation"},
+      {"name": "Cape Town Campus Residences", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R3 200 - R5 000/month", "contact": "021 959 6767", "applyLink": "https://www.cput.ac.za/students/life/accommodation"}
+    ]
+  },
+  {
+    "institution": "Durban University of Technology",
+    "province": "KwaZulu-Natal",
+    "type": "Public University",
+    "residences": [
+      {"name": "Steve Biko Campus Hostels", "gender": "Mixed", "roomType": "NSFAS Accredited, Self-catering", "price": "R2 500 - R4 000/month", "contact": "031 373 2000", "applyLink": "https://www.dut.ac.za/student_services/accommodation/"}
+    ]
+  },
+  {
+    "institution": "University of Limpopo",
+    "province": "Limpopo",
+    "type": "Public University",
+    "residences": [
+      {"name": "Turfloop Campus Residences", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 200 - R3 800/month", "contact": "015 268 9111", "applyLink": "https://www.ul.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "University of Venda",
+    "province": "Limpopo",
+    "type": "Public University",
+    "residences": [
+      {"name": "UNIVEN Residences", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 000 - R3 500/month", "contact": "015 962 8000", "applyLink": "https://www.univen.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Walter Sisulu University",
+    "province": "Eastern Cape",
+    "type": "Public University",
+    "residences": [
+      {"name": "Mthatha Campus Hostels", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 800 - R3 200/month", "contact": "047 502 2111", "applyLink": "https://www.wsu.ac.za/accommodation"},
+      {"name": "Buffalo City Campus Hostels", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 000 - R3 500/month", "contact": "047 502 2111", "applyLink": "https://www.wsu.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "University of Fort Hare",
+    "province": "Eastern Cape",
+    "type": "Public University",
+    "residences": [
+      {"name": "Alice Campus Residences", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 000 - R3 400/month", "contact": "040 602 2011", "applyLink": "https://www.ufh.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "University of the Western Cape",
+    "province": "Western Cape",
+    "type": "Public University",
+    "residences": [
+      {"name": "UWC Residences", "gender": "Mixed", "roomType": "Self-catering", "price": "R3 000 - R4 500/month", "contact": "021 959 2911", "applyLink": "https://www.uwc.ac.za/students/accommodation"}
+    ]
+  },
+  {
+    "institution": "University of Zululand",
+    "province": "KwaZulu-Natal",
+    "type": "Public University",
+    "residences": [
+      {"name": "KwaDlangezwa Campus Residences", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 800 - R3 000/month", "contact": "035 902 6000", "applyLink": "https://www.unizulu.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Sol Plaatje University",
+    "province": "Northern Cape",
+    "type": "Public University",
+    "residences": [
+      {"name": "SPU Residences", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 800 - R4 000/month", "contact": "053 491 0000", "applyLink": "https://www.spu.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "University of Mpumalanga",
+    "province": "Mpumalanga",
+    "type": "Public University",
+    "residences": [
+      {"name": "Mbombela Campus Residences", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 500 - R3 800/month", "contact": "013 002 0001", "applyLink": "https://www.ump.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Sefako Makgatho Health Sciences University",
+    "province": "Gauteng",
+    "type": "Public University",
+    "residences": [
+      {"name": "SMU Residences", "gender": "Mixed", "roomType": "Self-catering", "price": "R3 000 - R4 500/month", "contact": "012 521 3111", "applyLink": "https://www.smu.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Vaal University of Technology",
+    "province": "Gauteng",
+    "type": "Public University",
+    "residences": [
+      {"name": "Vanderbijlpark Campus Residences", "gender": "Mixed", "roomType": "NSFAS Accredited, Self-catering", "price": "R2 800 - R4 200/month", "contact": "016 950 9000", "applyLink": "https://www.vut.ac.za/student-life/accommodation/"},
+      {"name": "Sebokeng Campus Hostels", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 500 - R3 800/month", "contact": "016 950 9000", "applyLink": "https://www.vut.ac.za/student-life/accommodation/"},
+      {"name": "Accredited Off-Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 200 - R3 500/month", "contact": "016 950 9000", "applyLink": "https://www.vut.ac.za/student-life/accommodation/"}
+    ]
+  },
+  {
+    "institution": "Varsity College",
+    "province": "Gauteng",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "Varsity Village Sandton", "gender": "Mixed", "roomType": "NSFAS Accredited, Self-catering", "price": "R3 200 - R5 800/month", "contact": "010 593 2390", "applyLink": "https://www.varsitycollege.co.za/accommodation"},
+      {"name": "Varsity Village Pretoria", "gender": "Mixed", "roomType": "NSFAS Accredited, Self-catering", "price": "R2 900 - R5 200/month", "contact": "012 543 9100", "applyLink": "https://www.varsitycollege.co.za/accommodation"},
+      {"name": "Varsity Village Durban", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 800 - R5 000/month", "contact": "031 566 4300", "applyLink": "https://www.varsitycollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "IIE MSA",
+    "province": "Gauteng",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "MSA Residence Village", "gender": "Mixed", "roomType": "Self-catering, Single/Sharing", "price": "R3 500 - R6 000/month", "contact": "011 950 4000", "applyLink": "https://www.msa.ac.za/student-life/accommodation"}
+    ]
+  },
+  {
+    "institution": "Stadio Higher Education",
+    "province": "Gauteng",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "Stadio Residence Partners", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 800 - R4 500/month", "contact": "087 158 5000", "applyLink": "https://www.stadio.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Boston City Campus",
+    "province": "Gauteng",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "Boston Accredited Housing", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 500 - R4 000/month", "contact": "011 551 2000", "applyLink": "https://www.boston.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Vega School",
+    "province": "Gauteng",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "Vega Accredited Accommodation", "gender": "Mixed", "roomType": "Self-catering", "price": "R3 000 - R5 000/month", "contact": "011 219 5000", "applyLink": "https://www.vegaschool.com/accommodation"}
+    ]
+  },
+  {
+    "institution": "Mancosa",
+    "province": "KwaZulu-Natal",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "Mancosa Accredited Housing", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 500 - R4 000/month", "contact": "031 300 7200", "applyLink": "https://www.mancosa.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Regent Business School",
+    "province": "KwaZulu-Natal",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "Regent Accredited Housing", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 300 - R3 800/month", "contact": "031 300 7200", "applyLink": "https://www.regent.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "IMM Graduate School",
+    "province": "Gauteng",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "IMM Accredited Housing", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 400 - R3 900/month", "contact": "011 628 9000", "applyLink": "https://www.imm.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "CTI Education Group",
+    "province": "Gauteng",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "CTI Accredited Student Housing", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 800 - R4 500/month", "contact": "011 351 8000", "applyLink": "https://www.cti.ac.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Damelin College",
+    "province": "Gauteng",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "Damelin Accredited Housing Partners", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 500 - R4 200/month", "contact": "011 684 8000", "applyLink": "https://www.damelin.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Oxbridge Academy",
+    "province": "Western Cape",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "Oxbridge Accredited Accommodation", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 200 - R3 800/month", "contact": "021 110 0720", "applyLink": "https://www.oxbridgeacademy.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Lyceum College",
+    "province": "Gauteng",
+    "type": "Private Institution",
+    "residences": [
+      {"name": "Lyceum Accredited Housing", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 000 - R3 500/month", "contact": "011 668 8200", "applyLink": "https://www.lyceum.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Western TVET College",
+    "province": "Western Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "NSFAS Accredited Housing Partners", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 000 - R3 500/month", "contact": "021 386 6680", "applyLink": "https://www.westerncollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "False Bay TVET College",
+    "province": "Western Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Accredited Private Accommodation", "gender": "Mixed", "roomType": "Self-catering", "price": "R2 200 - R3 800/month", "contact": "021 701 1390", "applyLink": "https://www.falsebaycollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "South Cape TVET College",
+    "province": "Western Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "George Campus Accredited Housing", "gender": "Mixed", "roomType": "Self-catering", "price": "R1 800 - R3 000/month", "contact": "044 884 0359", "applyLink": "https://www.southcape.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Ekurhuleni East TVET College",
+    "province": "Gauteng",
+    "type": "TVET College",
+    "residences": [
+      {"name": "KwaThema Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 000 - R3 200/month", "contact": "011 730 6600", "applyLink": "https://www.eec.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Sedibeng TVET College",
+    "province": "Gauteng",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Vereeniging Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 900 - R3 000/month", "contact": "016 420 2520", "applyLink": "https://www.sedcol.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Central Johannesburg TVET College",
+    "province": "Gauteng",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Parktown Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 200 - R3 500/month", "contact": "011 351 6000", "applyLink": "https://www.cjc.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Durban TVET College",
+    "province": "KwaZulu-Natal",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Ritson Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 000 - R3 200/month", "contact": "031 250 8400", "applyLink": "https://www.durbancollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Coastal KZN TVET College",
+    "province": "KwaZulu-Natal",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Appelsbosch Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 800 - R2 800/month", "contact": "032 436 8700", "applyLink": "https://www.coastalkzn.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Motheo TVET College",
+    "province": "Free State",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Bloemfontein Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 800 - R2 800/month", "contact": "051 406 9300", "applyLink": "https://www.motheotvet.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Maluti TVET College",
+    "province": "Free State",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Phuthaditjhaba Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 600 - R2 500/month", "contact": "058 713 0485", "applyLink": "https://www.malutitvet.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Mopani South East TVET College",
+    "province": "Limpopo",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Phalaborwa Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 500 - R2 500/month", "contact": "015 781 5721", "applyLink": "https://www.mopanicollege.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Vhembe TVET College",
+    "province": "Limpopo",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Mavhoi Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 500 - R2 300/month", "contact": "015 963 3156", "applyLink": "https://www.vhembecollege.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Capricorn TVET College",
+    "province": "Limpopo",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Polokwane Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 800 - R2 800/month", "contact": "015 295 6993", "applyLink": "https://www.capricorncollege.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Ikhala TVET College",
+    "province": "Eastern Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Queenstown Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 600 - R2 500/month", "contact": "045 838 2599", "applyLink": "https://www.ikhala.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Port Elizabeth TVET College",
+    "province": "Eastern Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Russell Road Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 800 - R2 800/month", "contact": "041 509 6000", "applyLink": "https://www.pecollege.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Eastcape Midlands TVET College",
+    "province": "Eastern Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Uitenhage Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 700 - R2 600/month", "contact": "041 995 2000", "applyLink": "https://www.emcol.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Mthashana TVET College",
+    "province": "KwaZulu-Natal",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Vryheid Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 600 - R2 400/month", "contact": "034 980 1010", "applyLink": "https://www.mthashana.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Majuba TVET College",
+    "province": "KwaZulu-Natal",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Newcastle Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 700 - R2 600/month", "contact": "034 326 4888", "applyLink": "https://www.majuba.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Thekwini TVET College",
+    "province": "KwaZulu-Natal",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Asherville Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 900 - R3 000/month", "contact": "031 250 8400", "applyLink": "https://www.thekwini.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Elangeni TVET College",
+    "province": "KwaZulu-Natal",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Pinetown Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 800 - R2 800/month", "contact": "031 716 6700", "applyLink": "https://www.elangeni.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Umfolozi TVET College",
+    "province": "KwaZulu-Natal",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Richtek Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 700 - R2 600/month", "contact": "035 797 0000", "applyLink": "https://www.umfolozicollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Esayidi TVET College",
+    "province": "KwaZulu-Natal",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Port Shepstone Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 600 - R2 400/month", "contact": "039 688 3109", "applyLink": "https://www.esayidifet.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Orbit TVET College",
+    "province": "North West",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Mankwe Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 700 - R2 600/month", "contact": "014 592 7014", "applyLink": "https://www.orbitcollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Vuselela TVET College",
+    "province": "North West",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Klerksdorp Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 600 - R2 500/month", "contact": "018 406 7800", "applyLink": "https://www.vuselelacollege.co.za/accommodation"}
+        ]
+  },
+  {
+    "institution": "Taletso TVET College",
+    "province": "North West",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Mafikeng Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 500 - R2 300/month", "contact": "018 384 2340", "applyLink": "https://www.taletsocollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Flavius Mareka TVET College",
+    "province": "Free State",
+    "type": "TVET College",
+    "residences": [
+      {
+        "name": "Kroonstad Campus Housing",
+        "gender": "Mixed",
+        "roomType": "NSFAS Accredited",
+        "price": "R1 600 - R2 400/month",
+        "contact": "056 216 5800",
+        "applyLink": "https://www.flaviusmareka.net/accommodation"
+      },
+      {
+        "name": "Sasolburg Campus Housing",
+        "gender": "Mixed",
+        "roomType": "NSFAS Accredited",
+        "price": "R1 500 - R2 300/month",
+        "contact": "056 216 5800",
+        "applyLink": "https://www.flaviusmareka.net/accommodation"
+      },
+      {
+        "name": "Mphohadi Campus Housing",
+        "gender": "Mixed",
+        "roomType": "NSFAS Accredited",
+        "price": "R1 400 - R2 200/month",
+        "contact": "056 216 5800",
+        "applyLink": "https://www.flaviusmareka.net/accommodation"
+      }
+    ]
+  },
+  {
+    "institution": "Goldfields TVET College",
+    "province": "Free State",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Welkom Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 700 - R2 600/month", "contact": "057 910 6000", "applyLink": "https://www.goldfields.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Lephalale TVET College",
+    "province": "Limpopo",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Lephalale Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 500 - R2 300/month", "contact": "014 763 1855", "applyLink": "https://www.leptvet.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Sekhukhune TVET College",
+    "province": "Limpopo",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Groblersdal Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 500 - R2 300/month", "contact": "013 262 3056", "applyLink": "https://www.sekhukhunetvet.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Waterberg TVET College",
+    "province": "Limpopo",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Mokopane Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 600 - R2 400/month", "contact": "015 491 8580", "applyLink": "https://www.waterbergcollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Ingwe TVET College",
+    "province": "Eastern Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Mount Fletcher Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 400 - R2 200/month", "contact": "039 257 0910", "applyLink": "https://www.ingwetvet.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Buffalo City TVET College",
+    "province": "Eastern Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "East London Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 800 - R2 800/month", "contact": "043 704 9200", "applyLink": "https://www.bccollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "King Hintsa TVET College",
+    "province": "Eastern Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Butterworth Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 500 - R2 300/month", "contact": "047 401 6400", "applyLink": "https://www.kinghintsacollege.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Lovedale TVET College",
+    "province": "Eastern Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "King Williams Town Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 600 - R2 400/month", "contact": "043 604 0700", "applyLink": "https://www.lovedale.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Ehlanzeni TVET College",
+    "province": "Mpumalanga",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Nelspruit Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 700 - R2 600/month", "contact": "013 752 7105", "applyLink": "https://www.ehlanzenicollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Gert Sibande TVET College",
+    "province": "Mpumalanga",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Ermelo Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 600 - R2 400/month", "contact": "017 801 2800", "applyLink": "https://www.gscollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Nkangala TVET College",
+    "province": "Mpumalanga",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Middelburg Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 700 - R2 500/month", "contact": "013 246 0529", "applyLink": "https://www.nkangalacollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Northern Cape Rural TVET College",
+    "province": "Northern Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Upington Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 500 - R2 300/month", "contact": "054 331 1900", "applyLink": "https://www.ncrfet.co.za/accommodation"},
+      {"name": "De Aar Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 400 - R2 200/month", "contact": "053 631 0660", "applyLink": "https://www.ncrfet.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Northern Cape Urban TVET College",
+    "province": "Northern Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Kimberley Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 600 - R2 500/month", "contact": "053 839 2063", "applyLink": "https://www.ncutvet.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "South West Gauteng TVET College",
+    "province": "Gauteng",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Molapo Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 800 - R2 800/month", "contact": "011 527 8300", "applyLink": "https://www.swgc.co.za/accommodation"},
+      {"name": "Dobsonville Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 700 - R2 600/month", "contact": "011 527 8300", "applyLink": "https://www.swgc.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Tshwane North TVET College",
+    "province": "Gauteng",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Mamelodi Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 700 - R2 600/month", "contact": "012 801 5300", "applyLink": "https://www.tnc.edu.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "West Coast TVET College",
+    "province": "Western Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Vredenburg Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 600 - R2 400/month", "contact": "022 713 4700", "applyLink": "https://www.westcoastcollege.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "Boland TVET College",
+    "province": "Western Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Paarl Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 800 - R2 700/month", "contact": "021 870 2900", "applyLink": "https://www.bolandcollege.com/accommodation"}
+    ]
+  },
+  {
+    "institution": "Northlink TVET College",
+    "province": "Western Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "Parow Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R1 900 - R2 900/month", "contact": "021 970 9000", "applyLink": "https://www.northlink.co.za/accommodation"}
+    ]
+  },
+  {
+    "institution": "College of Cape Town",
+    "province": "Western Cape",
+    "type": "TVET College",
+    "residences": [
+      {"name": "City Campus Housing", "gender": "Mixed", "roomType": "NSFAS Accredited", "price": "R2 000 - R3 000/month", "contact": "021 404 6700", "applyLink": "https://www.cct.edu.za/accommodation"}
+    ]
+  }
+]
