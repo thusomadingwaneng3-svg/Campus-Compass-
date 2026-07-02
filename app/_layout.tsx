@@ -118,21 +118,29 @@ export default function Layout() {
   useEffect(() => {
     const autoSync = async () => {
       try {
+        // V93.2.2: CRITICAL - Delete old oversized cache first time only
+        await AsyncStorage.removeItem('offlineSchoolsAfrica');
+
         const lastSync = await AsyncStorage.getItem('offlineLastUpdated');
         const hoursSince = lastSync? (Date.now() - new Date(lastSync).getTime()) / 3600000 : 999;
+
         if (hoursSince > 24) {
-          // V93.2: Only cache SA on web to avoid QuotaExceededError
-          let query = supabase.from('institutions').select('*');
+          // V93.2: Only cache SA on web to avoid QuotaExceededError. Select fewer columns = smaller
+          let query = supabase.from('institutions').select('id,name,province,aps_required,application_deadline_2026,country,lat,lng');
           if (Platform.OS === 'web') {
-            query = query.eq('country', 'South Africa'); // or.eq('region', 'SA') depending on your schema
+            query = query.eq('country', 'South Africa');
           }
 
-          const { data } = await query;
+          const { data, error } = await query;
+          if (error) throw error;
+
           if (data) {
             const jsonData = JSON.stringify(data);
+            console.log('Cache size:', (jsonData.length/1024/1024).toFixed(2), 'MB');
+
             // V93.2: Check size before saving. ~4MB limit for web
             if (jsonData.length < 4000000) {
-              await AsyncStorage.setItem('offlineInstitutions', jsonData);
+              await AsyncStorage.setItem('offlineInstitutions', jsonData); // New key only
               await AsyncStorage.setItem('offlineLastUpdated', new Date().toISOString());
             } else {
               console.log('Data too large for cache, skipping offline save');
