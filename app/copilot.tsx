@@ -1,8 +1,11 @@
 import { useState, useRef } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, KeyboardAvoidingView, Platform, ActivityIndicator, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 type Msg = { role: 'user' | 'ai'; text: string };
+
+// V93.3.1: Use env var for web. Falls back to prod URL
+const API_URL = process.env.EXPO_PUBLIC_API_URL || 'https://campus-compass-thuso.vercel.app';
 
 export default function Copilot() {
   const [input, setInput] = useState('');
@@ -20,14 +23,21 @@ export default function Copilot() {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/copilot', {
+      const res = await fetch(`${API_URL}/api/copilot`, { // <-- ABSOLUTE URL FIX
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: input })
       });
+      
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(`API ${res.status}: ${errText}`);
+      }
+      
       const data = await res.json();
       setMsgs(m => [...m, { role: 'ai', text: data.reply || 'No matches found. Try different filters.' }]);
-    } catch (e) {
+    } catch (e: any) {
+      console.log('Copilot fetch error:', e.message); // Check DevTools for this
       setMsgs(m => [...m, { role: 'ai', text: 'Failed to connect. Check internet.' }]);
     } finally {
       setLoading(false);
