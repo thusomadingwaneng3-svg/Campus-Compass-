@@ -17,10 +17,23 @@ import * as Location from 'expo-location';
 import { LinearGradient } from 'expo-linear-gradient';
 import { supabase } from '../lib/supabase';
 
-const emojiMap: Record<string, string> = { home: '🏠', school: '🏫', campus: '🎓', location: '📍', chatbubbles: '💬', alarm: '⏰', 'bar-chart': '📊', calculator: '🧮', warning: '⚠️', 'log-in': '🔑', download: '⬇️', 'checkmark-circle': '✅', 'share-social': '📤', flag: '🚩', menu: '☰' };
+const emojiMap: Record<string, string> = { 
+  home: '🏠', school: '🏫', campus: '🎓', location: '📍', chatbubbles: '💬', 
+  alarm: '⏰', 'bar-chart': '📊', calculator: '🧮', warning: '⚠️', 
+  'log-in': '🔑', download: '⬇️', 'checkmark-circle': '✅', 'share-social': '📤', 
+  flag: '🚩', menu: '☰' 
+};
 
+// V93.5.2: Web-safe emoji icons. No LinearGradient on icon to avoid dot bug
 function GlamIcon({ name, focused, gradient, bg }: any) {
-  return <View style={[styles.iconWrapper, { backgroundColor: focused? bg : bg + '40' }]}><LinearGradient colors={gradient} style={[styles.iconGradient, { opacity: focused? 1 : 0.6 }]}><Text style={{ fontSize: 18 }}>{emojiMap[name] || '•'}</Text></LinearGradient></View>;
+  const emoji = emojiMap[name] || '🏫';
+  return (
+    <View style={[styles.iconWrapper, { backgroundColor: focused? bg : '#F3F4F6' }]}>
+      <View style={[styles.iconGradient, { backgroundColor: focused? gradient[0] : '#E5E7EB' }]}>
+        <Text style={{ fontSize: 20, lineHeight: 20 }}>{emoji}</Text>
+      </View>
+    </View>
+  );
 }
 
 function CustomDrawerContent(props: any) {
@@ -79,7 +92,7 @@ function CustomDrawerContent(props: any) {
       </LinearGradient>
       <View style={{ paddingTop: 16, paddingHorizontal: 8 }}><DrawerItemList {...props} /></View>
       <TouchableOpacity onPress={() => props.navigation.navigate('my-campuses')} style={{ flexDirection: 'row', alignItems: 'center', padding: 12, marginHorizontal: 8, borderRadius: 16, backgroundColor: '#F0FDF4' }}>
-        <View style={[styles.iconWrapper, { backgroundColor: '#F0FDF4' }]}><LinearGradient colors={['#10B981', '#059669']} style={styles.iconGradient}><Text style={{ fontSize: 18 }}>{emojiMap.campus}</Text></LinearGradient></View>
+        <View style={[styles.iconWrapper, { backgroundColor: '#F0FDF4' }]}><View style={[styles.iconGradient, { backgroundColor: '#10B981' }]}><Text style={{ fontSize: 18 }}>🎓</Text></View></View>
         <Text style={{ fontSize: 15, fontWeight: '700', marginLeft: 12, flex: 1, color: '#059669' }}>My Campuses</Text>
         {unread > 0 && <View style={{ backgroundColor: '#FF3B30', borderRadius: 10, paddingHorizontal: 6, paddingVertical: 2 }}><Text style={{ color: '#fff', fontSize: 12, fontWeight: '800' }}>{unread}</Text></View>}
       </TouchableOpacity>
@@ -96,24 +109,26 @@ export default function Layout() {
   useEffect(() => {
     const autoSync = async () => {
       try {
-        await AsyncStorage.removeItem('offlineSchoolsAfrica'); // V93.2.2: Nuke old cache
+        await AsyncStorage.multiRemove(['offlineSchoolsAfrica', 'offlineInstitutions']); // V93.5: Nuke ALL old cache
         const lastSync = await AsyncStorage.getItem('offlineLastUpdated');
         const hoursSince = lastSync? (Date.now() - new Date(lastSync).getTime()) / 3600000 : 999;
         if (hoursSince > 24) {
-          let query = supabase.from('institutions').select('id,name,province,aps_required,application_deadline_2026,country'); // V93.2: Smaller columns
-          if (Platform.OS === 'web') query = query.eq('country', 'South Africa'); // SA only on web
-          const { data, error } = await query;
+          // V93.5.1: Removed.eq('country') to fix 400. Limit 120 to stay <2MB
+          const { data, error } = await supabase.from('institutions').select('id,name,province,aps_required,application_deadline_2026').limit(120);
           if (error) throw error;
           if (data) {
             const jsonData = JSON.stringify(data);
             console.log('Cache size:', (jsonData.length/1024/1024).toFixed(2), 'MB');
-            if (jsonData.length < 4000000) { // <4MB for web quota
+            if (jsonData.length < 2000000) { 
               await AsyncStorage.setItem('offlineInstitutions', jsonData);
               await AsyncStorage.setItem('offlineLastUpdated', new Date().toISOString());
             } else { console.log('Data too large for cache, skipping offline save'); }
           }
         }
-      } catch (e) { console.log('Auto-sync failed, using cache', e); }
+      } catch (e) { 
+        console.log('Auto-sync failed, using cache', e); 
+        await AsyncStorage.removeItem('offlineInstitutions'); 
+      }
     };
     setTimeout(autoSync, 3000);
   }, []);
@@ -151,21 +166,21 @@ export default function Layout() {
               drawerStyle: { backgroundColor: '#fff', width: Platform.OS === 'web'? 380 : 300 }
             }}
           >
-            <Drawer.Screen name="index" options={{ drawerLabel: 'Home', title: 'CAMPUS COMPASS', drawerIcon: ({ focused }) => <GlamIcon name={focused? "home" : "home-outline"} focused={focused} gradient={['#FF6B9D', '#C44569']} bg="#FFF0F5" /> }} />
-            <Drawer.Screen name="institutions" options={{ drawerLabel: 'All Institutions', title: 'SA & AFRICA INSTITUTIONS', drawerIcon: ({ focused }) => <GlamIcon name={focused? "school" : "school-outline"} focused={focused} gradient={['#4F46E5', '#7C3AED']} bg="#F5F3FF" /> }} />
-            <Drawer.Screen name="map" initialParams={{ mode: 'cluster' }} options={{ drawerLabel: 'Map View', title: 'Institutions Map', drawerIcon: ({ focused }) => <GlamIcon name={focused? "location" : "location-outline"} focused={focused} gradient={['#10B981', '#059669']} bg="#F0FDF4" /> }} />
-            <Drawer.Screen name="chat" options={{ drawerLabel: 'AI Chat - Thuso', title: 'Campus AI', drawerIcon: ({ focused }) => <GlamIcon name={focused? "chatbubbles" : "chatbubbles-outline"} focused={focused} gradient={['#F59E0B', '#D97706']} bg="#FFFBEB" /> }} />
-            <Drawer.Screen name="copilot" options={{ drawerLabel: 'AI Copilot V2', title: 'Campus AI Copilot', drawerIcon: ({ focused }) => <GlamIcon name={focused? "chatbubbles" : "chatbubbles-outline"} focused={focused} gradient={['#F59E0B', '#EA580C']} bg="#FFF7ED" /> }} />
+            <Drawer.Screen name="index" options={{ drawerLabel: 'Home', title: 'CAMPUS COMPASS', drawerIcon: ({ focused }) => <GlamIcon name="home" focused={focused} gradient={['#FF6B9D', '#C44569']} bg="#FFF0F5" /> }} />
+            <Drawer.Screen name="institutions" options={{ drawerLabel: 'All Institutions', title: 'SA & AFRICA INSTITUTIONS', drawerIcon: ({ focused }) => <GlamIcon name="school" focused={focused} gradient={['#4F46E5', '#7C3AED']} bg="#F5F3FF" /> }} />
+            <Drawer.Screen name="map" initialParams={{ mode: 'cluster' }} options={{ drawerLabel: 'Map View', title: 'Institutions Map', drawerIcon: ({ focused }) => <GlamIcon name="location" focused={focused} gradient={['#10B981', '#059669']} bg="#F0FDF4" /> }} />
+            <Drawer.Screen name="chat" options={{ drawerLabel: 'AI Chat - Thuso', title: 'Campus AI', drawerIcon: ({ focused }) => <GlamIcon name="chatbubbles" focused={focused} gradient={['#F59E0B', '#D97706']} bg="#FFFBEB" /> }} />
+            {/* V93.5: Copilot deleted */}
             <Drawer.Screen name="my-campuses" options={{ drawerItemStyle: { display: 'none' } }} />
             <Drawer.Screen name="institution-chat" options={{ drawerItemStyle: { display: 'none' } }} />
-            <Drawer.Screen name="deadlines" options={{ drawerLabel: 'Deadlines Tracker', title: 'Application Deadlines', drawerIcon: ({ focused }) => <GlamIcon name={focused? "alarm" : "alarm-outline"} focused={focused} gradient={['#EF4444', '#DC2626']} bg="#FEF2F2" /> }} />
-            <Drawer.Screen name="compare" options={{ drawerLabel: 'Compare Unis', title: 'Compare Institutions', drawerIcon: ({ focused }) => <GlamIcon name={focused? "bar-chart" : "bar-chart-outline"} focused={focused} gradient={['#8B5CF6', '#7C3AED']} bg="#F5F3FF" /> }} />
-            <Drawer.Screen name="aps" options={{ drawerLabel: 'APS Calculator', title: 'APS Calculator', drawerIcon: ({ focused }) => <GlamIcon name={focused? "calculator" : "calculator-outline"} focused={focused} gradient={['#3B82F6', '#2563EB']} bg="#EFF6FF" />, drawerItemStyle: { borderRadius: 16, marginHorizontal: 8, marginVertical: 3, marginTop: 16, borderTopWidth: 1, borderTopColor: '#eee', paddingTop: 8 } }} />
-            <Drawer.Screen name="emergency" options={{ drawerLabel: 'Emergency Hub', title: 'Campus Emergency Hub', drawerIcon: ({ focused }) => <GlamIcon name={focused? "warning" : "warning-outline"} focused={focused} gradient={['#EF4444', '#DC2626']} bg="#FEF2F2" /> }} />
-            <Drawer.Screen name="login" options={{ drawerLabel: 'Login / Register', title: 'Login', drawerIcon: ({ focused }) => <GlamIcon name={focused? "log-in" : "log-in-outline"} focused={focused} gradient={['#06B6D4', '#0891B2']} bg="#ECFEFF" /> }} />
-            <Drawer.Screen name="install" listeners={{ drawerItemPress: (e) => { e.preventDefault(); handleInstallApp(); } }} options={{ drawerLabel: isInstalled? 'Installed ✓' : 'Add to Home Screen', drawerIcon: ({ focused }) => <GlamIcon name={isInstalled? "checkmark-circle" : focused? "download" : "download-outline"} focused={focused} gradient={['#22C55E', '#16A34A']} bg="#F0FDF4" /> }} />
-            <Drawer.Screen name="share" listeners={{ drawerItemPress: (e) => { e.preventDefault(); handleShareApp(); } }} options={{ drawerLabel: 'Share App', drawerIcon: ({ focused }) => <GlamIcon name={focused? "share-social" : "share-social-outline"} focused={focused} gradient={['#F97316', '#EA580C']} bg="#FFF7ED" /> }} />
-            <Drawer.Screen name="report" listeners={{ drawerItemPress: (e) => { e.preventDefault(); handleReport(); } }} options={{ drawerLabel: 'Report Issue', drawerIcon: ({ focused }) => <GlamIcon name={focused? "flag" : "flag-outline"} focused={focused} gradient={['#DC2626', '#B91C1C']} bg="#FEF2F2" /> }} />
+            <Drawer.Screen name="deadlines" options={{ drawerLabel: 'Deadlines Tracker', title: 'Application Deadlines', drawerIcon: ({ focused }) => <GlamIcon name="alarm" focused={focused} gradient={['#EF4444', '#DC2626']} bg="#FEF2F2" /> }} />
+            <Drawer.Screen name="compare" options={{ drawerLabel: 'Compare Unis', title: 'Compare Institutions', drawerIcon: ({ focused }) => <GlamIcon name="bar-chart" focused={focused} gradient={['#8B5CF6', '#7C3AED']} bg="#F5F3FF" /> }} />
+            <Drawer.Screen name="aps" options={{ drawerLabel: 'APS Calculator', title: 'APS Calculator', drawerIcon: ({ focused }) => <GlamIcon name="calculator" focused={focused} gradient={['#3B82F6', '#2563EB']} bg="#EFF6FF" />, drawerItemStyle: { borderRadius: 16, marginHorizontal: 8, marginVertical: 3, marginTop: 16, borderTopWidth: 1, borderTopColor: '#eee', paddingTop: 8 } }} />
+            <Drawer.Screen name="emergency" options={{ drawerLabel: 'Emergency Hub', title: 'Campus Emergency Hub', drawerIcon: ({ focused }) => <GlamIcon name="warning" focused={focused} gradient={['#EF4444', '#DC2626']} bg="#FEF2F2" /> }} />
+            <Drawer.Screen name="login" options={{ drawerLabel: 'Login / Register', title: 'Login', drawerIcon: ({ focused }) => <GlamIcon name="log-in" focused={focused} gradient={['#06B6D4', '#0891B2']} bg="#ECFEFF" /> }} />
+            <Drawer.Screen name="install" listeners={{ drawerItemPress: (e) => { e.preventDefault(); handleInstallApp(); } }} options={{ drawerLabel: isInstalled? 'Installed ✓' : 'Add to Home Screen', drawerIcon: ({ focused }) => <GlamIcon name={isInstalled? "checkmark-circle" : "download"} focused={focused} gradient={['#22C55E', '#16A34A']} bg="#F0FDF4" /> }} />
+            <Drawer.Screen name="share" listeners={{ drawerItemPress: (e) => { e.preventDefault(); handleShareApp(); } }} options={{ drawerLabel: 'Share App', drawerIcon: ({ focused }) => <GlamIcon name="share-social" focused={focused} gradient={['#F97316', '#EA580C']} bg="#FFF7ED" /> }} />
+            <Drawer.Screen name="report" listeners={{ drawerItemPress: (e) => { e.preventDefault(); handleReport(); } }} options={{ drawerLabel: 'Report Issue', drawerIcon: ({ focused }) => <GlamIcon name="flag" focused={focused} gradient={['#DC2626', '#B91C1C']} bg="#FEF2F2" /> }} />
             <Drawer.Screen name="(internal)/pass" options={{ drawerItemStyle: { display: 'none' } }} />
             <Drawer.Screen name="(internal)/links" options={{ drawerItemStyle: { display: 'none' } }} />
             <Drawer.Screen name="(internal)/offline" options={{ drawerItemStyle: { display: 'none' } }} />
