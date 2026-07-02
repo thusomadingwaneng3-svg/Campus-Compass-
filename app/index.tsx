@@ -1,29 +1,54 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  TextInput,
-  Modal,
-  Linking,
-  SafeAreaView,
-  StatusBar,
-  ScrollView,
-  Platform,
-  ActivityIndicator,
-  FlatList,
-  Animated
+  View, Text, TouchableOpacity, StyleSheet, TextInput, Modal, Linking,
+  SafeAreaView, StatusBar, ScrollView, Platform, ActivityIndicator, FlatList, Animated
 } from 'react-native';
 import { CampusContext } from '../CampusContext';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { supabase } from '../lib/supabase';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { openDB, IDBPDatabase } from 'idb'; 
+import globalInstitutions from '../global_institutions.json'; 
+import funding from '../funding.json'; // V93.9.1: SA Bursaries
+import africaBursaries from '../africa_bursaries.json'; // V93.9.2: Africa Bursaries
+import schoolsAfrica from '../schools_africa.json'; // V93.9.1: Schools
+import africaNonSA from '../africa_non_sa.json'; // V93.9.1: Africa only
 
-const BASE_URL = 'https://campus-compass-thuso.vercel.app';
+// V93.8: IndexedDB instance
+let db: IDBPDatabase;
+const initDB = async () => {
+  if (!db) db = await openDB('campus-compass', 1, {
+    upgrade(db) { 
+      if (!db.objectStoreNames.contains('institutions')) {
+        db.createObjectStore('institutions', { keyPath: 'id' }); 
+      }
+    }
+  });
+  return db;
+};
 
-export default function InstitutionsScreen() {
+// V93.9.1: Normalize all JSONs to same schema
+const normalizeRecord = (d: any, i: number, type: string) => ({
+  id: d.id || `${type}-${d.name?.replace(/\s/g,'-')?.replace(/[^a-zA-Z0-9-]/g,'')}-${i}`,
+  name: d.name,
+  shortName: d.shortName || d.short || d.name,
+  province: d.province || d.province_state || '', 
+  city: d.city || '',
+  country: d.country || 'South Africa',
+  level: type === 'bursary'? 'Bursary' : type === 'school'? 'School' : 'Tertiary',
+  type: type, // 'university', 'school', 'bursary'
+  applyUrl: d.applyUrl || d.apply_url || d.website || d.link,
+  primaryColor: d.primaryColor || d.primary_color || '#8B0000',
+  lat: d.lat || d.latitude, 
+  lng: d.lng || d.longitude,
+  latitude: d.lat || d.latitude, 
+  longitude: d.lng || d.longitude,
+  provider: d.provider || d.name, // for bursaries
+  deadline: d.deadline || d.application_deadline_2026 || 'TBD',
+  covers: d.covers || d.benefits || [],
+});
+
+export default function HomeScreen() {
   const router = useRouter();
   const context = useContext(CampusContext);
   const setActiveCampus = context?.setActiveCampus || (() => {});
@@ -32,522 +57,201 @@ export default function InstitutionsScreen() {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedCampus, setSelectedCampus] = useState<any>(null);
 
-  // Data state
-  const [institutions, setInstitutions] = useState<any[]>([]);
-  const [saBursaries, setSaBursaries] = useState<any[]>([]);
-  const [africaBursaries, setAfricaBursaries] = useState<any[]>([]);
-  const [africaSchools, setAfricaSchools] = useState<any[]>([]);
-  const [knowledge, setKnowledge] = useState<any>({});
-  const [loadingSchools, setLoadingSchools] = useState(false);
-  const [loadingBursaries, setLoadingBursaries] = useState(false);
+  const [institutions, setInstitutions] = useState<any[]>([]); // V93.8: ALL institutions
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [provinceIndex, setProvinceIndex] = useState<any>({});
 
-  // Filters
+  const [totalCount, setTotalCount] = useState<number>(0);
+
   const [levelFilter, setLevelFilter] = useState<'All' | 'Tertiary' | 'School' | 'Africa' | 'Bursaries'>('All');
   const [selectedProvince, setSelectedProvince] = useState<string>('All');
   const [bursaryCountryFilter, setBursaryCountryFilter] = useState<string>('All');
 
-  // Province dropdown state
   const [provinceModalVisible, setProvinceModalVisible] = useState(false);
   const [provinceSearch, setProvinceSearch] = useState('');
-
-  // PWA Install state
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [canInstall, setCanInstall] = useState(false);
-
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    loadInitialData();
-
+    loadAllData(); // V93.9.1: Load all 5 JSONs
     if (Platform.OS === 'web') {
-      const handler = (e: any) => {
-        e.preventDefault();
-        setDeferredPrompt(e);
-        setCanInstall(true);
-      };
+      const handler = (e: any) => { e.preventDefault(); setDeferredPrompt(e); setCanInstall(true); };
       window.addEventListener('beforeinstallprompt', handler);
       return () => window.removeEventListener('beforeinstallprompt', handler);
     }
   }, []);
 
   useEffect(() => {
-    if (!loading) {
-      Animated.timing(fadeAnim, {
-        toValue: 1,
-        duration: 400,
-        useNativeDriver: false
-      }).start();
+    if (!loading &&!error) {
+      Animated.timing(fadeAnim, { toValue: 1, duration: 400, useNativeDriver: false }).start();
     }
-  }, [loading]);
+  }, [loading, error]);
 
-  const loadInitialData = async () => {
-    setLoading(true);
-    await Promise.all([
-      loadKnowledge(),
-      loadAfricaNonSA(),
-      loadProvinceIndex(),
-      loadBursaries(),
-      loadAfricaSchools()
-    ]);
-    setLoading(false);
-  };
-
-  const loadKnowledge = async () => {
+  // V93.9.1: Load ALL from IndexedDB + 5 JSONs
+  const loadAllData = async () => {
+    setLoading(true); setError(null);
     try {
-      const offline = await AsyncStorage.getItem('offlineKnowledge');
-      if (offline) {
-        setKnowledge(JSON.parse(offline));
-        return;
+      const database = await initDB();
+      let all = await database.getAll('institutions'); // Supabase 34K
+      
+      // V93.9.1: If IndexedDB empty, seed with 5 JSONs
+      if (all.length === 0) {
+        const tx = database.transaction('institutions', 'readwrite');
+        await Promise.all([
+         ...globalInstitutions.map((d, i) => tx.store.put(normalizeRecord(d, i, 'university'))),
+         ...funding.map((d, i) => tx.store.put(normalizeRecord(d, i, 'bursary'))), // SA
+         ...africaBursaries.map((d, i) => tx.store.put(normalizeRecord(d, i, 'bursary'))), // Africa V93.9.2
+         ...schoolsAfrica.map((d, i) => tx.store.put(normalizeRecord(d, i, 'school'))),
+         ...africaNonSA.map((d, i) => tx.store.put(normalizeRecord(d, i, 'university'))),
+        ]);
+        await tx.done;
+        all = await database.getAll('institutions');
+        console.log(`Seeded JSON: Uni:${globalInstitutions.length+africaNonSA.length} Bursary:${funding.length+africaBursaries.length} School:${schoolsAfrica.length}`);
       }
-      const res = await fetch(`${BASE_URL}/data/knowledge.json`);
-      if (res.ok) {
-        const data = await res.json();
-        setKnowledge(data);
-        await AsyncStorage.setItem('offlineKnowledge', JSON.stringify(data));
-      }
+      
+      setInstitutions(all);
+      setTotalCount(all.length);
+      setProvinceIndex(buildProvinceIndex(all)); 
+      
     } catch (e) {
-      console.log('Failed to load knowledge.json:', e);
-    }
-  };
-
-  const loadAfricaNonSA = async () => {
-    try {
-      const offline = await AsyncStorage.getItem('offlineAfricaNonSA');
-      if (offline) {
-        const data = JSON.parse(offline);
-        setInstitutions(prev => [...prev,...normalizeAfricaNonSA(data)]);
-        return;
-      }
-      const res = await fetch(`${BASE_URL}/data/africa_non_sa.json`);
-      if (res.ok) {
-        const data = await res.json();
-        const normalized = normalizeAfricaNonSA(data);
-        setInstitutions(prev => [...prev,...normalized]);
-        await AsyncStorage.setItem('offlineAfricaNonSA', JSON.stringify(data));
-      }
-    } catch (e) {
-      console.log('Failed to load africa_non_sa.json:', e);
-    }
-  };
-
-  const loadAfricaSchools = async () => {
-    try {
-      const isWeb = Platform.OS === 'web';
-
-      // Don't use AsyncStorage cache on web - it hits 5-10MB quota limit
-      if (!isWeb) {
-        const offline = await AsyncStorage.getItem('offlineSchoolsAfrica');
-        if (offline) {
-          const data = JSON.parse(offline);
-          setAfricaSchools(normalizeAfricaSchools(data));
-          return;
-        }
-      }
-
-      const res = await fetch(`${BASE_URL}/data/schools_africa.json`);
-      if (res.ok) {
-        const data = await res.json();
-        const normalized = normalizeAfricaSchools(data);
-        setAfricaSchools(normalized);
-
-        // Only cache on native
-        if (!isWeb) {
-          await AsyncStorage.setItem('offlineSchoolsAfrica', JSON.stringify(data));
-        }
-      }
-    } catch (e) {
-      console.log('Failed to load schools_africa.json:', e);
-    }
-  };
-
-  const loadBursaries = async () => {
-    setLoadingBursaries(true);
-    try {
-      const [offlineSA, offlineAfrica] = await Promise.all([
-        AsyncStorage.getItem('offlineFunding'),
-        AsyncStorage.getItem('offlineAfricaBursaries')
-      ]);
-
-      let saData: any[] = [];
-      let africaData: any[] = [];
-
-      if (offlineSA) {
-        saData = JSON.parse(offlineSA).map((b: any) => ({...b, country: 'South Africa', id: b.id || `sa-${Math.random()}`}));
-      }
-      if (offlineAfrica) {
-        africaData = JSON.parse(offlineAfrica).map((b: any) => ({...b, country: b.notes?.split(',')[0] || 'Africa', id: b.id || `af-${Math.random()}`}));
-      }
-
-      if (saData.length > 0 || africaData.length > 0) {
-        setSaBursaries(saData);
-        setAfricaBursaries(africaData);
-        setLoadingBursaries(false);
-        return;
-      }
-
-      const [saRes, africaRes] = await Promise.all([
-        fetch(`${BASE_URL}/data/funding.json`),
-        fetch(`${BASE_URL}/data/africa_bursaries.json`)
-      ]);
-
-      if (saRes.ok) {
-        const data = await saRes.json();
-        saData = data.map((b: any, i: number) => ({...b, country: 'South Africa', id: b.id || `sa-${i}`}));
-        setSaBursaries(saData);
-        await AsyncStorage.setItem('offlineFunding', JSON.stringify(data));
-      }
-
-      if (africaRes.ok) {
-        const data = await africaRes.json();
-        africaData = data.map((b: any, i: number) => ({...b, country: b.notes?.split(',')[0] || 'Africa', id: b.id || `af-${i}`}));
-        setAfricaBursaries(africaData);
-        await AsyncStorage.setItem('offlineAfricaBursaries', JSON.stringify(data));
-      }
-    } catch (e) {
-      console.log('Failed to load bursaries:', e);
+      console.error('Failed to load IndexedDB data:', e);
+      setError('Could not load data. Try refresh.');
     } finally {
-      setLoadingBursaries(false);
+      setLoading(false);
     }
   };
 
-  useEffect(() => {
-    if (!knowledge.institutions) return;
-    const tertiary = normalizeSA(knowledge);
-    setInstitutions(prev => {
-      const nonSA = prev.filter(i => i.country!== 'South Africa');
-      return [...tertiary,...nonSA];
+  const buildProvinceIndex = (data: any[]) => {
+    const index: any = {};
+    data.filter(i => i.country === 'South Africa' && i.type === 'school').forEach(s => { // V93.9.1: type not level
+      if (!index[s.province]) index[s.province] = { count: 0, file: null };
+      index[s.province].count += 1;
     });
-  }, [knowledge]);
-
-  const loadProvinceIndex = async () => {
-    try {
-      const offline = await AsyncStorage.getItem('offlineSchoolIndex');
-      if (offline) {
-        setProvinceIndex(JSON.parse(offline));
-        return;
-      }
-      const res = await fetch(`${BASE_URL}/data/schools/index.json`);
-      if (res.ok) {
-        const data = await res.json();
-        setProvinceIndex(data);
-        await AsyncStorage.setItem('offlineSchoolIndex', JSON.stringify(data));
-      }
-    } catch (e) {
-      console.log('Error loading province index:', e);
-    }
+    return index;
   };
 
-  useEffect(() => {
-    if (selectedProvince === 'All' || levelFilter!== 'School') return;
-    if (!provinceIndex[selectedProvince]) return;
-    loadSchools();
-  }, [selectedProvince, provinceIndex, levelFilter]);
-
-  const loadSchools = async () => {
-    setLoadingSchools(true);
-    try {
-      const entry = provinceIndex[selectedProvince];
-      if (!entry) {
-        setLoadingSchools(false);
-        return;
-      }
-      let filePath = typeof entry === 'string'? entry : entry.file || entry.path;
-      if (!filePath) {
-        setLoadingSchools(false);
-        return;
-      }
-      if (!filePath.startsWith('http')) {
-        filePath = `${BASE_URL}${filePath}`;
-      }
-      const fileName = filePath.split('/').pop().replace('.json', '');
-      const offlineKey = `offline_${fileName}`;
-
-      const offline = await AsyncStorage.getItem(offlineKey);
-      if (offline) {
-        const schools = JSON.parse(offline);
-        setInstitutions(prev => [...prev.filter(i => i.level!== 'School'),...schools]);
-        setLoadingSchools(false);
-        return;
-      }
-
-      const res = await fetch(filePath);
-      if (res.ok) {
-        const schools = await res.json();
-        const normalized = schools.map((s: any) => ({
-         ...s,
-          id: s.id || `school-${s.name}-${selectedProvince}`,
-          level: 'School',
-          province: selectedProvince,
-          country: 'South Africa'
-        }));
-        setInstitutions(prev => [...prev.filter(i => i.level!== 'School'),...normalized]);
-        await AsyncStorage.setItem(offlineKey, JSON.stringify(normalized));
-      }
-    } catch (e) {
-      console.error('Failed to load schools:', e);
-    } finally {
-      setLoadingSchools(false);
-    }
-  };
-
-  const normalizeSA = (knowledge: any) => {
-    const all = [
-     ...(knowledge.institutions || []),
-     ...(knowledge.tvet_colleges || []),
-     ...(knowledge.private_institutions || [])
-    ];
-    return all.map((campus, i) => {
-      const lat = campus.latitude?? campus.lat?? null;
-      const lng = campus.longitude?? campus.lng?? null;
-      return {
-        id: campus.id || `sa-${i}`,
-        name: campus.name,
-        shortName: campus.short || campus.name,
-        city: campus.location || campus.city,
-        province: campus.province,
-        country: 'South Africa',
-        level: 'Tertiary',
-        type: campus.tvet? 'TVET College' : campus.private? 'Private Institution' : 'Public University',
-        applyUrl: campus.website || campus.apply_link,
-        primaryColor: campus.primaryColor || '#8B0000',
-        lat, lng, latitude: lat, longitude: lng,
-        coords: { lat, lng },
-        emergency: { security: campus.security_phone || campus.contact },
-        offices: {}
-      };
-    });
-  };
-
-  const normalizeAfricaNonSA = (data: any[]) =>
-    data.map((inst: any, i: number) => {
-      const lat = inst.latitude?? inst.lat?? null;
-      const lng = inst.longitude?? inst.lng?? null;
-      return {
-        id: inst.id || `africa-${i}`,
-        name: inst.name,
-        shortName: inst.short || inst.name,
-        city: inst.city,
-        province: inst.province,
-        country: inst.country || 'Africa',
-        level: 'Tertiary',
-        type: inst.type || 'University',
-        applyUrl: inst.apply_link,
-        primaryColor: inst.primaryColor || '#1B3A6B',
-        lat, lng, latitude: lat, longitude: lng,
-        coords: { lat, lng },
-        emergency: { security: inst.security_phone },
-        offices: {}
-      };
-    });
-
-  const normalizeAfricaSchools = (data: any[]) =>
-    data.map((s: any) => ({
-      id: s.id || `school-${s.name}`,
-      name: s.name,
-      shortName: s.name,
-      city: '',
-      province: '',
-      country: 'Africa',
-      level: 'School',
-      type: 'School',
-      applyUrl: null,
-      primaryColor: '#228B22',
-      lat: s.lat,
-      lng: s.lon,
-      latitude: s.lat,
-      longitude: s.lon,
-      coords: { lat: s.lat, lng: s.lon },
-      emergency: {},
-      offices: {}
-    }));
-
-  const handleInstall = async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === 'accepted') setCanInstall(false);
-    setDeferredPrompt(null);
-  };
-
-  const filtered = institutions.filter(c => {
-    if (levelFilter === 'Africa' && c.country === 'South Africa') return false;
-    if (levelFilter === 'Tertiary' && c.level!== 'Tertiary') return false;
-    if (levelFilter === 'School' && c.level!== 'School') return false;
-    if (levelFilter === 'Bursaries') return false;
-    if (selectedProvince!== 'All' && c.province!== selectedProvince) return false;
-
-    if (search) {
-      const searchLower = search.toLowerCase();
-      return (
-        c.name?.toLowerCase().includes(searchLower) ||
-        c.shortName?.toLowerCase().includes(searchLower) ||
-        c.city?.toLowerCase().includes(searchLower) ||
-        c.province?.toLowerCase().includes(searchLower) ||
-        c.country?.toLowerCase().includes(searchLower)
-      );
-    }
-    return true;
+  const handleInstall = async () => { if (!deferredPrompt) return; deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; if (outcome === 'accepted') setCanInstall(false); setDeferredPrompt(null); };
+  
+  // V93.9.1: Filter by type instead of level
+  const filtered = institutions.filter(c => { 
+    if (levelFilter === 'Africa' && c.country === 'South Africa') return false; 
+    if (levelFilter === 'Tertiary' && c.type!== 'university') return false; // V93.9.1
+    if (levelFilter === 'School' && c.type!== 'school') return false; // V93.9.1
+    if (levelFilter === 'Bursaries' && c.type!== 'bursary') return false; // V93.9.1
+    if (selectedProvince!== 'All' && c.province!== selectedProvince) return false; 
+    if (search) { 
+      const searchLower = search.toLowerCase(); 
+      return (c.name?.toLowerCase().includes(searchLower) || c.shortName?.toLowerCase().includes(searchLower) || c.city?.toLowerCase().includes(searchLower) || c.province?.toLowerCase().includes(searchLower) || c.country?.toLowerCase().includes(searchLower) || c.provider?.toLowerCase().includes(searchLower)); // V93.9.1: provider for bursaries
+    } 
+    return true; 
   });
 
-  const displayedInstitutions = levelFilter === 'Africa'? africaSchools : filtered;
-
-  const allBursaries = [...saBursaries,...africaBursaries];
-  const filteredBursaries = allBursaries.filter(b => {
-    const matchesSearch = search
-     ? b.name?.toLowerCase().includes(search.toLowerCase()) ||
-        b.provider?.toLowerCase().includes(search.toLowerCase()) ||
-        b.fields?.some((f: string) => f.toLowerCase().includes(search.toLowerCase()))
-      : true;
-    const matchesCountry = bursaryCountryFilter === 'All' ||
-      b.country?.includes(bursaryCountryFilter) ||
-      b.notes?.includes(bursaryCountryFilter);
-    return matchesSearch && matchesCountry;
+  const displayedInstitutions = levelFilter === 'Africa'? institutions.filter(i => i.type === 'university' && i.country!== 'South Africa') : filtered; // V93.9.1
+  
+  // V93.9.1: Bursaries now come from IndexedDB too
+  const bursaries = institutions.filter(i => i.type === 'bursary');
+  const filteredBursaries = bursaries.filter(b => { 
+    const matchesSearch = search? b.name?.toLowerCase().includes(search.toLowerCase()) || b.provider?.toLowerCase().includes(search.toLowerCase()) : true; 
+    const matchesCountry = bursaryCountryFilter === 'All' || b.country === bursaryCountryFilter; // V93.9.1: === not includes
+    return matchesSearch && matchesCountry; 
   });
 
-  const filteredProvinces = Object.keys(provinceIndex).filter(prov =>
-    prov.toLowerCase().includes(provinceSearch.toLowerCase())
-  );
+  const filteredProvinces = Object.keys(provinceIndex).filter(prov => prov.toLowerCase().includes(provinceSearch.toLowerCase()));
   const countries = ['All', 'South Africa', 'Nigeria', 'Ghana', 'Kenya', 'Uganda', 'Mauritius', 'East Africa', 'Southern Africa', 'West Africa'];
-
-  const handleSelect = (campus: any) => {
-    setSelectedCampus(campus);
-    setModalVisible(true);
+  
+  const handleSelect = (campus: any) => { setSelectedCampus(campus); setModalVisible(true); };
+  const handleViewMap = () => { setActiveCampus(selectedCampus); setModalVisible(false); router.push('/map'); };
+  const handleEmergency = () => { setActiveCampus(selectedCampus); setModalVisible(false); router.push('/emergency'); };
+  const handleApply = async () => { 
+    if (!selectedCampus?.applyUrl) return; 
+    try { await supabase.from('apply_clicks').insert({ campus_id: selectedCampus.id, campus_name: selectedCampus.shortName, province: selectedCampus.province, user_agent: Platform.OS }); } 
+    catch (error) { console.log('Analytics failed:', error); } 
+    setModalVisible(false); Linking.openURL(selectedCampus.applyUrl); 
   };
-
-  const handleViewMap = () => {
-    setActiveCampus(selectedCampus);
-    setModalVisible(false);
-    router.push('/map');
-  };
-
-  const handleEmergency = () => {
-    setActiveCampus(selectedCampus);
-    setModalVisible(false);
-    router.push('/emergency');
-  };
-
-  const handleApply = async () => {
-    if (!selectedCampus?.applyUrl) return;
-    try {
-      await supabase.from('apply_clicks').insert({
-        campus_id: selectedCampus.id,
-        campus_name: selectedCampus.shortName,
-        province: selectedCampus.province,
-        user_agent: Platform.OS,
-      });
-    } catch (error) {
-      console.log('Analytics failed:', error);
-    }
-    setModalVisible(false);
-    Linking.openURL(selectedCampus.applyUrl);
-  };
-
-  const selectProvince = (prov: string) => {
-    setSelectedProvince(prov);
-    setProvinceModalVisible(false);
-    setProvinceSearch('');
-  };
-
-  const renderInstitutionItem = ({ item }: { item: any }) => (
-    <TouchableOpacity
-      style={[styles.card, { backgroundColor: item.primaryColor || '#8B0000' }]}
-      onPress={() => handleSelect(item)}
-      activeOpacity={0.8}
-    >
+  const selectProvince = (prov: string) => { setSelectedProvince(prov); setProvinceModalVisible(false); setProvinceSearch(''); };
+  
+  const SkeletonCard = () => ( <View style={[styles.card, { backgroundColor: '#E5E7EB' }]}><View style={{ flex: 1 }}><View style={{ height: 20, width: '60%', backgroundColor: '#D1D5DB', borderRadius: 4, marginBottom: 8 }} /><View style={{ height: 16, width: '90%', backgroundColor: '#D1D5DB', borderRadius: 4, marginBottom: 6 }} /><View style={{ height: 14, width: '40%', backgroundColor: '#D1D5DB', borderRadius: 4 }} /></View><Ionicons name="chevron-forward" size={28} color="#9CA3AF" /></View> );
+  
+  const renderInstitutionItem = ({ item }: { item: any }) => ( 
+    <TouchableOpacity style={[styles.card, { backgroundColor: item.primaryColor || '#8B0000' }]} onPress={() => handleSelect(item)} activeOpacity={0.8}>
       <View style={{ flex: 1 }}>
         <Text style={styles.cardTitle}>{item.shortName}</Text>
         <Text style={styles.cardSubtitle}>{item.name}</Text>
-        <Text style={styles.cardCity}>
-          {item.city}{item.city && item.province? ', ' : ''}{item.province}
-          {item.country && item.country!== 'South Africa'? `, ${item.country}` : ''}
-        </Text>
+        <Text style={styles.cardCity}>{item.city}{item.city && item.province? ', ' : ''}{item.province}{item.country && item.country!== 'South Africa'? `, ${item.country}` : ''}</Text>
         <Text style={styles.cardType}>{item.type || item.level}</Text>
       </View>
       <Ionicons name="chevron-forward" size={28} color="white" />
-    </TouchableOpacity>
+    </TouchableOpacity> 
   );
-
-  const renderBursaryItem = ({ item }: { item: any }) => (
-    <TouchableOpacity
-      style={[styles.card, { backgroundColor: item.country === 'South Africa'? '#8B0000' : '#1B3A6B' }]}
-      onPress={() => Linking.openURL(item.apply_link)}
-      activeOpacity={0.8}
-    >
+  
+  const renderBursaryItem = ({ item }: { item: any }) => ( 
+    <TouchableOpacity style={[styles.card, { backgroundColor: item.country === 'South Africa'? '#8B0000' : '#1B3A6B' }]} onPress={() => Linking.openURL(item.applyUrl)} activeOpacity={0.8}> // V93.9.1: applyUrl not apply_link
       <View style={{ flex: 1 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Text style={styles.cardTitle}>{item.name}</Text>
-          <View style={[styles.countryBadge, item.country === 'South Africa' && styles.countryBadgeSA]}>
-            <Text style={styles.countryBadgeText}>{item.country === 'South Africa'? 'SA' : 'AF'}</Text>
-          </View>
+          <View style={[styles.countryBadge, item.country === 'South Africa' && styles.countryBadgeSA]}><Text style={styles.countryBadgeText}>{item.country === 'South Africa'? 'SA' : 'AF'}</Text></View>
         </View>
         <Text style={styles.cardSubtitle}>{item.provider}</Text>
         <Text style={styles.cardCity}>Deadline: {item.deadline}</Text>
-        <Text style={styles.cardType}>{item.level?.join(', ')}</Text>
-        <Text style={styles.cardCity} numberOfLines={3}>{item.notes}</Text>
-        <View style={styles.badgeRow}>
-          {item.covers?.slice(0, 3).map((c: string, i: number) => (
-            <View key={i} style={styles.badge}>
-              <Text style={styles.badgeText}>{c}</Text>
-            </View>
-          ))}
-        </View>
+        <View style={styles.badgeRow}>{item.covers?.slice(0, 3).map((c: string, i: number) => (<View key={i} style={styles.badge}><Text style={styles.badgeText}>{c}</Text></View>))}</View>
       </View>
       <Ionicons name="open-outline" size={28} color="white" />
-    </TouchableOpacity>
+    </TouchableOpacity> 
   );
 
-  if (loading) {
-    return (
-      <View style={styles.loadingScreen}>
-        <ActivityIndicator size="large" color="#8B0000" />
-        <Text style={styles.loadingText}>Loading institutions...</Text>
-      </View>
-    );
+  if (error) { 
+    return ( 
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="#111827" />
+        <View style={styles.loadingScreen}>
+          <Ionicons name="cloud-offline" size={48} color="#DC143C" />
+          <Text style={[styles.loadingText, { color: '#DC143C', marginTop: 12 }]}>{error}</Text>
+          <TouchableOpacity style={[styles.modalBtn, { backgroundColor: '#8B0000', marginTop: 20, width: '60%' }]} onPress={loadAllData}>
+            <Text style={styles.modalBtnText}>Retry</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView> 
+    ); 
+  }
+
+  if (loading) { 
+    return ( 
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="#111827" />
+        <View style={styles.header}>
+          <Ionicons name="school" size={32} color="#FFD700" />
+          <Text style={styles.headerText}>SA & AFRICA INSTITUTIONS</Text>
+          <Text style={styles.subHeader}>Loading {totalCount || '...'} institutions</Text>
+        </View>
+        <View style={{ paddingHorizontal: 16, paddingTop: 20 }}>{[1,2,3,4].map(i => <SkeletonCard key={i} />)}</View>
+      </SafeAreaView> 
+    ); 
   }
 
   const numColumns = Platform.OS === 'web'? 2 : 1;
-
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#111827" />
-
       <View style={styles.header}>
         <Ionicons name="school" size={32} color="#FFD700" />
         <Text style={styles.headerText}>SA & AFRICA INSTITUTIONS</Text>
-        <Text style={styles.subHeader}>Map • Emergency • Apply • Bursaries</Text>
-
-        {canInstall && (
-          <TouchableOpacity style={styles.installBtn} onPress={handleInstall}>
-            <Ionicons name="download" size={18} color="#111827" />
-            <Text style={styles.installBtnText}>Install App</Text>
-          </TouchableOpacity>
-        )}
+        <Text style={styles.subHeader}>{totalCount}+ Institutions • Map • Emergency • Apply</Text>
+        {canInstall && (<TouchableOpacity style={styles.installBtn} onPress={handleInstall}><Ionicons name="download" size={18} color="#111827" /><Text style={styles.installBtnText}>Install App</Text></TouchableOpacity>)}
       </View>
-
+      
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.filterRow}>
         {['All', 'Tertiary', 'Africa', 'School', 'Bursaries'].map(filter => (
-          <TouchableOpacity
-            key={filter}
-            style={[styles.filterBtn, levelFilter === filter && styles.filterBtnActive]}
-            onPress={() => setLevelFilter(filter as any)}
-          >
-            <Text style={[styles.filterBtnText, levelFilter === filter && styles.filterBtnTextActive]}>
-              {filter}
-            </Text>
+          <TouchableOpacity key={filter} style={[styles.filterBtn, levelFilter === filter && styles.filterBtnActive]} onPress={() => setLevelFilter(filter as any)}>
+            <Text style={[styles.filterBtnText, levelFilter === filter && styles.filterBtnTextActive]}>{filter}</Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
 
       {levelFilter === 'School' && Object.keys(provinceIndex).length > 0 && (
-        <TouchableOpacity
-          style={styles.dropdownBtn}
-          onPress={() => setProvinceModalVisible(true)}
-        >
-          <Text style={styles.dropdownBtnText}>
-            {selectedProvince === 'All'? 'All Provinces' : selectedProvince}
-          </Text>
+        <TouchableOpacity style={styles.dropdownBtn} onPress={() => setProvinceModalVisible(true)}>
+          <Text style={styles.dropdownBtnText}>{selectedProvince === 'All'? 'All Provinces' : selectedProvince}</Text>
           <Ionicons name="chevron-down" size={20} color="#374151" />
         </TouchableOpacity>
       )}
@@ -555,14 +259,8 @@ export default function InstitutionsScreen() {
       {levelFilter === 'Bursaries' && (
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.filterRow}>
           {countries.map(c => (
-            <TouchableOpacity
-              key={c}
-              style={[styles.filterBtn, bursaryCountryFilter === c && styles.filterBtnActive]}
-              onPress={() => setBursaryCountryFilter(c)}
-            >
-              <Text style={[styles.filterBtnText, bursaryCountryFilter === c && styles.filterBtnTextActive]}>
-                {c}
-              </Text>
+            <TouchableOpacity key={c} style={[styles.filterBtn, bursaryCountryFilter === c && styles.filterBtnActive]} onPress={() => setBursaryCountryFilter(c)}>
+              <Text style={[styles.filterBtnText, bursaryCountryFilter === c && styles.filterBtnTextActive]}>{c}</Text>
             </TouchableOpacity>
           ))}
         </ScrollView>
@@ -570,171 +268,80 @@ export default function InstitutionsScreen() {
 
       <View style={styles.searchContainer}>
         <Ionicons name="search" size={20} color="#666" />
-        <TextInput
-          style={styles.search}
-          placeholder={levelFilter === 'Bursaries'? "Search bursaries, provider, field..." : "Search institution, city, province..."}
-          placeholderTextColor="#999"
-          value={search}
-          onChangeText={setSearch}
-        />
-        {search.length > 0 && (
-          <TouchableOpacity onPress={() => setSearch('')}>
-            <Ionicons name="close-circle" size={20} color="#999" />
-          </TouchableOpacity>
-        )}
+        <TextInput style={styles.search} placeholder={levelFilter === 'Bursaries'? "Search bursaries..." : "Search all institutions..."} placeholderTextColor="#999" value={search} onChangeText={setSearch} />
+        {search.length > 0 && (<TouchableOpacity onPress={() => setSearch('')}><Ionicons name="close-circle" size={20} color="#999" /></TouchableOpacity>)}
       </View>
 
-      {(loadingSchools || loadingBursaries) && (
-        <View style={styles.loadingContainer}>
-          <ActivityIndicator size="small" color="#111827" />
-          <Text style={styles.loadingText}>
-            {loadingSchools? 'Loading schools...' : 'Loading bursaries...'}
-          </Text>
-        </View>
-      )}
-
       <Text style={styles.notice}>
-        {levelFilter === 'Bursaries'
-         ? `${filteredBursaries.length} bursaries shown`
-          : `${displayedInstitutions.length} institutions shown`}. Data verified May 2026.
+        {levelFilter === 'Bursaries'? `${filteredBursaries.length} bursaries shown` : `${displayedInstitutions.length} of ${totalCount} institutions shown`}
       </Text>
 
       <Animated.View style={{ flex: 1, opacity: fadeAnim }}>
         {levelFilter === 'Bursaries'? (
-          <FlatList
-            key={`bursaries-${numColumns}`}
-            data={filteredBursaries}
-            keyExtractor={(item) => item.id}
-            renderItem={renderBursaryItem}
-            numColumns={numColumns}
-            columnWrapperStyle={numColumns > 1? styles.row : null}
-            contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 80 }}
-            ListEmptyComponent={
-             !loadingBursaries? (
-                <View style={styles.noResultsContainer}>
-                  <Ionicons name="school-outline" size={48} color="#ddd" />
-                  <Text style={styles.noResults}>No bursaries found</Text>
-                </View>
-              ) : null
-            }
+          <FlatList 
+            key={`bursaries-${numColumns}`} 
+            data={filteredBursaries} 
+            keyExtractor={(item) => item.id} 
+            renderItem={renderBursaryItem} 
+            numColumns={numColumns} 
+            columnWrapperStyle={numColumns > 1? styles.row : null} 
+            contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 80 }} 
+            ListEmptyComponent={(<View style={styles.noResultsContainer}><Ionicons name="school-outline" size={48} color="#ddd" /><Text style={styles.noResults}>No bursaries found</Text></View>)}
           />
         ) : (
-          <FlatList
-            key={`institutions-${numColumns}`}
-            data={displayedInstitutions}
-            keyExtractor={(item, index) => item.id || `${item.name}-${index}`}
-            renderItem={renderInstitutionItem}
-            numColumns={numColumns}
-            columnWrapperStyle={numColumns > 1? styles.row : null}
-            contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 80 }}
-            keyboardShouldPersistTaps="handled"
-            initialNumToRender={20}
-            windowSize={10}
-            ListEmptyComponent={
-             !loadingSchools? (
-                <View style={styles.noResultsContainer}>
-                  <Ionicons name="search-outline" size={48} color="#ddd" />
-                  <Text style={styles.noResults}>
-                    {search? `No institutions found for "${search}"` : 'Select a filter to load institutions'}
-                  </Text>
-                </View>
-              ) : null
-            }
+          <FlatList 
+            key={`institutions-${numColumns}`} 
+            data={displayedInstitutions} 
+            keyExtractor={(item, index) => item.id || `${item.name}-${index}`} 
+            renderItem={renderInstitutionItem} 
+            numColumns={numColumns} 
+            columnWrapperStyle={numColumns > 1? styles.row : null} 
+            contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 80 }} 
+            keyboardShouldPersistTaps="handled" 
+            initialNumToRender={50} 
+            windowSize={10} 
+            ListEmptyComponent={(<View style={styles.noResultsContainer}><Ionicons name="search-outline" size={48} color="#ddd" /><Text style={styles.noResults}>{search? `No institutions found for "${search}"` : 'No institutions'}</Text></View>)}
           />
         )}
       </Animated.View>
 
-      {/* Campus Action Modal */}
       <Modal animationType="slide" transparent={true} visible={modalVisible} onRequestClose={() => setModalVisible(false)}>
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>{selectedCampus?.shortName}</Text>
             <Text style={styles.modalSubTitle}>{selectedCampus?.name}</Text>
-            <Text style={styles.modalMeta}>
-              {selectedCampus?.type} • {selectedCampus?.province}
-              {selectedCampus?.country && selectedCampus?.country!== 'South Africa'? `, ${selectedCampus?.country}` : ''}
-            </Text>
-
-            <TouchableOpacity style={[styles.modalBtn, { backgroundColor: '#8B0000' }]} onPress={handleViewMap}>
-              <Ionicons name="map" size={24} color="white" />
-              <Text style={styles.modalBtnText}>View Campus Map</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={[styles.modalBtn, { backgroundColor: '#DC143C' }]} onPress={handleEmergency}>
-              <Ionicons name="warning" size={24} color="white" />
-              <Text style={styles.modalBtnText}>Emergency Hub</Text>
-            </TouchableOpacity>
-
-            {selectedCampus?.applyUrl && (
-              <TouchableOpacity style={[styles.modalBtn, { backgroundColor: '#228B22' }]} onPress={handleApply}>
-                <Ionicons name="school" size={24} color="white" />
-                <Text style={styles.modalBtnText}>Apply Now</Text>
-              </TouchableOpacity>
-            )}
-
-            <TouchableOpacity onPress={() => router.push('/analytics')} style={{ position: 'absolute', right: 16, top: 20 }}>
-              <Ionicons name="stats-chart" size={28} color="#FFD700" />
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.cancelBtn} onPress={() => setModalVisible(false)}>
-              <Text style={styles.cancelText}>Cancel</Text>
-            </TouchableOpacity>
+            <Text style={styles.modalMeta}>{selectedCampus?.type} • {selectedCampus?.province}{selectedCampus?.country && selectedCampus?.country!== 'South Africa'? `, ${selectedCampus?.country}` : ''}</Text>
+            <TouchableOpacity style={[styles.modalBtn, { backgroundColor: '#8B0000' }]} onPress={handleViewMap}><Ionicons name="map" size={24} color="white" /><Text style={styles.modalBtnText}>View Campus Map</Text></TouchableOpacity>
+            <TouchableOpacity style={[styles.modalBtn, { backgroundColor: '#DC143C' }]} onPress={handleEmergency}><Ionicons name="warning" size={24} color="white" /><Text style={styles.modalBtnText}>Emergency Hub</Text></TouchableOpacity>
+            {selectedCampus?.applyUrl && (<TouchableOpacity style={[styles.modalBtn, { backgroundColor: '#228B22' }]} onPress={handleApply}><Ionicons name="school" size={24} color="white" /><Text style={styles.modalBtnText}>Apply Now</Text></TouchableOpacity>)}
+            <TouchableOpacity onPress={() => router.push('/analytics')} style={{ position: 'absolute', right: 16, top: 20 }}><Ionicons name="stats-chart" size={28} color="#FFD700" /></TouchableOpacity>
+            <TouchableOpacity style={styles.cancelBtn} onPress={() => setModalVisible(false)}><Text style={styles.cancelText}>Cancel</Text></TouchableOpacity>
           </View>
         </View>
       </Modal>
 
-      {/* Province Dropdown Modal */}
-      <Modal
-        visible={provinceModalVisible}
-        animationType="slide"
-        transparent={true}
-        onRequestClose={() => setProvinceModalVisible(false)}
-      >
+      <Modal visible={provinceModalVisible} animationType="slide" transparent={true} onRequestClose={() => setProvinceModalVisible(false)}>
         <View style={styles.modalOverlay}>
           <View style={styles.modalList}>
             <View style={styles.modalListHeader}>
               <Text style={styles.modalListTitle}>Select Province</Text>
-              <TouchableOpacity onPress={() => setProvinceModalVisible(false)}>
-                <Ionicons name="close" size={24} color="#374151" />
-              </TouchableOpacity>
+              <TouchableOpacity onPress={() => setProvinceModalVisible(false)}><Ionicons name="close" size={24} color="#374151" /></TouchableOpacity>
             </View>
-
-            <TextInput
-              style={styles.provinceSearch}
-              placeholder="Search province..."
-              placeholderTextColor="#999"
-              value={provinceSearch}
-              onChangeText={setProvinceSearch}
-              autoFocus
-            />
-
+            <TextInput style={styles.provinceSearch} placeholder="Search province..." placeholderTextColor="#999" value={provinceSearch} onChangeText={setProvinceSearch} autoFocus />
             <ScrollView>
-              <TouchableOpacity
-                style={styles.modalListItem}
-                onPress={() => selectProvince('All')}
-              >
-                <Text style={selectedProvince === 'All'? styles.modalListItemActive : styles.modalListItemText}>
-                  All Provinces
-                </Text>
+              <TouchableOpacity style={styles.modalListItem} onPress={() => selectProvince('All')}>
+                <Text style={selectedProvince === 'All'? styles.modalListItemActive : styles.modalListItemText}>All Provinces</Text>
                 {selectedProvince === 'All' && <Ionicons name="checkmark" size={20} color="#111827" />}
               </TouchableOpacity>
-
               {filteredProvinces.map(prov => (
-                <TouchableOpacity
-                  key={prov}
-                  style={styles.modalListItem}
-                  onPress={() => selectProvince(prov)}
-                >
+                <TouchableOpacity key={prov} style={styles.modalListItem} onPress={() => selectProvince(prov)}>
                   <Text style={selectedProvince === prov? styles.modalListItemActive : styles.modalListItemText}>
                     {prov} {provinceIndex[prov]?.count? `(${provinceIndex[prov].count})` : ''}
                   </Text>
                   {selectedProvince === prov && <Ionicons name="checkmark" size={20} color="#111827" />}
                 </TouchableOpacity>
               ))}
-
-              {filteredProvinces.length === 0 && (
-                <Text style={styles.noResults}>No provinces found</Text>
-              )}
+              {filteredProvinces.length === 0 && (<Text style={styles.noResults}>No provinces found</Text>)}
             </ScrollView>
           </View>
         </View>
@@ -756,28 +363,9 @@ const styles = StyleSheet.create({
   filterBtnActive: { backgroundColor: '#111827' },
   filterBtnText: { color: '#374151', fontWeight: '600', fontSize: 14 },
   filterBtnTextActive: { color: '#fff' },
-  dropdownBtn: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: '#E5E7EB',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderRadius: 12,
-    marginHorizontal: 16,
-    marginBottom: 12,
-  },
+  dropdownBtn: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#E5E7EB', paddingHorizontal: 16, paddingVertical: 12, borderRadius: 12, marginHorizontal: 16, marginBottom: 12 },
   dropdownBtnText: { fontSize: 16, fontWeight: '600', color: '#374151' },
-  searchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    margin: 16,
-    paddingHorizontal: 12,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#DDD',
-  },
+  searchContainer: { flexDirection: 'row', alignItems: 'center', backgroundColor: 'white', margin: 16, paddingHorizontal: 12, borderRadius: 12, borderWidth: 1, borderColor: '#DDD' },
   search: { flex: 1, padding: 14, fontSize: 16 },
   loadingContainer: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingVertical: 12, gap: 8 },
   loadingText: { fontSize: 14, color: '#666', marginTop: 8 },
@@ -785,21 +373,7 @@ const styles = StyleSheet.create({
   noResultsContainer: { alignItems: 'center', paddingVertical: 60 },
   noResults: { fontSize: 15, color: '#666', textAlign: 'center', marginTop: 12, fontStyle: 'italic' },
   row: { justifyContent: 'space-between', gap: 12 },
-  card: {
-    padding: 18,
-    borderRadius: 14,
-    marginBottom: 14,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    minHeight: 160,
-    flex: Platform.OS === 'web'? 1 : undefined,
-  },
+  card: { padding: 18, borderRadius: 14, marginBottom: 14, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', elevation: 3, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 4, minHeight: 160, flex: Platform.OS === 'web'? 1 : undefined },
   cardTitle: { color: 'white', fontWeight: 'bold', fontSize: 20, lineHeight: 24, flexShrink: 1 },
   cardSubtitle: { color: 'white', fontSize: 15, opacity: 0.9, marginTop: 4 },
   cardCity: { color: 'white', fontSize: 14, opacity: 0.8, marginTop: 6 },
