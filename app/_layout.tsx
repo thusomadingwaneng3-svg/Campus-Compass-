@@ -121,10 +121,25 @@ export default function Layout() {
         const lastSync = await AsyncStorage.getItem('offlineLastUpdated');
         const hoursSince = lastSync? (Date.now() - new Date(lastSync).getTime()) / 3600000 : 999;
         if (hoursSince > 24) {
-          const { data } = await supabase.from('institutions').select('*');
-          if (data) { await AsyncStorage.setItem('offlineInstitutions', JSON.stringify(data)); await AsyncStorage.setItem('offlineLastUpdated', new Date().toISOString()); }
+          // V93.2: Only cache SA on web to avoid QuotaExceededError
+          let query = supabase.from('institutions').select('*');
+          if (Platform.OS === 'web') {
+            query = query.eq('country', 'South Africa'); // or.eq('region', 'SA') depending on your schema
+          }
+
+          const { data } = await query;
+          if (data) {
+            const jsonData = JSON.stringify(data);
+            // V93.2: Check size before saving. ~4MB limit for web
+            if (jsonData.length < 4000000) {
+              await AsyncStorage.setItem('offlineInstitutions', jsonData);
+              await AsyncStorage.setItem('offlineLastUpdated', new Date().toISOString());
+            } else {
+              console.log('Data too large for cache, skipping offline save');
+            }
+          }
         }
-      } catch (e) { console.log('Auto-sync failed, using cache'); }
+      } catch (e) { console.log('Auto-sync failed, using cache', e); }
     };
     setTimeout(autoSync, 3000);
   }, []);
