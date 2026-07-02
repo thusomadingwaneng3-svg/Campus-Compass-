@@ -1,28 +1,57 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase'; // Move supabase.ts to root/lib/
+import Groq from 'groq-sdk';
+import { createClient } from '@supabase/supabase-js';
+
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY! // use service key on server
+);
 
 export async function POST(req: Request) {
-  const { query } = await req.json();
+  try {
+    const { query } = await req.json();
+    if (!query) return NextResponse.json({ error: 'No query' }, { status: 400 });
 
-  // Basic parsing. V93.1 we’ll use OpenAI to extract fields
-  const apsMatch = query.match(/aps\s*(\d+)/i);
-  const aps = apsMatch? parseInt(apsMatch[1]) : 999;
-  const budgetMatch = query.match(/<r(\d+)/i);
-  const budget = budgetMatch? parseInt(budgetMatch[1]) * 1000 : 9999;
+    // 1. RAG: Pull relevant data from Supabase first
+    const apsMatch = query.match(/aps\s*(\d{2,3})/i);
+    const courseMatch = query.match(/(engineering|medicine|law|it|commerce|education)/i);
 
-  const { data: unis } = await supabase
-   .from('institutions')
-   .select('name, min_aps, application_deadline_2026, website')
-   .lte('min_aps', aps)
-   .limit(3);
+    let context = '';
+    if (apsMatch) {
+      const aps = parseInt(apsMatch[1]);
+      const { data: unis } = await supabase
+       .from('institutions')
+       .select('name, province, application_deadline_2026, aps_required')
+       .lte('aps_required', aps)
+       .limit(5);
+      context = `Relevant SA Unis for APS ${aps}: ${JSON.stringify(unis)}`;
+    }
 
-  const { data: burs } = await supabase
-   .from('bursaries')
-   .select('name, deadline, amount, region')
-   .eq('region', 'SA')
-   .limit(3);
+    // 2. Ask Groq with your data as context
+    const chatCompletion = await groq.chat.completions.create({
+      messages: [
+        {
+          role: 'system',
+          content: `You are Campus Copilot for SA students 2026. Only use the provided data. Be concise. If data missing, say "I don't have that in my database yet". South African English. Rands, not $.`
+        },
+        { role: 'user', content: `Student asked: ${query}\n\nDatabase Context: ${context}` }
+      ],
+      model: 'llama-3.3-70b-versatile', // fastest + smartest free model
+      temperature: 0.3,
+      max_tokens: 400,
+    });
 
-  const reply = `**Top 3 Unis for APS ${aps}:**\n${unis?.map(u => `• ${u.name} | Min APS: ${u.min_aps} | Closes: ${u.application_deadline_2026}`).join('\n') || 'None found'}\n\n**Top 3 SA Bursaries:**\n${burs?.map(b => `• ${b.name} | R${b.amount || '?' } | Closes: ${b.deadline}`).join('\n') || 'None found'}\n\nReply with "Engineering" or "Medicine" to filter.`;
+    return NextResponse.json({
+      reply: chatCompletion.choices[0].message.content
+    }, { headers: { 'Access-Control-Allow-Origin': '*' }});
 
-  return NextResponse.json({ reply });
+  } catch (e: any) {
+    console.error(e);
+    return NextResponse.json({ error: 'Failed to connect to AI' }, { status: 500 });
+  }
+}
+
+export async function OPTIONS() {
+  return new Response(null, { headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST' }});
 }
