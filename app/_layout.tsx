@@ -8,7 +8,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { CampusProvider } from '../CampusContext';
 import { AuthProvider } from '../lib/AuthContext';
 import { Share, Alert, Linking, Platform, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// V93.8.2: DELETE AsyncStorage import
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import { DrawerActions, useIsFocused } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
@@ -16,6 +16,8 @@ import { useEffect, useState, useCallback } from 'react';
 import * as Location from 'expo-location';
 import { LinearGradient } from 'expo-linear-gradient';
 import { supabase } from '../lib/supabase';
+import { openDB, IDBPDatabase } from 'idb'; 
+import globalInstitutions from '../global_institutions.json'; 
 
 const emojiMap: Record<string, string> = { 
   home: '🏠', school: '🏫', campus: '🎓', location: '📍', chatbubbles: '💬', 
@@ -24,7 +26,6 @@ const emojiMap: Record<string, string> = {
   flag: '🚩', menu: '☰' 
 };
 
-// V93.5.2: Web-safe emoji icons. No LinearGradient on icon to avoid dot bug
 function GlamIcon({ name, focused, gradient, bg }: any) {
   const emoji = emojiMap[name] || '🏫';
   return (
@@ -36,8 +37,20 @@ function GlamIcon({ name, focused, gradient, bg }: any) {
   );
 }
 
+let db: IDBPDatabase;
+const initDB = async () => {
+  if (!db) db = await openDB('campus-compass', 1, {
+    upgrade(db) { 
+      if (!db.objectStoreNames.contains('institutions')) {
+        db.createObjectStore('institutions', { keyPath: 'id' }); 
+      }
+    }
+  });
+  return db;
+};
+
 function CustomDrawerContent(props: any) {
-  const [counts, setCounts] = useState({ institutions: 0, saBursaries: 0, africaBursaries: 0, closingSoon: 0 });
+  const [counts, setCounts] = useState({ total: 0, loaded: 0, closingSoon: 0 });
   const [lastUpdate, setLastUpdate] = useState<string | null>(null);
   const [unread, setUnread] = useState(0);
   const isFocused = useIsFocused();
@@ -62,14 +75,19 @@ function CustomDrawerContent(props: any) {
       try {
         const today = new Date().toISOString().split('T')[0];
         const in60Days = new Date(Date.now() + 60*24*60*60*1000).toISOString().split('T')[0];
-        const [instRes, saRes, africaRes, closingRes, lastUpd] = await Promise.all([
+        const database = await initDB();
+        const loadedCount = await database.count('institutions');
+        
+        const [instRes, closingRes, lastUpd] = await Promise.all([
           supabase.from('institutions').select('id', { count: 'exact', head: true }),
-          supabase.from('bursaries').select('id', { count: 'exact', head: true }).eq('region', 'SA'),
-          supabase.from('bursaries').select('id', { count: 'exact', head: true }).eq('region', 'Africa'),
           supabase.from('institutions').select('id', { count: 'exact', head: true }).gte('application_deadline_2026', today).lte('application_deadline_2026', in60Days),
-          AsyncStorage.getItem('offlineLastUpdated')
+          Promise.resolve(localStorage.getItem('offlineLastUpdated')) // V93.8.2: localStorage
         ]);
-        setCounts({ institutions: instRes.count || 0, saBursaries: saRes.count || 0, africaBursaries: africaRes.count || 0, closingSoon: closingRes.count || 0 });
+        setCounts({ 
+          total: (instRes.count || 0) + globalInstitutions.length, 
+          loaded: loadedCount,
+          closingSoon: closingRes.count || 0
+        });
         setLastUpdate(lastUpd);
       } catch (e) { console.log('Failed to load counts:', e); }
     };
@@ -87,7 +105,10 @@ function CustomDrawerContent(props: any) {
           <View style={styles.logoBox}><Text style={{ fontSize: 28 }}>🏫</Text></View>
           <Text style={{ color: 'white', fontSize: 22, fontWeight: '900', marginLeft: 10 }}>Campus Compass</Text>
         </View>
-        <Text style={{ color: '#FFD700', fontSize: 13, fontWeight: '600', marginLeft: 56 }}>{counts.institutions}+ Institutions • {counts.closingSoon} Closing Soon</Text>
+        <Text style={{ color: '#FFD700', fontSize: 13, fontWeight: '600', marginLeft: 56 }}>
+          {counts.total}+ Total • {counts.loaded} Loaded
+        </Text>
+        <Text style={{ color: '#FFD700', fontSize: 12, fontWeight: '600', marginLeft: 56 }}>{counts.closingSoon} Closing Soon</Text>
         <Text style={{ color: '#FFD700', fontSize: 11, fontWeight: '500', marginLeft: 56, marginTop: 4 }}>Data updated: {lastUpdateText}</Text>
       </LinearGradient>
       <View style={{ paddingTop: 16, paddingHorizontal: 8 }}><DrawerItemList {...props} /></View>
@@ -109,28 +130,50 @@ export default function Layout() {
   useEffect(() => {
     const autoSync = async () => {
       try {
-        await AsyncStorage.multiRemove(['offlineSchoolsAfrica', 'offlineInstitutions']); // V93.5: Nuke ALL old cache
-        const lastSync = await AsyncStorage.getItem('offlineLastUpdated');
+        localStorage.removeItem('offlineSchoolsAfrica'); // V93.8.2: localStorage
+        localStorage.removeItem('offlineInstitutions');
+        const database = await initDB();
+        const count = await database.count('institutions');
+        const lastSync = localStorage.getItem('offlineLastUpdated'); // V93.8.2
         const hoursSince = lastSync? (Date.now() - new Date(lastSync).getTime()) / 3600000 : 999;
-        if (hoursSince > 24) {
-          // V93.5.1: Removed.eq('country') to fix 400. Limit 120 to stay <2MB
-          const { data, error } = await supabase.from('institutions').select('id,name,province,aps_required,application_deadline_2026').limit(120);
-          if (error) throw error;
-          if (data) {
-            const jsonData = JSON.stringify(data);
-            console.log('Cache size:', (jsonData.length/1024/1024).toFixed(2), 'MB');
-            if (jsonData.length < 2000000) { 
-              await AsyncStorage.setItem('offlineInstitutions', jsonData);
-              await AsyncStorage.setItem('offlineLastUpdated', new Date().toISOString());
-            } else { console.log('Data too large for cache, skipping offline save'); }
+        
+        const targetCount = 30000 + globalInstitutions.length;
+        if (count < targetCount || hoursSince > 24) {
+          console.log('Syncing Supabase + JSON to IndexedDB...');
+          await database.clear('institutions'); 
+          
+          const tx1 = database.transaction('institutions', 'readwrite');
+          await Promise.all(globalInstitutions.map(d => tx1.store.put(d)));
+          await tx1.done;
+          console.log(`Loaded JSON: ${globalInstitutions.length}`);
+
+          let from = 0;
+          const batchSize = 1000;
+          let totalSynced = globalInstitutions.length;
+          
+          while (true) {
+            const { data, error } = await supabase
+           .from('institutions')
+           .select('id,name,province,aps_required,application_deadline_2026')
+           .range(from, from + batchSize - 1);
+            if (error) throw error;
+            if (!data || data.length === 0) break;
+            
+            const tx2 = database.transaction('institutions', 'readwrite');
+            await Promise.all(data.map(d => tx2.store.put(d))); 
+            await tx2.done;
+            
+            totalSynced += data.length;
+            from += batchSize;
+            console.log(`Synced ${totalSynced}/${targetCount}...`);
+            if (data.length < batchSize) break;
           }
+          localStorage.setItem('offlineLastUpdated', new Date().toISOString()); // V93.8.2
+          console.log('IndexedDB Sync Complete:', totalSynced);
         }
-      } catch (e) { 
-        console.log('Auto-sync failed, using cache', e); 
-        await AsyncStorage.removeItem('offlineInstitutions'); 
-      }
+      } catch (e) { console.error('IndexedDB sync failed', e); }
     };
-    setTimeout(autoSync, 3000);
+    setTimeout(autoSync, 2000);
   }, []);
 
   useEffect(() => {
@@ -170,7 +213,6 @@ export default function Layout() {
             <Drawer.Screen name="institutions" options={{ drawerLabel: 'All Institutions', title: 'SA & AFRICA INSTITUTIONS', drawerIcon: ({ focused }) => <GlamIcon name="school" focused={focused} gradient={['#4F46E5', '#7C3AED']} bg="#F5F3FF" /> }} />
             <Drawer.Screen name="map" initialParams={{ mode: 'cluster' }} options={{ drawerLabel: 'Map View', title: 'Institutions Map', drawerIcon: ({ focused }) => <GlamIcon name="location" focused={focused} gradient={['#10B981', '#059669']} bg="#F0FDF4" /> }} />
             <Drawer.Screen name="chat" options={{ drawerLabel: 'AI Chat - Thuso', title: 'Campus AI', drawerIcon: ({ focused }) => <GlamIcon name="chatbubbles" focused={focused} gradient={['#F59E0B', '#D97706']} bg="#FFFBEB" /> }} />
-            {/* V93.5: Copilot deleted */}
             <Drawer.Screen name="my-campuses" options={{ drawerItemStyle: { display: 'none' } }} />
             <Drawer.Screen name="institution-chat" options={{ drawerItemStyle: { display: 'none' } }} />
             <Drawer.Screen name="deadlines" options={{ drawerLabel: 'Deadlines Tracker', title: 'Application Deadlines', drawerIcon: ({ focused }) => <GlamIcon name="alarm" focused={focused} gradient={['#EF4444', '#DC2626']} bg="#FEF2F2" /> }} />
