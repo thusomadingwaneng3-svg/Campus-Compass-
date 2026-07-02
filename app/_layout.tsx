@@ -79,7 +79,7 @@ function CustomDrawerContent(props: any) {
         
         const [instRes, closingRes, lastUpd] = await Promise.all([
           supabase.from('institutions').select('id', { count: 'exact', head: true }),
-          supabase.from('institutions').select('id', { count: 'exact', head: true }).gte('application_deadline_2026', today).lte('application_deadline_2026', in60Days).catch(() => ({count: 0})), // V93.8.4: safe
+          supabase.from('institutions').select('id', { count: 'exact', head: true }).gte('application_deadline_2026', today).lte('application_deadline_2026', in60Days),
           Promise.resolve(localStorage.getItem('offlineLastUpdated'))
         ]);
         setCounts({ 
@@ -141,7 +141,6 @@ export default function Layout() {
           console.log('Syncing Supabase + JSON to IndexedDB...');
           await database.clear('institutions'); 
           
-          // V93.8.4: Force ID for JSON rows
           const tx1 = database.transaction('institutions', 'readwrite');
           await Promise.all(globalInstitutions.map((d, i) => tx1.store.put({
             id: d.id || `global-${d.name?.replace(/\s/g,'-')?.replace(/[^a-zA-Z0-9-]/g,'')}-${i}`,
@@ -162,23 +161,28 @@ export default function Layout() {
           await tx1.done;
           console.log(`Loaded JSON: ${globalInstitutions.length}`);
 
-          // V93.8.4: Only safe columns to avoid 400
+          // V93.8.6: Match your exact Supabase columns
           let from = 0;
           const batchSize = 1000;
           let totalSynced = globalInstitutions.length;
           
           while (true) {
             const { data, error } = await supabase
-         .from('institutions')
-         .select('id,name,province,city,country,level,type,apply_url,latitude,longitude') // V93.8.4: Safe
-         .range(from, from + batchSize - 1);
+       .from('institutions')
+       .select('id,name,country,website,province_state,city,country_code,latitude,longitude,apply_url,type,application_deadline_2026,primary_color,short') // V93.8.6: Exact
+       .range(from, from + batchSize - 1);
             if (error) throw error;
             if (!data || data.length === 0) break;
             
             const tx2 = database.transaction('institutions', 'readwrite');
             await Promise.all(data.map(d => tx2.store.put({
              ...d,
-              applyUrl: d.apply_url, // Normalize to camelCase for Home
+              province: d.province_state, // Normalize to camelCase
+              applyUrl: d.apply_url,
+              lat: d.latitude,
+              lng: d.longitude,
+              shortName: d.short,
+              primaryColor: d.primary_color,
             }))); 
             await tx2.done;
             
