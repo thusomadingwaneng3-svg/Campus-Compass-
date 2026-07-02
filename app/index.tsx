@@ -9,12 +9,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { supabase } from '../lib/supabase';
 import { openDB, IDBPDatabase } from 'idb'; 
 import globalInstitutions from '../global_institutions.json'; 
-import funding from '../funding.json'; // V93.9.1: SA Bursaries
-import africaBursaries from '../africa_bursaries.json'; // V93.9.2: Africa Bursaries
-import schoolsAfrica from '../schools_africa.json'; // V93.9.1: Schools
-import africaNonSA from '../africa_non_sa.json'; // V93.9.1: Africa only
+import funding from '../funding.json'; 
+import africaBursaries from '../africa_bursaries.json'; 
+import schoolsAfrica from '../schools_africa.json'; 
+import africaNonSA from '../africa_non_sa.json'; 
 
-// V93.8: IndexedDB instance
 let db: IDBPDatabase;
 const initDB = async () => {
   if (!db) db = await openDB('campus-compass', 1, {
@@ -27,7 +26,6 @@ const initDB = async () => {
   return db;
 };
 
-// V93.9.1: Normalize all JSONs to same schema
 const normalizeRecord = (d: any, i: number, type: string) => ({
   id: d.id || `${type}-${d.name?.replace(/\s/g,'-')?.replace(/[^a-zA-Z0-9-]/g,'')}-${i}`,
   name: d.name,
@@ -36,14 +34,14 @@ const normalizeRecord = (d: any, i: number, type: string) => ({
   city: d.city || '',
   country: d.country || 'South Africa',
   level: type === 'bursary'? 'Bursary' : type === 'school'? 'School' : 'Tertiary',
-  type: type, // 'university', 'school', 'bursary'
+  type: type, 
   applyUrl: d.applyUrl || d.apply_url || d.website || d.link,
   primaryColor: d.primaryColor || d.primary_color || '#8B0000',
   lat: d.lat || d.latitude, 
   lng: d.lng || d.longitude,
   latitude: d.lat || d.latitude, 
   longitude: d.lng || d.longitude,
-  provider: d.provider || d.name, // for bursaries
+  provider: d.provider || d.name, 
   deadline: d.deadline || d.application_deadline_2026 || 'TBD',
   covers: d.covers || d.benefits || [],
 });
@@ -56,18 +54,14 @@ export default function HomeScreen() {
   const [search, setSearch] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedCampus, setSelectedCampus] = useState<any>(null);
-
-  const [institutions, setInstitutions] = useState<any[]>([]); // V93.8: ALL institutions
+  const [institutions, setInstitutions] = useState<any[]>([]); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [provinceIndex, setProvinceIndex] = useState<any>({});
-
   const [totalCount, setTotalCount] = useState<number>(0);
-
   const [levelFilter, setLevelFilter] = useState<'All' | 'Tertiary' | 'School' | 'Africa' | 'Bursaries'>('All');
   const [selectedProvince, setSelectedProvince] = useState<string>('All');
   const [bursaryCountryFilter, setBursaryCountryFilter] = useState<string>('All');
-
   const [provinceModalVisible, setProvinceModalVisible] = useState(false);
   const [provinceSearch, setProvinceSearch] = useState('');
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
@@ -75,7 +69,7 @@ export default function HomeScreen() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    loadAllData(); // V93.9.1: Load all 5 JSONs
+    loadAllData(); 
     if (Platform.OS === 'web') {
       const handler = (e: any) => { e.preventDefault(); setDeferredPrompt(e); setCanInstall(true); };
       window.addEventListener('beforeinstallprompt', handler);
@@ -89,22 +83,20 @@ export default function HomeScreen() {
     }
   }, [loading, error]);
 
-  // V93.9.1: Load ALL from IndexedDB + 5 JSONs
   const loadAllData = async () => {
     setLoading(true); setError(null);
     try {
       const database = await initDB();
-      let all = await database.getAll('institutions'); // Supabase 34K
+      let all = await database.getAll('institutions'); 
       
-      // V93.9.1: If IndexedDB empty, seed with 5 JSONs
       if (all.length === 0) {
         const tx = database.transaction('institutions', 'readwrite');
         await Promise.all([
-         ...globalInstitutions.map((d, i) => tx.store.put(normalizeRecord(d, i, 'university'))),
-         ...funding.map((d, i) => tx.store.put(normalizeRecord(d, i, 'bursary'))), // SA
-         ...africaBursaries.map((d, i) => tx.store.put(normalizeRecord(d, i, 'bursary'))), // Africa V93.9.2
-         ...schoolsAfrica.map((d, i) => tx.store.put(normalizeRecord(d, i, 'school'))),
-         ...africaNonSA.map((d, i) => tx.store.put(normalizeRecord(d, i, 'university'))),
+        ...globalInstitutions.map((d, i) => tx.store.put(normalizeRecord(d, i, 'university'))),
+        ...funding.map((d, i) => tx.store.put(normalizeRecord(d, i, 'bursary'))), 
+        ...africaBursaries.map((d, i) => tx.store.put(normalizeRecord(d, i, 'bursary'))), 
+        ...schoolsAfrica.map((d, i) => tx.store.put(normalizeRecord(d, i, 'school'))),
+        ...africaNonSA.map((d, i) => tx.store.put(normalizeRecord(d, i, 'university'))),
         ]);
         await tx.done;
         all = await database.getAll('institutions');
@@ -125,7 +117,7 @@ export default function HomeScreen() {
 
   const buildProvinceIndex = (data: any[]) => {
     const index: any = {};
-    data.filter(i => i.country === 'South Africa' && i.type === 'school').forEach(s => { // V93.9.1: type not level
+    data.filter(i => i.country === 'South Africa' && i.type === 'school').forEach(s => {
       if (!index[s.province]) index[s.province] = { count: 0, file: null };
       index[s.province].count += 1;
     });
@@ -134,27 +126,25 @@ export default function HomeScreen() {
 
   const handleInstall = async () => { if (!deferredPrompt) return; deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; if (outcome === 'accepted') setCanInstall(false); setDeferredPrompt(null); };
   
-  // V93.9.1: Filter by type instead of level
   const filtered = institutions.filter(c => { 
     if (levelFilter === 'Africa' && c.country === 'South Africa') return false; 
-    if (levelFilter === 'Tertiary' && c.type!== 'university') return false; // V93.9.1
-    if (levelFilter === 'School' && c.type!== 'school') return false; // V93.9.1
-    if (levelFilter === 'Bursaries' && c.type!== 'bursary') return false; // V93.9.1
+    if (levelFilter === 'Tertiary' && c.type!== 'university') return false; 
+    if (levelFilter === 'School' && c.type!== 'school') return false; 
+    if (levelFilter === 'Bursaries' && c.type!== 'bursary') return false; 
     if (selectedProvince!== 'All' && c.province!== selectedProvince) return false; 
     if (search) { 
       const searchLower = search.toLowerCase(); 
-      return (c.name?.toLowerCase().includes(searchLower) || c.shortName?.toLowerCase().includes(searchLower) || c.city?.toLowerCase().includes(searchLower) || c.province?.toLowerCase().includes(searchLower) || c.country?.toLowerCase().includes(searchLower) || c.provider?.toLowerCase().includes(searchLower)); // V93.9.1: provider for bursaries
+      return (c.name?.toLowerCase().includes(searchLower) || c.shortName?.toLowerCase().includes(searchLower) || c.city?.toLowerCase().includes(searchLower) || c.province?.toLowerCase().includes(searchLower) || c.country?.toLowerCase().includes(searchLower) || c.provider?.toLowerCase().includes(searchLower)); 
     } 
     return true; 
   });
 
-  const displayedInstitutions = levelFilter === 'Africa'? institutions.filter(i => i.type === 'university' && i.country!== 'South Africa') : filtered; // V93.9.1
+  const displayedInstitutions = levelFilter === 'Africa'? institutions.filter(i => i.type === 'university' && i.country!== 'South Africa') : filtered; 
   
-  // V93.9.1: Bursaries now come from IndexedDB too
   const bursaries = institutions.filter(i => i.type === 'bursary');
   const filteredBursaries = bursaries.filter(b => { 
     const matchesSearch = search? b.name?.toLowerCase().includes(search.toLowerCase()) || b.provider?.toLowerCase().includes(search.toLowerCase()) : true; 
-    const matchesCountry = bursaryCountryFilter === 'All' || b.country === bursaryCountryFilter; // V93.9.1: === not includes
+    const matchesCountry = bursaryCountryFilter === 'All' || b.country === bursaryCountryFilter; 
     return matchesSearch && matchesCountry; 
   });
 
@@ -187,7 +177,7 @@ export default function HomeScreen() {
   );
   
   const renderBursaryItem = ({ item }: { item: any }) => ( 
-    <TouchableOpacity style={[styles.card, { backgroundColor: item.country === 'South Africa'? '#8B0000' : '#1B3A6B' }]} onPress={() => Linking.openURL(item.applyUrl)} activeOpacity={0.8}> // V93.9.1: applyUrl not apply_link
+    <TouchableOpacity style={[styles.card, { backgroundColor: item.country === 'South Africa'? '#8B0000' : '#1B3A6B' }]} onPress={() => Linking.openURL(item.applyUrl)} activeOpacity={0.8}>
       <View style={{ flex: 1 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Text style={styles.cardTitle}>{item.name}</Text>
