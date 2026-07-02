@@ -166,6 +166,14 @@ export default function Layout() {
             <Drawer.Screen name="institutions" options={{ drawerLabel: 'All Institutions', title: 'SA & AFRICA INSTITUTIONS', drawerIcon: ({ focused }) => <GlamIcon name={focused? "school" : "school-outline"} focused={focused} gradient={['#4F46E5', '#7C3AED']} bg="#F5F3FF" /> }} />
             <Drawer.Screen name="map" initialParams={{ mode: 'cluster' }} options={{ drawerLabel: 'Map View', title: 'Institutions Map', drawerIcon: ({ focused }) => <GlamIcon name={focused? "location" : "location-outline"} focused={focused} gradient={['#10B981', '#059669']} bg="#F0FDF4" /> }} />
             <Drawer.Screen name="chat" options={{ drawerLabel: 'AI Chat - Thuso', title: 'Campus AI', drawerIcon: ({ focused }) => <GlamIcon name={focused? "chatbubbles" : "chatbubbles-outline"} focused={focused} gradient={['#F59E0B', '#D97706']} bg="#FFFBEB" /> }} />
+            <Drawer.Screen
+              name="copilot"
+              options={{
+                drawerLabel: 'AI Copilot V2',
+                title: 'Campus AI Copilot',
+                drawerIcon: ({ focused }) => <GlamIcon name={focused? "chatbubbles" : "chatbubbles-outline"} focused={focused} gradient={['#F59E0B', '#EA580C']} bg="#FFF7ED" />
+              }}
+            />
             <Drawer.Screen name="my-campuses" options={{ drawerItemStyle: { display: 'none' } }} />
             <Drawer.Screen name="institution-chat" options={{ drawerItemStyle: { display: 'none' } }} />
             <Drawer.Screen name="deadlines" options={{ drawerLabel: 'Deadlines Tracker', title: 'Application Deadlines', drawerIcon: ({ focused }) => <GlamIcon name={focused? "alarm" : "alarm-outline"} focused={focused} gradient={['#EF4444', '#DC2626']} bg="#FEF2F2" /> }} />
@@ -187,7 +195,6 @@ export default function Layout() {
             <Drawer.Screen name="(internal)/institution/[id]" options={{ drawerItemStyle: { display: 'none' } }} />
             <Drawer.Screen name="(internal)/apply/[id]" options={{ drawerItemStyle: { display: 'none' } }} />
             <Drawer.Screen name="(internal)/services/dataService" options={{ drawerItemStyle: { display: 'none' } }} />
-            {/* V66: DELETED api/ai-web/route and api/copilot/route from here */}
             <Drawer.Screen name="pro" options={{ drawerItemStyle: { display: 'none' } }} />
             <Drawer.Screen name="sync" options={{ drawerItemStyle: { display: 'none' } }} />
             <Drawer.Screen name="power" options={{ drawerItemStyle: { display: 'none' } }} />
