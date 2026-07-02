@@ -8,7 +8,6 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { CampusProvider } from '../CampusContext';
 import { AuthProvider } from '../lib/AuthContext';
 import { Share, Alert, Linking, Platform, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-// V93.8.2: DELETE AsyncStorage import
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import { DrawerActions, useIsFocused } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
@@ -80,8 +79,8 @@ function CustomDrawerContent(props: any) {
         
         const [instRes, closingRes, lastUpd] = await Promise.all([
           supabase.from('institutions').select('id', { count: 'exact', head: true }),
-          supabase.from('institutions').select('id', { count: 'exact', head: true }).gte('application_deadline_2026', today).lte('application_deadline_2026', in60Days),
-          Promise.resolve(localStorage.getItem('offlineLastUpdated')) // V93.8.2: localStorage
+          supabase.from('institutions').select('id', { count: 'exact', head: true }).gte('application_deadline_2026', today).lte('application_deadline_2026', in60Days).catch(() => ({count: 0})), // V93.8.4: safe
+          Promise.resolve(localStorage.getItem('offlineLastUpdated'))
         ]);
         setCounts({ 
           total: (instRes.count || 0) + globalInstitutions.length, 
@@ -130,11 +129,11 @@ export default function Layout() {
   useEffect(() => {
     const autoSync = async () => {
       try {
-        localStorage.removeItem('offlineSchoolsAfrica'); // V93.8.2: localStorage
+        localStorage.removeItem('offlineSchoolsAfrica');
         localStorage.removeItem('offlineInstitutions');
         const database = await initDB();
         const count = await database.count('institutions');
-        const lastSync = localStorage.getItem('offlineLastUpdated'); // V93.8.2
+        const lastSync = localStorage.getItem('offlineLastUpdated');
         const hoursSince = lastSync? (Date.now() - new Date(lastSync).getTime()) / 3600000 : 999;
         
         const targetCount = 30000 + globalInstitutions.length;
@@ -142,25 +141,45 @@ export default function Layout() {
           console.log('Syncing Supabase + JSON to IndexedDB...');
           await database.clear('institutions'); 
           
+          // V93.8.4: Force ID for JSON rows
           const tx1 = database.transaction('institutions', 'readwrite');
-          await Promise.all(globalInstitutions.map(d => tx1.store.put(d)));
+          await Promise.all(globalInstitutions.map((d, i) => tx1.store.put({
+            id: d.id || `global-${d.name?.replace(/\s/g,'-')?.replace(/[^a-zA-Z0-9-]/g,'')}-${i}`,
+            name: d.name,
+            shortName: d.shortName || d.name,
+            province: d.province, 
+            city: d.city || '',
+            country: d.country || 'South Africa',
+            level: d.level || 'Tertiary',
+            type: d.type || 'University',
+            applyUrl: d.applyUrl || d.website,
+            primaryColor: d.primaryColor || '#8B0000',
+            lat: d.lat || d.latitude, 
+            lng: d.lng || d.longitude,
+            latitude: d.lat || d.latitude, 
+            longitude: d.lng || d.longitude,
+          })));
           await tx1.done;
           console.log(`Loaded JSON: ${globalInstitutions.length}`);
 
+          // V93.8.4: Only safe columns to avoid 400
           let from = 0;
           const batchSize = 1000;
           let totalSynced = globalInstitutions.length;
           
           while (true) {
             const { data, error } = await supabase
-           .from('institutions')
-           .select('id,name,province,aps_required,application_deadline_2026')
-           .range(from, from + batchSize - 1);
+         .from('institutions')
+         .select('id,name,province,city,country,level,type,apply_url,latitude,longitude') // V93.8.4: Safe
+         .range(from, from + batchSize - 1);
             if (error) throw error;
             if (!data || data.length === 0) break;
             
             const tx2 = database.transaction('institutions', 'readwrite');
-            await Promise.all(data.map(d => tx2.store.put(d))); 
+            await Promise.all(data.map(d => tx2.store.put({
+             ...d,
+              applyUrl: d.apply_url, // Normalize to camelCase for Home
+            }))); 
             await tx2.done;
             
             totalSynced += data.length;
@@ -168,10 +187,13 @@ export default function Layout() {
             console.log(`Synced ${totalSynced}/${targetCount}...`);
             if (data.length < batchSize) break;
           }
-          localStorage.setItem('offlineLastUpdated', new Date().toISOString()); // V93.8.2
+          localStorage.setItem('offlineLastUpdated', new Date().toISOString());
           console.log('IndexedDB Sync Complete:', totalSynced);
         }
-      } catch (e) { console.error('IndexedDB sync failed', e); }
+      } catch (e: any) { 
+        console.error('IndexedDB sync failed', e.message || e); 
+        Alert.alert('Sync Failed', e.message || 'Check Supabase columns/RLS'); 
+      }
     };
     setTimeout(autoSync, 2000);
   }, []);
